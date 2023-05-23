@@ -20,17 +20,17 @@
 (setq savehist-additional-variables
       '(kill-ring
         command-history
-	set-variable-value-history
-	custom-variable-history   
-	query-replace-history     
-	read-expression-history   
-	minibuffer-history        
-	read-char-history         
-	face-name-history         
-	bookmark-history          
-        ivy-history               
-	counsel-M-x-history       
-	file-name-history         
+        set-variable-value-history
+        custom-variable-history
+        query-replace-history
+        read-expression-history
+        minibuffer-history
+        read-char-history
+        face-name-history
+        bookmark-history
+        ivy-history
+        counsel-M-x-history
+        file-name-history
         counsel-minibuffer-history))
 (setq history-length 250)
 (setq kill-ring-max 25)
@@ -55,7 +55,7 @@
   (setq kill-ring (mapcar 'substring-no-properties kill-ring)))
 (add-hook 'kill-emacs-hook 'unpropertize-kill-ring)
 
-;; Recentf files 
+;; Recentf files
 (setq recentf-max-menu-items 25)
 (setq recentf-save-file     "~/.nano-recentf")
 (recentf-mode 1)
@@ -68,6 +68,7 @@
 (setq backup-directory-alist '(("." . "~/.backups"))
       make-backup-files t     ; backup of a file the first time it is saved.
       backup-by-copying t     ; don't clobber symlinks
+      vc-make-backup-files t  ; backup version controlled files too as we don't commit on every save
       version-control t       ; version numbers for backup files
       delete-old-versions t   ; delete excess backup files silently
       kept-old-versions 6     ; oldest versions to keep when a new numbered
@@ -79,5 +80,10 @@
                               ;  (default: 30)
       auto-save-interval 200)  ; number of keystrokes between auto-saves
                               ;  (default: 300)
+
+;; Exclude sensitive data from backups
+(require 'nano-sensitive)
+(add-to-list 'auto-mode-alist '("\\.gpg$" . sensitive-mode))
+(add-to-list 'auto-mode-alist '("\\.netrc$" . sensitive-mode))
 
 (provide 'nano-session)

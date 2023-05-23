@@ -22,47 +22,9 @@
 ;; Usage:
 ;;  (require 'nano-colors)
 ;;  (material-color "deep-purple-2") 
-;;  (open-color "grape-9")
-;;  (nord-color "aurora-0")
+;;  (toothpaste-color "orange-0")
 ;;
 ;; ---------------------------------------------------------------------
-
-;; See https://yeun.github.io/open-color/
-(defconst open-colors
-  '(("gray"   . (list "#F8F9FA" "#F1F3F5" "#E9ECEF" "#DEE2E6" "#CED4DA"
-                      "#ADB5BD" "#868E96" "#495057" "#343A40" "#212529"))
-    ("red"    . (list "#FFF5F5" "#FFE3E3" "#FFC9C9" "#FFA8A8" "#FF8787"
-                      "#FF6B6B" "#FA5252" "#F03E3E" "#E03131" "#C92A2A"))
-    ("pink"   . (list "#FFF0F6" "#FFDEEB" "#FCC2D7" "#FAA2C1" "#F783AC"
-                      "#F06595" "#E64980" "#D6336C" "#C2255C" "#A61E4D"))
-    ("grape"  . (list "#F8F0FC" "#F3D9FA" "#EEBEFA" "#E599F7" "#DA77F2"
-                      "#CC5DE8" "#BE4BDB" "#AE3EC9" "#9C36B5" "#862E9C"))
-    ("violet" . (list "#F3F0FF" "#E5DBFF" "#D0BFFF" "#B197FC" "#9775FA"
-                      "#845EF7" "#7950F2" "#7048E8" "#6741D9" "#5F3DC4"))
-    ("indigo" . (list "#EDF2FF" "#DBE4FF" "#BAC8FF" "#91A7FF" "#748FFC"
-                      "#5C7CFA" "#4C6EF5" "#4263EB" "#3B5BDB" "#364FC7"))
-    ("blue"   . (list "#E7F5FF" "#D0EBFF" "#A5D8FF" "#74C0FC" "#4DABF7"
-                      "#339AF0" "#228BE6" "#1C7ED6" "#1971C2" "#1864AB"))
-    ("cyan"   . (list "#E3FAFC" "#C5F6FA" "#99E9F2" "#66D9E8" "#3BC9DB"
-                      "#22B8CF" "#15AABF" "#1098AD" "#0C8599" "#0B7285"))
-    ("teal"   . (list "#E6FCF5" "#C3FAE8" "#96F2D7" "#63E6BE" "#38D9A9"
-                      "#20C997" "#12B886" "#0CA678" "#099268" "#087F5B"))
-    ("green"  . (list "#EBFBEE" "#D3F9D8" "#B2F2BB" "#8CE99A" "#69DB7C"
-                      "#51CF66" "#40C057" "#37B24D" "#2F9E44" "#2B8A3E"))
-    ("lime"   . (list "#F4FCE3" "#E9FAC8" "#D8F5A2" "#C0EB75" "#A9E34B"
-                      "#94D82D" "#82C91E" "#74B816" "#66A80F" "#5C940D"))
-    ("yellow" . (list "#FFF9DB" "#FFF3BF" "#FFEC99" "#FFE066" "#FFD43B"
-                      "#FCC419" "#FAB005" "#F59F00" "#F08C00" "#E67700"))
-    ("orange" . (list "#FFF4E6" "#FFE8CC" "#FFD8A8" "#FFC078" "#FFA94D"
-                      "#FF922B" "#FD7E14" "#F76707" "#E8590C" "#D9480F" ))))
-
-(defun open-color (color)
-  (interactive)
-  (let ((hue   (substring color 0 -2))
-        (level (string-to-number (substring color -1))))
-    (nth (+ 1 level) (cdr (assoc hue open-colors)))))
-
-
 
 ;; See https://material.io/design/color/the-color-system.html
 (defconst material-colors
@@ -113,22 +75,24 @@
 
 
 
-;; See https://www.nordtheme.com/
-(defconst nord-colors
-  '( ("polar-night" . (list "#2E3440" "#3B4252" "#434C5E" "#4C566A"))
-     ("snow-storm"  . (list "#D8DEE9" "#E5E9F0" "#ECEFF4"))
-     ("frost"       . (list "#8FBCBB" "#88C0D0" "#81A1C1" "#5E81AC"))
-     ("aurora"      . (list "#BF616A" "#D08770" "#EBCB8B" "#A3BE8C" "#B48EAD"))
-     ("nord"        . (list "#2E3440" "#3B4252" "#434C5E" "#4C566A"
-			    "#D8DEE9" "#E5E9F0" "#ECEFF4" "#8FBCBB"
-			    "#88C0D0" "#81A1C1" "#5E81AC" "#BF616A"
-			    "#D08770" "#EBCB8B" "#A3BE8C" "#B48EAD"))))
-
-(defun nord-color (color)
+;; See http://toothpaste-theme.github.io/toothpaste/
+(defconst toothpaste-colors
+  '( ("gray" . (list "#C5C5C0"))
+     ("blue-gray"  . (list "#222E33" "#465E68" "#DAE3E8"))
+     ("yellow"     . (list "#3B3A32" "#3E3D32" "#49483E" "#DBCD7F"))
+     ("blue"       . (list "#769EB3" "#96CBFE"))
+     ("cyan"       . (list "#73B3C0"))
+     ("green"      . (list "#97B853" "#9DC777" "#A8FF60"))
+     ("orange"     . (list "#C88E4B" "#E9C062"))
+     ("red"        . (list "#CC6666" "#E36868"))
+     ("magenta"    . (list "#C5487A"))
+     ("purple"     . (list "#9B82C9"))))
+     
+(defun toothpaste-color (color)
   (interactive)
   (let ((hue   (substring color 0 -2))
         (level (string-to-number (substring color -1))))
-    (nth (+ 1 level) (cdr (assoc hue nord-colors)))))
+    (nth (+ 1 level) (cdr (assoc hue toothpaste-colors)))))
 
 (provide 'nano-colors)
 

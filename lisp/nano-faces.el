@@ -33,9 +33,9 @@
 
 
 
-(defcustom nano-font-family-monospaced "Roboto Mono"
+(defcustom nano-font-family-monospaced "JetBrains Mono"
   "Name of the font-family to use for nano.
-Defaults to Roboto Mono. Customizing this might lead to conflicts
+Defaults to JetBrains Mono. Customizing this might lead to conflicts
 if the family does not have sufficient bold/light etc faces."
   :group 'nano
   :type 'string)
@@ -83,7 +83,7 @@ attention through the popout effect."
   "Strong face is used for information of a structural nature.
 It has to be the same color as the default color and only the
 weight differs by one level (e.g., light/regular or
-regular/bold). IT is generally used for titles, keywords,
+regular/bold). It is generally used for titles, keywords,
 directory, etc."
   :group 'nano)
 
@@ -110,35 +110,35 @@ background color that is barely perceptible."
   :group 'nano)
 
 (defface nano-face-header-default nil
-  "Default face for ther header line."
+  "Default face for the header line."
   :group 'nano)
 
 (defface nano-face-header-critical nil
-  "Critical face for ther header line."
+  "Critical face for the header line."
   :group 'nano)
 
 (defface nano-face-header-popout nil
-  "Popout face for ther header line."
+  "Popout face for the header line."
   :group 'nano)
 
 (defface nano-face-header-strong nil
-  "Strong face for ther header line."
+  "Strong face for the header line."
   :group 'nano)
 
 (defface nano-face-header-salient nil
-  "Salient face for ther header line."
+  "Salient face for the header line."
   :group 'nano)
 
 (defface nano-face-header-faded nil
-  "Faded face for ther header line."
+  "Faded face for the header line."
   :group 'nano)
 
 (defface nano-face-header-subtle nil
-  "Subtle face for ther header line."
+  "Subtle face for the header line."
   :group 'nano)
 
 (defface nano-face-header-highlight nil
-  "Highlight face for ther header line."
+  "Highlight face for the header line."
   :group 'nano)
 
 (defface nano-face-header-separator nil

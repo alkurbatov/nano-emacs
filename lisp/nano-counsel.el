@@ -16,10 +16,11 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
 
-;; We have a local copy of smex (that has not changed since 2014)
+(require 'counsel)
 (require 'smex)
+(require 'swiper)
 
-(setq ivy-height 4)
+(setq ivy-height 20)
 (setq ivy-count-format "")
 (setq ivy-initial-inputs-alist: '((counsel-minor .            "^+")
                                   (counsel-package .          "^+")
@@ -33,11 +34,16 @@
                                   (woman .                    "^")))
 (global-set-key (kbd "M-x")     'counsel-M-x)
 
-
+;; Key bindings
 (global-set-key (kbd "C-c r")   'counsel-recentf)
 (global-set-key (kbd "C-c b")   'counsel-bookmark)
 (global-set-key (kbd "C-x C-b") 'counsel-switch-buffer)
 (global-set-key (kbd "C-c c")   'counsel-org-capture)
+(global-set-key (kbd "C-s")     'swiper-isearch)
+(global-set-key (kbd "C-r")     'swiper-isearch-backward)
+(global-set-key (kbd "C-x b")   'ivy-switch-buffer)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)

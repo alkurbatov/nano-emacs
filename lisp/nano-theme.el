@@ -31,6 +31,7 @@
 ;;; Code:
 
 (require 'nano-faces)
+(require 'nano-colors)
 
 (defcustom nano-theme-var nil
   "Variable which sets the default startup theme as light or dark.
@@ -123,6 +124,7 @@ Defaults to nil."
   (set-face 'secondary-selection                      'nano-face-subtle)
   (set-face 'completions-common-part                   'nano-face-faded)
   (set-face 'completions-first-difference            'nano-face-default))
+
 (defun nano-theme--font-lock ()
   "Derive font-lock faces from nano-faces."
   (set-face 'font-lock-comment-face                    'nano-face-faded)
@@ -133,9 +135,38 @@ Defaults to nil."
   (set-face 'font-lock-function-name-face             'nano-face-strong)
   (set-face 'font-lock-variable-name-face             'nano-face-strong)
   (set-face 'font-lock-builtin-face                  'nano-face-salient)
+  (set-face-attribute 'font-lock-builtin-face nil
+                      :foreground (toothpaste-color "red-0"))
   (set-face 'font-lock-type-face                     'nano-face-salient)
   (set-face 'font-lock-keyword-face                  'nano-face-salient))
 
+(defun nano-theme--tree-sitter ()
+  "Derive tree-sitter faces from nano-faces."
+  (with-eval-after-load 'tree-sitter-hl
+    (set-face-attribute 'tree-sitter-hl-face:constant nil
+                        :foreground (toothpaste-color "red-0"))
+    (set-face-attribute 'tree-sitter-hl-face:constant.builtin nil
+                        :foreground (toothpaste-color "red-0"))
+    (set-face-attribute 'tree-sitter-hl-face:constructor nil
+                        :foreground (toothpaste-color "cyan-0"))
+    (set-face-attribute 'tree-sitter-hl-face:function.call nil
+                        :foreground (toothpaste-color "blue-0"))
+    (set-face-attribute 'tree-sitter-hl-face:label nil
+                        :foreground (toothpaste-color "blue-0"))
+    (set-face-attribute 'tree-sitter-hl-face:method.call nil
+                        :foreground (toothpaste-color "blue-0"))
+    (set-face-attribute 'tree-sitter-hl-face:number nil
+                        :foreground (toothpaste-color "blue-1"))
+    (set-face-attribute 'tree-sitter-hl-face:operator nil
+                        :foreground (face-foreground 'nano-face-default))
+    (set-face-attribute 'tree-sitter-hl-face:property nil
+                        :foreground (toothpaste-color "blue-1"))
+    (set-face-attribute 'tree-sitter-hl-face:type nil
+                        :foreground (toothpaste-color "cyan-0"))
+    (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
+                        :foreground (toothpaste-color "red-0"))
+    (set-face-attribute 'tree-sitter-hl-face:variable.parameter nil
+                        :foreground (toothpaste-color "blue-0"))))
 
 (defun nano-theme--mode-line ()
   "Derive mode-line and header-line faces from nano-faces."
@@ -162,7 +193,7 @@ Defaults to nil."
                       :overline nil
                       :inherit nil
                       :box nil)
-  
+
   ;;(when (display-graphic-p)
   (set-face-attribute 'header-line nil
                        :weight 'light
@@ -268,7 +299,6 @@ Defaults to nil."
 (defun nano-theme--bookmark ()
   "Derive bookmark faces from nano faces."
   (with-eval-after-load 'bookmark
-    (set-face 'bookmark-menu-heading                  'nano-face-strong)
     (set-face 'bookmark-menu-bookmark                'nano-face-salient)))
 
 
@@ -732,26 +762,40 @@ function is a convenience wrapper used by `describe-package-1'."
   (with-eval-after-load 'company
     (set-face 'company-tooltip-selection                   '(nano-face-strong nano-face-subtle))
     (set-face-attribute 'company-tooltip-selection nil :background nano-color-popout)
-    
+
     (set-face 'company-tooltip                                               'nano-face-subtle)
 
     (set-face 'company-scrollbar-fg                                          'nano-face-faded)
     (set-face-attribute 'company-scrollbar-fg nil :background nano-color-foreground)
-    
+
     (set-face 'company-scrollbar-bg                                          'nano-face-default)
     (set-face-attribute 'company-scrollbar-bg nil :background nano-color-faded)
 
     (set-face 'company-tooltip-common                                        'nano-face-faded)
     (set-face 'company-tooltip-common-selection            '(nano-face-strong nano-face-subtle))
     (set-face-attribute 'company-tooltip-common-selection nil :background nano-color-popout)
-    
+
     (set-face 'company-tooltip-annotation                                    'nano-face-default)
     (set-face 'company-tooltip-annotation-selection        '(nano-face-strong nano-face-subtle))))
+
+(defun nano-theme--flycheck ()
+  "Dervice flycheck faces from nano faces."
+  (with-eval-after-load 'flycheck
+     (set-face 'flycheck-error 'nano-face-header-critical)
+     (set-face-attribute 'flycheck-warning nil
+                         :background (toothpaste-color "orange-0")
+                         :foreground nano-color-background
+                         :underline 'unspecified)
+     (set-face-attribute 'flycheck-info nil
+                         :background (toothpaste-color "blue-0")
+                         :foreground nano-color-background
+                         :underline 'unspecified)))
 
 (defun nano-theme ()
   "Derive many, many faces from the core nano faces."
   (nano-theme--basics)
   (nano-theme--font-lock)
+  (nano-theme--tree-sitter)
   (nano-theme--mode-line)
   (nano-theme--minibuffer)
   (nano-theme--buttons)
@@ -781,7 +825,8 @@ function is a convenience wrapper used by `describe-package-1'."
   (nano-theme--helm-ff)
   (nano-theme--helm-grep)
   (nano-theme--hl-line)
-  (nano-theme--company))
+  (nano-theme--company)
+  (nano-theme--flycheck))
 
 (defun nano-refresh-theme ()
   "Convenience function which refreshes the nano-theme.

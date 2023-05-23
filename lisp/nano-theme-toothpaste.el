@@ -16,21 +16,22 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
 (require 'nano-base-colors)
-(defun nano-theme-set-light ()
-  "Apply light Nano theme base."
-  ;; Colors from Material design at https://material.io/
-  (setq frame-background-mode    'light)
-  (setq nano-color-foreground "#37474F") ;; Blue Grey / L800
-  (setq nano-color-background "#FFFFFF") ;; White
-  (setq nano-color-highlight  "#FAFAFA") ;; Very Light Grey
-  (setq nano-color-critical   "#FF6F00") ;; Amber / L900
-  (setq nano-color-salient    "#673AB7") ;; Deep Purple / L500
-  (setq nano-color-strong     "#000000") ;; Black
-  (setq nano-color-popout     "#FFAB91") ;; Deep Orange / L200
-  (setq nano-color-subtle     "#ECEFF1") ;; Blue Grey / L50
-  (setq nano-color-faded      "#B0BEC5") ;; Blue Grey / L200
-  ;; to allow for toggling of the themes.
-  (setq nano-theme-var "light")
-  )
+(require 'nano-colors)
 
-(provide 'nano-theme-light)
+(defun nano-theme-set-toothpaste ()
+  "Apply toothpaste Nano theme base."
+  ;; Colors from Toothpaste theme at https://github.com/toothpaste-theme/toothpaste
+  (setq frame-background-mode     'dark)
+  (setq nano-color-foreground (toothpaste-color "blue-gray-2"))
+  (setq nano-color-background (toothpaste-color "blue-gray-0"))
+  (setq nano-color-highlight  (toothpaste-color "yellow-0"))
+  (setq nano-color-critical   (toothpaste-color "red-0"))
+  (setq nano-color-salient    (toothpaste-color "green-1"))
+  (setq nano-color-strong     (toothpaste-color "blue-0"))
+  (setq nano-color-popout     (toothpaste-color "yellow-3"))
+  (setq nano-color-subtle     (toothpaste-color "yellow-0"))
+  (setq nano-color-faded      (toothpaste-color "blue-gray-1"))
+  ;; to allow for toggling of the themes.
+  (setq nano-theme-var "toothpaste"))
+
+(provide 'nano-theme-toothpaste)

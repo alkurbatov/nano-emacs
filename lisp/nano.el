@@ -15,23 +15,14 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
-(package-initialize)
-
-
-;; Path to nano emacs modules (mandatory)
-(add-to-list 'load-path "/Users/rougier/Documents/GitHub/nano-emacs")
-(add-to-list 'load-path ".")
 
 ;; Default layout (optional)
 (require 'nano-layout)
 
 ;; Theming Command line options (this will cancel warning messages)
-(add-to-list 'command-switch-alist '("-dark"   . (lambda (args))))
-(add-to-list 'command-switch-alist '("-light"  . (lambda (args))))
 (add-to-list 'command-switch-alist '("-default"  . (lambda (args))))
 (add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
 (add-to-list 'command-switch-alist '("-no-help" . (lambda (args))))
-(add-to-list 'command-switch-alist '("-compact" . (lambda (args))))
 
 
 ;; Customize support for 'emacs -q' (Optional)
@@ -50,13 +41,9 @@
 ;; Theme
 (require 'nano-faces)
 (require 'nano-theme)
-(require 'nano-theme-dark)
-(require 'nano-theme-light)
+(require 'nano-theme-toothpaste)
 
-(cond
- ((member "-default" command-line-args) t)
- ((member "-dark" command-line-args) (nano-theme-set-dark))
- (t (nano-theme-set-light)))
+(nano-theme-set-toothpaste)
 (call-interactively 'nano-refresh-theme)
 
 ;; Nano default settings (optional)
@@ -71,13 +58,8 @@
 ;; Nano key bindings modification (optional)
 (require 'nano-bindings)
 
-;; Compact layout (need to be loaded after nano-modeline)
-(when (member "-compact" command-line-args)
-  (require 'nano-compact))
-  
-;; Nano counsel configuration (optional)
-;; Needs "counsel" package to be installed (M-x: package-install)
-;; (require 'nano-counsel)
+;; Nano counsel configuration
+(require 'nano-counsel)
 
 ;; Welcome message (optional)
 (let ((inhibit-message t))
@@ -86,10 +68,27 @@
 
 ;; Splash (optional)
 (unless (member "-no-splash" command-line-args)
-  (require 'nano-splash))
+  (require 'nano-splash)
+  (nano-splash))
 
 ;; Help (optional)
 (unless (member "-no-help" command-line-args)
   (require 'nano-help))
+
+;; Mu4e (optional)
+;;(require 'nano-mu4e)
+
+;; Projects management
+(require 'nano-projectile)
+
+;; Org mode
+(require 'nano-org)
+
+;; Linting and IDE features
+(require 'nano-lsp)
+
+;; Programming languages
+(require 'nano-elisp)
+(require 'nano-python)
 
 (provide 'nano)

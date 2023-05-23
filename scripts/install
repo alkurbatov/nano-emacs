@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+# Settings
+EMACS_HOME=~/.emacs.d
+
+# Purge previous configuration
+if [ -d "${EMACS_HOME}" ]; then
+    for i in lisp; do
+        rm -rf "${EMACS_HOME:?}/${i}" || true
+    done
+
+    rm "${EMACS_HOME}"/{early-init.el,init.el} || true
+else
+    mkdir "${EMACS_HOME}"
+fi
+
+# Install new configuration
+cp early-init.el init.el "${EMACS_HOME}"
+cp -r lisp "${EMACS_HOME}"
+

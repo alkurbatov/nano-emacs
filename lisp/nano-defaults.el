@@ -16,7 +16,7 @@
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
 
-;; No startup  screen
+;; No startup screen
 (setq inhibit-startup-screen t)
 
 ;; No startup message
@@ -54,10 +54,7 @@
 (setq default-major-mode 'text-mode)
 
 ;; Moderate font lock
-(setq font-lock-maximum-decoration nil)
-
-;; No limit on font lock
-(setq font-lock-maximum-size nil)
+(setq font-lock-maximum-decoration t)
 
 ;; No line break space points
 (setq auto-fill-mode nil)
@@ -93,10 +90,10 @@
   (menu-bar-mode -1))
 
 ;; Tab behavior
-;; (setq tab-always-indent 'complete)
-;; (global-company-mode)
-;; (define-key company-mode-map [remap indent-for-tab-command]
-;;   #'company-indent-or-complete-common)
+(setq tab-always-indent 'complete)
+(global-company-mode)
+(define-key company-mode-map [remap indent-for-tab-command]
+            #'company-indent-or-complete-common)
 
 ;; Pixel scroll (as opposed to char scrool)
 ;; (pixel-scroll-mode t)
@@ -104,10 +101,6 @@
 ;; Mac specific
 (when (eq system-type 'darwin)
   (setq ns-use-native-fullscreen t
-        mac-option-key-is-meta nil
-        mac-command-key-is-meta t
-        mac-command-modifier 'meta
-        mac-option-modifier nil
         mac-use-title-bar nil))
 
 ;; Make sure clipboard works properly in tty mode on OSX
@@ -168,5 +161,11 @@
         (kill-buffer buffer))
     ad-do-it))
 (ad-activate 'term-sentinel)
+
+;; Enable flycheck
+(global-flycheck-mode)
+
+;; Enable yasnippet
+(yas-global-mode)
 
 (provide 'nano-defaults)

@@ -325,7 +325,7 @@
 (setq org-mode-line-string nil)
 (with-eval-after-load 'org-clock
   (add-hook 'org-clock-out-hook
-            '(lambda () (setq org-mode-line-string nil)
+            #'(lambda () (setq org-mode-line-string nil)
                         (force-mode-line-update))))
 
 (defun nano-modeline-org-clock-mode-p ()

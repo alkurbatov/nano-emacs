@@ -20,10 +20,7 @@
 
 (setq default-frame-alist
       (append (list
-	           '(min-height . 1)
-               '(height     . 45)
-	           '(min-width  . 1)
-               '(width      . 81)
+               '(fullscreen . maximized)
                '(vertical-scroll-bars . nil)
                '(internal-border-width . 24)
                '(left-fringe    . 1)
@@ -40,7 +37,7 @@
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 2 (medium)
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 3 (strong)
 
-;; Fall back font for glyph missing in Roboto
+;; Fall back font for glyph missing in JetBrains Mono
 (defface fallback '((t :family "Fira Code"
                        :inherit 'nano-face-faded)) "Fallback")
 (set-display-table-slot standard-display-table 'truncation
@@ -75,5 +72,13 @@
 
 ;; Hide org markup for README
 (setq org-hide-emphasis-markers t)
+
+;; Display line numbers in most modes
+(add-hook 'conf-unix-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
+
+;; Hide indicatiors in left-fringe (GUI mode)
+(setq flycheck-indication-mode nil)
 
 (provide 'nano-layout)

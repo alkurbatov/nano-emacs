@@ -27,7 +27,7 @@ considered to be an early prototype.
 
 You need a recent version of
 [GNU Emacs](https://www.gnu.org/software/emacs/) and to have the
-[Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) and
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/) and
 [Fira Code](https://fonts.google.com/specimen/Fira+Code) fonts
 installed on your system. There are no other dependencies.
 
