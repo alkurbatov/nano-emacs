@@ -59,7 +59,7 @@
 (tooltip-mode 0)
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode nil))
 (menu-bar-mode 0)
-;; (global-hl-line-mode 1)
+(global-hl-line-mode 1)
 (setq x-underline-at-descent-line t)
 
 ;; Vertical window divider
