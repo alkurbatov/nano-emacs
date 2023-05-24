@@ -169,6 +169,12 @@
     ad-do-it))
 (ad-activate 'term-sentinel)
 
+;; Remember the last place visited in a file
+(save-place-mode 1)
+
+;; Automatically revert buffers for changed files if they don't have unsaved changes
+(global-auto-revert-mode 1)
+
 ;; Enable flycheck
 (global-flycheck-mode)
 
