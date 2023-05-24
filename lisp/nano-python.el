@@ -59,7 +59,7 @@
   ((python-mode . setup-python-with-lsp))
    (python-mode . tree-sitter-hl-mode))
 
-;; Enable syntax highlighting for particular configuration files
+;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.flake8\\'" . conf-mode))
 
 (provide 'nano-python)

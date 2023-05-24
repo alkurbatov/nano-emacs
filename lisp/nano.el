@@ -84,7 +84,10 @@
 ;; Org mode
 (require 'nano-org)
 
-;; Linting and IDE features
+;; Version control
+(require 'nano-git)
+
+;; IDE features
 (require 'nano-lsp)
 
 ;; Programming languages
