@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: init
+# key: init
+# --
+#!/usr/bin/env bash
+
+set -euxo pipefail
+

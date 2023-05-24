@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: head
+# key: head
+# --
+#+title: $1
+#+startup: content

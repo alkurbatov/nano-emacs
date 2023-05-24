@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: src
+# key: src
+# --
+#+name ${1:name}
+#+begin_src $2
+$3
+#+end_src

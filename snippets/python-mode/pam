@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: pam
+# key: pam
+# --
+pytestmark = pytest.mark.asyncio
