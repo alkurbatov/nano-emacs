@@ -1,30 +1,30 @@
-;; ---------------------------------------------------------------------
+;;; nano-help.el --- Defines help message and help screen
+
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers 
-;;
+;; Copyright (C) 2020 - N Λ N O developers
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-;; ---------------------------------------------------------------------
-;; 
-;; This file defines a help message (M-p) and a help scren (M-h)
-;;
+
+;;; Commentary:
+;; This file defines a help message (M-p) and a help screen (M-h)
+
 ;; Usage:
-;;
 ;;  (require 'nano-help)
 ;;  M-: (nano-quick-help) or M-p
 ;;  M-: (nano-help) or M-h
-;;
-;; ---------------------------------------------------------------------
+
+;;; Code:
 
 ;; Help message
 (defun nano-quick-help ()
@@ -66,3 +66,4 @@
     (if (display-graphic-p) (propertize "\n " 'face '(:height 0.5))))))
 
 (provide 'nano-help)
+;;; nano-help.el ends here

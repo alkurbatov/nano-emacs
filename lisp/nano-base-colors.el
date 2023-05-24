@@ -1,39 +1,41 @@
-;; ---------------------------------------------------------------------
+;;; nano-base-colors.el --- Base colors for the nano theme
+
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2020 - N Λ N O developers
-;;
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-;; ---------------------------------------------------------------------
-;;
+
+;;; Commentary:
+
 ;; Defines the 9 basic colors of the nano theme.
 ;; The default values are loaded from well-known faces of Emacs.
-;;
+
 ;; To change nano's appearance you therefore may:
 ;; - Load any Emacs theme before loading nano to change the appearance
 ;; - Load one of the few nano themes after this file. This will result inactive
 ;;   the best experience.
 ;; - Set your own colors by customizing nano group
-;;
-;; ---------------------------------------------------------------------
+
+;;; Code:
 
 (defgroup nano '()
-  "Faces and colors for the nano emacs theme")
+  "Faces and colors for the nano Emacs theme.")
 
 ;; Derive our default color set from classic Emacs faces.
 ;; This allows dropping nano components into already themed Emacsen with varying
 ;; degrees of visual appeal.
-;;
+
 ;; We memorize the default colorset in this var in order not to confuse
 ;; customize: the STANDARD argument of defcustom gets re-evaluated by customize
 ;; to determine if the current value is default or not.
@@ -98,3 +100,4 @@
   :group 'nano)
 
 (provide 'nano-base-colors)
+;;; nano-base-colors.el ends here
