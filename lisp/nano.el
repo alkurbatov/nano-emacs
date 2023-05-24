@@ -88,5 +88,6 @@
 ;; Programming languages
 (require 'nano-elisp)
 (require 'nano-python)
+(require 'nano-toml)
 
 (provide 'nano)

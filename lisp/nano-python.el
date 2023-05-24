@@ -61,5 +61,6 @@
 
 ;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.flake8\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("poetry.lock\\'" . conf-toml-mode))
 
 (provide 'nano-python)
