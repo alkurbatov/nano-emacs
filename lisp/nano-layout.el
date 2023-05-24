@@ -32,6 +32,11 @@
                '(tool-bar-lines . 0)
                '(menu-bar-lines . 0))))
 
+;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
+(when (and (eq system-type 'darwin) (display-graphic-p))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
+
 ;; on OSX, type the line below (in terminal) to get a 1 pixel border
 ;; defaults write com.apple.universalaccess increaseContrast -bool YES
 
