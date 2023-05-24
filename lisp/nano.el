@@ -22,7 +22,6 @@
 ;; Theming Command line options (this will cancel warning messages)
 (add-to-list 'command-switch-alist '("-default"  . (lambda (args))))
 (add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
-(add-to-list 'command-switch-alist '("-no-help" . (lambda (args))))
 
 
 ;; Customize support for 'emacs -q' (Optional)
@@ -70,10 +69,6 @@
 (unless (member "-no-splash" command-line-args)
   (require 'nano-splash)
   (nano-splash))
-
-;; Help (optional)
-(unless (member "-no-help" command-line-args)
-  (require 'nano-help))
 
 ;; Mu4e (optional)
 ;;(require 'nano-mu4e)
