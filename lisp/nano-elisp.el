@@ -18,7 +18,4 @@
 ;; ---------------------------------------------------------------------
 ;; Configures programming environment for the Python language.
 
-;; Disable annoying 'there should be two spaces after period'
-(setq sentence-end-double-space nil)
-
 (provide 'nano-elisp)

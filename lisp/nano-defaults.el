@@ -62,6 +62,9 @@
 ;; Fill column at 80
 (setq fill-column 80)
 
+;; Use a single space after dots
+(setq sentence-end-double-space nil)
+
 ;; No confirmation for visiting non-existent files
 (setq confirm-nonexistent-file-or-buffer nil)
 
