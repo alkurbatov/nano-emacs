@@ -41,6 +41,8 @@
         corfu                  ; COmpletion Overlay Region Function
         counsel                ; Improves ivy integration
         deft                   ; Quickly browse, filter, and edit plain text notes
+        dockerfile-mode        ; An emacs mode for handling Dockerfiles
+        docker-compose-mode    ; Major mode for editing docker-compose files
         f                      ; Modern API for working with files and directories
         flycheck               ; Modern on-the-fly syntax checking extension
         flyspell-correct-popup ; Correcting words with flyspell via popup interface
