@@ -510,7 +510,7 @@ function is a convenience wrapper used by `describe-package-1'."
     (set-face 'org-document-info                       'nano-face-faded)
     (set-face 'org-document-info-keyword               'nano-face-faded)
     (set-face 'org-document-title                      'nano-face-faded)
-    (set-face 'org-done                              'nano-face-default)
+    (set-face 'org-done                                'nano-face-faded)
     (set-face 'org-drawer                              'nano-face-faded)
     (set-face 'org-ellipsis                            'nano-face-faded)
     (set-face 'org-footnote                            'nano-face-faded)
