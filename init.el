@@ -48,6 +48,7 @@
         flyspell-correct-popup ; Correcting words with flyspell via popup interface
         flyspell-popup         ; Correcting words with flyspell in popup menus
         git-modes              ; Emacs major modes for Git configuration files
+        gitlab-ci-mode         ; Emacs major mode for editing GitLab CI files
         guess-language         ; Robust automatic language detection
         helpful                ; A better help buffer
         htmlize                ; Convert buffer text and decorations to HTML
