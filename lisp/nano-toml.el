@@ -1,7 +1,7 @@
-;;; nano-toml.el --- TOML configuration format environment
+;;; nano-toml.el --- Environment for TOML configuration format
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers
+;; Copyright (C) 2023 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 
 ;;; Commentary:
 
-;; Configures environment for the TOML configuration format.
+;; Configures environment for the TOML configuration format
 
 ;;; Code:
 

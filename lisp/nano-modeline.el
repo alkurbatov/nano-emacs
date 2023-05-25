@@ -1,33 +1,32 @@
-;; -*- lexical-binding: t -*-
-;; -------------------------------------------------------------------
+;; nano-modeline.el --- Nano modeline -*- lexical-binding: t -*-
+
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers 
-;;
+;; Copyright (C) 2020 - N Λ N O developers
+
 ;; This file is not part of GNU Emacs.
-;;
+
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
 ;; published by the Free Software Foundation, either version 3 of the
 ;; License, or (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>
-;; -------------------------------------------------------------------
-;;
+
+;;; Commentary:
+
 ;; Nano mode line format:
-;;
+
 ;; [ status | name (primary)               secondary | item1 | item2 ]
-;;
-;; -------------------------------------------------------------------
+
+;;; Code:
 (require 'subr-x)
 
-
-;; -------------------------------------------------------------------
 (defun vc-branch ()
   (if vc-mode
       (let ((backend (vc-backend buffer-file-name)))
@@ -449,7 +448,7 @@
 
 ;; ---------------------------------------------------------------------
 (defun nano-modeline-status ()
-  "Return buffer status: read-only (RO), modified (**) or read-write (RW)"
+  "Return buffer status: read-only (RO), modified (**) or read-write (RW)."
   
   (let ((read-only   buffer-read-only)
         (modified    (and buffer-file-name (buffer-modified-p))))
@@ -466,7 +465,7 @@
 
 ;; ---------------------------------------------------------------------
 (defun nano-modeline ()
-  "Install a header line whose content is dependend on the major mode"
+  "Install a header line whose content is dependend on the major mode."
   (interactive)
   (setq-default header-line-format
   '((:eval
@@ -495,8 +494,7 @@
 
 ;; ---------------------------------------------------------------------
 (defun nano-modeline-update-windows ()
-  "Modify the mode line depending on the presence of a window
-below or a buffer local variable 'no-mode-line'."
+  "Modify the mode line depending on the presence of a window below or a buffer local variable 'no-mode-line'."
   (dolist (window (window-list))
     (with-selected-window window
 	  (with-current-buffer (window-buffer window)
@@ -516,6 +514,4 @@ below or a buffer local variable 'no-mode-line'."
 (nano-modeline)
 
 (provide 'nano-modeline)
-
-
-
+;;; nano-modeline.el ends here

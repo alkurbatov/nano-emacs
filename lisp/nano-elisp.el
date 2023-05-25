@@ -1,7 +1,7 @@
 ;;; nano-elisp.el --- ELisp programming environment
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers
+;; Copyright (C) 2023 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -21,6 +21,10 @@
 ;; Configures programming environment for the ELisp language.
 
 ;;; Code:
+(require 'checkdoc)
+
+;; Don't enforce documentation, we have plenty of undocumented functions
+(setq checkdoc-force-docstrings-flag nil)
 
 (provide 'nano-elisp)
 ;;; nano-elisp.el ends here
