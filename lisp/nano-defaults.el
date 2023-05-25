@@ -175,6 +175,12 @@
 ;; Automatically revert buffers for changed files if they don't have unsaved changes
 (global-auto-revert-mode 1)
 
+;; Start week from Monday
+(setq calendar-week-start-day 1)
+
+;; Use the DD/MM/YYYY format for the diary dates
+(setq calendar-date-style 'european)
+
 ;; Enable flycheck
 (global-flycheck-mode)
 
