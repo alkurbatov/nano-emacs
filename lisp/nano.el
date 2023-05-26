@@ -1,22 +1,26 @@
-;; ---------------------------------------------------------------------
+;; nano.el --- Main entry point
+
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2020 - N Λ N O developers
-;;
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
-;; ---------------------------------------------------------------------
 
-;; Default layout (optional)
+;;; Commentary:
+
+;;; Code:
+
+;; Default layout
 (require 'nano-layout)
 
 ;; Theming Command line options (this will cancel warning messages)
@@ -45,27 +49,27 @@
 (nano-theme-set-toothpaste)
 (call-interactively 'nano-refresh-theme)
 
-;; Nano default settings (optional)
+;; Nano default settings
 (require 'nano-defaults)
 
-;; Nano session saving (optional)
+;; Nano session saving
 (require 'nano-session)
 
-;; Nano header & mode lines (optional)
+;; Nano header & mode lines
 (require 'nano-modeline)
 
-;; Nano key bindings modification (optional)
+;; Nano key bindings modification
 (require 'nano-bindings)
 
 ;; Nano counsel configuration
 (require 'nano-counsel)
 
-;; Welcome message (optional)
+;; Welcome message
 (let ((inhibit-message t))
-  (message "Welcome to GNU Emacs / N Λ N O edition")
+  (message "Welcome to GNU Emacs / N Λ N O for devs edition")
   (message (format "Initialization time: %s" (emacs-init-time))))
 
-;; Splash (optional)
+;; Splash
 (unless (member "-no-splash" command-line-args)
   (require 'nano-splash)
   (nano-splash))
@@ -91,3 +95,4 @@
 (require 'nano-toml)
 
 (provide 'nano)
+;;; nano.el ends here

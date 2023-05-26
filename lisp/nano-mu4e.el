@@ -1,29 +1,24 @@
-;;; -*- lexical-binding: t -*-
-;; ---------------------------------------------------------------------
+;;; nano-mu4e.el --- mu4e integration -*- lexical-binding: t -*-
+
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2020 - N Λ N O developers
-;;
+
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-;;
+
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;;
+
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
-;; ---------------------------------------------------------------------
-;; An experimental header command prompt for entering non intrusive
-;; short text, without auto-completion nor history. Typical usage is
-;; for one line org-captures (TODO or meeting) or short mail
-;; answers. The command prompt is displayed using the header line and
-;; the content is copied from a tiny one line window at the bottom of
-;; this window. It takes care of setting the text to white and hiding
-;; the cursor such that it is mostly invisible.
-;; ---------------------------------------------------------------------
+
+;;; Commentary:
+
+;;; Code:
 (require 'svg-tag-mode)
 (require 'mu4e-dashboard)
 (require 'mu4e-thread-folding)
@@ -71,7 +66,7 @@
 
 (defun mu4e-headers-tag (text tag face help query)
   "Make a clickable button with specified FACE displaying TEXT.
-   When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
+When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map 'mu4e-headers-mode-map)
     (define-key map [mouse-1] `(lambda ()
@@ -88,7 +83,7 @@
 
 (defun mu4e-headers-button (text face help query)
   "Make a clickable button with specified FACE displaying TEXT.
-   When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
+When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map 'mu4e-headers-mode-map)
     (define-key map [mouse-1] `(lambda ()
@@ -300,7 +295,7 @@
        :height ,(if (display-graphic-p)
                     (- (face-attribute 'default :height) 20)
                   1)))
-  "SVG tag default face"
+  "SVG tag default face."
   :group 'svg-tag)
 
 (defface mu4e-headers-svg-tag-popout-face
@@ -312,7 +307,7 @@
        :height ,(if (display-graphic-p)
                     (- (face-attribute 'default :height) 20)
                   1)))
-  "SVG tag popout face"
+  "SVG tag popout face."
   :group 'mu4e)
 
 (defface mu4e-headers-svg-tag-salient-face
@@ -324,7 +319,7 @@
        :height ,(if (display-graphic-p)
                     (- (face-attribute 'default :height) 20)
                   1)))
-  "SVG tag salient face"
+  "SVG tag salient face."
   :group 'svg-tag)
 
 (defface mu4e-headers-svg-tag-critical-face
@@ -336,7 +331,7 @@
        :height ,(if (display-graphic-p)
                     (- (face-attribute 'default :height) 20)
                   1)))
-  "SVG tag critical face"
+  "SVG tag critical face."
   :group 'svg-tag)
 
 (defun mu4e-mark-at-point-advice (mark target)
@@ -372,4 +367,4 @@
 (advice-add 'mu4e-mark-at-point :after #'mu4e-mark-at-point-advice)
 
 (provide 'nano-mu4e)
-
+;;; nano-mu4e.el ends here

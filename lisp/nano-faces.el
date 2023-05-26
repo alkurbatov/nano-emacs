@@ -24,7 +24,6 @@
 ;; - nano-face-default   - nano-face-faded    - nano-face-subtle
 
 ;;; Code:
-
 (require 'nano-base-colors)
 
 (defcustom nano-font-family-monospaced "JetBrains Mono"
@@ -136,35 +135,35 @@ background color that is barely perceptible."
   :group 'nano)
 
 (defface nano-face-header-separator nil
-  "Face for separating item in the header line (internal use)"
+  "Face for separating item in the header line (internal use)."
   :group 'nano)
 
 (defface nano-face-header-filler nil
-  "Face compsenting spaces in the header line (internal use) "
+  "Face compsenting spaces in the header line (internal use)."
   :group 'nano)
 
 (defface nano-face-tag-default nil
-  "Default face for tags"
+  "Default face for tags."
   :group 'nano)
 
 (defface nano-face-tag-faded nil
-  "Faded face for tags"
+  "Faded face for tags."
   :group 'nano)
 
 (defface nano-face-tag-strong nil
-  "Strong face for tags"
+  "Strong face for tags."
   :group 'nano)
 
 (defface nano-face-tag-salient nil
-  "Salient face for tags"
+  "Salient face for tags."
   :group 'nano)
 
 (defface nano-face-tag-popout nil
-  "Popout face for tags"
+  "Popout face for tags."
   :group 'nano)
 
 (defface nano-face-tag-critical nil
-  "Critical face for tags"
+  "Critical face for tags."
   :group 'nano)
 
 (defun nano-what-faces (pos)
