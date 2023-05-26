@@ -28,8 +28,9 @@
                '(fullscreen . maximized)
                '(vertical-scroll-bars . nil)
                '(internal-border-width . 24)
-               '(left-fringe    . 1)
-               '(right-fringe   . 1)
+               '(left-fringe    . 0)
+               '(right-fringe   . 0)
+               '(undecorated-round . t)
                '(tool-bar-lines . 0)
                '(menu-bar-lines . 0))))
 
@@ -49,7 +50,7 @@
 
 ;; Fall back font for glyph missing in JetBrains Mono
 (defface fallback '((t :family "Fira Code"
-                       :inherit 'nano-face-faded)) "Fallback.")
+                       :inherit 'nano-faded)) "Fallback.")
 (set-display-table-slot standard-display-table 'truncation
                         (make-glyph-code ?… 'fallback))
 (set-display-table-slot standard-display-table 'wrap
@@ -97,6 +98,12 @@
 
 ;; Hide org markup for README
 (setq org-hide-emphasis-markers t)
+
+;; Enable modeline
+(nano-modeline-mode)
+
+;; Show column number in modeline mode
+(column-number-mode)
 
 ;; Display line numbers in most modes
 (add-hook 'conf-unix-mode-hook 'display-line-numbers-mode)

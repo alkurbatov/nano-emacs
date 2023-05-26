@@ -25,10 +25,10 @@
 
 ;; --- Dashboard --------------------------------------------------
 (defun nano-mu4e-dashboard-colors ()
-  (face-remap-add-relative 'org-link 'nano-face-default)
-  (face-remap-add-relative 'org-verbatim 'nano-face-salient)
-  (face-remap-add-relative 'org-level-1 'nano-face-default)
-  (face-remap-add-relative 'org-level-2 'nano-face-default))
+  (face-remap-add-relative 'org-link 'nano-default)
+  (face-remap-add-relative 'org-verbatim 'nano-salient)
+  (face-remap-add-relative 'org-level-1 'nano-default)
+  (face-remap-add-relative 'org-level-2 'nano-default))
 (add-hook 'mu4e-dashboard-mode-hook #'nano-mu4e-dashboard-colors)
 
 
@@ -44,9 +44,9 @@
 (setq mu4e-thread-folding-child-prefix-string
       "  ")
 
-(setq mu4e-thread-folding-root-unfolded-face 'nano-face-default)
-(setq mu4e-thread-folding-root-folded-face 'nano-face-default)
-(setq mu4e-thread-folding-root-child-face 'nano-face-default)
+(setq mu4e-thread-folding-root-unfolded-face 'nano-default)
+(setq mu4e-thread-folding-root-folded-face 'nano-default)
+(setq mu4e-thread-folding-root-child-face 'nano-default)
 (setq mu4e-thread-folding-default-view 'unfolded)
 
 
@@ -127,13 +127,13 @@ When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
          (unread  (memq 'unread  (mu4e-message-field msg :flags)))
          (date (mu4e-msg-field msg :date))
          (diff (- (time-to-days (current-time)) (time-to-days date)))
-         (face 'nano-face-salient))
+         (face 'nano-salient))
 
-    ;; (setq face (cond ((= diff   0) (if unread 'nano-face-strong 'nano-face-faded))
-    ;;                 ((< diff   8) (if unread 'nano-face-strong 'nano-face-faded))
-    ;;                 (t            (if unread 'nano-face-strong 'nano-face-faded))))
-    ;; (setq face (if unread 'nano-face-strong 'nano-face-faded))
-    (setq face 'nano-face-faded)
+    ;; (setq face (cond ((= diff   0) (if unread 'nano-strong 'nano-faded))
+    ;;                 ((< diff   8) (if unread 'nano-strong 'nano-faded))
+    ;;                 (t            (if unread 'nano-strong 'nano-faded))))
+    ;; (setq face (if unread 'nano-strong 'nano-faded))
+    (setq face 'nano-faded)
     ;; (if (and (not empty-parent) child)
     ;;    (setq face `(:foreground ,nano-color-subtle)))
 
@@ -174,26 +174,26 @@ When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
 
      (mu4e-headers-button
       (or sender-name sender-address "Unknown")
-      (cond  ((and child unread) 'nano-face-default)
-             (child              'nano-face-faded)
-             (unread             'nano-face-strong)
-             (t                  'nano-face-strong))
+      (cond  ((and child unread) 'nano-default)
+             (child              'nano-faded)
+             (unread             'nano-strong)
+             (t                  'nano-strong))
       
       (format "Mails from %s" sender-address)
       (concat "from:" sender-address))
 
-     (cond (unread ;;(propertize " ● " 'face 'nano-face-default))
+     (cond (unread ;;(propertize " ● " 'face 'nano-default))
             (propertize " ● " 'face '(:height 130)))
            (inbox
-            (propertize " • " 'face 'nano-face-faded))
+            (propertize " • " 'face 'nano-faded))
            ((or (not child) empty-parent tags)
-            (propertize " - " 'face 'nano-face-faded)))
+            (propertize " - " 'face 'nano-faded)))
 
 
      (if (or (not mu4e-headers-show-threads) (not child))
          (if list (concat (mu4e-headers-button
                            "[LIST]"
-                           '(:inherit nano-face-faded)
+                           '(:inherit nano-faded)
                            (format "Mails from/to %s" list)
                            (format "list:%s" list)) " ")))
 
@@ -202,19 +202,19 @@ When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
                 (function (lambda (tag)
                             (mu4e-headers-button
                              (format "[%s]" tag)
-                             '(:inherit (nano-face-salient nano-face-strong))
+                             '(:inherit (nano-salient nano-strong))
                              (format "Mails with tag %s" tag)
                              (concat "tag:" tag))))  tags " ") " "))
 
      (if (or (not child) empty-parent)
      ;; (if (= level 0)
-         (propertize subject 'face 'nano-face-default)))))
+         (propertize subject 'face 'nano-default)))))
 
 (defun mu4e-headers-attach (msg)
   (cond ((memq 'flagged  (mu4e-message-field msg :flags))
-         (propertize "!" 'face 'nano-face-strong))
+         (propertize "!" 'face 'nano-strong))
         ((memq 'attach  (mu4e-message-field msg :flags))
-         (propertize "" 'face 'nano-face-faded))
+         (propertize "" 'face 'nano-faded))
         (t " ")))
 
 
@@ -283,7 +283,7 @@ When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
 (plist-put (cdr (assq 'tag      mu4e-marks)) :char "×")
 (setq mu4e-headers-show-target nil)
 (set-face-attribute 'mu4e-header-marks-face nil
-                    :inherit 'nano-face-strong
+                    :inherit 'nano-strong
                     :foreground nano-color-foreground)
 
 (defface mu4e-headers-svg-tag-default-face

@@ -85,6 +85,14 @@
 (dolist (package package-list)
   (straight-use-package package))
 
+;; GNU Emacs / N Λ N O Theme
+(straight-use-package
+ '(nano-theme :type git :host github :repo "rougier/nano-theme"))
+
+;; GNU Emacs / N Λ N O Modeline
+(straight-use-package
+ '(nano-modeline :type git :host github :repo "rougier/nano-modeline"))
+
 ;; Special case for pdf-tools that has recently (2022) changed maintainer
 (straight-use-package
  '(pdf-tools :type git :host github :repo "vedang/pdf-tools"))

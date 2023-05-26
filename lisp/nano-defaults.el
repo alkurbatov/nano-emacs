@@ -48,8 +48,10 @@
 ;; No empty line indicators
 (setq indicate-empty-lines nil)
 
-;; No cursor in inactive windows
-(setq cursor-in-non-selected-windows nil)
+;; Bar cursor
+(setq-default cursor-type '(hbar .  2))
+(setq-default cursor-in-non-selected-windows nil)
+(setq blink-cursor-mode nil)
 
 ;; Text mode is initial mode
 (setq initial-major-mode 'text-mode)

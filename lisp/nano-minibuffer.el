@@ -47,7 +47,7 @@
 
    (with-eval-after-load 'ivy
      (setq ivy-height 4)
-     (set-face 'ivy-current-match 'nano-face-strong)
+     (set-face 'ivy-current-match 'nano-strong)
      ;; See https://github.com/abo-abo/swiper/issues/2383
      (setcdr (assoc t ivy-format-functions-alist) #'ivy-format-function-line)
      (set-face-attribute 'ivy-current-match nil

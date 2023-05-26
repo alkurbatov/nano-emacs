@@ -42,12 +42,9 @@
     (load custom-file)))
 
 ;; Theme
-(require 'nano-faces)
-(require 'nano-theme)
-(require 'nano-theme-toothpaste)
-
-(nano-theme-set-toothpaste)
-(call-interactively 'nano-refresh-theme)
+(require 'nano-theme-ex)
+(load-theme 'nano-dark t)
+(nano-theme-customize)
 
 ;; Nano default settings
 (require 'nano-defaults)
