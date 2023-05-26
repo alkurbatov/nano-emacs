@@ -80,7 +80,7 @@
 ;; See http://toothpaste-theme.github.io/toothpaste/
 (defconst toothpaste-colors
   '( ("gray" . (list "#C5C5C0"))
-     ("blue-gray"  . (list "#222E33" "#465E68" "#DAE3E8"))
+     ("blue-gray"  . (list "#222E33" "#2C3C42" "#465E68" "#DAE3E8"))
      ("yellow"     . (list "#3B3A32" "#3E3D32" "#49483E" "#DBCD7F"))
      ("blue"       . (list "#769EB3" "#96CBFE"))
      ("cyan"       . (list "#73B3C0"))

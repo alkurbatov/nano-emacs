@@ -26,15 +26,15 @@
   "Apply toothpaste Nano theme base."
   ;; Colors from Toothpaste theme at https://github.com/toothpaste-theme/toothpaste
   (setq frame-background-mode     'dark)
-  (setq nano-color-foreground (toothpaste-color "blue-gray-2"))
+  (setq nano-color-foreground (toothpaste-color "blue-gray-3"))
   (setq nano-color-background (toothpaste-color "blue-gray-0"))
   (setq nano-color-highlight  (toothpaste-color "yellow-0"))
   (setq nano-color-critical   (toothpaste-color "red-0"))
   (setq nano-color-salient    (toothpaste-color "green-1"))
   (setq nano-color-strong     (toothpaste-color "blue-0"))
   (setq nano-color-popout     (toothpaste-color "yellow-3"))
-  (setq nano-color-subtle     (toothpaste-color "yellow-0"))
-  (setq nano-color-faded      (toothpaste-color "blue-gray-1"))
+  (setq nano-color-subtle     (toothpaste-color "blue-gray-1"))
+  (setq nano-color-faded      (toothpaste-color "blue-gray-2"))
   ;; to allow for toggling of the themes.
   (setq nano-theme-var "toothpaste"))
 
