@@ -187,5 +187,8 @@
 ;; Enable yasnippet
 (yas-global-mode)
 
+;; Highlight TODO keywords
+(global-hl-todo-mode)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here

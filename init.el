@@ -51,6 +51,7 @@
         gitlab-ci-mode         ; Emacs major mode for editing GitLab CI files
         guess-language         ; Robust automatic language detection
         helpful                ; A better help buffer
+        hl-todo                ; Highlight TODO keywords
         htmlize                ; Convert buffer text and decorations to HTML
         imenu-list             ; Show imenu entries in a separate buffer
         ivy                    ; A generic completion frontend for Emacs

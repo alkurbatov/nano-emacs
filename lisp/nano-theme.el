@@ -776,7 +776,7 @@ function is a convenience wrapper used by `describe-package-1'."
     (set-face 'company-tooltip-annotation-selection        '(nano-face-strong nano-face-subtle))))
 
 (defun nano-theme--flycheck ()
-  "Dervice flycheck faces from nano faces."
+  "Derive flycheck faces from nano faces."
   (with-eval-after-load 'flycheck
      (set-face 'flycheck-error 'nano-face-header-critical)
      (set-face-attribute 'flycheck-warning nil
@@ -787,6 +787,16 @@ function is a convenience wrapper used by `describe-package-1'."
                          :background (toothpaste-color "blue-0")
                          :foreground nano-color-background
                          :underline 'unspecified)))
+
+(defun nano-theme--hl-todo ()
+  "Set ht-todo colors."
+  (with-eval-after-load 'hl-todo
+    (setq hl-todo-highlight-punctuation ":"
+          hl-todo-keyword-faces
+          `(("TODO"       . nano-face-popout)
+            ("FIXME"      . nano-face-critical)
+            ("NB"         . nano-face-salient)
+            ("NOTE"       . nano-face-salient)))))
 
 (defun nano-theme ()
   "Derive many, many faces from the core nano faces."
@@ -823,7 +833,8 @@ function is a convenience wrapper used by `describe-package-1'."
   (nano-theme--helm-grep)
   (nano-theme--hl-line)
   (nano-theme--company)
-  (nano-theme--flycheck))
+  (nano-theme--flycheck)
+  (nano-theme--hl-todo))
 
 (defun nano-refresh-theme ()
   "Convenience function which refreshes the nano-theme.
