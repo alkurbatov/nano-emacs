@@ -20,9 +20,6 @@
 
 ;;; Code:
 
-;; Default layout
-(require 'nano-layout)
-
 ;; Theming Command line options (this will cancel warning messages)
 (add-to-list 'command-switch-alist '("-default"  . (lambda (args))))
 (add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
@@ -44,7 +41,11 @@
 ;; Theme
 (require 'nano-theme-ex)
 (load-theme 'nano-dark t)
+(nano-mode)
 (nano-theme-customize)
+
+;; Default layout
+(require 'nano-layout)
 
 ;; Nano default settings
 (require 'nano-defaults)

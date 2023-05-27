@@ -25,14 +25,7 @@
 
 (setq default-frame-alist
       (append (list
-               '(fullscreen . maximized)
-               '(vertical-scroll-bars . nil)
-               '(internal-border-width . 24)
-               '(left-fringe    . 0)
-               '(right-fringe   . 0)
-               '(undecorated-round . t)
-               '(tool-bar-lines . 0)
-               '(menu-bar-lines . 0))))
+               '(fullscreen . maximized))))
 
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
 (when (and (eq system-type 'darwin) (display-graphic-p))
@@ -47,16 +40,6 @@
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 1 (light)
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 2 (medium)
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 3 (strong)
-
-;; Fall back font for glyph missing in JetBrains Mono
-(defface fallback '((t :family "Fira Code"
-                       :inherit 'nano-faded)) "Fallback.")
-(set-display-table-slot standard-display-table 'truncation
-                        (make-glyph-code ?… 'fallback))
-(set-display-table-slot standard-display-table 'wrap
-                         (make-glyph-code ?↩ 'fallback))
-
-;; (set-fontset-font t nil "Fira Code" nil 'append)
 
 ;; Enable font ligatures
 ;; Taken from https://github.com/mickeynp/ligature.el/wiki
@@ -77,24 +60,7 @@
 (add-hook 'term-mode-hook
 	  (lambda () (setq buffer-display-table (make-display-table))))
 
-(setq inhibit-startup-screen t
-      inhibit-startup-message t
-      inhibit-startup-echo-area-message t
-      initial-scratch-message nil)
-(when (fboundp 'tool-bar-mode) (tool-bar-mode nil))
-(tooltip-mode 0)
-(when (fboundp 'scroll-bar-mode) (scroll-bar-mode nil))
-(menu-bar-mode 0)
 (global-hl-line-mode 1)
-(setq x-underline-at-descent-line t)
-
-;; Vertical window divider
-(setq window-divider-default-right-width 24)
-(setq window-divider-default-places 'right-only)
-(window-divider-mode 1)
-
-;; No ugly button for checkboxes
-(setq widget-image-enable nil)
 
 ;; Hide org markup for README
 (setq org-hide-emphasis-markers t)

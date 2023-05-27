@@ -20,54 +20,6 @@
 
 ;;; Code:
 
-;; No startup screen
-(setq inhibit-startup-screen t)
-
-;; No startup message
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
-
-;; No message in scratch buffer
-(setq initial-scratch-message nil)
-
-;; Initial buffer
-(setq initial-buffer-choice nil)
-
-;; No frame title
-(setq frame-title-format nil)
-
-;; No file dialog
-(setq use-file-dialog nil)
-
-;; No dialog box
-(setq use-dialog-box nil)
-
-;; No popup windows
-(setq pop-up-windows nil)
-
-;; No empty line indicators
-(setq indicate-empty-lines nil)
-
-;; Bar cursor
-(setq-default cursor-type '(hbar .  2))
-(setq-default cursor-in-non-selected-windows nil)
-(setq blink-cursor-mode nil)
-
-;; Text mode is initial mode
-(setq initial-major-mode 'text-mode)
-
-;; Text mode is default major mode
-(setq default-major-mode 'text-mode)
-
-;; Moderate font lock
-(setq font-lock-maximum-decoration t)
-
-;; No line break space points
-(setq auto-fill-mode nil)
-
-;; Fill column at 80
-(setq fill-column 80)
-
 ;; Use a single space after dots
 (setq sentence-end-double-space nil)
 
@@ -89,9 +41,6 @@
 
 ;; No scroll bars
 (if (fboundp 'scroll-bar-mode) (set-scroll-bar-mode nil))
-
-;; No toolbar
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; No menu bar
 (if (display-graphic-p)
