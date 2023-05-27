@@ -21,7 +21,6 @@
 ;;; Code:
 
 ;; Theming Command line options (this will cancel warning messages)
-(add-to-list 'command-switch-alist '("-default"  . (lambda (args))))
 (add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
 
 

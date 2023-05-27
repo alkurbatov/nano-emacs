@@ -26,10 +26,6 @@
 ;; No confirmation for visiting non-existent files
 (setq confirm-nonexistent-file-or-buffer nil)
 
-;; Completion style, see
-;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
-(setq completion-styles '(basic substring))
-
 ;; Use RET to open org-mode links, including those in quick-help.org
 (setq org-return-follows-link t)
 
@@ -47,11 +43,27 @@
     (menu-bar-mode t) ;; When nil, focus problem on OSX
   (menu-bar-mode -1))
 
-;; Tab behavior
-(setq tab-always-indent 'complete)
+;; Enable autocompletion
 (global-company-mode)
 (define-key company-mode-map [remap indent-for-tab-command]
             #'company-indent-or-complete-common)
+
+;; Completion style, see
+;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
+(require 'orderless)
+(setq completion-styles '(substring orderless basic)
+      orderless-component-separator 'orderless-escapable-split-on-space
+      completion-category-overrides '((file (styles basic partial-completion)))
+      read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
+
+;; Enable indentation+completion using the TAB key.
+;; completion-at-point is often bound to M-TAB.
+(setq tab-always-indent 'complete)
+
+;; TAB cycle if there are only few candidates
+(setq completion-cycle-threshold 3)
 
 ;; Pixel scroll (as opposed to char scrool)
 ;; (pixel-scroll-mode t)

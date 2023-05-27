@@ -22,30 +22,49 @@
 (require 'nano-colors)
 (require 'nano-faces)
 
-;; When we set a face, we take care of removing any previous settings
-(defun set-face (face style)
-  "Reset FACE and make it inherit STYLE."
-  (set-face-attribute face nil
-                      :foreground 'unspecified :background 'unspecified
-                      :family     'unspecified :slant      'unspecified
-                      :weight     'unspecified :height     'unspecified
-                      :underline  'unspecified :overline   'unspecified
-                      :box        'unspecified :inherit    style))
-
-
 (defun nano-theme--basics ()
   "Customize basic Emacs faces and nano-faces."
-  (set-face 'show-paren-match 'nano-popout))
+  (set-face-attribute 'show-paren-match nil
+                      :foreground nano-dark-popout))
 
 (defun nano-theme--font-lock ()
-  "Customize font-lock faces from nano-faces."
+  "Customize font-lock faces."
   (set-face-attribute 'font-lock-string-face nil
                       :foreground (nord-color "aurora-3"))
+  (set-face-attribute 'font-lock-type-face nil
+                      :foreground (nord-color "nord-7"))
   (set-face-attribute 'font-lock-variable-name-face nil
                       :weight 'regular))
 
+(defun nano-theme--company ()
+  "Customize company tooltip window."
+  (with-eval-after-load 'company
+    (set-face-attribute 'company-tooltip-common nil
+                        :foreground (nord-color "nord-7"))
+    (set-face-attribute 'company-tooltip-annotation-selection nil
+                        :background nano-dark-salient)))
+
+(defun nano-theme--ivy ()
+  "Customize ivy faces."
+  (with-eval-after-load 'ivy
+    (set-face-attribute 'ivy-minibuffer-match-face-1 nil
+                        :background nano-dark-background
+                        :foreground (nord-color "nord-7"))
+    (set-face-attribute 'ivy-minibuffer-match-face-2 nil
+                        :background nano-dark-background
+                        :foreground (nord-color "nord-7"))
+    (set-face-attribute 'ivy-minibuffer-match-face-3 nil
+                        :background nano-dark-background
+                        :foreground (nord-color "nord-7"))
+    (set-face-attribute 'ivy-minibuffer-match-face-4 nil
+                        :background nano-dark-background
+                        :foreground (nord-color "nord-7"))
+    (set-face-attribute 'ivy-current-match nil
+                        :background nano-dark-highlight
+                        :foreground nano-dark-foreground)))
+
 (defun nano-theme--tree-sitter ()
-  "Derive tree-sitter faces from nano-faces."
+  "Customize tree-sitter faces."
   (with-eval-after-load 'tree-sitter-hl
     (set-face-attribute 'tree-sitter-hl-face:constructor nil
                         :foreground (nord-color "frost-1")
@@ -62,6 +81,8 @@
                         :foreground (nord-color "frost-1"))
     (set-face-attribute 'tree-sitter-hl-face:number nil
                         :foreground (nord-color "aurora-4"))
+    (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
+                        :foreground (nord-color "nord-7"))
 
     ;; Workaround bug in tree-sitter-langs causing wrong face on decorators
     (tree-sitter-hl-add-patterns 'python
@@ -69,7 +90,7 @@
     ))
 
 (defun nano-theme--flycheck ()
-  "Derive flycheck faces from nano faces."
+  "Derive flycheck faces."
   (with-eval-after-load 'flycheck
      (set-face-attribute 'flycheck-error nil
                          :background (nord-color "aurora-0")
@@ -96,8 +117,10 @@
 
 
 (defun nano-theme-customize ()
-  "Customize many, many faces from the core nano faces."
+  "Customize many, many faces."
   (nano-theme--basics)
+  (nano-theme--company)
+  (nano-theme--ivy)
   (nano-theme--font-lock)
   (nano-theme--flycheck)
   (nano-theme--tree-sitter)

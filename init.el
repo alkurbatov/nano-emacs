@@ -54,7 +54,6 @@
         hl-todo                ; Highlight TODO keywords
         htmlize                ; Convert buffer text and decorations to HTML
         imenu-list             ; Show imenu entries in a separate buffer
-        ivy                    ; A generic completion frontend for Emacs
         ligature               ; Display typographical ligatures in Emacs
         lsp-ivy                ; Provides an ivy interface to the workspace symbol functionality offered by lsp-mode
         lsp-mode               ; Emacs client/library for the Language Server Protocol
@@ -62,7 +61,6 @@
         magit                  ; A Git porcelain inside Emacs.
         marginalia             ; Enrich existing commands with completion annotations
         markdown-mode          ; Major mode for Markdown-formatted text
-        mini-frame             ; Show minibuffer in child frame on read-from-minibuffer
         multi-term             ; Managing multiple terminal buffers in Emacs.
         orderless              ; Completion style for matching regexps in any order
         org-auto-tangle        ; Tangle org file when it is saved
@@ -72,7 +70,6 @@
         py-isort               ; Reformat python-mode buffer with isort
         python-black           ; Reformat Python using black-macchiato
         smex                   ; A smart M-x enhancement for Emacs
-        swiper                 ; Alternative to isearch that uses Ivy to show an overview of all matches
         tree-sitter            ; An incremental parsing system for programming tools
         tree-sitter-langs      ; Language bundle for Emacs's tree-sitter package
         use-package            ; A configuration macro for simplifying your .emacs
