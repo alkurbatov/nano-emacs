@@ -86,6 +86,9 @@
 ;; IDE features
 (require 'nano-lsp)
 
+;; Tools
+(require 'nano-docker)
+
 ;; Programming languages
 (require 'nano-elisp)
 (require 'nano-python)
