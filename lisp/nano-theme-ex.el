@@ -42,7 +42,7 @@
   (set-face-attribute 'font-lock-string-face nil
                       :foreground (nord-color "aurora-3"))
   (set-face-attribute 'font-lock-type-face nil
-                      :foreground (nord-color "nord-7"))
+                      :foreground (nord-color "frost-0"))
   (set-face-attribute 'font-lock-variable-name-face nil
                       :weight 'regular))
 
@@ -50,7 +50,7 @@
   "Customize company tooltip window."
   (with-eval-after-load 'company
     (set-face-attribute 'company-tooltip-common nil
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'company-tooltip-annotation-selection nil
                         :background nano-dark-salient)))
 
@@ -59,16 +59,16 @@
   (with-eval-after-load 'ivy
     (set-face-attribute 'ivy-minibuffer-match-face-1 nil
                         :background nano-dark-background
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-2 nil
                         :background nano-dark-background
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-3 nil
                         :background nano-dark-background
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-4 nil
                         :background nano-dark-background
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-current-match nil
                         :background nano-dark-highlight
                         :foreground nano-dark-foreground)))
@@ -92,11 +92,18 @@
     (set-face-attribute 'tree-sitter-hl-face:number nil
                         :foreground (nord-color "aurora-4"))
     (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
-                        :foreground (nord-color "nord-7"))
+                        :foreground (nord-color "frost-0"))
 
     ;; Workaround bug in tree-sitter-langs causing wrong face on decorators
     (tree-sitter-hl-add-patterns 'python
       [(decorator (call (identifier) @function.special))])
+    ))
+
+(defun nano-theme--makefile ()
+  "Customize makefile mode faces."
+  (with-eval-after-load 'make-mode
+    (set-face-attribute 'makefile-targets nil
+                        :foreground (nord-color "frost-2"))
     ))
 
 (defun nano-theme--flycheck ()
@@ -114,6 +121,32 @@
                          :background nano-dark-salient
                          :foreground nano-dark-background
                          :underline 'unspecified)))
+
+(defun nano-theme--diff-hl ()
+  "Customize diff-hl colors."
+
+  (with-eval-after-load 'diff-hl
+    (set-face-attribute 'diff-hl-insert nil
+                        :background (nord-color "aurora-3")
+                        :foreground (nord-color "aurora-3"))
+    (set-face-attribute 'diff-hl-change nil
+                        :background (nord-color "aurora-2")
+                        :foreground (nord-color "aurora-2"))
+    (set-face-attribute 'diff-hl-delete nil
+                        :background (nord-color "aurora-0")
+                        :foreground (nord-color "aurora-0")))
+
+  (with-eval-after-load 'diff-hl-margin
+    (set-face-attribute 'diff-hl-margin-insert nil
+                        :background nano-dark-background
+                        :foreground (nord-color "aurora-3"))
+    (set-face-attribute 'diff-hl-margin-change nil
+                        :background nano-dark-background
+                        :foreground (nord-color "aurora-2"))
+    (set-face-attribute 'diff-hl-margin-delete nil
+                        :background nano-dark-background
+                        :foreground (nord-color "aurora-0"))
+    ))
 
 (defun nano-theme--hl-todo ()
   "Customize hl-todo colors."
@@ -135,6 +168,8 @@
   (nano-theme--font-lock)
   (nano-theme--flycheck)
   (nano-theme--tree-sitter)
+  (nano-theme--makefile)
+  (nano-theme--diff-hl)
   (nano-theme--hl-todo))
 
 

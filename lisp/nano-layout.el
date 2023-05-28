@@ -25,6 +25,7 @@
 
 (setq default-frame-alist
       (append (list
+               '(left-fringe . 4)
                '(fullscreen . maximized))))
 
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)

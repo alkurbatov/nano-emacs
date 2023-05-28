@@ -41,6 +41,7 @@
         corfu                  ; COmpletion Overlay Region Function
         counsel                ; Improves ivy integration
         deft                   ; Quickly browse, filter, and edit plain text notes
+        diff-hl                ; Package for highlighting uncommitted changes
         dockerfile-mode        ; An emacs mode for handling Dockerfiles
         docker-compose-mode    ; Major mode for editing docker-compose files
         f                      ; Modern API for working with files and directories

@@ -22,6 +22,19 @@
 ;; Configures git behavior.
 
 ;;; Code:
+(require 'diff-hl)
+
+;; Show changes in unsaved buffers
+(diff-hl-flydiff-mode)
+
+;; Show the diff indicators in the margin when in TUI mode
+(unless (display-graphic-p)
+  (add-hook 'prog-mode-hook 'diff-hl-margin-mode)
+  (add-hook 'text-mode-hook 'diff-hl-margin-mode))
+
+;; Integrate diff-hl with magit
+(add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))

@@ -147,6 +147,9 @@
 ;; Enable flycheck
 (global-flycheck-mode)
 
+;; Highlight changes if version control enabled
+(global-diff-hl-mode)
+
 ;; Enable yasnippet
 (yas-global-mode)
 
