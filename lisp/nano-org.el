@@ -50,7 +50,8 @@ if the family does not have sufficient bold/light etc faces."
   (setq org-log-done 'time)
 
   :bind
-  (("C-c a" . org-agenda)))
+  (("C-c a" . org-agenda)
+   ("C-c z" . org-toggle-link-display)))
 
 (provide 'nano-org)
 ;;; nano-org.el ends here

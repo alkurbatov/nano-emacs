@@ -50,5 +50,8 @@
 ;; Open recent files
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 
+;; Don't press shift when undoing things
+(global-set-key (kbd "C--") 'undo)
+
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here
