@@ -21,13 +21,6 @@
 
 ;;; Code:
 
-(defcustom nano-font-family-monospaced "JetBrains Mono"
-  "Name of the font-family to use for nano.
-Defaults to JetBrains Mono. Customizing this might lead to conflicts
-if the family does not have sufficient bold/light etc faces."
-  :group 'nano
-  :type 'string)
-
 (defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
   "Name of the directory containing Org files with TOOD items)."
   :type 'string
