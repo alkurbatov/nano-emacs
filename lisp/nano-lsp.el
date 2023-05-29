@@ -21,19 +21,15 @@
 
 ;;; Code:
 
-(use-package lsp-mode
-  :defer t
-
-  :config
-  (use-package lsp-ivy
-    :commands lsp-ivy-workspace-symbol)
+(with-eval-after-load "lsp"
+  (require 'lsp-diagnostics)
+  (require 'lsp-ivy)
 
   ;; Manually inject flycheck support as by some reason it is not enabled by default
-  (require 'lsp-diagnostics)
   (lsp-diagnostics-flycheck-enable)
 
   ;; Refresh lenses faster
-  (setq lsp-idle-delay 0.1)
+  (setq lsp-idle-delay 0.3)
 
   ;; Disable flymake in favor of flycheck
   (setq lsp-prefer-flymake nil)
@@ -44,12 +40,7 @@
         lsp-modeline-code-actions-enable nil
         lsp-headerline-breadcrumb-enable nil)
 
-  :commands
-  (lsp lsp-deferred)
-
-  :custom
-  (lsp-auto-guess-root +1))
-
+  (customize-set-variable 'lsp-auto-guess-root +1))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here

@@ -73,7 +73,6 @@
         smex                   ; A smart M-x enhancement for Emacs
         tree-sitter            ; An incremental parsing system for programming tools
         tree-sitter-langs      ; Language bundle for Emacs's tree-sitter package
-        use-package            ; A configuration macro for simplifying your .emacs
         vertico                ; VERTical Interactive Completion
         yaml-mode              ; YAML mode
         yasnippet              ; A template system for Emacs

@@ -26,10 +26,7 @@
   :type 'string
   :group 'nano)
 
-(use-package org
-  :ensure nil
-
-  :config
+(with-eval-after-load "org"
   ;; Small speedup, we don't need the agenda after every start
   (setq org-agenda-inhibit-startup t)
 
@@ -42,9 +39,9 @@
   ;; Add current time when marking item as 'DONE'
   (setq org-log-done 'time)
 
-  :bind
-  (("C-c a" . org-agenda)
-   ("C-c z" . org-toggle-link-display)))
+  (define-key org-mode-map (kbd "C-c z") #'org-toggle-link-display))
+
+(global-set-key (kbd "C-c a") #'org-agenda)
 
 (provide 'nano-org)
 ;;; nano-org.el ends here

@@ -21,9 +21,11 @@
 ;; Configures programming environment for the Python language.
 
 ;;; Code:
+(require 'python)
 
-(defun setup-python-with-lsp ()
+(defun nano-setup-python-with-lsp ()
   "Setup and enable lsp-mode for Python."
+
   (poetry-tracking-mode)
 
   ;; Disable lsp checker in favor of flake8+mypy.
@@ -32,35 +34,28 @@
 
   (lsp-deferred)
 
+  ;; Use mypy instead of pyright
+  (customize-set-variable 'lsp-pyright-typechecking-mode "off")
+
   (flycheck-add-next-checker 'lsp 'python-flake8)
   (flycheck-add-next-checker 'python-flake8 'python-mypy))
 
-(use-package python
-  :ensure nil
+(with-eval-after-load "python"
+  (require 'lsp)
+  (require 'lsp-pyright)
+  (require 'poetry)
 
-  :config
-  (use-package poetry
-    :config
-    (setq poetry-tracking-strategy 'switch-buffer))
+  (setq poetry-tracking-strategy 'switch-buffer)
 
-  (use-package python-black)
-  (use-package py-isort)
-
-  (use-package lsp-pyright
-    :custom
-    ;; We use mypy instead
-    (lsp-pyright-typechecking-mode "off"))
-
-  ;; Suppress annoing indent guessing messages
+  ;; Suppress annoying indent guessing messages
   (setq python-indent-guess-indent-offset-verbose nil)
 
   ;; Configure linting
   (add-to-list 'flycheck-checkers 'python-flycheck)
   (add-to-list 'flycheck-checkers 'python-mypy)
 
-  :hook
-  ((python-mode . setup-python-with-lsp))
-   (python-mode . tree-sitter-hl-mode))
+  (add-hook 'python-mode-hook 'nano-setup-python-with-lsp)
+  (add-hook 'python-mode-hook 'tree-sitter-hl-mode))
 
 ;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.coveragerc\\'" . conf-mode))
