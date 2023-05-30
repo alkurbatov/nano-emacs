@@ -47,9 +47,12 @@
         f                      ; Modern API for working with files and directories
         flycheck               ; Modern on-the-fly syntax checking extension
         flyspell-correct-popup ; Correcting words with flyspell via popup interface
+        flycheck-golangci-lint ; Flycheck checker for golangci-lint
         flyspell-popup         ; Correcting words with flyspell in popup menus
         git-modes              ; Emacs major modes for Git configuration files
         gitlab-ci-mode         ; Emacs major mode for editing GitLab CI files
+        go-eldoc               ; Eldoc for Go language
+        go-mode                ; Emacs mode for the Go programming language
         guess-language         ; Robust automatic language detection
         helpful                ; A better help buffer
         hl-todo                ; Highlight TODO keywords
