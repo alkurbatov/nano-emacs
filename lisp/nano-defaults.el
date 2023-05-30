@@ -156,5 +156,9 @@
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
 
+;; Enable spellchecking
+(setq ispell-program-name "aspell")
+(setq ispell-dictionary "american")
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
