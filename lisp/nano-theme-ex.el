@@ -158,6 +158,31 @@
             ("NB"         . nano-salient)
             ("NOTE"       . nano-salient)))))
 
+(defun nano-theme--markdown ()
+  "Customize markdown colors."
+  (with-eval-after-load 'markdown-mode
+    (set-face-attribute 'markdown-header-delimiter-face nil
+                        :foreground nano-dark-salient)
+    (set-face-attribute 'markdown-language-keyword-face nil
+                        :foreground (nord-color "frost-0"))
+    (set-face-attribute 'markdown-link-face nil
+                        :foreground (nord-color "aurora-3"))
+    (set-face-attribute 'markdown-markup-face nil
+                        :foreground nano-dark-salient)
+    (set-face-attribute 'markdown-url-face nil
+                        :foreground (nord-color "aurora-3"))))
+
+(defun nano-theme--flyspell ()
+  "Customize flyspell colors."
+  (with-eval-after-load 'flyspell
+    (set-face-attribute 'flyspell-duplicate nil
+                         :background nano-dark-salient
+                         :foreground nano-dark-background
+                         :underline 'unspecified)
+    (set-face-attribute 'flyspell-incorrect nil
+                         :background nano-dark-salient
+                         :foreground nano-dark-background
+                         :underline 'unspecified)))
 
 (defun nano-theme-customize ()
   "Customize many, many faces."
@@ -167,8 +192,10 @@
   (nano-theme--ivy)
   (nano-theme--font-lock)
   (nano-theme--flycheck)
+  (nano-theme--flyspell)
   (nano-theme--tree-sitter)
   (nano-theme--makefile)
+  (nano-theme--markdown)
   (nano-theme--diff-hl)
   (nano-theme--hl-todo))
 

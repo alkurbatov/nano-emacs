@@ -66,6 +66,7 @@
         magit                  ; A Git porcelain inside Emacs.
         marginalia             ; Enrich existing commands with completion annotations
         markdown-mode          ; Major mode for Markdown-formatted text
+        markdown-toc           ; Generate a TOC in markdown file
         multi-term             ; Managing multiple terminal buffers in Emacs.
         orderless              ; Completion style for matching regexps in any order
         org-auto-tangle        ; Tangle org file when it is saved
