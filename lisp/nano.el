@@ -58,6 +58,9 @@
 ;; Nano key bindings modification
 (require 'nano-bindings)
 
+;; Nano spellcheck configuration
+(require 'nano-spellcheck)
+
 ;; Nano counsel configuration
 (require 'nano-counsel)
 

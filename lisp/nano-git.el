@@ -36,8 +36,11 @@
 (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
+;; Check spelling when writing commit message
+(add-hook 'git-commit-setup 'git-commit-turn-on-flyspell)
+
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
- 
+
 (provide 'nano-git)
 ;;; nano-git.el ends here
