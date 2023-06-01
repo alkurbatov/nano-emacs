@@ -19,6 +19,7 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'bind-key)
 
 ;; Use a single space after dots
 (setq sentence-end-double-space nil)
@@ -32,8 +33,9 @@
 ;; Mouse active in terminal
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
-  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-  (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+  (bind-keys*
+   ("<mouse-4>" . 'scroll-down-line)
+   ("<mouse-5>" . 'scroll-up-line)))
 
 ;; No scroll bars
 (if (fboundp 'scroll-bar-mode) (set-scroll-bar-mode nil))

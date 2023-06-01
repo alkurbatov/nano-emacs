@@ -38,13 +38,15 @@
 
 
 (with-eval-after-load "go-mode"
+  (require 'bind-key)
   (require 'flycheck-golangci-lint)
   (require 'lsp)
 
   (setq flycheck-golangci-lint-tests t)
   (setq flycheck-golangci-lint-fast t)
 
-  (define-key go-mode-map (kbd "M-.") #'godoc-at-point)
+  (bind-key :map go-mode-map
+            "M-." 'godoc-at-point)
 
   (add-hook 'go-mode-hook 'flycheck-golangci-lint-setup)
   (add-hook 'go-mode-hook 'nano-setup-go-with-lsp)

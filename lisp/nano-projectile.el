@@ -22,6 +22,7 @@
 ;; https://docs.projectile.mx/projectile/index.html
 
 ;;; Code:
+(require 'bind-key)
 (require 'projectile)
 
 ;; Enable projectile mode globally
@@ -37,7 +38,8 @@
 (setq projectile-indexing-method 'alien)
 
 ;; Key bindings
-(define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+(bind-keys :map projectile-mode-map
+           ("C-x p" . projectile-command-map))
 
 (provide 'nano-projectile)
 ;;; nano-projectile.el ends here

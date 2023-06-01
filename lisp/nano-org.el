@@ -20,6 +20,7 @@
 ;; Configures Org mode
 
 ;;; Code:
+(require 'bind-key)
 
 (defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
   "Name of the directory containing Org files with TOOD items)."
@@ -39,9 +40,11 @@
   ;; Add current time when marking item as 'DONE'
   (setq org-log-done 'time)
 
-  (define-key org-mode-map (kbd "C-c z") #'org-toggle-link-display))
+  (bind-keys :map org-mode-map
+             ("C-c z" . org-toggle-link-display)
+             ("<s-return>" . toggle-frame-maximized)))
 
-(global-set-key (kbd "C-c a") #'org-agenda)
+(bind-key* "C-c a" 'org-agenda)
 
 (provide 'nano-org)
 ;;; nano-org.el ends here

@@ -19,24 +19,22 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'bind-key)
 
 ;; Kill current buffer (instead of asking first buffer name)
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
+(bind-key* "C-x k" 'kill-current-buffer)
 
 ;; M-n for new frame (M-n is unbound in vanilla emacs)
 (defun new-frame ()
   (interactive)
   (select-frame (make-frame))
   (switch-to-buffer "*scratch*"))
-(global-set-key (kbd "M-n") 'new-frame)
-(global-set-key (kbd "M-`") 'other-frame)
+(bind-keys*
+ ("M-n" . new-frame)
+ ("M-`" . other-frame))
 
-;; M-return for frame maximization toggle
-(global-set-key (kbd "<M-return>") 'toggle-frame-maximized)
-(with-eval-after-load 'org
-  (define-key org-mode-map (kbd "<M-return>") 'toggle-frame-maximized))
-
-
+;; Cmd-return for frame maximization toggle
+(bind-key "<s-return>" 'toggle-frame-maximized)
 
 ;; Close frame if not the last, kill emacs else
 (defun nano--delete-frame-or-kill-emacs ()
@@ -45,13 +43,13 @@
   (if (> (length (frame-list)) 1)
       (delete-frame)
     (save-buffers-kill-terminal)))
-(global-set-key (kbd "C-x C-c") 'nano--delete-frame-or-kill-emacs)
+(bind-key* "C-x C-c" 'nano--delete-frame-or-kill-emacs)
 
 ;; Open recent files
-(global-set-key (kbd "C-c r") 'recentf-open-files)
+(bind-key* "C-c r" 'recentf-open-files)
 
 ;; Don't press shift when undoing things
-(global-set-key (kbd "C--") 'undo)
+(bind-key* "C--" 'undo)
 
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here
