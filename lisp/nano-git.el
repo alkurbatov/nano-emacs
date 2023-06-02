@@ -29,15 +29,15 @@
 
 ;; Show the diff indicators in the margin when in TUI mode
 (unless (display-graphic-p)
-  (add-hook 'prog-mode-hook 'diff-hl-margin-mode)
-  (add-hook 'text-mode-hook 'diff-hl-margin-mode))
+  (add-hook 'prog-mode-hook #'diff-hl-margin-mode)
+  (add-hook 'text-mode-hook #'diff-hl-margin-mode))
 
 ;; Integrate diff-hl with magit
-(add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
-(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+(add-hook 'magit-pre-refresh-hook #'diff-hl-magit-pre-refresh)
+(add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
 
 ;; Check spelling when writing commit message
-(add-hook 'git-commit-setup 'git-commit-turn-on-flyspell)
+(add-hook 'git-commit-setup #'git-commit-turn-on-flyspell)
 
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))

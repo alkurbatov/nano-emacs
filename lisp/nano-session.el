@@ -58,7 +58,7 @@
 ;; See https://emacs.stackexchange.com/questions/4187
 (defun unpropertize-kill-ring ()
   (setq kill-ring (mapcar 'substring-no-properties kill-ring)))
-(add-hook 'kill-emacs-hook 'unpropertize-kill-ring)
+(add-hook 'kill-emacs-hook #'unpropertize-kill-ring)
 
 ;; Recentf files
 (setq recentf-max-menu-items 25)

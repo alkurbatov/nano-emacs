@@ -19,9 +19,9 @@
 ;;; Commentary:
 
 ;;; Code:
-
 (require 'disp-table)
 (require 'ligature)
+(require 'nano-modeline)
 
 (setq default-frame-alist
       (append (list
@@ -63,19 +63,27 @@
 
 (global-hl-line-mode 1)
 
-;; Hide org markup for README
-(setq org-hide-emphasis-markers t)
+;; Enable nano-modeline in different modes
+(add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
+(add-hook 'text-mode-hook            #'nano-modeline-text-mode)
+(add-hook 'pdf-view-mode-hook        #'nano-modeline-pdf-mode)
+(add-hook 'term-mode-hook            #'nano-modeline-term-mode)
+(add-hook 'xwidget-webkit-mode-hook  #'nano-modeline-xwidget-mode)
+(add-hook 'messages-buffer-mode-hook #'nano-modeline-message-mode)
 
-;; Enable modeline
-(nano-modeline-mode)
+;; Remove the default modeline in favor of nano-modeline
+(setq-default mode-line-format nil)
+
+;; Make a text mode the default one
+(nano-modeline-text-mode t)
 
 ;; Show column number in modeline mode
 (column-number-mode)
 
 ;; Display line numbers in most modes
-(add-hook 'conf-unix-mode-hook 'display-line-numbers-mode)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'conf-unix-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'text-mode-hook #'display-line-numbers-mode)
 
 ;; Hide indicatiors in left-fringe (GUI mode)
 (setq flycheck-indication-mode nil)

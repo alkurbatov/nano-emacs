@@ -21,6 +21,7 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'org-agenda)
 
 (defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
   "Name of the directory containing Org files with TOOD items)."
@@ -28,9 +29,6 @@
   :group 'nano)
 
 (with-eval-after-load "org"
-  ;; Small speedup, we don't need the agenda after every start
-  (setq org-agenda-inhibit-startup t)
-
   ;; Load org files with tasks
   (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$"))
 
@@ -40,9 +38,22 @@
   ;; Add current time when marking item as 'DONE'
   (setq org-log-done 'time)
 
+  ;; Use RET to open org-mode links, including those in quick-help.org
+  (setq org-return-follows-link t)
+
+  ;; Hide org markup for README
+  (setq org-hide-emphasis-markers t)
+
+  (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
+  (add-hook 'org-capture-mode-hook     #'nano-modeline-org-capture-mode)
+  (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
+
   (bind-keys :map org-mode-map
              ("C-c z" . org-toggle-link-display)
              ("<s-return>" . toggle-frame-maximized)))
+
+;; Small speedup, we don't need the agenda immediately after every start
+(setq org-agenda-inhibit-startup t)
 
 (bind-key* "C-c a" 'org-agenda)
 

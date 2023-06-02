@@ -366,5 +366,8 @@ When hovered, HELP is displayed. When clicked, mu4e QUERY is executed."
 
 (advice-add 'mu4e-mark-at-point :after #'mu4e-mark-at-point-advice)
 
+(add-hook 'mu4e-headers-mode-hook    #'nano-modeline-mu4e-headers-mode)
+(add-hook 'mu4e-view-mode-hook       #'nano-modeline-mu4e-message-mode)
+
 (provide 'nano-mu4e)
 ;;; nano-mu4e.el ends here

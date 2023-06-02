@@ -147,7 +147,7 @@
          ;; (not inhibit-startup-screen)
          )
     (progn
-      (add-hook 'window-setup-hook 'nano-splash)
+      (add-hook 'window-setup-hook #'nano-splash)
       (setq inhibit-startup-screen t
             inhibit-startup-message t
             inhibit-startup-echo-area-message t)))

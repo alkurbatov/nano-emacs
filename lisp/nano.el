@@ -23,20 +23,6 @@
 ;; Theming Command line options (this will cancel warning messages)
 (add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
 
-
-;; Customize support for 'emacs -q' (Optional)
-;; You can enable customizations by creating the nano-custom.el file
-;; with e.g. `touch nano-custom.el` in the folder containing this file.
-(let* ((this-file  (or load-file-name (buffer-file-name)))
-       (this-dir  (file-name-directory this-file))
-       (custom-path  (concat this-dir "nano-custom.el")))
-  (when (and (eq nil user-init-file)
-             (eq nil custom-file)
-             (file-exists-p custom-path))
-    (setq user-init-file this-file)
-    (setq custom-file custom-path)
-    (load custom-file)))
-
 ;; Theme
 (require 'nano-theme-ex)
 (load-theme 'nano-dark t)
@@ -51,9 +37,6 @@
 
 ;; Nano session saving
 (require 'nano-session)
-
-;; Nano header & mode lines
-(require 'nano-modeline)
 
 ;; Nano key bindings modification
 (require 'nano-bindings)

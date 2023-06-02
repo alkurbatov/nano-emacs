@@ -21,9 +21,9 @@
 ;;; Code:
 
 (with-eval-after-load "markdown-mode"
-  (add-hook 'markdown-mode-hook 'tree-sitter-hl-mode)
-  (add-hook 'markdown-mode-hook 'flyspell-mode)
-  (add-hook 'markdown-mode-hook 'flyspell-buffer)) ; immediately check whole buffer
+  (add-hook 'markdown-mode-hook #'tree-sitter-hl-mode)
+  (add-hook 'markdown-mode-hook #'flyspell-mode)
+  (add-hook 'markdown-mode-hook #'flyspell-buffer)) ; immediately check whole buffer
 
 (provide 'nano-markdown)
 ;;; nano-markdown.el ends here

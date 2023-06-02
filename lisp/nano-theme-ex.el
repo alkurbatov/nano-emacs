@@ -31,12 +31,6 @@
   (set-face-attribute 'show-paren-match nil
                       :foreground nano-dark-popout))
 
-(defun nano-theme--modeline ()
-  "Customize nano-modeline faces."
-  (with-eval-after-load 'company
-    (set-face-attribute 'nano-modeline-active-secondary nil
-                        :foreground nano-dark-foreground)))
-
 (defun nano-theme--font-lock ()
   "Customize font-lock faces."
   (set-face-attribute 'font-lock-string-face nil
@@ -187,7 +181,6 @@
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-theme--basics)
-  (nano-theme--modeline)
   (nano-theme--company)
   (nano-theme--ivy)
   (nano-theme--font-lock)

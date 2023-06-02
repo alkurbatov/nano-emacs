@@ -21,14 +21,15 @@
 ;;; Code:
 (require 'bind-key)
 
+;; Move customization variables to a separate file, otherwise init.el will be used
+(setq custom-file "~/.emacs.d/nano-custom.el")
+(load custom-file 'noerror 'nomessage)
+
 ;; Use a single space after dots
 (setq sentence-end-double-space nil)
 
 ;; No confirmation for visiting non-existent files
 (setq confirm-nonexistent-file-or-buffer nil)
-
-;; Use RET to open org-mode links, including those in quick-help.org
-(setq org-return-follows-link t)
 
 ;; Mouse active in terminal
 (unless (display-graphic-p)
