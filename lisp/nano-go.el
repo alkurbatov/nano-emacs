@@ -45,16 +45,16 @@
   (setq flycheck-golangci-lint-tests t)
   (setq flycheck-golangci-lint-fast t)
 
-  (bind-key :map go-mode-map
-            "M-." 'godoc-at-point)
+  (bind-keys :map go-mode-map
+            ("M-." 'godoc-at-point))
 
-  (add-hook 'go-mode-hook 'flycheck-golangci-lint-setup)
-  (add-hook 'go-mode-hook 'nano-setup-go-with-lsp)
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
-  (add-hook 'go-mode-hook 'tree-sitter-hl-mode)
+  (add-hook 'go-mode-hook #'flycheck-golangci-lint-setup)
+  (add-hook 'go-mode-hook #'nano-setup-go-with-lsp)
+  (add-hook 'go-mode-hook #'go-eldoc-setup)
+  (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
 
   ;; Enable syntax highlight in godoc buffer.
-  (add-hook 'godoc-mode-hook 'go-mode))
+  (add-hook 'godoc-mode-hook #'go-mode))
 
 (provide 'nano-go)
 ;;; nano-go.el ends here
