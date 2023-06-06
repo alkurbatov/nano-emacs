@@ -29,6 +29,8 @@
   :group 'nano)
 
 (with-eval-after-load "org"
+  (require 'nano-faces)
+
   ;; Load org files with tasks
   (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$"))
 
@@ -43,6 +45,21 @@
 
   ;; Hide org markup for README
   (setq org-hide-emphasis-markers t)
+
+  ;; Customize some links, see:
+  ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
+
+  ;; "Green" projects aka moving me to personal targets
+  (org-link-set-parameters
+    "green-project"
+    :face 'nano-face-org-green-project
+    :follow (lambda (path) (org-open-file path)))
+
+  ;; "Red" projects aka must-do-or-be-fired
+  (org-link-set-parameters
+    "red-project"
+    :face 'nano-face-org-red-project
+    :follow (lambda (path) (org-open-file path)))
 
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
   (add-hook 'org-capture-mode-hook     #'nano-modeline-org-capture-mode)

@@ -18,12 +18,8 @@
 
 ;;; Commentary:
 
-;; This file defines the 6 basic nano faces several nano modules require:
-
-;; - nano-face-critical  - nano-face-popout   - nano-face-salient
-;; - nano-face-default   - nano-face-faded    - nano-face-subtle
-
 ;;; Code:
+(require 'nano-colors)
 
 (defun nano-what-faces (pos)
   "Get the font faces at POS."
@@ -34,6 +30,22 @@
                       (get-char-property pos 'face)
                       (plist-get (text-properties-at pos) 'face)))))
     (message "Faces: %s" faces)))
+
+(defface nano-face-org-green-project nil
+  "Nano face for personal projects."
+  :group 'nano)
+
+(defface nano-face-org-red-project nil
+  "Nano face for must-do-or-be-fired projects."
+  :group 'nano)
+
+(defun nano-faces ()
+  "Derive face attributes for nano-faces."
+  (set-face-attribute 'nano-face-org-green-project nil
+                      :foreground (nord-color "aurora-3"))
+
+  (set-face-attribute 'nano-face-org-red-project nil
+                      :foreground (nord-color "aurora-0")))
 
 (provide 'nano-faces)
 ;;; nano-faces.el ends here

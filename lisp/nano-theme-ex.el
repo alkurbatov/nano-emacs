@@ -180,6 +180,7 @@
 
 (defun nano-theme-customize ()
   "Customize many, many faces."
+  (nano-faces)
   (nano-theme--basics)
   (nano-theme--company)
   (nano-theme--ivy)
