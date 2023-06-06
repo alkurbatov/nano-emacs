@@ -73,6 +73,7 @@
         pinentry               ; GnuPG Pinentry server implementation
         poetry                 ; Python dependency management and packaging in Emacs
         projectile             ; Project interaction library for Emacs
+        protobuf-mode          ; Major mode for editing protocol buffers
         py-isort               ; Reformat python-mode buffer with isort
         python-black           ; Reformat Python using black-macchiato
         smex                   ; A smart M-x enhancement for Emacs
