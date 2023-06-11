@@ -60,20 +60,17 @@
 ;; Mu4e (optional)
 ;;(require 'nano-mu4e)
 
-;; Projects management
-(require 'nano-projectile)
-
 ;; Org mode
 (require 'nano-org)
 
-;; Version control
-(require 'nano-git)
-
 ;; IDE features
+(require 'nano-projectile)
 (require 'nano-lsp)
 
 ;; Tools
 (require 'nano-docker)
+(require 'nano-git)
+(require 'nano-remote)
 
 ;; Programming languages
 (require 'nano-elisp)

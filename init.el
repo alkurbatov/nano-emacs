@@ -76,6 +76,7 @@
         protobuf-mode          ; Major mode for editing protocol buffers
         py-isort               ; Reformat python-mode buffer with isort
         python-black           ; Reformat Python using black-macchiato
+        ssh-config-mode        ; Emacs mode for editing ssh config files
         smex                   ; A smart M-x enhancement for Emacs
         tree-sitter            ; An incremental parsing system for programming tools
         tree-sitter-langs      ; Language bundle for Emacs's tree-sitter package
