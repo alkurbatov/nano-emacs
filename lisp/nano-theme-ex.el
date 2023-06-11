@@ -178,6 +178,16 @@
                          :foreground nano-dark-background
                          :underline 'unspecified)))
 
+(defun nano-theme--pip-requirements ()
+  "Customize pip-requirements mode faces."
+  (with-eval-after-load 'pip-requirements
+    (set-face-attribute 'font-lock-variable-name-face nil
+                        :foreground (nord-color "frost-1"))
+    (set-face-attribute 'font-lock-constant-face nil
+                        :foreground (nord-color "aurora-2"))
+    (set-face-attribute 'font-lock-builtin-face nil
+                        :foreground nano-dark-foreground)))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -191,7 +201,8 @@
   (nano-theme--makefile)
   (nano-theme--markdown)
   (nano-theme--diff-hl)
-  (nano-theme--hl-todo))
+  (nano-theme--hl-todo)
+  (nano-theme--pip-requirements))
 
 
 (provide 'nano-theme-ex)

@@ -89,6 +89,10 @@
 (dolist (package package-list)
   (straight-use-package package))
 
+;; Major mode for editing pip requirements files
+(straight-use-package
+ '(pip-requirements :type git :host github :repo "Wilfred/pip-requirements.el"))
+
 ;; GNU Emacs / N Λ N O Theme
 (straight-use-package
  '(nano-theme :type git :host github :repo "rougier/nano-theme"))
