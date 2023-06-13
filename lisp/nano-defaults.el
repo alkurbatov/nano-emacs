@@ -20,6 +20,7 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'exec-path-from-shell)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
 (setq custom-file "~/.emacs.d/nano-custom.el")
@@ -104,6 +105,15 @@
 
 ;; Minimum window height
 (setq window-min-height 1)
+
+;; Forward some shell variables in OS X GUI
+(when (memq window-system '(mac ns x))
+  (dolist (var '("LANG" "LC_ALL" "LC_CTYPE"))
+    (add-to-list 'exec-path-from-shell-variables var))
+  (exec-path-from-shell-initialize)
+
+  ;; Reinit Emacs locale as now we have properly set environment
+  (set-locale-environment (getenv "LANG")))
 
 ;; Buffer encoding
 (prefer-coding-system       'utf-8)
