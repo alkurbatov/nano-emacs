@@ -32,7 +32,8 @@
   (require 'nano-faces)
 
   ;; Load org files with tasks
-  (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$"))
+  (if (file-directory-p nano-org-directory)
+      (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$")))
 
   (setq org-todo-keywords
         '((sequence "TODO" "|" "DONE" "CANCELLED")))
