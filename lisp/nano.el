@@ -34,6 +34,7 @@
 
 ;; Nano default settings
 (require 'nano-defaults)
+(require 'nano-calendar)
 
 ;; Nano session saving
 (require 'nano-session)
