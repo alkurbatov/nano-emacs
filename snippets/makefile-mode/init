@@ -1,0 +1,28 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: init
+# key: init
+# expand-env: ((yas-indent-line 'fixed))
+# --
+SHELL := bash
+.SHELLFLAGS := -eu -o pipefail -c
+
+MAKEFLAGS = --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
+
+# Override PWD so that it's always based on the location of the file and **NOT**
+# based on where the shell is when calling `make`. This is useful if `make`
+# is called like `make -C <some path>`
+PWD := \$(realpath \$(dir \$(abspath \$(firstword \$(MAKEFILE_LIST)))))
+
+WORKTREE_ROOT := \$(shell git rev-parse --show-toplevel 2> /dev/null)
+SOURCES = app
+
+.DEFAULT_GOAL := help
+.PHONY: help
+help: ## Display this help screen
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-38s\033[0m %s\n", \$\$1, \$\$2}' \$(MAKEFILE_LIST)
+
+.venv: pyproject.toml poetry.lock  ## Build the virtual environment
+	poetry env use 3.11
+	poetry install --no-root --no-interaction --no-ansi
+	touch .venv
