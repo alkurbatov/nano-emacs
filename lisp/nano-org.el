@@ -28,8 +28,14 @@
   :type 'string
   :group 'nano)
 
+(defun nano/org-time-stamp-inactive ()
+  "Insert inactive timestamp with current date."
+  (interactive)
+  (org-insert-time-stamp (current-time) nil t))
+
 (with-eval-after-load "org"
   (require 'nano-faces)
+  (require 'nano-modeline)
 
   ;; Load org files with tasks
   (if (file-directory-p nano-org-directory)
@@ -68,6 +74,7 @@
 
   (bind-keys :map org-mode-map
              ("C-c z" . org-toggle-link-display)
+             ("C-c i" . nano/org-time-stamp-inactive)
              ("<s-return>" . toggle-frame-maximized)))
 
 ;; Small speedup, we don't need the agenda immediately after every start
