@@ -19,11 +19,17 @@
 ;;; Commentary:
 
 ;;; Code:
+(defun nano-setup-markdown-mode ()
+  "Setup markdown mode with spellcheck."
+
+  (tree-sitter-hl-mode)
+  (flyspell-mode)
+
+  (unless (string= (buffer-name) "COMMIT_EDITMSG")
+    (flyspell-buffer)))
 
 (with-eval-after-load "markdown-mode"
-  (add-hook 'markdown-mode-hook #'tree-sitter-hl-mode)
-  (add-hook 'markdown-mode-hook #'flyspell-mode)
-  (add-hook 'markdown-mode-hook #'flyspell-buffer)) ; immediately check whole buffer
+  (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode)) ; immediately check whole buffer
 
 (provide 'nano-markdown)
 ;;; nano-markdown.el ends here
