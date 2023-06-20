@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: new-project
-# key: new-project
+# name: Project template
 # --
 #+title: ${1:`(substring (buffer-name) 0 -4)`}
 #+startup: overview

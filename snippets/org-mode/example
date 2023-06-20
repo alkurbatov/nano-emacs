@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: example
-# key: example
+# name: Example block
 # --
 #+name ${1:name}
 #+begin_example ${2:bash}

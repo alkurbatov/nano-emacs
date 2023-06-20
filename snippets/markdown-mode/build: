@@ -1,5 +1,4 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: build:
-# key: build:
+# name: build commit tag
 # --
 👷

@@ -1,5 +1,4 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: ctx
-# key: ctx
+# name: ctx context.Context
 # --
 ctx context.Context

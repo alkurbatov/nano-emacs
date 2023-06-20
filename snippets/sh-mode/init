@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: init
-# key: init
+# name: Script header
 # --
 #!/usr/bin/env bash
 

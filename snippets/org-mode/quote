@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: quote
-# key: quote
+# name: Quote block
 # --
 #+begin_quote
 $1

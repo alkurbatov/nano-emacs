@@ -1,5 +1,4 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: ferr
-# key: ferr
+# name: fmt.Errorf("text: %w", err)
 # --
 fmt.Errorf("$1: %w", err)

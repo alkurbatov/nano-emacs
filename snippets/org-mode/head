@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: head
-# key: head
+# name: Org file header
 # --
 #+title: $1
 #+startup: content

@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: tab-test
-# key: tab-test
+# name: Table test template
 # --
 func Test${1:Function}(t *testing.T) {
 	tt := []struct {

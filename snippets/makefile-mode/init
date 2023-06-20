@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: init
-# key: init
+# name: Makefile template
 # expand-env: ((yas-indent-line 'fixed))
 # --
 SHELL := bash

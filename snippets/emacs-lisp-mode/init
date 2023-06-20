@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: init
-# key: init
+# name: Elisp module template
 # --
 ;;; nano-${1:module}.el --- $2
 

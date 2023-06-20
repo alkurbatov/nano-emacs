@@ -1,6 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: src
-# key: src
+# name: Source code block
 # --
 #+name ${1:name}
 #+begin_src $2
