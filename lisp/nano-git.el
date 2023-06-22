@@ -23,6 +23,7 @@
 
 ;;; Code:
 (require 'diff-hl)
+(require 'nano-modeline)
 
 ;; Show changes in unsaved buffers
 (diff-hl-flydiff-mode)
@@ -38,6 +39,19 @@
 
 ;; Check spelling when writing commit message
 (add-hook 'git-commit-setup #'git-commit-turn-on-flyspell)
+
+;; Improve display of nano-modeline in magit buffers, see:
+;; See: https://github.com/rougier/nano-modeline/issues/8
+(defun nano-modeline-magit-mode (orig-fun input)
+  "Nano modeline for magit mode."
+  (funcall nano-modeline-position
+           `((nano-modeline-buffer-status) " "
+             (nano-modeline-buffer-name) " "
+             ,(concat "(" input ")"))
+           '((nano-modeline-cursor-position)
+             (nano-modeline-window-dedicated))))
+
+(advice-add 'magit-set-header-line-format :around #'nano-modeline-magit-mode)
 
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
