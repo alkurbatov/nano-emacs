@@ -21,7 +21,8 @@
 ;;; Code:
 
 ;; Theming Command line options (this will cancel warning messages)
-(add-to-list 'command-switch-alist '("--no-splash" . (lambda (args))))
+(add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
+(add-to-list 'command-switch-alist '("-debug" . (lambda (args))))
 
 ;; Theme
 (require 'nano-theme-ex)
@@ -54,9 +55,13 @@
   (message (format "Initialization time: %s" (emacs-init-time))))
 
 ;; Splash
-(unless (member "--no-splash" command-line-args)
+(unless (member "-no-splash" command-line-args)
   (require 'nano-splash)
   (nano-splash))
+
+;; Extended debugging
+(when (member "-debug" command-line-args)
+    (setq debug-on-error t))
 
 ;; Mu4e (optional)
 ;;(require 'nano-mu4e)
