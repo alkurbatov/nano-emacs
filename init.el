@@ -71,6 +71,7 @@
         multi-term             ; Managing multiple terminal buffers in Emacs.
         orderless              ; Completion style for matching regexps in any order
         org-auto-tangle        ; Tangle org file when it is saved
+        org-superstar          ; Make org-mode stars a little more super
         pinentry               ; GnuPG Pinentry server implementation
         poetry                 ; Python dependency management and packaging in Emacs
         projectile             ; Project interaction library for Emacs

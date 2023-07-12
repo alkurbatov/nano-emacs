@@ -41,6 +41,14 @@
   (if (file-directory-p nano-org-directory)
       (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$")))
 
+  ;; Use fancy images for org stars
+  (setq org-superstar-headline-bullets-list '("❯" "❯❯" "❯❯❯" "❯❯❯❯" "❯❯❯❯❯"))
+
+  ;; Hide leading dots
+  (setq org-superstar-leading-bullet ?\s
+        org-superstar-leading-fallback ?\s
+        org-hide-leading-stars nil)
+
   (setq org-todo-keywords
         '((sequence "TODO" "|" "DONE" "CANCELLED")))
     
@@ -69,6 +77,7 @@
     :follow (lambda (path) (org-open-file path)))
 
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
+  (add-hook 'org-mode-hook             #'org-superstar-mode)
   (add-hook 'org-capture-mode-hook     #'nano-modeline-org-capture-mode)
   (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
 
