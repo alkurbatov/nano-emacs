@@ -163,5 +163,10 @@
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
 
+;; Better work with trailing whitespaces and line endings
+(setq mode-require-final-newline nil)
+(add-hook 'org-mode-hook #'ethan-wspace-mode)
+(add-hook 'prog-mode-hook #'ethan-wspace-mode)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here

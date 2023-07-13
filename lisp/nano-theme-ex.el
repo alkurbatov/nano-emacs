@@ -188,6 +188,15 @@
     (set-face-attribute 'font-lock-builtin-face nil
                         :foreground nano-dark-foreground)))
 
+(defun nano-theme--ethan-wspace ()
+  "Customize ethan-wspace mode faces."
+  (with-eval-after-load 'ethan-wspace
+    (setq ethan-wspace-face-customized t)
+
+    (set-face-attribute 'ethan-wspace-face nil
+                        :background nano-dark-critical
+                        :foreground 'unspecified)))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -202,7 +211,8 @@
   (nano-theme--markdown)
   (nano-theme--diff-hl)
   (nano-theme--hl-todo)
-  (nano-theme--pip-requirements))
+  (nano-theme--pip-requirements)
+  (nano-theme--ethan-wspace))
 
 
 (provide 'nano-theme-ex)

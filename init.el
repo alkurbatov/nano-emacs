@@ -45,6 +45,7 @@
         diff-hl                ; Package for highlighting uncommitted changes
         dockerfile-mode        ; An emacs mode for handling Dockerfiles
         docker-compose-mode    ; Major mode for editing docker-compose files
+        ethan-wspace           ; A non-intrusive emacs customization for people who are OCD about whitespace
         exec-path-from-shell   ; Make Emacs use the $PATH set up by the user's shell
         f                      ; Modern API for working with files and directories
         flycheck               ; Modern on-the-fly syntax checking extension
