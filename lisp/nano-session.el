@@ -66,12 +66,13 @@
 (recentf-mode 1)
 
 ;; Bookmarks
-(setq bookmark-default-file "~/.nano-bookmark")
+(setq bookmark-default-file "~/.nano-bookmark"
+      bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
 
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.backups"))
-      make-backup-files t     ; backup of a file the first time it is saved.
+      make-backup-files t     ; backup of a file the first time it is saved
       backup-by-copying t     ; don't clobber symlinks
       vc-make-backup-files t  ; backup version controlled files too as we don't commit on every save
       version-control t       ; version numbers for backup files

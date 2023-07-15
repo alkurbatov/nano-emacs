@@ -28,6 +28,9 @@
 ;; Show changes in unsaved buffers
 (diff-hl-flydiff-mode)
 
+;; Save modified files in a repository without additional questions
+(setq magit-save-repository-buffers 'dontask)
+
 ;; Show the diff indicators in the margin when in TUI mode
 (unless (display-graphic-p)
   (add-hook 'prog-mode-hook #'diff-hl-margin-mode)

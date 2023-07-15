@@ -145,11 +145,16 @@
     ad-do-it))
 (ad-activate 'term-sentinel)
 
+;; Delete selected text when starting to type over it
+(setq delete-selection-mode t)
+
 ;; Remember the last place visited in a file
 (save-place-mode 1)
 
 ;; Automatically revert buffers for changed files if they don't have unsaved changes
-(global-auto-revert-mode 1)
+(global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t
+      dired-auto-revert-buffer t)
 
 ;; Enable flycheck
 (global-flycheck-mode)
