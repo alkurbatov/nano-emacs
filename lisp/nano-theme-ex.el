@@ -75,6 +75,9 @@
                         :weight 'regular)
     (set-face-attribute 'tree-sitter-hl-face:constant.builtin nil
                         :foreground (nord-color "aurora-2"))
+    (set-face-attribute 'tree-sitter-hl-face:function.builtin nil
+                        :foreground (nord-color "frost-1")
+                        :weight 'regular)
     (set-face-attribute 'tree-sitter-hl-face:function.call nil
                         :foreground (nord-color "frost-1")
                         :weight 'regular)
@@ -85,6 +88,10 @@
                         :foreground (nord-color "frost-1"))
     (set-face-attribute 'tree-sitter-hl-face:number nil
                         :foreground (nord-color "aurora-4"))
+    (set-face-attribute 'tree-sitter-hl-face:property nil
+                        :foreground (nord-color "snow-storm-0"))
+    (set-face-attribute 'tree-sitter-hl-face:punctuation.special nil
+                        :foreground (nord-color "frost-2"))
     (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
                         :foreground (nord-color "frost-0"))
 

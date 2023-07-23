@@ -22,6 +22,8 @@
 
 ;;; Code:
 
+(add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
+
 ;; Enable syntax highlighting for Sh-related files
 (add-to-list 'auto-mode-alist '("\\.env\\'" . sh-mode))
 
