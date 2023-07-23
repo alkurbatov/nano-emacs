@@ -45,27 +45,34 @@
   (with-eval-after-load 'company
     (set-face-attribute 'company-tooltip-common nil
                         :foreground (nord-color "frost-0"))
-    (set-face-attribute 'company-tooltip-annotation-selection nil
-                        :background nano-dark-salient)))
+    (set-face-attribute 'company-tooltip-common-selection nil
+                        :background nano-dark-faded
+                        :foreground (nord-color "frost-0")
+                        :weight 'bold)
+    (set-face-attribute 'company-tooltip-selection nil
+                        :background nano-dark-faded
+                        :foreground nano-dark-strong
+                        :weight 'bold)))
 
 (defun nano-theme--ivy ()
   "Customize ivy faces."
   (with-eval-after-load 'ivy
     (set-face-attribute 'ivy-minibuffer-match-face-1 nil
-                        :background nano-dark-background
+                        :background 'unspecified
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-2 nil
-                        :background nano-dark-background
+                        :background 'unspecified
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-3 nil
-                        :background nano-dark-background
+                        :background 'unspecified
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-minibuffer-match-face-4 nil
-                        :background nano-dark-background
+                        :background 'unspecified
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-current-match nil
-                        :background nano-dark-highlight
-                        :foreground nano-dark-foreground)))
+                        :background nano-dark-faded
+                        :foreground nano-dark-strong
+                        :weight 'bold)))
 
 (defun nano-theme--tree-sitter ()
   "Customize tree-sitter faces."
