@@ -51,7 +51,7 @@
 
   (setq org-todo-keywords
         '((sequence "TODO" "|" "DONE" "CANCELLED")))
-    
+
   ;; Add current time when marking item as 'DONE'
   (setq org-log-done 'time)
 
@@ -88,6 +88,9 @@
 
 ;; Small speedup, we don't need the agenda immediately after every start
 (setq org-agenda-inhibit-startup t)
+
+;; Let the agenda buffer consume whole window
+(setq org-agenda-window-setup 'current-window)
 
 (bind-key* "C-c a" 'org-agenda)
 
