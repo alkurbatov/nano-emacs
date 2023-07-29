@@ -174,5 +174,8 @@
               marginalia-align-offset -1) ; one space on the right
 (marginalia-mode)
 
+;; Enable convenient comment/uncomment shortcut
+(evilnc-default-hotkeys t)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
