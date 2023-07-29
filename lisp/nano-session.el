@@ -37,8 +37,9 @@
         counsel-M-x-history
         file-name-history
         counsel-minibuffer-history))
+
 (setq history-length 250)
-(setq kill-ring-max 25)
+(setq kill-ring-max 50)
 (put 'minibuffer-history         'history-length 50)
 (put 'file-name-history          'history-length 50)
 (put 'set-variable-value-history 'history-length 25)
@@ -51,6 +52,10 @@
 (put 'ivy-history                'history-length 25)
 (put 'counsel-M-x-history        'history-length 25)
 (put 'counsel-minibuffer-history 'history-length 25)
+
+;; No duplicates in history
+(setq history-delete-duplicates t)
+
 (setq savehist-file "~/.nano-savehist")
 (savehist-mode 1)
 
@@ -90,6 +95,12 @@
 ;; Exclude sensitive data from backups
 (add-to-list 'auto-mode-alist '("\\.gpg$" . sensitive-mode))
 (add-to-list 'auto-mode-alist '("\\.netrc$" . sensitive-mode))
+
+;; Record cursor position from one session ot the other
+(setq save-place-file (expand-file-name "saveplace" user-emacs-directory)
+      save-place-forget-unreadable-files t)
+(save-place-mode 1)
+
 
 (provide 'nano-session)
 ;;; nano-session.el ends here

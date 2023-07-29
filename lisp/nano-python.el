@@ -47,8 +47,10 @@
 
   (setq poetry-tracking-strategy 'switch-buffer)
 
-  ;; Suppress annoying indent guessing messages
-  (setq python-indent-guess-indent-offset-verbose nil)
+
+  ;; Let Emacs guess Python indent silently
+  (setq python-indent-guess-indent-offset t
+        python-indent-guess-indent-offset-verbose nil)
 
   ;; Configure linting
   (add-to-list 'flycheck-checkers 'python-flycheck)

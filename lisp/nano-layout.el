@@ -57,10 +57,6 @@
                                      "__" "~~" "~~>" "~>" "~-" "~@" "$>" "^=" "]#"))
 (global-ligature-mode t)
 
-;; Fix bug on OSX in term mode & zsh (spurious % after each command)
-(add-hook 'term-mode-hook
-	  (lambda () (setq buffer-display-table (make-display-table))))
-
 (global-hl-line-mode 1)
 
 ;; Enable nano-modeline in different modes

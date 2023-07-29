@@ -40,6 +40,9 @@
         lsp-modeline-code-actions-enable nil
         lsp-headerline-breadcrumb-enable nil)
 
+  ;; Increase read size per process
+  (setq read-process-output-max (* 1024 1024))
+
   (customize-set-variable 'lsp-auto-guess-root +1))
 
 (provide 'nano-lsp)

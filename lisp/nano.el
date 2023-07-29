@@ -51,6 +51,9 @@
 ;; Nano counsel configuration
 (require 'nano-counsel)
 
+;; Nano terminal configuration
+(require 'nano-terminal)
+
 ;; Welcome message
 (let ((inhibit-message t))
   (message "Welcome to GNU Emacs / N Λ N O for devs edition")

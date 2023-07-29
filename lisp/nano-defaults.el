@@ -21,23 +21,29 @@
 ;;; Code:
 (require 'bind-key)
 (require 'exec-path-from-shell)
+(require 'marginalia)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
 (setq custom-file "~/.emacs.d/nano-custom.el")
 (load custom-file 'noerror 'nomessage)
 
-;; Use a single space after dots
-(setq sentence-end-double-space nil)
+;; Typography
+(setq-default fill-column 80                          ; Default line width
+              sentence-end-double-space nil           ; Use a single space after dots
+              bidi-paragraph-direction 'left-to-right ; Faster
+              truncate-string-ellipsis "…")           ; Nicer ellipsis
 
 ;; No confirmation for visiting non-existent files
-(setq confirm-nonexistent-file-or-buffer nil)
+(setq-default confirm-nonexistent-file-or-buffer nil)
 
-;; Mouse active in terminal
-(unless (display-graphic-p)
-  (xterm-mouse-mode 1)
-  (bind-keys*
-   ("<mouse-4>" . 'scroll-down-line)
-   ("<mouse-5>" . 'scroll-up-line)))
+;; Follow symlinks without prompt
+(setq vc-follow-symlinks t)
+
+;; Replace yes/no prompts with y/n
+(setq-default use-short-answers t)
+
+(setq-default visible-bell nil             ; No visual bell
+              ring-bell-function 'ignore)  ; No bell
 
 ;; No scroll bars
 (if (fboundp 'scroll-bar-mode) (set-scroll-bar-mode nil))
@@ -62,8 +68,12 @@
       read-buffer-completion-ignore-case t
       completion-ignore-case t)
 
-;; Enable indentation+completion using the TAB key.
-;; completion-at-point is often bound to M-TAB.
+;; Enable useful region commands
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+;; Enable indentation+completion using the TAB key
+;; completion-at-point is often bound to M-TAB
 (setq tab-always-indent 'complete)
 
 ;; TAB cycle if there are only few candidates
@@ -80,11 +90,13 @@
 ;; Make sure clipboard works properly in tty mode on OSX
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
+
 (defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
+
 (when (and (not (display-graphic-p))
            (eq system-type 'darwin))
     (setq interprogram-cut-function 'paste-to-osx)
@@ -129,27 +141,11 @@
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
 
-;; Default shell in term
-(unless
-    (or (eq system-type 'windows-nt)
-        (not (file-exists-p "/bin/zsh")))
-  (setq-default shell-file-name "/bin/zsh")
-  (setq explicit-shell-file-name "/bin/zsh"))
-
-;; Kill term buffer when exiting
-(defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
-  (if (memq (process-status proc) '(signal exit))
-      (let ((buffer (process-buffer proc)))
-        ad-do-it
-        (kill-buffer buffer))
-    ad-do-it))
-(ad-activate 'term-sentinel)
+; Focus new help windows when opened
+(setq help-window-select t)
 
 ;; Delete selected text when starting to type over it
 (setq delete-selection-mode t)
-
-;; Remember the last place visited in a file
-(save-place-mode 1)
 
 ;; Automatically revert buffers for changed files if they don't have unsaved changes
 (global-auto-revert-mode t)
@@ -172,6 +168,11 @@
 (setq mode-require-final-newline nil)
 (add-hook 'org-mode-hook #'ethan-wspace-mode)
 (add-hook 'prog-mode-hook #'ethan-wspace-mode)
+
+(setq-default marginalia--ellipsis "…"    ; Nicer ellipsis
+              marginalia-align 'right     ; right alignment
+              marginalia-align-offset -1) ; one space on the right
+(marginalia-mode)
 
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
