@@ -177,5 +177,12 @@
 ;; Enable convenient comment/uncomment shortcut
 (evilnc-default-hotkeys t)
 
+;; Skip system buffers when cycling through open buffers
+(set-frame-parameter (selected-frame) 'buffer-predicate
+                     (lambda (buf)
+                       (let ((name (buffer-name buf)))
+                         (not (or (string-prefix-p "*" name)
+                                  (eq 'dired-mode (buffer-local-value 'major-mode buf)))))))
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
