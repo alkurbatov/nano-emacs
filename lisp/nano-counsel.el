@@ -58,11 +58,7 @@
 
  ;; Ivy-based interface to shell and system tools
  ("C-c c" . counsel-compile)
- ("C-c g" . counsel-git)
- ("C-c j" . counsel-git-grep)
- ("C-c L" . counsel-git-log)
  ("C-c k" . counsel-rg)
- ("C-c m" . counsel-linux-app)
  ("C-c n" . counsel-fzf)
  ("C-x l" . counsel-locate)
  ("C-c J" . counsel-file-jump)
@@ -73,7 +69,6 @@
  ("C-c C-r" . ivy-resume)
  ("C-c b" . counsel-bookmark)
  ("C-c d" . counsel-descbinds)
- ("C-c g" . counsel-git)
  ("C-c o" . counsel-outline)
  ("C-c t" . counsel-load-theme)
  ("C-c F" . counsel-org-file))

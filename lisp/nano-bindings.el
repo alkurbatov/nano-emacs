@@ -58,5 +58,12 @@
 (bind-key "C-h F"   #'helpful-function) ; Look up *F*unctions (excludes macros).
 (bind-key "C-h C"   #'helpful-command)  ; Look up *C*ommands.
 
+;; Avy
+(bind-key "M-g f" #'avy-goto-line)
+(bind-key "M-g w" #'avy-goto-word-1)
+(bind-key "M-g c" #'avy-goto-char)
+(bind-key "C-c l" #'avy-copy-line)
+(bind-key "C-c m" #'avy-move-line)
+
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here

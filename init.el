@@ -34,6 +34,7 @@
 
 (setq package-list
       '(ag                     ; Integration of ag search utility
+        avy                    ; Jump to things in Emacs tree-style
         bind-key               ; A simple way to manage personal keybindings
         cape                   ; Completion At Point Extensions
         company                ; Modular auto-completion framework
