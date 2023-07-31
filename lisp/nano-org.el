@@ -78,7 +78,6 @@
 
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
   (add-hook 'org-mode-hook             #'org-superstar-mode)
-  (add-hook 'org-capture-mode-hook     #'nano-modeline-org-capture-mode)
   (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
 
   (bind-keys :map org-mode-map
