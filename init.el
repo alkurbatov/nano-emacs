@@ -56,6 +56,7 @@
         flyspell-popup         ; Correcting words with flyspell in popup menus
         git-modes              ; Emacs major modes for Git configuration files
         gitlab-ci-mode         ; Emacs major mode for editing GitLab CI files
+        golden-ratio           ; Automatic resizing of Emacs windows to the golden ratio
         go-eldoc               ; Eldoc for Go language
         go-mode                ; Emacs mode for the Go programming language
         guess-language         ; Robust automatic language detection

@@ -184,5 +184,8 @@
                          (not (or (string-prefix-p "*" name)
                                   (eq 'dired-mode (buffer-local-value 'major-mode buf)))))))
 
+;; Enable windows balancing with golden ratio
+(golden-ratio-mode 1)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
