@@ -29,6 +29,7 @@
     (flyspell-buffer)))
 
 (with-eval-after-load "markdown-mode"
+  (add-hook 'markdown-mode-hook #'turn-on-smartparens-mode)
   (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode)) ; immediately check whole buffer
 
 (provide 'nano-markdown)

@@ -22,6 +22,7 @@
 (require 'bind-key)
 (require 'exec-path-from-shell)
 (require 'marginalia)
+(require 'smartparens-config)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
 (setq custom-file "~/.emacs.d/nano-custom.el")
@@ -186,6 +187,10 @@
 
 ;; Enable windows balancing with golden ratio
 (golden-ratio-mode 1)
+
+;; Enable smarter parens handling
+(show-smartparens-global-mode t)
+(add-hook 'prog-mode-hook #'turn-on-smartparens-mode)
 
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
