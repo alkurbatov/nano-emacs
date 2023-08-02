@@ -22,6 +22,8 @@
 (defun nano-setup-markdown-mode ()
   "Setup markdown mode with spellcheck."
 
+  (setq markdown-command "pandoc")
+
   (tree-sitter-hl-mode)
   (flyspell-mode)
 
