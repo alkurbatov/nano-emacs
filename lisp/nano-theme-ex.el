@@ -78,9 +78,11 @@
   "Customize tree-sitter faces."
   (with-eval-after-load 'tree-sitter-hl
     (set-face-attribute 'tree-sitter-hl-face:constructor nil
-                        :foreground (nord-color "frost-1")
+                        :foreground (nord-color "frost-0")
                         :weight 'regular)
     (set-face-attribute 'tree-sitter-hl-face:constant.builtin nil
+                        :foreground (nord-color "frost-2"))
+    (set-face-attribute 'tree-sitter-hl-face:escape nil
                         :foreground (nord-color "aurora-2"))
     (set-face-attribute 'tree-sitter-hl-face:function.builtin nil
                         :foreground (nord-color "frost-1")
@@ -91,6 +93,8 @@
     (set-face-attribute 'tree-sitter-hl-face:function.special nil
                         :foreground nano-dark-popout
                         :weight 'regular)
+    (set-face-attribute 'tree-sitter-hl-face:label nil
+                        :foreground (nord-color "snow-storm-0"))
     (set-face-attribute 'tree-sitter-hl-face:method.call nil
                         :foreground (nord-color "frost-1"))
     (set-face-attribute 'tree-sitter-hl-face:number nil
@@ -98,11 +102,11 @@
     (set-face-attribute 'tree-sitter-hl-face:property nil
                         :foreground (nord-color "snow-storm-0"))
     (set-face-attribute 'tree-sitter-hl-face:punctuation.special nil
-                        :foreground (nord-color "frost-2"))
+                        :foreground (nord-color "frost-1"))
     (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
                         :foreground (nord-color "frost-0"))
 
-    ;; Workaround bug in tree-sitter-langs causing wrong face on decorators
+    ;; Workaround bug in tree-sitter-langs causing wrong face for decorators
     (tree-sitter-hl-add-patterns 'python
       [(decorator (call (identifier) @function.special))])
     ))
@@ -211,6 +215,12 @@
                         :background nano-dark-critical
                         :foreground 'unspecified)))
 
+(defun nano-theme--gitlab-ci ()
+  "Customize gitlab-ci mode colors."
+  (with-eval-after-load 'gitlab-ci-mode
+    (set-face-attribute 'gitlab-ci-special-value nil
+                        :foreground nano-dark-popout)))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -226,8 +236,8 @@
   (nano-theme--diff-hl)
   (nano-theme--hl-todo)
   (nano-theme--pip-requirements)
-  (nano-theme--ethan-wspace))
-
+  (nano-theme--ethan-wspace)
+  (nano-theme--gitlab-ci))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
