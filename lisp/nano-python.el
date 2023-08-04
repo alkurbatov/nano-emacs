@@ -56,8 +56,7 @@
   (add-to-list 'flycheck-checkers 'python-flycheck)
   (add-to-list 'flycheck-checkers 'python-mypy)
 
-  (add-hook 'python-mode-hook #'nano-setup-python-with-lsp)
-  (add-hook 'python-mode-hook #'tree-sitter-hl-mode))
+  (add-hook 'python-ts-mode-hook #'nano-setup-python-with-lsp))
 
 ;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.coveragerc\\'" . conf-mode))

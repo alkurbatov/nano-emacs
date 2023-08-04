@@ -54,7 +54,6 @@
         flycheck-golangci-lint ; Flycheck checker for golangci-lint
         flyspell-popup         ; Correcting words with flyspell in popup menus
         git-modes              ; Emacs major modes for Git configuration files
-        gitlab-ci-mode         ; Emacs major mode for editing GitLab CI files
         golden-ratio           ; Automatic resizing of Emacs windows to the golden ratio
         go-eldoc               ; Eldoc for Go language
         go-mode                ; Emacs mode for the Go programming language
@@ -84,8 +83,7 @@
         ssh-config-mode        ; Emacs mode for editing ssh config files
         smartparens            ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
         smex                   ; A smart M-x enhancement for Emacs
-        tree-sitter            ; An incremental parsing system for programming tools
-        tree-sitter-langs      ; Language bundle for Emacs's tree-sitter package
+        treesit-auto           ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                ; VERTical Interactive Completion
         yaml-mode              ; YAML mode
         yasnippet              ; A template system for Emacs

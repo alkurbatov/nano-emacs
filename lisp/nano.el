@@ -91,7 +91,6 @@
 (require 'nano-python)
 (require 'nano-sh)
 (require 'nano-toml)
-(require 'nano-yaml)
 
 (provide 'nano)
 ;;; nano.el ends here

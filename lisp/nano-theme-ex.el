@@ -25,7 +25,7 @@
 (defun nano-theme--basics ()
   "Customize basic Emacs faces and nano-faces."
 
-  ;; Increase font size (default is 140) enforced by nano-theme
+  ;; Increase font size (default is 140, enforced by nano-theme)
   (set-face-attribute 'default nil :height 150)
 
   (set-face-attribute 'show-paren-match nil
@@ -33,6 +33,24 @@
 
 (defun nano-theme--font-lock ()
   "Customize font-lock faces."
+  (set-face-attribute 'font-lock-bracket-face nil
+                      :foreground (nord-color "frost-0"))
+  (set-face-attribute 'font-lock-builtin-face nil
+                      :foreground (nord-color "frost-0"))
+  (set-face-attribute 'font-lock-escape-face nil
+                      :foreground (nord-color "aurora-2")
+                      :weight 'regular)
+  (set-face-attribute 'font-lock-function-name-face nil
+                      :foreground (nord-color "frost-1")
+                      :weight 'regular)
+  (set-face-attribute 'font-lock-keyword-face nil
+                      :foreground (nord-color "frost-2"))
+  (set-face-attribute 'font-lock-number-face nil
+                      :foreground (nord-color "aurora-4"))
+  (set-face-attribute 'font-lock-operator-face nil
+                      :foreground (nord-color "frost-2"))
+  (set-face-attribute 'font-lock-property-use-face nil
+                      :foreground (nord-color "frost-1"))
   (set-face-attribute 'font-lock-string-face nil
                       :foreground (nord-color "aurora-3"))
   (set-face-attribute 'font-lock-type-face nil
@@ -74,49 +92,11 @@
                         :foreground nano-dark-strong
                         :weight 'bold)))
 
-(defun nano-theme--tree-sitter ()
-  "Customize tree-sitter faces."
-  (with-eval-after-load 'tree-sitter-hl
-    (set-face-attribute 'tree-sitter-hl-face:constructor nil
-                        :foreground (nord-color "frost-0")
-                        :weight 'regular)
-    (set-face-attribute 'tree-sitter-hl-face:constant.builtin nil
-                        :foreground (nord-color "frost-2"))
-    (set-face-attribute 'tree-sitter-hl-face:escape nil
-                        :foreground (nord-color "aurora-2"))
-    (set-face-attribute 'tree-sitter-hl-face:function.builtin nil
-                        :foreground (nord-color "frost-1")
-                        :weight 'regular)
-    (set-face-attribute 'tree-sitter-hl-face:function.call nil
-                        :foreground (nord-color "frost-1")
-                        :weight 'regular)
-    (set-face-attribute 'tree-sitter-hl-face:function.special nil
-                        :foreground nano-dark-popout
-                        :weight 'regular)
-    (set-face-attribute 'tree-sitter-hl-face:label nil
-                        :foreground (nord-color "snow-storm-0"))
-    (set-face-attribute 'tree-sitter-hl-face:method.call nil
-                        :foreground (nord-color "frost-1"))
-    (set-face-attribute 'tree-sitter-hl-face:number nil
-                        :foreground (nord-color "aurora-4"))
-    (set-face-attribute 'tree-sitter-hl-face:property nil
-                        :foreground (nord-color "snow-storm-0"))
-    (set-face-attribute 'tree-sitter-hl-face:punctuation.special nil
-                        :foreground (nord-color "frost-1"))
-    (set-face-attribute 'tree-sitter-hl-face:type.builtin nil
-                        :foreground (nord-color "frost-0"))
-
-    ;; Workaround bug in tree-sitter-langs causing wrong face for decorators
-    (tree-sitter-hl-add-patterns 'python
-      [(decorator (call (identifier) @function.special))])
-    ))
-
 (defun nano-theme--makefile ()
   "Customize makefile mode faces."
   (with-eval-after-load 'make-mode
     (set-face-attribute 'makefile-targets nil
-                        :foreground (nord-color "frost-2"))
-    ))
+                        :foreground (nord-color "frost-2"))))
 
 (defun nano-theme--flycheck ()
   "Derive flycheck faces."
@@ -136,7 +116,6 @@
 
 (defun nano-theme--diff-hl ()
   "Customize diff-hl colors."
-
   (with-eval-after-load 'diff-hl
     (set-face-attribute 'diff-hl-insert nil
                         :background (nord-color "aurora-3")
@@ -173,16 +152,27 @@
 (defun nano-theme--markdown ()
   "Customize markdown colors."
   (with-eval-after-load 'markdown-mode
+    (set-face-attribute 'markdown-inline-code-face nil
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'markdown-header-delimiter-face nil
-                        :foreground nano-dark-salient)
+                        :foreground (nord-color "frost-2"))
+    (set-face-attribute 'markdown-header-face-1 nil
+                        :foreground (nord-color "frost-1"))
+    (set-face-attribute 'markdown-header-face-2 nil
+                        :foreground (nord-color "frost-1"))
+    (set-face-attribute 'markdown-header-face-3 nil
+                        :foreground (nord-color "frost-1"))
     (set-face-attribute 'markdown-language-keyword-face nil
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'markdown-link-face nil
-                        :foreground (nord-color "aurora-3"))
+                        :foreground (nord-color "frost-1"))
     (set-face-attribute 'markdown-markup-face nil
-                        :foreground nano-dark-salient)
+                        :foreground (nord-color "frost-0"))
     (set-face-attribute 'markdown-url-face nil
-                        :foreground (nord-color "aurora-3"))))
+                        :foreground (nord-color "snow-storm-0")
+                        :underline t)
+
+    ))
 
 (defun nano-theme--flyspell ()
   "Customize flyspell colors."
@@ -230,7 +220,6 @@
   (nano-theme--font-lock)
   (nano-theme--flycheck)
   (nano-theme--flyspell)
-  (nano-theme--tree-sitter)
   (nano-theme--makefile)
   (nano-theme--markdown)
   (nano-theme--diff-hl)

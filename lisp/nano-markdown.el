@@ -24,7 +24,6 @@
 
   (setq markdown-command "pandoc")
 
-  (tree-sitter-hl-mode)
   (flyspell-mode)
 
   (unless (string= (buffer-name) "COMMIT_EDITMSG")

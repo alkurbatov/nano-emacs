@@ -23,6 +23,7 @@
 (require 'exec-path-from-shell)
 (require 'marginalia)
 (require 'smartparens-config)
+(require 'treesit-auto)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
 (setq custom-file "~/.emacs.d/nano-custom.el")
@@ -191,6 +192,13 @@
 ;; Enable smarter parens handling
 (show-smartparens-global-mode t)
 (add-hook 'prog-mode-hook #'turn-on-smartparens-mode)
+
+;; Enable tree-sitter integrated into Emacs 29
+(setq treesit-auto-install 'prompt)
+(global-treesit-auto-mode)
+
+;; Request maximum detalization
+(customize-set-variable 'treesit-font-lock-level 4)
 
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
