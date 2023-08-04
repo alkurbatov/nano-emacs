@@ -82,6 +82,7 @@
 (require 'nano-docker)
 (require 'nano-git)
 (require 'nano-remote)
+(require 'nano-mc)
 
 ;; Programming languages
 (require 'nano-elisp)
