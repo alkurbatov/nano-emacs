@@ -81,8 +81,8 @@
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
 
-;; Pixel scroll (as opposed to char scrool)
-;; (pixel-scroll-mode t)
+;; Pixel scroll mode
+(pixel-scroll-precision-mode)
 
 ;; Mac specific
 (when (eq system-type 'darwin)
