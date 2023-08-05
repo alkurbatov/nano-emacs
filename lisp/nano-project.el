@@ -1,4 +1,4 @@
-;;; nano-projectile.el --- Project management
+;;; nano-project.el --- Project management
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023 - N Λ N O developers
@@ -18,28 +18,16 @@
 
 ;;; Commentary:
 
-;; Project management library for Emacs.
-;; https://docs.projectile.mx/projectile/index.html
+;; Project management for Emacs.
 
 ;;; Code:
 (require 'bind-key)
-(require 'projectile)
 
-;; Enable projectile mode globally
-(projectile-mode +1)
-
-;; Disable autodiscover for speedup, all projects will be added manually
-(setq projectile-auto-discover nil)
-
-;; No need in caching
-(setq projectile-enable-caching nil)
-
-;; Use indexing method working on all platforms
-(setq projectile-indexing-method 'alien)
+(setq project-switch-commands 'project-find-file)
 
 ;; Key bindings
-(bind-keys :map projectile-mode-map
-           ("C-x p" . projectile-command-map))
+(bind-keys :map project-prefix-map
+           ("s" . counsel-ag))
 
-(provide 'nano-projectile)
-;;; nano-projectile.el ends here
+(provide 'nano-project)
+;;; nano-project.el ends here

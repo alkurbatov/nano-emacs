@@ -44,7 +44,6 @@
         counsel                ; Improves ivy integration
         deft                   ; Quickly browse, filter, and edit plain text notes
         diff-hl                ; Package for highlighting uncommitted changes
-        dockerfile-mode        ; An emacs mode for handling Dockerfiles
         evil-nerd-commenter    ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
         ethan-wspace           ; A non-intrusive emacs customization for people who are OCD about whitespace
         exec-path-from-shell   ; Make Emacs use the $PATH set up by the user's shell
@@ -76,7 +75,6 @@
         org-superstar          ; Make org-mode stars a little more super
         pinentry               ; GnuPG Pinentry server implementation
         poetry                 ; Python dependency management and packaging in Emacs
-        projectile             ; Project interaction library for Emacs
         protobuf-mode          ; Major mode for editing protocol buffers
         py-isort               ; Reformat python-mode buffer with isort
         python-black           ; Reformat Python using black-macchiato

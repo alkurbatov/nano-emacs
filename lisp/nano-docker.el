@@ -24,6 +24,7 @@
 
 ;; Enable syntax highlighting for Docker-related configuration files
 (add-to-list 'auto-mode-alist '("\\.dockerignore\\'" . gitignore-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile\\." . dockerfile-ts-mode))
 
 (provide 'nano-docker)
 ;;; nano-docker.el ends here
