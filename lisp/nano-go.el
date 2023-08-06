@@ -19,9 +19,17 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'bind-key)
+(require 'flycheck-golangci-lint)
+(require 'lsp)
+
 
 (defun nano-setup-go-with-lsp ()
   "Setup and enable lsp-mode for Go."
+
+  (setq flycheck-golangci-lint-tests t)
+  (setq flycheck-golangci-lint-fast t)
+  (flycheck-golangci-lint-setup)
 
   ;; Disable lsp checker in favor of golangci-lint.
   ;; This should be set before invocation of lsp (lsp-deferred) command.
@@ -37,23 +45,11 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
 
-(with-eval-after-load "go-mode"
-  (require 'bind-key)
-  (require 'flycheck-golangci-lint)
-  (require 'lsp)
+(add-hook 'go-ts-mode-hook #'nano-setup-go-with-lsp)
 
-  (setq flycheck-golangci-lint-tests t)
-  (setq flycheck-golangci-lint-fast t)
-
-  (bind-keys :map go-mode-map
-            ("M-." 'godoc-at-point))
-
-  (add-hook 'go-ts-mode-hook #'flycheck-golangci-lint-setup)
-  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-lsp)
-  (add-hook 'go-ts-mode-hook #'go-eldoc-setup)
-
-  ;; Enable syntax highlight in godoc buffer.
-  (add-hook 'godoc-mode-hook #'go-ts-mode))
+;; Enable syntax highlighting for Golang-related tools configuration files
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("go\\.mod\\'" . go-mod-ts-mode))
 
 (provide 'nano-go)
 ;;; nano-go.el ends here
