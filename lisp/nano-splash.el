@@ -36,7 +36,7 @@
 
 (defun nano-splash ()
   "Nano Emacs splash screen."
-  
+
   (interactive)
 
   ;; Hide modeline before window-body-height is computed
@@ -44,21 +44,21 @@
     (with-current-buffer splash-buffer
       (setq header-line-format nil)
       (setq mode-line-format nil)))
-  
+
   (let* ((splash-buffer  (get-buffer-create "*splash*"))
          (height         (round (- (window-body-height nil) 1) ))
          (width          (round (window-body-width nil)        ))
          (padding-center (+ (/ height 2) 1)))
-    
+
     ;; If there are buffer associated with filenames,
     ;;  we don't show the splash screen.
     (if (eq 0 (length (cl-loop for buf in (buffer-list)
                               if (buffer-file-name buf)
                               collect (buffer-file-name buf))))
-        
+
         (with-current-buffer splash-buffer
           (erase-buffer)
-          
+
           ;; Buffer local settings
           (if (one-window-p) (setq mode-line-format nil))
           (setq cursor-type nil)
@@ -83,9 +83,8 @@
           (display-buffer-same-window splash-buffer nil)
           (run-with-idle-timer 0.05 nil (lambda() (message nil)))
           (run-with-idle-timer 0.50 nil 'nano-splash-fade-out-slow)
-	  (if (fboundp 'nano-splash-help-message)
-              (run-with-idle-timer 0.55 nil 'nano-splash-help-message))
-	  )
+          (if (fboundp 'nano-splash-help-message)
+              (run-with-idle-timer 0.55 nil 'nano-splash-help-message)))
       (nano-splash-kill))))
 
 
