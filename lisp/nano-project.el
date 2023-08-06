@@ -22,7 +22,28 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'project)
 
+(defgroup project-local nil
+  "Local, non-VC-backed project.el root directories.
+Inspired by: https://christiantietze.de/posts/2022/03/mark-local-project.el-directories/"
+  :group 'project)
+
+(cl-defmethod project-root ((project (head local)))
+  "Return root directory of current PROJECT."
+  (cdr project))
+
+(defun project-local-try-local (dir)
+  "Determine if DIR is a non-VC project.
+DIR must include a file .project"
+  (if-let ((root (locate-dominating-file dir ".project")))
+      (cons 'local root)))
+
+(customize-set-variable 'project-find-functions
+                        (list #'project-try-vc
+                              #'project-local-try-local))
+
+;; Switch project in the same way as projectile does
 (setq project-switch-commands 'project-find-file)
 
 ;; Key bindings
