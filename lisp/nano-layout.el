@@ -84,6 +84,9 @@
 
 ;; Enable windows balancing with golden ratio
 (golden-ratio-mode 1)
+(setq golden-ratio-auto-scale t)
+
+;; In some modes we don't want to scale anything
 (setq golden-ratio-exclude-modes '("dired-mode"))
 
 ;; Hide indicatiors in left-fringe (GUI mode)
