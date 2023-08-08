@@ -186,9 +186,6 @@
                          (not (or (string-prefix-p "*" name)
                                   (eq 'dired-mode (buffer-local-value 'major-mode buf)))))))
 
-;; Enable windows balancing with golden ratio
-(golden-ratio-mode 1)
-
 ;; Enable smarter parens handling
 (show-smartparens-global-mode t)
 (add-hook 'prog-mode-hook #'turn-on-smartparens-mode)

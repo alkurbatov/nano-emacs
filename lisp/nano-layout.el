@@ -20,6 +20,7 @@
 
 ;;; Code:
 (require 'disp-table)
+(require 'golden-ratio)
 (require 'ligature)
 (require 'nano-modeline)
 
@@ -80,6 +81,10 @@
 (add-hook 'conf-unix-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
+
+;; Enable windows balancing with golden ratio
+(golden-ratio-mode 1)
+(setq golden-ratio-exclude-modes '("dired-mode"))
 
 ;; Hide indicatiors in left-fringe (GUI mode)
 (setq flycheck-indication-mode nil)
