@@ -20,6 +20,12 @@
 
 ;;; Code:
 
+(defun open-dired ()
+  "Open Dired in current folder with additional tweaks."
+  (interactive)
+
+  (dired "."))
+
 ;; Assume that we should use another Dired buffer (opened in a window nearby)
 ;; as target of all operations.
 (setq dired-dwim-target t)
@@ -31,6 +37,8 @@
 (setq
    delete-by-moving-to-trash t
    dired-recursive-deletes 'always)
+
+(bind-key "C-x d" #'open-dired)
 
 (provide 'nano-mc)
 ;;; nano-mc.el ends here
