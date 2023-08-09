@@ -197,5 +197,11 @@
 ;; Request maximum detalization
 (customize-set-variable 'treesit-font-lock-level 4)
 
+;; Report something goes wrong during code auto formatting
+(setq format-all-show-errors 'warnings)
+
+;; Ensure that default formatter is selected
+(add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here

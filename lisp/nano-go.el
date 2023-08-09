@@ -37,13 +37,7 @@
 
   (lsp-deferred)
 
-  (setq lsp-go-use-placeholders nil)
-
-  ;; Set up before-save hooks to format buffer on save and add/delete imports.
-  ;; Make sure no other gofmt/goimports hooks enabled.
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
-
+  (setq lsp-go-use-placeholders nil))
 
 (add-hook 'go-ts-mode-hook #'nano-setup-go-with-lsp)
 

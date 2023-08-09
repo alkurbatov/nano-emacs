@@ -52,6 +52,7 @@
         flyspell-correct-popup ; Correcting words with flyspell via popup interface
         flycheck-golangci-lint ; Flycheck checker for golangci-lint
         flyspell-popup         ; Correcting words with flyspell in popup menus
+        format-all             ; Auto-format source code in many languages with one command
         git-modes              ; Emacs major modes for Git configuration files
         golden-ratio           ; Automatic resizing of Emacs windows to the golden ratio
         guess-language         ; Robust automatic language detection
@@ -74,8 +75,6 @@
         pinentry               ; GnuPG Pinentry server implementation
         poetry                 ; Python dependency management and packaging in Emacs
         protobuf-mode          ; Major mode for editing protocol buffers
-        py-isort               ; Reformat python-mode buffer with isort
-        python-black           ; Reformat Python using black-macchiato
         ssh-config-mode        ; Emacs mode for editing ssh config files
         smartparens            ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
         smex                   ; A smart M-x enhancement for Emacs
