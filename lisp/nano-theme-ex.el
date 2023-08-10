@@ -205,11 +205,20 @@
                         :background nano-dark-critical
                         :foreground 'unspecified)))
 
-(defun nano-theme--gitlab-ci ()
-  "Customize gitlab-ci mode colors."
-  (with-eval-after-load 'gitlab-ci-mode
-    (set-face-attribute 'gitlab-ci-special-value nil
-                        :foreground nano-dark-popout)))
+(defun nano-theme--highlight-indent-guides ()
+  "Customize highlight-indent-guides mode colors."
+  (with-eval-after-load 'highlight-indent-guides
+    (setq highlight-indent-guides-auto-enabled nil)
+
+    (setq highlight-indent-guides-method 'character
+          highlight-indent-guides-character ?\|
+          highlight-indent-guides-responsive 'top)
+
+    (set-face-attribute 'highlight-indent-guides-character-face nil
+                        :foreground (nord-color "polar-night-1"))
+    (set-face-attribute 'highlight-indent-guides-top-character-face nil
+                        :foreground (nord-color "polar-night-3"))))
+
 
 (defun nano-theme-customize ()
   "Customize many, many faces."
@@ -226,7 +235,7 @@
   (nano-theme--hl-todo)
   (nano-theme--pip-requirements)
   (nano-theme--ethan-wspace)
-  (nano-theme--gitlab-ci))
+  (nano-theme--highlight-indent-guides))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
