@@ -54,6 +54,9 @@
 ;; Nano terminal configuration
 (require 'nano-terminal)
 
+;; Nano help and embedded documentation improvements
+(require 'nano-help)
+
 ;; Welcome message
 (let ((inhibit-message t))
   (message "Welcome to GNU Emacs / N Λ N O for devs edition")

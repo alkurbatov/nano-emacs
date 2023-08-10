@@ -44,8 +44,9 @@
         counsel                ; Improves ivy integration
         deft                   ; Quickly browse, filter, and edit plain text notes
         diff-hl                ; Package for highlighting uncommitted changes
-        evil-nerd-commenter    ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
+        engine-mode            ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace           ; A non-intrusive emacs customization for people who are OCD about whitespace
+        evil-nerd-commenter    ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
         exec-path-from-shell   ; Make Emacs use the $PATH set up by the user's shell
         f                      ; Modern API for working with files and directories
         flycheck               ; Modern on-the-fly syntax checking extension
