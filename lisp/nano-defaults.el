@@ -198,7 +198,7 @@
 (customize-set-variable 'treesit-font-lock-level 4)
 
 ;; Report something goes wrong during code auto formatting
-(setq format-all-show-errors 'warnings)
+(setq format-all-show-errors 'never)
 
 ;; Ensure that default formatter is selected
 (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
