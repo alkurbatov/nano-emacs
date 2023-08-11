@@ -28,5 +28,9 @@
            "https://pypi.org/search/?q=%s"
            :keybinding "y")
 
+(defengine github
+           "https://github.com/search?q=%s&type=code"
+           :keybinding "h")
+
 (provide 'nano-help)
 ;;; nano-help.el ends here
