@@ -51,6 +51,7 @@
         f                       ; Modern API for working with files and directories
         flycheck                ; Modern on-the-fly syntax checking extension
         flyspell-correct-popup  ; Correcting words with flyspell via popup interface
+        flycheck-eglot          ; Flycheck support for eglot
         flycheck-golangci-lint  ; Flycheck checker for golangci-lint
         flyspell-popup          ; Correcting words with flyspell in popup menus
         format-all              ; Auto-format source code in many languages with one command

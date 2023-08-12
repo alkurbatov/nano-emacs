@@ -20,26 +20,46 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'flycheck-eglot)
+(require 'format-all)
 (require 'flycheck-golangci-lint)
-(require 'lsp)
+(require 'eglot)
+(require 'project)
+
+;; Make it possible for Eglot to find go.mod in the project.
+;; See https://github.com/golang/tools/blob/master/gopls/doc/emacs.md#configuring-project-for-go-modules-in-emacs
+(defun project-find-go-module (dir)
+  (when-let ((root (locate-dominating-file dir "go.mod")))
+    (cons 'go-module root)))
+
+(cl-defmethod project-root ((project (head go-module)))
+  (cdr project))
+
+(add-hook 'project-find-functions #'project-find-go-module)
 
 
-(defun nano-setup-go-with-lsp ()
-  "Setup and enable lsp-mode for Go."
+;; Add gofumpt formatter
+(define-format-all-formatter gofmt
+  (:executable "gofumpt")
+  (:install (macos "brew install go"))
+  (:languages "Go")
+  (:features)
+  (:format (format-all--buffer-easy executable)))
+
+
+(defun nano-setup-go-with-eglot ()
+  "Setup and enable eglot for Go."
 
   (setq flycheck-golangci-lint-tests t)
   (setq flycheck-golangci-lint-fast t)
   (flycheck-golangci-lint-setup)
 
-  ;; Disable lsp checker in favor of golangci-lint.
-  ;; This should be set before invocation of lsp (lsp-deferred) command.
-  (setq-local lsp-diagnostics-provider :none)
+  ;; Allow other checkers
+  (setq flycheck-eglot-exclusive nil)
 
-  (lsp-deferred)
+  (eglot-ensure))
 
-  (setq lsp-go-use-placeholders nil))
-
-(add-hook 'go-ts-mode-hook #'nano-setup-go-with-lsp)
+(add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot)
 
 ;; Enable syntax highlighting for Golang-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
