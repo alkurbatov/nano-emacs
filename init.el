@@ -77,6 +77,7 @@
         pinentry                ; GnuPG Pinentry server implementation
         poetry                  ; Python dependency management and packaging in Emacs
         protobuf-mode           ; Major mode for editing protocol buffers
+        realgud                 ; The Grand "Cathedral" Debugger rewrite
         ssh-config-mode         ; Emacs mode for editing ssh config files
         smartparens             ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
         smex                    ; A smart M-x enhancement for Emacs
