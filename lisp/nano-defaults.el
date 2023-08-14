@@ -204,5 +204,14 @@
 ;; Ensure that default formatter is selected
 (add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
 
+;; Save abbreviations whenever files are saved
+(setq save-abbrevs 'silently)
+
+;; Tell emacs where to read abbrev definitions from
+(setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+
+;; Enable embedded abbrev mode
+(setq-default abbrev-mode t)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
