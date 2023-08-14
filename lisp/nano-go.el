@@ -39,7 +39,7 @@
 
 
 ;; Add gofumpt formatter
-(define-format-all-formatter gofmt
+(define-format-all-formatter gofumpt
   (:executable "gofumpt")
   (:install (macos "brew install go"))
   (:languages "Go")
