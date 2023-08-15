@@ -30,8 +30,8 @@
 ;; as target of all operations.
 (setq dired-dwim-target t)
 
-;; Always do recursive copies
-(setq dired-recursive-copies t)
+;; Always do recursive copies without questions
+(setq dired-recursive-copies 'always)
 
 ;; Tweak files and folders deletion.
 (setq
