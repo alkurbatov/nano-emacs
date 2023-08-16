@@ -21,42 +21,35 @@
 ;; Configures programming environment for the Python language.
 
 ;;; Code:
+(require 'eglot)
+(require 'poetry)
 (require 'python)
 
-(defun nano-setup-python-with-lsp ()
-  "Setup and enable lsp-mode for Python."
+
+(defun nano-setup-python-with-eglot ()
+  "Setup and enable Eglot for Python.
+For additional settings please refer to Pyright documentation
+https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
 
   (poetry-tracking-mode)
 
-  ;; Disable lsp checker in favor of flake8+mypy.
-  ;; This should be set before invocation of lsp (lsp-deferred) command.
-  (setq-local lsp-diagnostics-provider :none)
+  ;; Allow other checkers
+  (setq flycheck-eglot-exclusive nil)
 
-  (lsp-deferred)
-
-  ;; Use mypy instead of pyright
-  (customize-set-variable 'lsp-pyright-typechecking-mode "off")
-
-  (flycheck-add-next-checker 'lsp 'python-flake8)
-  (flycheck-add-next-checker 'python-flake8 'python-mypy))
+  (eglot-ensure))
 
 (with-eval-after-load "python"
-  (require 'lsp)
-  (require 'lsp-pyright)
-  (require 'poetry)
-
   (setq poetry-tracking-strategy 'switch-buffer)
-
-
-  ;; Let Emacs guess Python indent silently
-  (setq python-indent-guess-indent-offset t
-        python-indent-guess-indent-offset-verbose nil)
 
   ;; Configure linting
   (add-to-list 'flycheck-checkers 'python-flycheck)
   (add-to-list 'flycheck-checkers 'python-mypy)
 
-  (add-hook 'python-ts-mode-hook #'nano-setup-python-with-lsp))
+  (add-hook 'python-ts-mode-hook #'nano-setup-python-with-eglot))
+
+;; Let Emacs guess Python indent silently
+(setq python-indent-guess-indent-offset t
+      python-indent-guess-indent-offset-verbose nil)
 
 ;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.coveragerc\\'" . conf-mode))

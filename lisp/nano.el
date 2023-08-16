@@ -79,7 +79,6 @@
 
 ;; IDE features
 (require 'nano-project)
-(require 'nano-lsp)
 
 ;; Tools
 (require 'nano-docker)

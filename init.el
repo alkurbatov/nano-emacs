@@ -64,9 +64,6 @@
         htmlize                 ; Convert buffer text and decorations to HTML
         imenu-list              ; Show imenu entries in a separate buffer
         ligature                ; Display typographical ligatures in Emacs
-        lsp-ivy                 ; Provides an ivy interface to the workspace symbol functionality offered by lsp-mode
-        lsp-mode                ; Emacs client/library for the Language Server Protocol
-        lsp-pyright             ; Integration of Pyright with LSP mode
         magit                   ; A Git porcelain inside Emacs.
         marginalia              ; Enrich existing commands with completion annotations
         markdown-mode           ; Major mode for Markdown-formatted text

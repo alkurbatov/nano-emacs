@@ -219,6 +219,13 @@
     (set-face-attribute 'highlight-indent-guides-top-character-face nil
                         :foreground (nord-color "polar-night-3"))))
 
+(defun nano-theme--eglot ()
+  "Derive eglot faces."
+  (with-eval-after-load 'eglot
+     (set-face-attribute 'eglot-diagnostic-tag-unnecessary-face nil
+                         :background nano-dark-salient
+                         :foreground nano-dark-background
+                         :underline 'unspecified)))
 
 (defun nano-theme-customize ()
   "Customize many, many faces."
@@ -235,7 +242,8 @@
   (nano-theme--hl-todo)
   (nano-theme--pip-requirements)
   (nano-theme--ethan-wspace)
-  (nano-theme--highlight-indent-guides))
+  (nano-theme--highlight-indent-guides)
+  (nano-theme--eglot))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
