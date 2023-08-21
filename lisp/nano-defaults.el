@@ -55,6 +55,9 @@
     (menu-bar-mode t) ;; When nil, focus problem on OSX
   (menu-bar-mode -1))
 
+;; Disable some byte compile warnings
+(setq native-comp-async-report-warnings-errors 'silent)
+
 ;; Enable autocompletion
 (global-company-mode)
 (define-key company-mode-map [remap indent-for-tab-command]
