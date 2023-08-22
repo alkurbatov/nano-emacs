@@ -19,8 +19,9 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'ls-lisp)
 
-(defun open-dired ()
+(defun nano-open-dired ()
   "Open Dired in current folder with additional tweaks."
   (interactive)
 
@@ -33,12 +34,16 @@
 ;; Always do recursive copies without questions
 (setq dired-recursive-copies 'always)
 
+;; Show directories on the top of the list
+(setq dired-listing-switches "-laGh1v --group-directories-first"
+      ls-lisp-use-insert-directory-program nil)
+
 ;; Tweak files and folders deletion.
 (setq
    delete-by-moving-to-trash t
    dired-recursive-deletes 'always)
 
-(bind-key "C-x d" #'open-dired)
+(bind-key "C-x d" #'nano-open-dired)
 
 (provide 'nano-mc)
 ;;; nano-mc.el ends here
