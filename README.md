@@ -10,6 +10,10 @@ possible) and to keep it modular enough. The idea is for users to copy
 the part they are interested in such as to include them in their own
 configuration.
 
+<div>
+<img src="./images/nano-emacs-dark.png">
+</div>
+
 ### Supported programming languages and formats
 - `Bash`
 - `Elisp`
@@ -36,8 +40,10 @@ configuration.
   brew install font-fira-code font-roboto font-roboto-mono font-roboto-mono-nerd-font font-roboto-slab font-victor-mono homebrew/cask-fonts/font-jetbrains-mono
   ```
 
-- `coreutls` (`Mac OS` only)
-  For better listing in `Dired`.
+- `coreutls` (`Mac OS` only) for better listing in `Dired`
+  ```bash
+  brew install coreutls
+  ```
 
 ### Optional requirements
 - [Golangci-lint](https://golangci-lint.run/) for better linting in `Golang`.
