@@ -227,6 +227,13 @@
                          :foreground nano-dark-background
                          :underline 'unspecified)))
 
+(defun nano-theme--dired ()
+  "Derive Dired faces."
+  (with-eval-after-load 'dired
+     (set-face-attribute 'dired-directory nil
+                         :foreground (nord-color "frost-2")
+                         :weight 'bold)))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -243,7 +250,8 @@
   (nano-theme--pip-requirements)
   (nano-theme--ethan-wspace)
   (nano-theme--highlight-indent-guides)
-  (nano-theme--eglot))
+  (nano-theme--eglot)
+  (nano-theme--dired))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
