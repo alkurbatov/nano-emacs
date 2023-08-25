@@ -20,6 +20,7 @@
 
 ;;; Code:
 (require 'ls-lisp)
+(require 'nano-settings)
 
 (defun nano-open-dired ()
   "Open Dired in current folder with additional tweaks."
@@ -34,11 +35,18 @@
 ;; Always do recursive copies without questions
 (setq dired-recursive-copies 'always)
 
-;; Show directories on the top of the list
-(setq dired-listing-switches "-laGh1v --group-directories-first"
-      ls-lisp-use-insert-directory-program nil)
+;; Use GNU ls on OS X
+(when (eq system-type 'darwin)
+  (setq ls-lisp-use-insert-directory-program t
+        insert-directory-program (concat nano-brew-path "/opt/coreutils/bin/gls")))
 
-;; Tweak files and folders deletion.
+;; Tweak displayed fields
+(setq dired-listing-switches
+      (combine-and-quote-strings '("-lahgGk"
+                                   "--group-directories-first"
+                                   "--time-style=+%d %b %Y")))
+
+;; tweak files and folders deletion.
 (setq
    delete-by-moving-to-trash t
    dired-recursive-deletes 'always)

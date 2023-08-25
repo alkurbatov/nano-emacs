@@ -21,12 +21,8 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'nano-settings)
 (require 'org-agenda)
-
-(defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
-  "Name of the directory containing Org files with TOOD items)."
-  :type 'string
-  :group 'nano)
 
 (defun nano-org-time-stamp-inactive ()
   "Insert inactive timestamp with current date."

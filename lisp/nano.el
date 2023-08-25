@@ -30,6 +30,9 @@
 (nano-mode)
 (nano-theme-customize)
 
+;; Settings
+(require 'nano-settings)
+
 ;; Default layout
 (require 'nano-layout)
 
