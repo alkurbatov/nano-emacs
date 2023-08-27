@@ -53,5 +53,8 @@
 
 (bind-key "C-x d" #'nano-open-dired)
 
+(bind-keys :map dired-mode-map
+           ("M-u" . dired-up-directory))
+
 (provide 'nano-mc)
 ;;; nano-mc.el ends here
