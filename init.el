@@ -44,6 +44,7 @@
         counsel                 ; Improves ivy integration
         deft                    ; Quickly browse, filter, and edit plain text notes
         diff-hl                 ; Package for highlighting uncommitted changes
+        elfeed                  ; An Emacs web feeds client
         engine-mode             ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace            ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter     ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
