@@ -24,15 +24,6 @@
 ;; Kill current buffer (instead of asking first buffer name)
 (bind-key* "C-x k" 'kill-current-buffer)
 
-;; M-n for new frame (M-n is unbound in vanilla emacs)
-(defun new-frame ()
-  (interactive)
-  (select-frame (make-frame))
-  (switch-to-buffer "*scratch*"))
-(bind-keys*
- ("M-n" . new-frame)
- ("M-`" . other-frame))
-
 ;; Cmd-return for frame maximization toggle
 (bind-key "<s-return>" 'toggle-frame-maximized)
 
