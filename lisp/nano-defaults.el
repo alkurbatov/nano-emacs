@@ -58,6 +58,14 @@
 ;; Disable some byte compile warnings
 (setq native-comp-async-report-warnings-errors 'silent)
 
+;; Enable yasnippet
+(yas-global-mode)
+
+;; Include snippets into audo-completion if Eglot is used
+(add-hook 'eglot-managed-mode-hook (lambda ()
+                                     (add-to-list 'company-backends
+                                                  '(company-capf :with company-yasnippet))))
+
 ;; Enable autocompletion
 (global-company-mode)
 (define-key company-mode-map [remap indent-for-tab-command]
@@ -163,9 +171,6 @@
 
 ;; Highlight changes if version control enabled
 (global-diff-hl-mode)
-
-;; Enable yasnippet
-(yas-global-mode)
 
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
