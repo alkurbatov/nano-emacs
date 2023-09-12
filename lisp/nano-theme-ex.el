@@ -93,7 +93,7 @@
                         :weight 'bold)))
 
 (defun nano-theme--makefile ()
-  "Customize makefile mode faces."
+  "Customize 'makefile-mode' faces."
   (with-eval-after-load 'make-mode
     (set-face-attribute 'makefile-targets nil
                         :foreground (nord-color "frost-2"))))
@@ -234,24 +234,50 @@
                          :foreground (nord-color "frost-2")
                          :weight 'bold)))
 
+(defun nano-theme--whitespace ()
+  "Derive 'whitespace-mode' faces."
+  (with-eval-after-load 'whitespace
+    (set-face-attribute 'whitespace-newline  nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-missing-newline-at-eof nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-space nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-space-after-tab nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-space-before-tab nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-tab nil
+                        :background nano-dark-background
+                        :foreground nano-dark-faded)
+    (set-face-attribute 'whitespace-trailing nil
+                        :background nano-dark-critical
+                        :foreground nano-dark-faded)))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
   (nano-theme--basics)
   (nano-theme--company)
-  (nano-theme--ivy)
-  (nano-theme--font-lock)
+  (nano-theme--diff-hl)
+  (nano-theme--dired)
+  (nano-theme--eglot)
+  (nano-theme--ethan-wspace)
   (nano-theme--flycheck)
   (nano-theme--flyspell)
+  (nano-theme--font-lock)
+  (nano-theme--highlight-indent-guides)
+  (nano-theme--hl-todo)
+  (nano-theme--ivy)
   (nano-theme--makefile)
   (nano-theme--markdown)
-  (nano-theme--diff-hl)
-  (nano-theme--hl-todo)
   (nano-theme--pip-requirements)
-  (nano-theme--ethan-wspace)
-  (nano-theme--highlight-indent-guides)
-  (nano-theme--eglot)
-  (nano-theme--dired))
+  (nano-theme--whitespace))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here

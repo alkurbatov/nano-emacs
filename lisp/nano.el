@@ -35,6 +35,7 @@
 
 ;; Default layout
 (require 'nano-layout)
+(require 'nano-whitespace)
 
 ;; Nano default settings
 (require 'nano-defaults)
