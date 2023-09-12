@@ -23,7 +23,8 @@
 
 ;;; Code:
 
-(setq straight-check-for-modifications nil) ; No checking (for speedup)
+(setq straight-check-for-modifications nil ; No checking (for speedup)
+      straight-use-package-by-default t)   ; Implicitly adds :straight t to all use-package forms
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
