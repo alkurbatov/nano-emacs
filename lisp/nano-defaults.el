@@ -221,5 +221,9 @@
 ;; Enable embedded abbrev mode
 (setq-default abbrev-mode t)
 
+;; Tweak Eglot
+(setq-default eglot-events-buffer-size 0 ; Disable debug log to speed up things a bit
+              eglot-autoshutdown t)      ; Automatically shutdown backends if last baffer was killed
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
