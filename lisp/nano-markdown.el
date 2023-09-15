@@ -19,18 +19,10 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'thingatpt)
-
-(defun flyspell-ignore-markdown-links ()
-  (not (thing-at-point 'url)))
-
 (defun nano-setup-markdown-mode ()
   "Setup markdown mode with spellcheck."
 
   (setq markdown-command "pandoc")
-
-  ;; Add spell checking ignore rules
-  (put 'markdown-mode 'flyspell-mode-predicate 'flyspell-ignore-markdown-links)
 
   (flyspell-mode)
 
@@ -40,6 +32,9 @@
 (with-eval-after-load "markdown-mode"
   (add-hook 'markdown-mode-hook #'turn-on-smartparens-mode)
   (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode)) ; immediately check whole buffer
+
+;; Use Github Markdown flavor by default (provided by markdown-mode) as it is used most often
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 
 (provide 'nano-markdown)
 ;;; nano-markdown.el ends here
