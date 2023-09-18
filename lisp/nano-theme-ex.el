@@ -112,7 +112,15 @@
      (set-face-attribute 'flycheck-info nil
                          :background nano-dark-salient
                          :foreground nano-dark-background
-                         :underline 'unspecified)))
+                         :underline 'unspecified))
+
+  (with-eval-after-load 'flycheck-inline
+     (set-face-attribute 'flycheck-inline-error nil
+                         :foreground (nord-color "aurora-0"))
+     (set-face-attribute 'flycheck-inline-warning nil
+                         :foreground nano-dark-critical)
+     (set-face-attribute 'flycheck-inline-info nil
+                         :foreground nano-dark-salient)))
 
 (defun nano-theme--diff-hl ()
   "Customize diff-hl colors."

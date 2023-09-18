@@ -168,6 +168,7 @@
 ;; Enable flycheck
 (global-flycheck-mode)
 (global-flycheck-eglot-mode)
+(global-flycheck-inline-mode)
 
 ;; Highlight changes if version control enabled
 (global-diff-hl-mode)
