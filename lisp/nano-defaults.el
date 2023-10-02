@@ -68,6 +68,11 @@
 
 ;; Enable autocompletion
 (global-company-mode)
+
+;; Show autocompletion as soon as possible
+(setq company-idle-delay 0.2
+      company-minimum-prefix-length 2)
+
 (define-key company-mode-map [remap indent-for-tab-command]
             #'company-indent-or-complete-common)
 
@@ -176,6 +181,9 @@
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
 
+;; Enable garbage collector hack to speed up Emacs
+(gcmh-mode 1)
+
 ;; Better work with trailing whitespaces and line endings
 (setq mode-require-final-newline nil)
 (add-hook 'org-mode-hook #'ethan-wspace-mode)
@@ -224,7 +232,11 @@
 
 ;; Tweak Eglot
 (setq-default eglot-events-buffer-size 0 ; Disable debug log to speed up things a bit
-              eglot-autoshutdown t)      ; Automatically shutdown backends if last baffer was killed
+              eglot-autoshutdown t       ; Automatically shutdown backend if last buffer was killed
+              eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
+              eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
+
+(fset #'jsonrpc--log-event #'ignore) ; Remove laggy typing it probably reduces chatty json from lsp to eglot
 
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
