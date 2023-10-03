@@ -93,7 +93,7 @@
                         :weight 'bold)))
 
 (defun nano-theme--makefile ()
-  "Customize 'makefile-mode' faces."
+  "Customize `makefile-mode' faces."
   (with-eval-after-load 'make-mode
     (set-face-attribute 'makefile-targets nil
                         :foreground (nord-color "frost-2"))))
@@ -243,7 +243,7 @@
                          :weight 'bold)))
 
 (defun nano-theme--whitespace ()
-  "Derive 'whitespace-mode' faces."
+  "Derive `whitespace-mode' faces."
   (with-eval-after-load 'whitespace
     (set-face-attribute 'whitespace-newline  nil
                         :background nano-dark-background
