@@ -74,9 +74,11 @@
 (setq bookmark-default-file "~/.nano-bookmark"
       bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
 
+;; Lock files
+(setq lock-file-name-transforms `((".*" ,(concat user-emacs-directory "locks/") t)))
 
 ;; Backup
-(setq backup-directory-alist '(("." . "~/.backups"))
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups/")))
       make-backup-files t     ; backup of a file the first time it is saved
       backup-by-copying t     ; don't clobber symlinks
       vc-make-backup-files t  ; backup version controlled files too as we don't commit on every save

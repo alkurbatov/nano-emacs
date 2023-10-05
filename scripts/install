@@ -22,3 +22,6 @@ cp early-init.el init.el "${EMACS_HOME}"
 for i in lisp snippets; do
     cp -r "${i}" "${EMACS_HOME}"
 done
+
+# Create auxiliary directories
+mkdir -p "${EMACS_HOME}/locks"
