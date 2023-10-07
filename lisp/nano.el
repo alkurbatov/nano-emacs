@@ -93,6 +93,7 @@
 
 ;; Programming languages
 (require 'nano-elisp)
+(require 'nano-c++)
 (require 'nano-go)
 (require 'nano-markdown)
 (require 'nano-python)
