@@ -20,38 +20,19 @@
 
 ;;; Code:
 
-(defun nano-iterm-here ()
-  "Open an iTerm (OSX) and go to the curent directory."
-  (interactive)
-
-  (shell-command "open -a iTerm $PWD" nil nil))
-
 ;; Mouse active in terminal
 (unless (display-graphic-p)
   (xterm-mouse-mode 1)
   (bind-keys*
-   ("<mouse-4>" . 'scroll-down-line)
-   ("<mouse-5>" . 'scroll-up-line)))
+   ("<mouse-4>" . scroll-down-line)
+   ("<mouse-5>" . scroll-up-line)))
 
-;; Default shell in term
-(unless
-    (or (eq system-type 'windows-nt)
-        (not (file-exists-p "/bin/zsh")))
-  (setq-default shell-file-name "/bin/zsh")
-  (setq explicit-shell-file-name "/bin/zsh"))
+;; Mask Eat as xterm to make it compatible with OS X tools
+(setq eat-term-name "xterm-256color")
 
-;; Kill term buffer when exiting
-(defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
-  (if (memq (process-status proc) '(signal exit))
-      (let ((buffer (process-buffer proc)))
-        ad-do-it
-        (kill-buffer buffer))
-    ad-do-it))
-(ad-activate 'term-sentinel)
-
-;; Fix bug on OSX in term mode & zsh (spurious % after each command)
-(add-hook 'term-mode-hook
-      (lambda () (setq buffer-display-table (make-display-table))))
+;; Close terminal without questions
+(setq eat-kill-buffer-on-exit t
+      eat-query-before-killing-running-terminal nil)
 
 (provide 'nano-terminal)
 ;;; nano-terminal.el ends here

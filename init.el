@@ -147,6 +147,17 @@
             :fork (:host github
                    :repo "alkurbatov/flycheck-golangci-lint")))
 
+;; Emulate A Terminal, in a region, in a buffer and in Eshell
+(straight-use-package
+ '(eat :type git
+       :host codeberg
+       :repo "akib/emacs-eat"
+       :files ("*.el" ("term" "term/*.el") "*.texi"
+               "*.ti" ("terminfo/e" "terminfo/e/*")
+               ("terminfo/65" "terminfo/65/*")
+               ("integration" "integration/*")
+               (:exclude ".dir-locals.el" "*-tests.el"))))
+
 ;; Load settings
 (require 'nano)
 
