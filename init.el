@@ -108,10 +108,6 @@
 (straight-use-package
  '(pdf-tools :type git :host github :repo "vedang/pdf-tools"))
 
-;; Denote not yet on ELPA (2022-06-19)
-(straight-use-package
- '(denote :type git :host github :repo "protesilaos/denote"))
-
 ;; Display org properties in the agenda buffer (modified version)
 (straight-use-package
  '(org-agenda-property :type git :host github :repo "Malabarba/org-agenda-property"
