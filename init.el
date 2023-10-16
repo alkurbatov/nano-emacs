@@ -53,7 +53,6 @@
         f                       ; Modern API for working with files and directories
         flycheck                ; Modern on-the-fly syntax checking extension
         flycheck-eglot          ; Flycheck support for eglot
-        flycheck-golangci-lint  ; Flycheck checker for golangci-lint
         flycheck-inline         ; Display Flycheck errors inline
         flyspell-correct-popup  ; Correcting words with flyspell via popup interface
         flyspell-popup          ; Correcting words with flyspell in popup menus
@@ -145,6 +144,12 @@
 ;; pdf-drop-mode
 (straight-use-package
  '(pdf-drop-mode :type git :host github :repo "rougier/pdf-drop-mode"))
+
+;; Flycheck checker for golangci-lint
+(straight-use-package
+ '(flycheck-golangci-lint :type git :host github :repo "weijiangan/flycheck-golangci-lint"
+            :fork (:host github
+                   :repo "alkurbatov/flycheck-golangci-lint")))
 
 ;; Load settings
 (require 'nano)
