@@ -20,6 +20,11 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'elfeed-org)
+
+;; Initialize elfeed-org
+;; By default reads settings from "~/.emacs.d/elfeed.org"
+(elfeed-org)
 
 (bind-key "C-x w" #'elfeed)
 
