@@ -16,6 +16,7 @@ configuration.
 
 ### Supported programming languages and formats
 - `Bash`
+- `C++`
 - `Elisp`
 - `Golang`
 - `Makefile`
@@ -46,6 +47,7 @@ configuration.
   ```
 
 ### Optional requirements
+- [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for better linting in `Golang`.
 - [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP` in `Golang`.
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
