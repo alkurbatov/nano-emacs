@@ -59,6 +59,7 @@
         format-all              ; Auto-format source code in many languages with one command
         gcmh                    ; The Garbage Collector Magic Hack
         git-modes               ; Emacs major modes for Git configuration files
+        google-c-style          ; Google's C/C++ style for c-mode
         golden-ratio            ; Automatic resizing of Emacs windows to the golden ratio
         guess-language          ; Robust automatic language detection
         helpful                 ; A better help buffer
