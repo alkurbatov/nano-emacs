@@ -64,7 +64,6 @@
 (add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
 (add-hook 'text-mode-hook            #'nano-modeline-text-mode)
 (add-hook 'pdf-view-mode-hook        #'nano-modeline-pdf-mode)
-(add-hook 'term-mode-hook            #'nano-modeline-term-mode)
 (add-hook 'xwidget-webkit-mode-hook  #'nano-modeline-xwidget-mode)
 (add-hook 'messages-buffer-mode-hook #'nano-modeline-message-mode)
 
