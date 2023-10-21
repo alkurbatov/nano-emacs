@@ -21,10 +21,14 @@
 ;;; Code:
 (require 'bind-key)
 (require 'elfeed-org)
+(require 'nano-modeline)
 
 ;; Initialize elfeed-org
 ;; By default reads settings from "~/.emacs.d/elfeed.org"
 (elfeed-org)
+
+(add-hook 'elfeed-show-mode-hook     #'nano-modeline-elfeed-entry-mode)
+(add-hook 'elfeed-search-mode-hook   #'nano-modeline-elfeed-search-mode)
 
 (bind-key "C-x w" #'elfeed)
 
