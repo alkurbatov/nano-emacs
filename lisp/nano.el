@@ -75,9 +75,6 @@
 (when (member "-debug" command-line-args)
     (setq debug-on-error t))
 
-;; Mu4e (optional)
-;;(require 'nano-mu4e)
-
 ;; Org mode
 (require 'nano-org)
 

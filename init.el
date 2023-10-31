@@ -42,7 +42,6 @@
         consult-recoll          ; Consult interface for recoll query
         corfu                   ; COmpletion Overlay Region Function
         counsel                 ; Improves ivy integration
-        deft                    ; Quickly browse, filter, and edit plain text notes
         diff-hl                 ; Package for highlighting uncommitted changes
         elfeed                  ; An Emacs web feeds client
         elfeed-org              ; Configure the Elfeed RSS reader with an Orgmode file
@@ -66,7 +65,6 @@
         helpful                 ; A better help buffer
         highlight-indent-guides ; Emacs minor mode to highlight indentation
         hl-todo                 ; Highlight TODO keywords
-        htmlize                 ; Convert buffer text and decorations to HTML
         imenu-list              ; Show imenu entries in a separate buffer
         ligature                ; Display typographical ligatures in Emacs
         magit                   ; A Git porcelain inside Emacs.
@@ -122,14 +120,6 @@
 ;; Replace keywords with SVG tags
 (straight-use-package
  '(svg-tag-mode :type git :host github :repo "rougier/svg-tag-mode"))
-
-;; Dashboard for mu4e
-(straight-use-package
- '(mu4e-dashboard :type git :host github :repo "rougier/mu4e-dashboard"))
-
-;; Folding mode for mu4e
-(straight-use-package
- '(mu4e-folding :type git :host github :repo "rougier/mu4e-folding"))
 
 ;; Relative date formatting
 (straight-use-package
