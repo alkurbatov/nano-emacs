@@ -267,6 +267,22 @@
                         :background nano-dark-critical
                         :foreground nano-dark-faded)))
 
+(defun nano-theme--term ()
+  "Derive `eat' faces."
+  (with-eval-after-load 'term
+    (set-face-attribute 'term-color-blue nil
+                        :foreground (nord-color "frost-2"))
+    (set-face-attribute 'term-color-cyan nil
+                        :foreground (nord-color "frost-0"))
+    (set-face-attribute 'term-color-green nil
+                        :foreground (nord-color "aurora-3"))
+    (set-face-attribute 'term-color-magenta nil
+                        :foreground (nord-color "aurora-4"))
+    (set-face-attribute 'term-color-red nil
+                        :foreground (nord-color "aurora-0"))
+    (set-face-attribute 'term-color-yellow nil
+                        :foreground (nord-color "aurora-2"))))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -285,7 +301,8 @@
   (nano-theme--makefile)
   (nano-theme--markdown)
   (nano-theme--pip-requirements)
-  (nano-theme--whitespace))
+  (nano-theme--whitespace)
+  (nano-theme--term))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
