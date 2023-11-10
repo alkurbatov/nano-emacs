@@ -270,18 +270,49 @@
 (defun nano-theme--term ()
   "Derive `eat' faces."
   (with-eval-after-load 'term
-    (set-face-attribute 'term-color-blue nil
+    (set-face-attribute 'ansi-color-blue nil
                         :foreground (nord-color "frost-2"))
-    (set-face-attribute 'term-color-cyan nil
+    (set-face-attribute 'ansi-color-bright-blue nil
+                        :background (nord-color "frost-1"))
+    (set-face-attribute 'ansi-color-cyan nil
                         :foreground (nord-color "frost-0"))
-    (set-face-attribute 'term-color-green nil
+    (set-face-attribute 'ansi-color-bright-cyan nil
+                        :background (nord-color "frost-0"))
+    (set-face-attribute 'ansi-color-green nil
                         :foreground (nord-color "aurora-3"))
-    (set-face-attribute 'term-color-magenta nil
+    (set-face-attribute 'ansi-color-bright-green nil
+                        :background (nord-color "aurora-3"))
+    (set-face-attribute 'ansi-color-magenta nil
                         :foreground (nord-color "aurora-4"))
-    (set-face-attribute 'term-color-red nil
+    (set-face-attribute 'ansi-color-bright-magenta nil
+                        :background (nord-color "aurora-4"))
+    (set-face-attribute 'ansi-color-red nil
                         :foreground (nord-color "aurora-0"))
+    (set-face-attribute 'ansi-color-bright-red nil
+                        :background (nord-color "aurora-1"))
+    (set-face-attribute 'ansi-color-yellow nil
+                        :foreground (nord-color "aurora-2"))
+    (set-face-attribute 'ansi-color-bright-yellow nil
+                        :background (nord-color "aurora-2"))
+
+    (set-face-attribute 'term-color-blue nil
+                        :foreground (nord-color "frost-2")
+                        :background (nord-color "frost-1"))
+    (set-face-attribute 'term-color-cyan nil
+                        :foreground (nord-color "frost-0")
+                        :background (nord-color "frost-0"))
+    (set-face-attribute 'term-color-green nil
+                        :foreground (nord-color "aurora-3")
+                        :background (nord-color "aurora-3"))
+    (set-face-attribute 'term-color-magenta nil
+                        :foreground (nord-color "aurora-4")
+                        :background (nord-color "aurora-4"))
+    (set-face-attribute 'term-color-red nil
+                        :foreground (nord-color "aurora-0")
+                        :background (nord-color "aurora-1"))
     (set-face-attribute 'term-color-yellow nil
-                        :foreground (nord-color "aurora-2"))))
+                        :foreground (nord-color "aurora-2")
+                        :background (nord-color "aurora-2"))))
 
 (defun nano-theme-customize ()
   "Customize many, many faces."
