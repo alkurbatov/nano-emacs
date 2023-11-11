@@ -34,5 +34,7 @@
 (setq eat-kill-buffer-on-exit t
       eat-query-before-killing-running-terminal nil)
 
+(add-hook 'eat-mode-hook #'nano-modeline-eat-mode)
+
 (provide 'nano-terminal)
 ;;; nano-terminal.el ends here
