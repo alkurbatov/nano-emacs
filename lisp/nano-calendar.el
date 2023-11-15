@@ -26,11 +26,11 @@
     (setq calendar-week-start-day 1           ; Start week from Monday
           calendar-date-style 'european       ; Use the DD/MM/YYYY format for the diary dates
 
-          calendar-day-name-array     ["Воскресенье" "Понедельник" "Вторник" "Среда" 
+          calendar-day-name-array     ["Воскресенье" "Понедельник" "Вторник" "Среда"
                                        "Четверг" "Пятница" "Суббота"]
           calendar-day-header-array   ["Вс" "Пн" "Вт" "Ср" "Чт" "Пт" "Сб"]
           calendar-day-abbrev-array   ["Вск" "Пнд" "Втр" "Сре" "Чтв" "Птн" "Суб"]
-          calendar-month-name-array   ["Январь" "Февраль" "Март" "Апрель" "Май" 
+          calendar-month-name-array   ["Январь" "Февраль" "Март" "Апрель" "Май"
                                        "Июнь" "Июль" "Август" "Сентябрь"
                                        "Октябрь" "Ноябрь" "Декабрь"]
           calendar-month-abbrev-array ["Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек"]))
