@@ -24,7 +24,8 @@
 
   (eglot-ensure))
 
-(add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
+(with-eval-after-load "c++-ts-mode"
+  (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot))
 
 ;; Enable syntax highlighting for C++-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-ts-mode))

@@ -59,7 +59,8 @@
 
   (eglot-ensure))
 
-(add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot)
+(with-eval-after-load "go-ts-mode"
+  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
 
 ;; Enable syntax highlighting for Golang-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
