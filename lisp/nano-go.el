@@ -20,9 +20,7 @@
 
 ;;; Code:
 (require 'bind-key)
-(require 'flycheck-eglot)
 (require 'format-all)
-(require 'flycheck-golangci-lint)
 (require 'eglot)
 (require 'project)
 
@@ -49,13 +47,6 @@
 
 (defun nano-setup-go-with-eglot ()
   "Setup and enable eglot for Go."
-
-  (setq flycheck-golangci-lint-tests t)
-  (setq flycheck-golangci-lint-fast t)
-  (flycheck-golangci-lint-setup)
-
-  ;; Allow other checkers
-  (setq flycheck-eglot-exclusive nil)
 
   (eglot-ensure))
 

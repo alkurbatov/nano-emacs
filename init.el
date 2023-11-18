@@ -51,9 +51,6 @@
         evil-nerd-commenter     ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
         exec-path-from-shell    ; Make Emacs use the $PATH set up by the user's shell
         f                       ; Modern API for working with files and directories
-        flycheck                ; Modern on-the-fly syntax checking extension
-        flycheck-eglot          ; Flycheck support for eglot
-        flycheck-inline         ; Display Flycheck errors inline
         flyspell-correct-popup  ; Correcting words with flyspell via popup interface
         flyspell-popup          ; Correcting words with flyspell in popup menus
         format-all              ; Auto-format source code in many languages with one command
@@ -133,11 +130,9 @@
 (straight-use-package
  '(pdf-drop-mode :type git :host github :repo "rougier/pdf-drop-mode"))
 
-;; Flycheck checker for golangci-lint
+;; Collection of flymake checkers
 (straight-use-package
- '(flycheck-golangci-lint :type git :host github :repo "weijiangan/flycheck-golangci-lint"
-            :fork (:host github
-                   :repo "alkurbatov/flycheck-golangci-lint")))
+ '(flymake-collection :type git :host github :repo "mohkale/flymake-collection"))
 
 ;; Emulate A Terminal, in a region, in a buffer and in Eshell
 (straight-use-package

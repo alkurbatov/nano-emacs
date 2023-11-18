@@ -91,8 +91,5 @@
 ;; In some modes we don't want to scale anything
 (setq golden-ratio-exclude-modes '("dired-mode"))
 
-;; Hide indicatiors in left-fringe (GUI mode)
-(setq flycheck-indication-mode nil)
-
 (provide 'nano-layout)
 ;;; nano-layout.el ends here

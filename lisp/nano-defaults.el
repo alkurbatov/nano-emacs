@@ -170,10 +170,9 @@
 (setq global-auto-revert-non-file-buffers t
       dired-auto-revert-buffer t)
 
-;; Enable flycheck
-(global-flycheck-mode)
-(global-flycheck-eglot-mode)
-(global-flycheck-inline-mode)
+;; Enable flymake
+(add-hook 'prog-mode-hook #'flymake-mode)
+(add-hook 'text-mode-hook #'flymake-mode)
 
 ;; Highlight changes if version control enabled
 (global-diff-hl-mode)

@@ -23,7 +23,7 @@
 (require 'nano-faces)
 
 (defun nano-theme--basics ()
-  "Customize basic Emacs faces and nano-faces."
+  "Customize basic Emacs faces and `nano-faces'."
 
   ;; Increase font size (default is 140, enforced by nano-theme)
   (set-face-attribute 'default nil :height 150)
@@ -98,28 +98,26 @@
     (set-face-attribute 'makefile-targets nil
                         :foreground (nord-color "frost-2"))))
 
-(defun nano-theme--flycheck ()
-  "Derive flycheck faces."
-  (with-eval-after-load 'flycheck
-     (set-face-attribute 'flycheck-error nil
+(defun nano-theme--flymake ()
+  "Derive flymake faces."
+  (with-eval-after-load 'flymake
+     (set-face-attribute 'flymake-error nil
                          :background (nord-color "aurora-0")
-                         :foreground nano-dark-background
+                         :foreground nano-dark-foreground
                          :underline 'unspecified)
-     (set-face-attribute 'flycheck-warning nil
+     (set-face-attribute 'flymake-error-echo nil
+                         :foreground (nord-color "aurora-0"))
+     (set-face-attribute 'flymake-warning nil
                          :background nano-dark-critical
                          :foreground nano-dark-background
                          :underline 'unspecified)
-     (set-face-attribute 'flycheck-info nil
+     (set-face-attribute 'flymake-warning-echo nil
+                         :foreground nano-dark-critical)
+     (set-face-attribute 'flymake-note nil
                          :background nano-dark-salient
                          :foreground nano-dark-background
-                         :underline 'unspecified))
-
-  (with-eval-after-load 'flycheck-inline
-     (set-face-attribute 'flycheck-inline-error nil
-                         :foreground (nord-color "aurora-0"))
-     (set-face-attribute 'flycheck-inline-warning nil
-                         :foreground nano-dark-critical)
-     (set-face-attribute 'flycheck-inline-info nil
+                         :underline 'unspecified)
+     (set-face-attribute 'flymake-note-echo nil
                          :foreground nano-dark-salient)))
 
 (defun nano-theme--diff-hl ()
@@ -323,7 +321,7 @@
   (nano-theme--dired)
   (nano-theme--eglot)
   (nano-theme--ethan-wspace)
-  (nano-theme--flycheck)
+  (nano-theme--flymake)
   (nano-theme--flyspell)
   (nano-theme--font-lock)
   (nano-theme--highlight-indent-guides)

@@ -59,7 +59,6 @@
  ;; Ivy-based interface to shell and system tools
  ("C-c c" . counsel-compile)
  ("C-c k" . counsel-rg)
- ("C-c n" . counsel-fzf)
  ("C-x l" . counsel-locate)
  ("C-c J" . counsel-file-jump)
  ("C-S-o" . counsel-rhythmbox)

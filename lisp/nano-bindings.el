@@ -62,5 +62,9 @@
 (bind-key "C-c l" #'avy-copy-line)
 (bind-key "C-c m" #'avy-move-line)
 
+;; Flymake
+(bind-key "C-c n" #'flymake-goto-next-error)
+(bind-key "C-c p" #'flymake-goto-prev-error)
+
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here

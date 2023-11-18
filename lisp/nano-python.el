@@ -31,20 +31,19 @@
 For additional settings please refer to Pyright documentation
 https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
 
+  (setq poetry-tracking-strategy 'switch-buffer)
   (poetry-tracking-mode)
 
-  ;; Allow other checkers
-  (setq flycheck-eglot-exclusive nil)
+  ;; Ask Eglot to disable diagnostic, we will use other linters instead.
+  (setq eglot-stay-out-of '(flymake))
+
+  ;; Configure linting
+  (add-hook 'flymake-diagnostic-functions #'flymake-collection-flake8 nil t)
+  (add-hook 'flymake-diagnostic-functions #'flymake-collection-mypy nil t)
 
   (eglot-ensure))
 
 (with-eval-after-load "python"
-  (setq poetry-tracking-strategy 'switch-buffer)
-
-  ;; Configure linting
-  (add-to-list 'flycheck-checkers 'python-flycheck)
-  (add-to-list 'flycheck-checkers 'python-mypy)
-
   (add-hook 'python-ts-mode-hook #'nano-setup-python-with-eglot))
 
 ;; Let Emacs guess Python indent silently
