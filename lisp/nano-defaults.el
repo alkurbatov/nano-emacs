@@ -235,8 +235,7 @@
               eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
               eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
 
-(add-to-list 'eglot-ignored-server-capabilities ; Disable annoying inlay hints
-             :inlayHintProvider)
+(setq eglot-ignored-server-capabilities '(:inlayHintProvider)) ; Disable annoying inlay hints
 
 (fset #'jsonrpc--log-event #'ignore) ; Remove laggy typing it probably reduces chatty json from lsp to eglot
 
