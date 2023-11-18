@@ -20,12 +20,11 @@
 
 ;;; Code:
 (defun nano-setup-c++-with-eglot ()
-  "Setup and enable eglot for C++."
+  "Setup and enable Eglot for C++."
 
   (eglot-ensure))
 
-(with-eval-after-load "c++-ts-mode"
-  (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot))
+(add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
 
 ;; Enable syntax highlighting for C++-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-ts-mode))
