@@ -63,6 +63,8 @@
 
 ;; Include snippets into audo-completion if Eglot is used
 (add-hook 'eglot-managed-mode-hook (lambda ()
+                                     (setq eldoc-box-hover-mode t)
+
                                      (add-to-list 'company-backends
                                                   '(company-capf :with company-yasnippet))))
 

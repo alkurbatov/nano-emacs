@@ -46,6 +46,7 @@
         elfeed                  ; An Emacs web feeds client
         elfeed-org              ; Configure the Elfeed RSS reader with an Orgmode file
         editorconfig            ; EditorConfig plugin for Emacs
+        eldoc-box               ; Childframe doc for eglot and anything that uses eldoc
         engine-mode             ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace            ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter     ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
