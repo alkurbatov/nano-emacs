@@ -26,6 +26,9 @@
 
 (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
 
+;; Force C++ mode for all headers
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-ts-mode))
+
 ;; Enable syntax highlighting for C++-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-ts-mode))
 (add-to-list 'auto-mode-alist '("CMakeLists.txt\\'" . cmake-ts-mode))
