@@ -228,6 +228,10 @@
 (defun nano-theme--eglot ()
   "Derive eglot faces."
   (with-eval-after-load 'eglot
+     (set-face-attribute 'eglot-diagnostic-tag-deprecated-face nil
+                         :background nano-dark-faded
+                         :foreground nano-dark-foreground
+                         :underline 'unspecified)
      (set-face-attribute 'eglot-diagnostic-tag-unnecessary-face nil
                          :background nano-dark-salient
                          :foreground nano-dark-background
