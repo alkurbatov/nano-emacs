@@ -1,0 +1,4 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: std::cout << ${1:Output} << '\n';
+# --
+std::cout << ${1:Output} << '\n';
