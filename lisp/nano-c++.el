@@ -24,6 +24,19 @@
 
   (eglot-ensure))
 
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(c++-ts-mode
+                 . ("clangd"
+                    "-j=4"
+                    "--log=error"
+                    "--clang-tidy"
+                    "--completion-style=detailed"
+                    "--background-index"
+                    "--pch-storage=memory"
+                    "--header-insertion=never"
+                    "--header-insertion-decorators=0"))))
+
 (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
 
 ;; Force C++ mode for all headers
