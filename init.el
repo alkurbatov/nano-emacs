@@ -58,7 +58,6 @@
         gcmh                     ; The Garbage Collector Magic Hack
         git-modes                ; Emacs major modes for Git configuration files
         golden-ratio             ; Automatic resizing of Emacs windows to the golden ratio
-        guess-language           ; Robust automatic language detection
         helpful                  ; A better help buffer
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
@@ -125,10 +124,6 @@
 ;; org imenu
 (straight-use-package
  '(org-imenu :type git :host github :repo "rougier/org-imenu"))
-
-;; pdf-drop-mode
-(straight-use-package
- '(pdf-drop-mode :type git :host github :repo "rougier/pdf-drop-mode"))
 
 ;; Collection of flymake checkers
 (straight-use-package
