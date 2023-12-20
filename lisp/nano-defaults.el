@@ -176,6 +176,9 @@
 (add-hook 'prog-mode-hook #'flymake-mode)
 (add-hook 'text-mode-hook #'flymake-mode)
 
+;; Enable selection highlighting
+(selection-highlight-mode)
+
 ;; Highlight changes if version control enabled
 (global-diff-hl-mode)
 

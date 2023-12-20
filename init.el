@@ -33,57 +33,57 @@
 (require 'nano-package)
 
 (setq package-list
-      '(ag                      ; Integration of ag search utility
-        avy                     ; Jump to things in Emacs tree-style
-        bind-key                ; A simple way to manage personal keybindings
-        cape                    ; Completion At Point Extensions
-        company                 ; Modular auto-completion framework
-        consult                 ; Consulting completing-read
-        consult-recoll          ; Consult interface for recoll query
-        corfu                   ; COmpletion Overlay Region Function
-        counsel                 ; Improves ivy integration
-        diff-hl                 ; Package for highlighting uncommitted changes
-        elfeed                  ; An Emacs web feeds client
-        elfeed-org              ; Configure the Elfeed RSS reader with an Orgmode file
-        editorconfig            ; EditorConfig plugin for Emacs
-        eldoc-box               ; Childframe doc for eglot and anything that uses eldoc
-        engine-mode             ; Minor mode for defining and querying search engines through Emacs
-        ethan-wspace            ; A non-intrusive emacs customization for people who are OCD about whitespace
-        evil-nerd-commenter     ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
-        exec-path-from-shell    ; Make Emacs use the $PATH set up by the user's shell
-        f                       ; Modern API for working with files and directories
-        flyspell-correct-popup  ; Correcting words with flyspell via popup interface
-        flyspell-popup          ; Correcting words with flyspell in popup menus
-        format-all              ; Auto-format source code in many languages with one command
-        gcmh                    ; The Garbage Collector Magic Hack
-        git-modes               ; Emacs major modes for Git configuration files
-        golden-ratio            ; Automatic resizing of Emacs windows to the golden ratio
-        guess-language          ; Robust automatic language detection
-        helpful                 ; A better help buffer
-        highlight-indent-guides ; Emacs minor mode to highlight indentation
-        hl-todo                 ; Highlight TODO keywords
-        imenu-list              ; Show imenu entries in a separate buffer
-        ligature                ; Display typographical ligatures in Emacs
-        magit                   ; A Git porcelain inside Emacs.
-        marginalia              ; Enrich existing commands with completion annotations
-        markdown-mode           ; Major mode for Markdown-formatted text
-        markdown-toc            ; Generate a TOC in markdown file
-        multi-term              ; Managing multiple terminal buffers in Emacs.
-        orderless               ; Completion style for matching regexps in any order
-        org-auto-tangle         ; Tangle org file when it is saved
-        org-superstar           ; Make org-mode stars a little more super
-        pinentry                ; GnuPG Pinentry server implementation
-        poetry                  ; Python dependency management and packaging in Emacs
-        protobuf-mode           ; Major mode for editing protocol buffers
-        realgud                 ; The Grand "Cathedral" Debugger rewrite
-        ssh-config-mode         ; Emacs mode for editing ssh config files
-        smartparens             ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
-        smex                    ; A smart M-x enhancement for Emacs
-        treesit-auto            ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
-        vertico                 ; VERTical Interactive Completion
-        yaml-mode               ; YAML mode
-        yasnippet               ; A template system for Emacs
-        which-key))             ; Display available keybindings in popup
+      '(ag                       ; Integration of ag search utility
+        avy                      ; Jump to things in Emacs tree-style
+        bind-key                 ; A simple way to manage personal keybindings
+        cape                     ; Completion At Point Extensions
+        company                  ; Modular auto-completion framework
+        consult                  ; Consulting completing-read
+        consult-recoll           ; Consult interface for recoll query
+        corfu                    ; COmpletion Overlay Region Function
+        counsel                  ; Improves ivy integration
+        diff-hl                  ; Package for highlighting uncommitted changes
+        elfeed                   ; An Emacs web feeds client
+        elfeed-org               ; Configure the Elfeed RSS reader with an Orgmode file
+        editorconfig             ; EditorConfig plugin for Emacs
+        eldoc-box                ; Childframe doc for eglot and anything that uses eldoc
+        engine-mode              ; Minor mode for defining and querying search engines through Emacs
+        ethan-wspace             ; A non-intrusive emacs customization for people who are OCD about whitespace
+        evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
+        exec-path-from-shell     ; Make Emacs use the $PATH set up by the user's shell
+        f                        ; Modern API for working with files and directories
+        flyspell-correct-popup   ; Correcting words with flyspell via popup interface
+        flyspell-popup           ; Correcting words with flyspell in popup menus
+        format-all               ; Auto-format source code in many languages with one command
+        gcmh                     ; The Garbage Collector Magic Hack
+        git-modes                ; Emacs major modes for Git configuration files
+        golden-ratio             ; Automatic resizing of Emacs windows to the golden ratio
+        guess-language           ; Robust automatic language detection
+        helpful                  ; A better help buffer
+        highlight-indent-guides  ; Emacs minor mode to highlight indentation
+        hl-todo                  ; Highlight TODO keywords
+        imenu-list               ; Show imenu entries in a separate buffer
+        ligature                 ; Display typographical ligatures in Emacs
+        magit                    ; A Git porcelain inside Emacs.
+        marginalia               ; Enrich existing commands with completion annotations
+        markdown-mode            ; Major mode for Markdown-formatted text
+        markdown-toc             ; Generate a TOC in markdown file
+        multi-term               ; Managing multiple terminal buffers in Emacs.
+        orderless                ; Completion style for matching regexps in any order
+        org-auto-tangle          ; Tangle org file when it is saved
+        org-superstar            ; Make org-mode stars a little more super
+        pinentry                 ; GnuPG Pinentry server implementation
+        poetry                   ; Python dependency management and packaging in Emacs
+        protobuf-mode            ; Major mode for editing protocol buffers
+        realgud                  ; The Grand "Cathedral" Debugger rewrite
+        ssh-config-mode          ; Emacs mode for editing ssh config files
+        smartparens              ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
+        smex                     ; A smart M-x enhancement for Emacs
+        treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
+        vertico                  ; VERTical Interactive Completion
+        yaml-mode                ; YAML mode
+        yasnippet                ; A template system for Emacs
+        which-key))              ; Display available keybindings in popup
 
 ;; Install packages that are not yet installed
 (dolist (package package-list)
@@ -144,6 +144,10 @@
                ("terminfo/65" "terminfo/65/*")
                ("integration" "integration/*")
                (:exclude ".dir-locals.el" "*-tests.el"))))
+
+;; An Emacs minor mode for highlighting matches to the selection
+(straight-use-package
+ '(selection-highlight-mode :type git :host github :repo "balloneij/selection-highlight-mode"))
 
 ;; Load settings
 (require 'nano)
