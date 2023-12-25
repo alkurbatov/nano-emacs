@@ -21,6 +21,7 @@
 ;;; Code:
 (require 'nano-colors)
 (require 'nano-faces)
+(require 'nano-theme)
 
 (defun nano-theme--basics ()
   "Customize basic Emacs faces and `nano-faces'."
@@ -316,6 +317,13 @@
                         :foreground (nord-color "aurora-2")
                         :background (nord-color "aurora-2"))))
 
+(defun nano-theme--calendar ()
+  "Derive `calendar' faces."
+  (with-eval-after-load 'calendar
+    (set-face-attribute 'holiday nil
+                        :background 'unspecified
+                        :foreground (nord-color "aurora-2"))))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -335,7 +343,8 @@
   (nano-theme--markdown)
   (nano-theme--pip-requirements)
   (nano-theme--whitespace)
-  (nano-theme--term))
+  (nano-theme--term)
+  (nano-theme--calendar))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here

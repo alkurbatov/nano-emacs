@@ -20,8 +20,9 @@
 
 ;;; Code:
 (require 'calendar)
+(require 'russian-holidays)
 
-;; Set Russian names and abbrevs
+;; Set Russian names, abbrevs and holidays
 (if (string= (getenv "LANG") "ru_RU.UTF-8")
     (setq calendar-week-start-day 1           ; Start week from Monday
           calendar-date-style 'european       ; Use the DD/MM/YYYY format for the diary dates
@@ -33,7 +34,12 @@
           calendar-month-name-array   ["Январь" "Февраль" "Март" "Апрель" "Май"
                                        "Июнь" "Июль" "Август" "Сентябрь"
                                        "Октябрь" "Ноябрь" "Декабрь"]
-          calendar-month-abbrev-array ["Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек"]))
+          calendar-month-abbrev-array ["Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек"]
+
+          calendar-holidays russian-holidays))
+
+;; Highlight holidays by default
+(setq calendar-mark-holidays-flag t)
 
 (provide 'nano-calendar)
 ;;; nano-calendar.el ends here

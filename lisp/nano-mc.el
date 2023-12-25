@@ -46,7 +46,7 @@
                                    "--group-directories-first"
                                    "--time-style=+%d %b %Y")))
 
-;; tweak files and folders deletion.
+;; Tweak files and folders deletion.
 (setq
    delete-by-moving-to-trash t
    dired-recursive-deletes 'always)
