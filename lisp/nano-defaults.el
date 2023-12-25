@@ -35,6 +35,9 @@
               bidi-paragraph-direction 'left-to-right ; Faster
               truncate-string-ellipsis "…")           ; Nicer ellipsis
 
+; Increase read size per process
+(setq-default read-process-output-max (* 1024 1024))
+
 ;; No confirmation for visiting non-existent files
 (setq-default confirm-nonexistent-file-or-buffer nil)
 
