@@ -51,6 +51,9 @@
   (eglot-ensure))
 
 (with-eval-after-load "go-ts-mode"
+  ;; Sync indent with global settings
+  (setq go-ts-mode-indent-offset 4)
+
   (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
 
 ;; Enable syntax highlighting for Golang-related tools configuration files
