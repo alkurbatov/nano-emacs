@@ -59,7 +59,7 @@
 (setq savehist-file "~/.nano-savehist")
 (savehist-mode 1)
 
-;; Remove text properties for kill ring entries
+;; Remove text properties for kill ring entries. This saves a lot of time when loading it.
 ;; See https://emacs.stackexchange.com/questions/4187
 (defun unpropertize-kill-ring ()
   (setq kill-ring (mapcar 'substring-no-properties kill-ring)))

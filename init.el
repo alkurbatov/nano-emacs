@@ -37,7 +37,6 @@
         avy                      ; Jump to things in Emacs tree-style
         bind-key                 ; A simple way to manage personal keybindings
         cape                     ; Completion At Point Extensions
-        company                  ; Modular auto-completion framework
         consult                  ; Consulting completing-read
         consult-recoll           ; Consult interface for recoll query
         corfu                    ; COmpletion Overlay Region Function
@@ -62,6 +61,7 @@
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
         imenu-list               ; Show imenu entries in a separate buffer
+        kind-icon                ; Completion kind text/icon prefix labelling for emacs in-region completion
         ligature                 ; Display typographical ligatures in Emacs
         magit                    ; A Git porcelain inside Emacs.
         marginalia               ; Enrich existing commands with completion annotations
@@ -110,21 +110,9 @@
  '(org-agenda-property :type git :host github :repo "Malabarba/org-agenda-property"
                        :fork (:host github :repo "rougier/org-agenda-property")))
 
-;; SVG tags, progress bars & icons
-(straight-use-package
- '(svg-lib :type git :host github :repo "rougier/svg-lib"))
-
-;; Replace keywords with SVG tags
-(straight-use-package
- '(svg-tag-mode :type git :host github :repo "rougier/svg-tag-mode"))
-
 ;; Relative date formatting
 (straight-use-package
  '(relative-date :type git :host github :repo "rougier/relative-date"))
-
-;; org imenu
-(straight-use-package
- '(org-imenu :type git :host github :repo "rougier/org-imenu"))
 
 ;; Collection of flymake checkers
 (straight-use-package
@@ -144,6 +132,14 @@
 ;; An Emacs minor mode for highlighting matches to the selection
 (straight-use-package
  '(selection-highlight-mode :type git :host github :repo "balloneij/selection-highlight-mode"))
+
+;; Corfu popup on terminal
+(straight-use-package
+ '(corfu-terminal type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
+
+;; Corfu-popupinfo on terminal
+(straight-use-package
+ '(corfu-doc-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git"))
 
 ;; Load settings
 (require 'nano)

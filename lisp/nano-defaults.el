@@ -20,8 +20,11 @@
 
 ;;; Code:
 (require 'bind-key)
+(require 'cape)
+(require 'corfu)
 (require 'exec-path-from-shell)
 (require 'marginalia)
+(require 'orderless)
 (require 'smartparens-config)
 (require 'treesit-auto)
 
@@ -64,26 +67,43 @@
 ;; Enable yasnippet
 (yas-global-mode)
 
-;; Include snippets into audo-completion if Eglot is used
-(add-hook 'eglot-managed-mode-hook (lambda ()
-                                     (setq eldoc-box-hover-mode t)
-
-                                     (add-to-list 'company-backends
-                                                  '(company-capf :with company-yasnippet))))
-
 ;; Enable autocompletion
-(global-company-mode)
+(setq corfu-cycle t                ; Enable cycling for `corfu-next/previous'
+      corfu-auto t                 ; Enable auto completion
+      corfu-auto-delay 60.0        ; Delay before auto-completion shows up
+      corfu-separator ?\s          ; Orderless field separator
+      corfu-quit-at-boundary nil   ; Never quit at completion boundary
+      corfu-quit-no-match t        ; Quit when no match
+      corfu-preview-current nil    ; Disable current candidate preview
+      corfu-preselect-first nil    ; Disable candidate preselection
+      corfu-on-exact-match nil     ; Configure handling of exact matches
+      corfu-echo-documentation nil ; Disable documentation in the echo area
+      corfu-scroll-margin 5)       ; Use scroll margin
 
-;; Show autocompletion as soon as possible
-(setq company-idle-delay 0.2
-      company-minimum-prefix-length 2)
+(global-corfu-mode)
+(corfu-popupinfo-mode)
 
-(define-key company-mode-map [remap indent-for-tab-command]
-            #'company-indent-or-complete-common)
+;; Enable autocompletion via popup menu in terminal
+(unless (display-graphic-p)
+  (corfu-terminal-mode +1)
+  (corfu-doc-terminal-mode +1))
+
+;; TAB cycle if there are only few candidates
+(setq completion-cycle-threshold 3)
+
+;; Enable indentation+completion using the TAB key.
+;; completion-at-point is often bound to M-TAB.
+(setq tab-always-indent 'complete)
+
+;; Enable nice icons in completion menu
+(setq kind-icon-default-face 'corfu-default)
+(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
+
+;; Completion in source blocks
+(add-to-list 'completion-at-point-functions 'cape-symbol)
 
 ;; Completion style, see
 ;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
-(require 'orderless)
 (setq completion-styles '(substring orderless basic)
       orderless-component-separator 'orderless-escapable-split-on-space
       completion-category-overrides '((file (styles basic partial-completion)))
@@ -244,6 +264,13 @@
               eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
 
 (setq eglot-ignored-server-capabilities '(:inlayHintProvider)) ; Disable annoying inlay hints
+
+(add-hook 'eglot-managed-mode-hook (lambda ()
+                                     (setq eldoc-box-hover-mode t)))
+
+;; Specify explicitly to use Orderless for Eglot
+(setq completion-category-overrides '((eglot (styles orderless))
+                                      (eglot-capf (styles orderless))))
 
 (fset #'jsonrpc--log-event #'ignore) ; Remove laggy typing it probably reduces chatty json from lsp to eglot
 

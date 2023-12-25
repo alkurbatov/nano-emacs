@@ -59,20 +59,6 @@
   (set-face-attribute 'font-lock-variable-name-face nil
                       :weight 'regular))
 
-(defun nano-theme--company ()
-  "Customize company tooltip window."
-  (with-eval-after-load 'company
-    (set-face-attribute 'company-tooltip-common nil
-                        :foreground (nord-color "frost-0"))
-    (set-face-attribute 'company-tooltip-common-selection nil
-                        :background nano-dark-faded
-                        :foreground (nord-color "frost-0")
-                        :weight 'bold)
-    (set-face-attribute 'company-tooltip-selection nil
-                        :background nano-dark-faded
-                        :foreground nano-dark-strong
-                        :weight 'bold)))
-
 (defun nano-theme--ivy ()
   "Customize ivy faces."
   (with-eval-after-load 'ivy
@@ -328,7 +314,6 @@
   "Customize many, many faces."
   (nano-faces)
   (nano-theme--basics)
-  (nano-theme--company)
   (nano-theme--diff-hl)
   (nano-theme--dired)
   (nano-theme--eglot)
