@@ -306,6 +306,8 @@
 (defun nano-theme--calendar ()
   "Derive `calendar' faces."
   (with-eval-after-load 'calendar
+    (set-face-attribute 'calendar-today nil
+                        :background 'unspecified)
     (set-face-attribute 'holiday nil
                         :background 'unspecified
                         :foreground (nord-color "aurora-2"))))
