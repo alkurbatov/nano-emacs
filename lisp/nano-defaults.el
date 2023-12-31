@@ -99,8 +99,11 @@
 (setq kind-icon-default-face 'corfu-default)
 (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
 
-;; Completion in source blocks
-(add-to-list 'completion-at-point-functions 'cape-symbol)
+;; Enable code compeletion extensions (order matters!)
+(add-to-list 'completion-at-point-functions #'cape-file)
+(add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
+(add-to-list 'completion-at-point-functions #'cape-symbol)
+(add-to-list 'completion-at-point-functions #'cape-keyword)
 
 ;; Completion style, see
 ;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
