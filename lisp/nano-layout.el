@@ -58,7 +58,8 @@
                                      "__" "~~" "~~>" "~>" "~-" "~@" "$>" "^=" "]#"))
 (global-ligature-mode t)
 
-(global-hl-line-mode 1)
+(add-hook 'prog-mode-hook            #'hl-line-mode)
+(add-hook 'text-mode-hook            #'hl-line-mode)
 
 ;; Enable nano-modeline in different modes
 (add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
