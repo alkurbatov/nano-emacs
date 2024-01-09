@@ -67,7 +67,7 @@
 
 ;; Recentf files
 (setq recentf-max-menu-items 25)
-(setq recentf-save-file     "~/.nano-recentf")
+(setq recentf-save-file     (concat user-emacs-directory "recentf"))
 (recentf-mode 1)
 
 ;; Bookmarks
