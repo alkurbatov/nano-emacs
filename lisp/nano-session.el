@@ -66,8 +66,9 @@
 (add-hook 'kill-emacs-hook #'unpropertize-kill-ring)
 
 ;; Recentf files
-(setq recentf-max-menu-items 25)
-(setq recentf-save-file     (concat user-emacs-directory "recentf"))
+(setq recentf-max-menu-items 25
+      recentf-save-file (concat user-emacs-directory "recentf")
+      recentf-exclude '(".elfeed/index$" ".git/COMMIT_EDITMSG$")) ; ignore some files in recentf
 (recentf-mode 1)
 
 ;; Bookmarks
