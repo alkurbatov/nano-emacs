@@ -61,7 +61,6 @@
 ;; Prefer recently used completions
 (corfu-history-mode 1)
 
-(setq savehist-file "~/.nano-savehist")
 (savehist-mode 1)
 
 ;; Remove text properties for kill ring entries. This saves a lot of time when loading it.
@@ -72,7 +71,6 @@
 
 ;; Recentf files
 (setq recentf-max-menu-items 25
-      recentf-save-file (concat user-emacs-directory "recentf")
       recentf-exclude '(".elfeed/index$" ".git/COMMIT_EDITMSG$")) ; ignore some files in recentf
 (recentf-mode 1)
 
