@@ -34,6 +34,7 @@
         face-name-history
         bookmark-history
         ivy-history
+        corfu-history
         counsel-M-x-history
         file-name-history
         counsel-minibuffer-history))
@@ -50,11 +51,15 @@
 (put 'face-name-history          'history-length 25)
 (put 'bookmark-history           'history-length 25)
 (put 'ivy-history                'history-length 25)
+(put 'corfu-history              'history-length 25)
 (put 'counsel-M-x-history        'history-length 25)
 (put 'counsel-minibuffer-history 'history-length 25)
 
 ;; No duplicates in history
 (setq history-delete-duplicates t)
+
+;; Prefer recently used completions
+(corfu-history-mode 1)
 
 (setq savehist-file "~/.nano-savehist")
 (savehist-mode 1)
