@@ -45,7 +45,6 @@
         elfeed                   ; An Emacs web feeds client
         elfeed-org               ; Configure the Elfeed RSS reader with an Orgmode file
         editorconfig             ; EditorConfig plugin for Emacs
-        eldoc-box                ; Childframe doc for eglot and anything that uses eldoc
         engine-mode              ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace             ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
@@ -117,6 +116,12 @@
 ;; Collection of flymake checkers
 (straight-use-package
  '(flymake-collection :type git :host github :repo "mohkale/flymake-collection"))
+
+;; Flymake diagnostics on cursor hover
+(straight-use-package
+ '(flymake-popon
+   :type git
+   :repo "https://codeberg.org/akib/emacs-flymake-popon.git"))
 
 ;; Emulate A Terminal, in a region, in a buffer and in Eshell
 (straight-use-package

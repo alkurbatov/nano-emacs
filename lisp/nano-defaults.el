@@ -198,8 +198,12 @@
       dired-auto-revert-buffer t)
 
 ;; Enable flymake
-(add-hook 'prog-mode-hook #'flymake-mode)
-(add-hook 'text-mode-hook #'flymake-mode)
+(defun nano-enable-flymake ()
+  (flymake-mode)
+  (flymake-popon-mode))
+
+(add-hook 'prog-mode-hook #'nano-enable-flymake)
+(add-hook 'text-mode-hook #'nano-enable-flymake)
 
 ;; Enable selection highlighting
 (selection-highlight-mode)
@@ -266,9 +270,6 @@
               eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
 
 (setq eglot-ignored-server-capabilities '(:inlayHintProvider)) ; Disable annoying inlay hints
-
-(add-hook 'eglot-managed-mode-hook (lambda ()
-                                     (setq eldoc-box-hover-mode t)))
 
 ;; Specify explicitly to use Orderless for Eglot
 (setq completion-category-overrides '((eglot (styles orderless))
