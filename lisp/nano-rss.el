@@ -23,6 +23,8 @@
 (require 'elfeed-org)
 (require 'nano-modeline)
 
+(setq elfeed-db-directory (concat user-emacs-directory "elfeed"))
+
 ;; Initialize elfeed-org
 ;; By default reads settings from "~/.emacs.d/elfeed.org"
 (elfeed-org)
