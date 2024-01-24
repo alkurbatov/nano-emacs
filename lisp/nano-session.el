@@ -75,8 +75,7 @@
 (recentf-mode 1)
 
 ;; Bookmarks
-(setq bookmark-default-file "~/.nano-bookmark"
-      bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
+(setq bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
 
 ;; Lock files
 (setq lock-file-name-transforms `((".*" ,(concat user-emacs-directory "locks/") t)))
