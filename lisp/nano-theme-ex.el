@@ -312,6 +312,18 @@
                         :background 'unspecified
                         :foreground (nord-color "aurora-2"))))
 
+(defun nano-theme--avy ()
+  "Derive `avy' faces."
+  (with-eval-after-load 'avy
+    (set-face-attribute 'avy-lead-face nil
+                        :background (nord-color "aurora-0"))
+    (set-face-attribute 'avy-lead-face-0 nil
+                        :background (nord-color "frost-2"))
+    (set-face-attribute 'avy-lead-face-1 nil
+                        :background (nord-color "frost-3"))
+    (set-face-attribute 'avy-lead-face-2 nil
+                        :background (nord-color "aurora-4"))))
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -331,7 +343,8 @@
   (nano-theme--pip-requirements)
   (nano-theme--whitespace)
   (nano-theme--term)
-  (nano-theme--calendar))
+  (nano-theme--calendar)
+  (nano-theme--avy))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
