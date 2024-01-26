@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: class MyException(Exception):
+# --
+class ${1:My}Error(Exception):
+    def __init__(self) -> None:
+        super().__init__(${2:"error message"})
