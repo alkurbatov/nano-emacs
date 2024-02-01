@@ -21,7 +21,8 @@
 ;;; Code:
 
 (with-eval-after-load "yaml-ts-mode"
-  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode))
+  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
+  (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
 
 (provide 'nano-yaml)
 ;;; nano-yaml.el ends here
