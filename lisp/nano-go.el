@@ -39,14 +39,24 @@
 ;; Add gofumpt formatter
 (define-format-all-formatter gofumpt
   (:executable "gofumpt")
-  (:install (macos "brew install go"))
+  (:install "go install mvdan.cc/gofumpt@latest")
   (:languages "Go")
   (:features)
   (:format (format-all--buffer-easy executable)))
 
+;; Add gci formatter
+(define-format-all-formatter gci
+  (:executable "gci")
+  (:install "go install github.com/daixiang0/gci@latest")
+  (:languages "Go")
+  (:features)
+  (:format (format-all--buffer-easy executable "print")))
+
 
 (defun nano-setup-go-with-eglot ()
   "Setup and enable eglot for Go."
+  (add-to-list 'eglot-workspace-configuration
+               '((:gopls . ((:usePlaceholders . t)))))
 
   (eglot-ensure))
 
