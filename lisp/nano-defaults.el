@@ -70,7 +70,7 @@
 ;; Enable autocompletion
 (setq corfu-cycle t                ; Enable cycling for `corfu-next/previous'
       corfu-auto t                 ; Enable auto completion
-      corfu-auto-delay 60.0        ; Delay before auto-completion shows up
+      corfu-auto-prefix 2          ; Minimum length of prefix for auto completion
       corfu-separator ?\s          ; Orderless field separator
       corfu-quit-at-boundary nil   ; Never quit at completion boundary
       corfu-quit-no-match t        ; Quit when no match
@@ -81,12 +81,10 @@
       corfu-scroll-margin 5)       ; Use scroll margin
 
 (global-corfu-mode)
-(corfu-popupinfo-mode)
 
 ;; Enable autocompletion via popup menu in terminal
 (unless (display-graphic-p)
-  (corfu-terminal-mode +1)
-  (corfu-doc-terminal-mode +1))
+  (corfu-terminal-mode +1))
 
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
