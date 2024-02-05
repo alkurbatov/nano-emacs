@@ -29,7 +29,7 @@ configuration.
 - The configuration is tested mostly on `Mac OS` and rarely on `Linux`.
 
 ### Mandatory requirements
-- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 29.1 with enabled tree-sitter and native compilation.
+- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 29.2 with enabled tree-sitter and native compilation.
   In case of `Mac OS`, [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) is strongly recommended, e.g.:
   ```bash
   brew tap d12frosted/emacs-plus
