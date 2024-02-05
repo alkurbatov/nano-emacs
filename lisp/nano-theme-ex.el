@@ -58,6 +58,8 @@
                       :foreground (nord-color "frost-0"))
   (set-face-attribute 'font-lock-variable-name-face nil
                       :weight 'regular))
+  (set-face-attribute 'font-lock-misc-punctuation-face nil
+                      :foreground (nord-color "frost-1"))
 
 (defun nano-theme--ivy ()
   "Customize ivy faces."
