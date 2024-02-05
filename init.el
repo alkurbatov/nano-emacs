@@ -115,7 +115,8 @@
 
 ;; Collection of flymake checkers
 (straight-use-package
- '(flymake-collection :type git :host github :repo "mohkale/flymake-collection"))
+ '(flymake-collection :type git :host github :repo "mohkale/flymake-collection"
+                      :fork (:host github :repo "alkurbatov/flymake-collection")))
 
 ;; Flymake diagnostics on cursor hover
 (straight-use-package
