@@ -39,5 +39,9 @@
         ;; tabs -> »
         (tab-mark ?\t [187 ?\t])))
 
+
+;; Don't highlight long lines, there is not much we can do with them.
+(setq-default whitespace-line-column nil)
+
 (provide 'nano-whitespace)
 ;;; nano-whitespace.el ends here

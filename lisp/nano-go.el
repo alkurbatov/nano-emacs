@@ -70,6 +70,9 @@
   ;; Sync indent with global settings
   (setq go-ts-mode-indent-offset 4)
 
+  ;; Show indentation
+  (add-hook 'go-ts-mode-hook #'highlight-indent-guides-mode)
+
   (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
 
 ;; Enable syntax highlighting for Golang-related tools configuration files

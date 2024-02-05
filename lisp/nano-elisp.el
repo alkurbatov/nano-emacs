@@ -23,8 +23,12 @@
 ;;; Code:
 (require 'checkdoc)
 
-;; Don't enforce documentation, we have plenty of undocumented functions
-(setq checkdoc-force-docstrings-flag nil)
+(with-eval-after-load "lisp"
+  ;; Don't enforce documentation, we have plenty of undocumented functions
+  (setq checkdoc-force-docstrings-flag nil)
+
+  ;; Show indentation
+  (add-hook 'emacs-lisp-mode-hook #'highlight-indent-guides-mode))
 
 (provide 'nano-elisp)
 ;;; nano-elisp.el ends here

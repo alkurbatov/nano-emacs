@@ -1,7 +1,7 @@
-;;; nano-yaml.el --- YAML language configuration
+;;; nano-make.el --- Makefile integration
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2023-2024 - N Λ N O developers
+;; Copyright (C) 2024 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -19,13 +19,15 @@
 ;;; Commentary:
 
 ;;; Code:
+(defun nano-setup-makefile-mode ()
+  (setq-local indent-tabs-mode t)
+  (setq-local whitespace-style '(tabs tab-mark))
 
-(with-eval-after-load "yaml-ts-mode"
-  ;; Show indentation
-  (add-hook 'yaml-ts-mode-hook #'highlight-indent-guides-mode)
+  (whitespace-mode))
 
-  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
-  (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
+(with-eval-after-load "make-mode"
+  (add-hook 'makefile-mode-hook #'nano-setup-makefile-mode))
 
-(provide 'nano-yaml)
-;;; nano-yaml.el ends here
+
+(provide 'nano-make)
+;;; nano-make.el ends here

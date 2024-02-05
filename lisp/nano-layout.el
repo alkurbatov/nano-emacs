@@ -82,9 +82,6 @@
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 
-;; Show indentation
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-
 ;; Enable windows balancing with golden ratio
 (golden-ratio-mode 1)
 (setq golden-ratio-auto-scale t)

@@ -40,7 +40,7 @@
   :group 'nano)
 
 (defun nano-faces ()
-  "Derive face attributes for nano-faces."
+  "Derive face attributes for `nano-faces'."
   (set-face-attribute 'nano-face-org-green-project nil
                       :foreground (nord-color "aurora-3"))
 

@@ -92,6 +92,7 @@
 (require 'nano-elisp)
 (require 'nano-c++)
 (require 'nano-go)
+(require 'nano-make)
 (require 'nano-markdown)
 (require 'nano-python)
 (require 'nano-sh)
