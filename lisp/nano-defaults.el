@@ -72,7 +72,6 @@
       corfu-auto t                 ; Enable auto completion
       corfu-auto-prefix 2          ; Minimum length of prefix for auto completion
       corfu-separator ?\s          ; Orderless field separator
-      corfu-quit-at-boundary nil   ; Never quit at completion boundary
       corfu-quit-no-match t        ; Quit when no match
       corfu-preview-current nil    ; Disable current candidate preview
       corfu-preselect-first nil    ; Disable candidate preselection
@@ -99,7 +98,6 @@
 
 ;; Enable code compeletion extensions (order matters!)
 (add-to-list 'completion-at-point-functions #'cape-file)
-(add-to-list 'completion-at-point-functions #'cape-elisp-symbol)
 (add-to-list 'completion-at-point-functions #'cape-keyword)
 
 ;; Completion style, see
