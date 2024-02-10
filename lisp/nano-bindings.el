@@ -61,8 +61,13 @@
 (bind-key "C-c m" #'avy-move-line)
 
 ;; Flymake
-(bind-key "C-c n" #'flymake-goto-next-error)
-(bind-key "C-c p" #'flymake-goto-prev-error)
+(with-eval-after-load 'flymake
+  ;; Provide some flycheck-like bindings in flymake mode to ease transition
+  (bind-keys :map flymake-mode-map
+             ("C-c ! l" . flymake-show-buffer-diagnostics)
+             ("C-c ! n" . flymake-goto-next-error)
+             ("C-c ! p" . flymake-goto-prev-error)
+             ("C-c ! c" . flymake-start)))
 
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here
