@@ -67,7 +67,8 @@
              ("C-c ! l" . flymake-show-buffer-diagnostics)
              ("C-c ! n" . flymake-goto-next-error)
              ("C-c ! p" . flymake-goto-prev-error)
-             ("C-c ! c" . flymake-start)))
+             ("C-c ! c" . flymake-start)
+             ("C-c ! v" . flymake-running-backends)))
 
 (provide 'nano-bindings)
 ;;; nano-bindings.el ends here
