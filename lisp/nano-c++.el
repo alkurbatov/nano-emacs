@@ -31,6 +31,7 @@
                     "-j=4"
                     "--log=error"
                     "--clang-tidy"
+                    "--all-scopes-completion"
                     "--completion-style=detailed"
                     "--background-index"
                     "--pch-storage=memory"
