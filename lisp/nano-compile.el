@@ -1,7 +1,7 @@
-;;; nano-terminal.el --- Terminal configurations
+;;; nano-compile.el --- Compile mode settings
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2023-2024 - N Λ N O developers
+;; Copyright (C) 2024 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -19,23 +19,17 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'ansi-color)
+(require 'compile)
 
-;; Mouse active in terminal
-(unless (display-graphic-p)
-  (xterm-mouse-mode 1)
-  (bind-keys*
-   ("<mouse-4>" . scroll-down-line)
-   ("<mouse-5>" . scroll-up-line)))
+(setq
+ compilation-read-command nil    ; don't ask for command confirmation when run compilation
+ compilation-scroll-output t     ; follow compilation command output
+ compilation-ask-about-save nil) ; save all buffers before compilation
 
-;; Mask Eat as xterm to make it compatible with OS X tools
-(setq eat-term-name "xterm-256color")
+(with-eval-after-load "compile"
+  ;; Translate ANSI escape sequences
+  (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter))
 
-;; Close terminal without questions
-(setq eat-kill-buffer-on-exit t
-      eat-query-before-killing-running-terminal nil)
-
-(add-hook 'eat-mode-hook #'nano-modeline-eat-mode)
-(add-hook 'eat-mode-hook #'compilation-shell-minor-mode)
-
-(provide 'nano-terminal)
-;;; nano-terminal.el ends here
+(provide 'nano-compile)
+;;; nano-compile.el ends here

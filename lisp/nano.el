@@ -82,6 +82,7 @@
 (require 'nano-project)
 
 ;; Tools
+(require 'nano-compile)
 (require 'nano-docker)
 (require 'nano-git)
 (require 'nano-mc)
