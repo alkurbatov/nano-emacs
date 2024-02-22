@@ -77,7 +77,7 @@
                         :background 'unspecified
                         :foreground (nord-color "frost-0"))
     (set-face-attribute 'ivy-current-match nil
-                        :background nano-dark-faded
+                        :background (nord-color "polar-night-3")
                         :foreground nano-dark-strong
                         :weight 'bold)))
 
@@ -326,6 +326,17 @@
     (set-face-attribute 'avy-lead-face-2 nil
                         :background (nord-color "aurora-4"))))
 
+(defun nano-theme--corfu ()
+  "Derive `corfu' faces."
+  (with-eval-after-load 'corfu
+    (set-face-attribute 'corfu-border nil
+                        :background (nord-color "polar-night-3"))
+    (set-face-attribute 'corfu-current nil
+                        :background (nord-color "polar-night-3"))
+    (set-face-attribute 'corfu-default nil
+                        :background (nord-color "polar-night-1"))))
+
+
 (defun nano-theme-customize ()
   "Customize many, many faces."
   (nano-faces)
@@ -346,7 +357,8 @@
   (nano-theme--whitespace)
   (nano-theme--term)
   (nano-theme--calendar)
-  (nano-theme--avy))
+  (nano-theme--avy)
+  (nano-theme--corfu))
 
 (provide 'nano-theme-ex)
 ;;; nano-theme-ex.el ends here
