@@ -48,9 +48,8 @@ configuration.
 
 ### Optional requirements
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
-- [Golangci-lint](https://golangci-lint.run/) for better linting in `Golang`.
+- [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
 - [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP` in `Golang`.
-- [golangci-lint](https://golangci-lint.run/) for linting of `Golang` files.
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
 - [Pandoc](https://pandoc.org/) for markdown preview
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
