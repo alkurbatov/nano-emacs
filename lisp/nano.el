@@ -1,7 +1,7 @@
 ;; nano.el --- Main entry point
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers
+;; Copyright (C) 2023-2024 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,10 +25,9 @@
 (add-to-list 'command-switch-alist '("-debug" . (lambda (args))))
 
 ;; Theme
-(require 'nano-theme-ex)
-(load-theme 'nano-dark t)
+(require 'nano-theme)
 (nano-mode)
-(nano-theme-customize)
+(load-theme 'nano t)
 
 ;; Settings
 (require 'nano-settings)
@@ -82,6 +81,7 @@
 (require 'nano-project)
 
 ;; Tools
+(require 'nano-debug)
 (require 'nano-compile)
 (require 'nano-docker)
 (require 'nano-git)

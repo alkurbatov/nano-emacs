@@ -27,6 +27,8 @@
 (add-to-list 'load-path
              (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path
+             (expand-file-name "theme" user-emacs-directory))
+(add-to-list 'load-path
              "/opt/homebrew/opt/mu/share/emacs/site-lisp/mu/mu4e")
 
 ;; Setup dependencies
@@ -90,11 +92,8 @@
 
 ;; Major mode for editing pip requirements files
 (straight-use-package
- '(pip-requirements :type git :host github :repo "Wilfred/pip-requirements.el"))
-
-;; GNU Emacs / N Λ N O Theme
-(straight-use-package
- '(nano-theme :type git :host github :repo "rougier/nano-theme"))
+ '(pip-requirements :type git :host github :repo "Wilfred/pip-requirements.el"
+                    :fork (:host github :repo "alkurbatov/pip-requirements.el")))
 
 ;; GNU Emacs / N Λ N O Modeline
 (straight-use-package

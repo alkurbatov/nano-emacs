@@ -30,7 +30,6 @@
   (org-insert-time-stamp (current-time) nil t))
 
 (with-eval-after-load "org"
-  (require 'nano-faces)
   (require 'nano-modeline)
 
   ;; Load org files with tasks

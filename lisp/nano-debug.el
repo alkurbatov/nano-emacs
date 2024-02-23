@@ -1,7 +1,7 @@
-;;; nano-faces.el --- Main faces of nano theme
+;;; nano-debug.el --- Debugging utilities
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2020 - N Λ N O developers
+;; Copyright (C) 2024 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -19,7 +19,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'nano-colors)
 
 (defun nano-what-faces (pos)
   "Get the font faces at POS."
@@ -31,21 +30,7 @@
                       (plist-get (text-properties-at pos) 'face)))))
     (message "Faces: %s" faces)))
 
-(defface nano-face-org-green-project nil
-  "Nano face for personal projects."
-  :group 'nano)
 
-(defface nano-face-org-red-project nil
-  "Nano face for must-do-or-be-fired projects."
-  :group 'nano)
 
-(defun nano-faces ()
-  "Derive face attributes for `nano-faces'."
-  (set-face-attribute 'nano-face-org-green-project nil
-                      :foreground (nord-color "aurora-3"))
-
-  (set-face-attribute 'nano-face-org-red-project nil
-                      :foreground (nord-color "aurora-0")))
-
-(provide 'nano-faces)
-;;; nano-faces.el ends here
+(provide 'nano-debug)
+;;; nano-debug.el ends here
