@@ -38,10 +38,10 @@
 
 ;;;###autoload
 (deftheme nano
-  "N Λ N O dark theme Ex")
+  "N Λ N O dark theme Ex.")
 
-(set-foreground-color nano-dark-foreground)
-(set-background-color nano-dark-background)
+(set-foreground-color snow-storm-2)
+(set-background-color polar-night-0)
 (nano-theme)
 
 (provide-theme 'nano)

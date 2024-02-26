@@ -150,46 +150,12 @@
   "Default italic font (Victor Mono Italic Light, 16pt)."
   :group 'nano-theme-fonts)
 
-(defcustom nano-dark-foreground "#ECEFF4" ;; Snow Storm 3  / nord  6
-  "Default foreground color."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-background "#2E3440" ;; Polar Night 0 / nord  0
-  "Default background color."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-highlight "#3B4252" ;; Polar Night 1 / nord  1
-  "Highdark color is used to highdark part of the screen."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-subtle "#434C5E" ;; Polar Night 2 / nord  2
-  "Subtle color is used to suggest a physical area on the screen."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-faded "#677691" ;;
-  "Faded face is for information that are less important."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-salient "#81A1C1" ;; Frost         / nord  9
-  "Salient color is used for information that are important."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-strong "#FFFFFF" ;; White
-  "Strong color is used for information of a structural nature."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-popout "#D08770" ;; Aurora        / nord 12
-  "Popout colour is used for information that needs attention."
-  :type 'color :group 'nano-theme-dark)
-
-(defcustom nano-dark-critical "#EBCB8B" ;; Aurora        / nord 11
-  "Critical face is for information that requires immediate action."
-  :type 'color :group 'nano-theme-dark)
-
 (defvar polar-night-0 "#2E3440")
 (defvar polar-night-1 "#3B4252")
 (defvar polar-night-2 "#434C5E")
 (defvar polar-night-3 "#4C566A")
+(defvar polar-night-4 "#677691"
+  "Even lighter polar night to use as comments color, not part of the Nord palette.")
 (defvar snow-storm-0  "#D8DEE9")
 (defvar snow-storm-1  "#E5E9F0")
 (defvar snow-storm-2  "#ECEFF4")
@@ -449,8 +415,8 @@ background color that is barely perceptible."
                            (assq-delete-all 'background-color
                                             (assq-delete-all 'background-mode default-frame-alist))))
     (add-to-list 'default-frame-alist `(background-mode . ,'dark))
-    (add-to-list 'default-frame-alist `(background-color . ,nano-dark-background))
-    (add-to-list 'default-frame-alist `(foreground-color . ,nano-dark-foreground))
+    (add-to-list 'default-frame-alist `(background-color . ,polar-night-0))
+    (add-to-list 'default-frame-alist `(foreground-color . ,snow-storm-2))
     (custom-theme-set-variables 'nano '(widget-image-enable nil)
                                 '(x-underline-at-descent-line t))
     (setq frame-background-mode 'dark)
@@ -458,11 +424,11 @@ background color that is barely perceptible."
 
     (when nano-fonts-use
         (custom-theme-set-faces 'nano
-         `(default ((t (:foreground ,nano-dark-foreground
+         `(default ((t (:foreground ,snow-storm-2
                         :weight     ,(face-attribute 'nano-mono :weight)
                         :height     ,(face-attribute 'nano-mono :height)
                         :family     ,(face-attribute 'nano-mono :family)))))
-         `(italic ((t (:foreground ,nano-dark-foreground
+         `(italic ((t (:foreground ,snow-storm-2
                        :weight     ,(face-attribute 'nano-italic :weight)
                        :height     ,(face-attribute 'nano-italic :height)
                        :slant      ,(face-attribute 'nano-italic :slant)
@@ -474,17 +440,17 @@ background color that is barely perceptible."
 
     (unless nano-fonts-use
         (custom-theme-set-faces 'nano
-         `(default ((t (:foreground ,nano-dark-foreground))))
-         `(nano-strong ((t (:weight bold :foreground ,nano-dark-strong))))))
+         `(default ((t (:foreground ,snow-storm-2))))
+         `(nano-strong ((t (:weight bold :foreground ,snow-storm-0))))))
 
     ;; --- Window divider ----------------------------------------------
     (if nano-window-divider-show
         (custom-theme-set-faces 'nano
-         `(window-divider ((t (:foreground ,nano-dark-foreground))))
-         `(vertical-border ((t (:foreground ,nano-dark-foreground)))))
+         `(window-divider ((t (:foreground ,snow-storm-2))))
+         `(vertical-border ((t (:foreground ,snow-storm-2)))))
       (custom-theme-set-faces 'nano
-       `(window-divider ((t (:foreground ,nano-dark-background))))
-       `(vertical-border ((t (:foreground ,nano-dark-background))))))
+       `(window-divider ((t (:foreground ,polar-night-0))))
+       `(vertical-border ((t (:foreground ,polar-night-0))))))
     (custom-theme-set-faces 'nano
      '(window-divider-first-pixel ((t (:inherit window-divider))))
      '(window-divider-last-pixel ((t (:inherit window-divider)))))
@@ -494,73 +460,73 @@ background color that is barely perceptible."
 
    ;; --- Base ---------------------------------------------------------
 
-   `(default ((t (:background ,nano-dark-background
-                  :foreground ,nano-dark-foreground))))
+   `(default ((t (:background ,polar-night-0
+                  :foreground ,snow-storm-2))))
 
-   `(cursor ((t (:foreground ,nano-dark-background
-                 :background ,nano-dark-foreground))))
+   `(cursor ((t (:foreground ,polar-night-0
+                 :background ,snow-storm-2))))
 
-   `(mouse ((t (:foreground ,nano-dark-foreground
-                :background ,nano-dark-background))))
+   `(mouse ((t (:foreground ,snow-storm-2
+                :background ,polar-night-0))))
 
-   `(highlight ((t (:background ,nano-dark-highlight))))
+   `(highlight ((t (:background ,polar-night-1))))
 
-   `(nano-subtle ((t (:background ,nano-dark-subtle))))
+   `(nano-subtle ((t (:background ,polar-night-2))))
 
-   `(nano-subtle-i ((t (:foreground ,nano-dark-subtle))))
+   `(nano-subtle-i ((t (:foreground ,polar-night-2))))
 
-   `(nano-faded ((t (:foreground ,nano-dark-faded))))
+   `(nano-faded ((t (:foreground ,polar-night-4))))
 
-   `(nano-faded-i ((t (:foreground ,nano-dark-background
-                       :background ,nano-dark-faded))))
+   `(nano-faded-i ((t (:foreground ,polar-night-0
+                       :background ,polar-night-4))))
 
-   `(nano-default ((t (:foreground ,nano-dark-foreground))))
+   `(nano-default ((t (:foreground ,snow-storm-2))))
 
-   `(nano-default-i ((t (:foreground ,nano-dark-background
-                         :background ,nano-dark-foreground))))
-
-
-   `(nano-salient ((t (:foreground ,nano-dark-salient))))
-
-   `(nano-salient-i ((t (:foreground ,nano-dark-background
-                         :background ,nano-dark-salient))))
+   `(nano-default-i ((t (:foreground ,polar-night-0
+                         :background ,snow-storm-2))))
 
 
-   `(nano-strong-i ((t (:foreground ,nano-dark-background
-                        :background ,nano-dark-strong
+   `(nano-salient ((t (:foreground ,frost-2))))
+
+   `(nano-salient-i ((t (:foreground ,polar-night-0
+                         :background ,frost-2))))
+
+
+   `(nano-strong-i ((t (:foreground ,polar-night-0
+                        :background ,snow-storm-0
                         :weight normal))))
 
-   `(nano-popout ((t (:foreground ,nano-dark-popout))))
+   `(nano-popout ((t (:foreground ,aurora-1))))
 
-   `(nano-popout-i ((t (:foreground ,nano-dark-background
-                        :background ,nano-dark-popout))))
+   `(nano-popout-i ((t (:foreground ,polar-night-0
+                        :background ,aurora-1))))
 
-   `(nano-critical ((t (:foreground ,nano-dark-critical
+   `(nano-critical ((t (:foreground ,aurora-2
                         :weight normal))))
 
-   `(nano-critical-i ((t (:foreground ,nano-dark-background
-                          :background ,nano-dark-critical
+   `(nano-critical-i ((t (:foreground ,polar-night-0
+                          :background ,aurora-2
                           :weight normal))))
 
    ;; --- Header & mode line -------------------------------------------
 
-   `(mode-line ((t (:foreground ,nano-dark-foreground
-                    :background ,nano-dark-faded
+   `(mode-line ((t (:foreground ,snow-storm-2
+                    :background ,polar-night-4
                     :box (:line-width 3
-                          :color ,nano-dark-faded
+                          :color ,polar-night-4
                           :style nil)))))
    `(mode-line-highlight ((t (:inherit nano-popout))))
    `(mode-line-buffer-id ((t (:weight regular))))
    `(mode-line-emphasis  ((t (:weight regular))))
 
-   `(mode-line-inactive ((t (:foreground ,nano-dark-faded
-                             :background ,nano-dark-subtle
+   `(mode-line-inactive ((t (:foreground ,polar-night-4
+                             :background ,polar-night-2
                              :box (:line-width 3
-                                  :color ,nano-dark-subtle
+                                  :color ,polar-night-2
                                   :style nil)))))
 
-   `(header-line ((t (:foreground ,nano-dark-foreground
-                      :background ,nano-dark-subtle
+   `(header-line ((t (:foreground ,snow-storm-2
+                      :background ,polar-night-2
                       :inherit nil
                       :box nil))))
 
@@ -638,7 +604,7 @@ background color that is barely perceptible."
    `(font-lock-property-use-face     ((t (:foreground ,frost-1))))
    `(font-lock-string-face           ((t (:foreground ,aurora-3))))
    `(font-lock-type-face             ((t (:foreground ,frost-0))))
-   `(font-lock-variable-name-face    ((t (:foreground ,nano-dark-strong
+   `(font-lock-variable-name-face    ((t (:foreground ,snow-storm-0
                                           :weight regular))))
    '(font-lock-warning-face          ((t (:inherit nano-popout))))
 
@@ -690,18 +656,18 @@ background color that is barely perceptible."
 
    ;; --- Buttons ------------------------------------------------------
    `(custom-button
-     ((t (:foreground ,nano-dark-faded
-          :background ,nano-dark-highlight
+     ((t (:foreground ,polar-night-4
+          :background ,polar-night-1
           :box nil))))
 
    `(custom-button-mouse
-     ((t (:foreground ,nano-dark-foreground
-          :background ,nano-dark-subtle
+     ((t (:foreground ,snow-storm-2
+          :background ,polar-night-2
           :box nil))))
 
    `(custom-button-pressed
-     ((t (:foreground ,nano-dark-background
-          :background ,nano-dark-foreground
+     ((t (:foreground ,polar-night-0
+          :background ,snow-storm-2
           :box nil))))
 
    ;; --- Packages -----------------------------------------------------
@@ -856,11 +822,11 @@ background color that is barely perceptible."
    '(outline-8                      ((t (:inherit nano-strong))))
 
    ;; --- Flyspell ----------------------------------------------------
-   `(flyspell-duplicate             ((t (:background ,nano-dark-salient
-                                         :foreground ,nano-dark-background
+   `(flyspell-duplicate             ((t (:background ,frost-2
+                                         :foreground ,polar-night-0
                                          :underline unspecified))))
-   `(flyspell-incorrect             ((t (:background ,nano-dark-salient
-                                         :foreground ,nano-dark-background
+   `(flyspell-incorrect             ((t (:background ,frost-2
+                                         :foreground ,polar-night-0
                                          :underline unspecified))))
 
    ;; --- Org agenda ---------------------------------------------------
@@ -1380,11 +1346,11 @@ background color that is barely perceptible."
                                  :foreground ,aurora-2))))
     `(diff-hl-delete        ((t (:background ,aurora-0
                                  :foreground ,aurora-0))))
-    `(diff-hl-margin-insert ((t (:background ,nano-dark-background
+    `(diff-hl-margin-insert ((t (:background ,polar-night-0
                                  :foreground ,aurora-3))))
-    `(diff-hl-margin-change ((t (:background ,nano-dark-background
+    `(diff-hl-margin-change ((t (:background ,polar-night-0
                                  :foreground ,aurora-2))))
-    `(diff-hl-margin-delete ((t (:background ,nano-dark-background
+    `(diff-hl-margin-delete ((t (:background ,polar-night-0
                                  :foreground ,aurora-0))))
 
     ;; --- Dired -------------------------------------------------------
@@ -1392,30 +1358,30 @@ background color that is barely perceptible."
                            :weight bold))))
 
     ;; --- Eglot -------------------------------------------------------
-    `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,nano-dark-faded
-                                                 :foreground ,nano-dark-foreground
+    `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
+                                                 :foreground ,snow-storm-2
                                                  :underline unspecified))))
-    `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,nano-dark-salient
-                                                 :foreground ,nano-dark-background
+    `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
+                                                 :foreground ,polar-night-0
                                                  :underline unspecified))))
 
     ;; --- Ethan-wspace ------------------------------------------------
-    `(ethan-wspace-face ((t (:background ,nano-dark-critical
+    `(ethan-wspace-face ((t (:background ,aurora-2
                              :foreground unspecified))))
 
     ;; --- Flymake -----------------------------------------------------
     `(flymake-error        ((t (:background ,aurora-0
-                                :foreground ,nano-dark-foreground
+                                :foreground ,snow-storm-2
                                 :underline unspecified))))
     `(flymake-error-echo   ((t (:foreground ,aurora-0))))
-    `(flymake-warning      ((t (:background ,nano-dark-critical
-                                :foreground ,nano-dark-background
+    `(flymake-warning      ((t (:background ,aurora-2
+                                :foreground ,polar-night-0
                                 :underline unspecified))))
-    `(flymake-warning-echo ((t (:foreground ,nano-dark-critical))))
-    `(flymake-note         ((t (:background ,nano-dark-salient
-                                :foreground ,nano-dark-background
+    `(flymake-warning-echo ((t (:foreground ,aurora-2))))
+    `(flymake-note         ((t (:background ,frost-2
+                                :foreground ,polar-night-0
                                 :underline unspecified))))
-    `(flymake-note-echo    ((t (:foreground ,nano-dark-salient))))
+    `(flymake-note-echo    ((t (:foreground ,frost-2))))
 
     ;; --- Highlight-indent --------------------------------------------
     `(highlight-indent-guides-character-face     ((t (:foreground ,polar-night-1))))
@@ -1431,32 +1397,32 @@ background color that is barely perceptible."
     `(ivy-minibuffer-match-face-4 ((t (:background unspecified
                                        :foreground ,frost-0))))
     `(ivy-current-match           ((t (:background ,polar-night-3
-                                       :foreground ,nano-dark-strong
+                                       :foreground ,snow-storm-0
                                        :weight bold))))
 
     ;; --- Make --------------------------------------------------------
     '(makefile-targets ((t (:inherit nano-salient))))
 
     ;; --- Pip-requirements --------------------------------------------
-    '(pip-requirements-name-regex-face      ((t (:inherit nano-dark-strong))))
+    '(pip-requirements-name-regex-face      ((t (:inherit snow-storm-0))))
     `(pip-requirements-version-regex-1-face ((t (:foreground ,frost-2))))
     `(pip-requirements-version-regex-2-face ((t (:foreground ,aurora-4))))
 
     ;; --- Whitespace --------------------------------------------------
     `(whitespace-newline                ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-missing-newline-at-eof ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-space                  ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-space-after-tab        ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-space-before-tab       ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-tab                    ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
     `(whitespace-trailing               ((t (:background ,polar-night-0
-                                             :foreground ,nano-dark-faded))))
+                                             :foreground ,polar-night-4))))
 
     ))
 
