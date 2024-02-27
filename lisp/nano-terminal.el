@@ -37,7 +37,5 @@
 (add-hook 'eat-mode-hook #'nano-modeline-eat-mode)
 (add-hook 'eat-mode-hook #'compilation-shell-minor-mode)
 
-(bind-key "C-x p t" #'eat-project)
-
 (provide 'nano-terminal)
 ;;; nano-terminal.el ends here

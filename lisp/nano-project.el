@@ -48,7 +48,10 @@ DIR must include a file .project"
 
 ;; Key bindings
 (bind-keys :map project-prefix-map
-           ("s" . counsel-ag))
+           ("D" . project-find-dir)
+           ("d" . project-dired)
+           ("s" . counsel-ag)
+           ("t" . eat-project))
 
 (provide 'nano-project)
 ;;; nano-project.el ends here
