@@ -1346,12 +1346,9 @@ background color that is barely perceptible."
                                  :foreground ,aurora-2))))
     `(diff-hl-delete        ((t (:background ,aurora-0
                                  :foreground ,aurora-0))))
-    `(diff-hl-margin-insert ((t (:background ,polar-night-0
-                                 :foreground ,aurora-3))))
-    `(diff-hl-margin-change ((t (:background ,polar-night-0
-                                 :foreground ,aurora-2))))
-    `(diff-hl-margin-delete ((t (:background ,polar-night-0
-                                 :foreground ,aurora-0))))
+    `(diff-hl-margin-insert ((t (:foreground ,aurora-3))))
+    `(diff-hl-margin-change ((t (:foreground ,aurora-2))))
+    `(diff-hl-margin-delete ((t (:foreground ,aurora-0))))
 
     ;; --- Dired -------------------------------------------------------
     `(dired-directory ((t (:foreground ,frost-2
