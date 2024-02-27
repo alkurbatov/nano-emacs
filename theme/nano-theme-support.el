@@ -372,6 +372,7 @@ background color that is barely perceptible."
     (setq hl-todo-highlight-punctuation ":"
           hl-todo-keyword-faces
           `(("TODO"       . nano-popout)
+            ("XXX"        . nano-popout)
             ("FIXME"      . nano-critical)
             ("NB"         . nano-salient)
             ("NOTE"       . nano-salient))))
