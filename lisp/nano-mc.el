@@ -19,6 +19,7 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'dired-quick-sort)
 (require 'ls-lisp)
 (require 'nano-settings)
 
@@ -29,7 +30,7 @@
   (dired "."))
 
 ;; Assume that we should use another Dired buffer (opened in a window nearby)
-;; as target of all operations.
+;; as target of all operations
 (setq dired-dwim-target t)
 
 ;; Always do recursive copies without questions
@@ -42,11 +43,14 @@
 
 ;; Tweak displayed fields
 (setq dired-listing-switches
-      (combine-and-quote-strings '("-lahgGk"
-                                   "--group-directories-first"
+      (combine-and-quote-strings '("-lahGk"
                                    "--time-style=+%d %b %Y")))
 
-;; Tweak files and folders deletion.
+;; Setup quick sort
+(dired-quick-sort-setup)
+(setq dired-quick-sort-group-directories-last ?y) ; group directories together
+
+;; Tweak files and folders deletion
 (setq
    delete-by-moving-to-trash t
    dired-recursive-deletes 'always)

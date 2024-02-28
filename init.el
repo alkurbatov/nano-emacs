@@ -44,6 +44,7 @@
         corfu                    ; COmpletion Overlay Region Function
         counsel                  ; Improves ivy integration
         diff-hl                  ; Package for highlighting uncommitted changes
+        dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
         elfeed                   ; An Emacs web feeds client
         elfeed-org               ; Configure the Elfeed RSS reader with an Orgmode file
         editorconfig             ; EditorConfig plugin for Emacs
