@@ -141,7 +141,7 @@
 
 ;; Corfu popup on terminal
 (straight-use-package
- '(corfu-terminal type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
+ '(corfu-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
 
 ;; Load settings
 (require 'nano)
