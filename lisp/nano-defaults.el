@@ -210,9 +210,6 @@
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
 
-;; Enable garbage collector hack to speed up Emacs
-(gcmh-mode 1)
-
 ;; Better work with trailing whitespaces and line endings
 (setq mode-require-final-newline nil)
 (add-hook 'org-mode-hook #'ethan-wspace-mode)
