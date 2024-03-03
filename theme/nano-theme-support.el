@@ -193,10 +193,7 @@ attention through the popout effect."
 
 (defface nano-strong nil
   "Strong face is used for information of a structural nature.
-It has to be the same color as the default color and only the
-weight differs by one level (e.g., light/regular or
-regular/bold). IT is generally used for titles, keywords,
-directory, etc."
+It is generally used for titles, keywords, directory, etc."
   :group nil)
 
 (defface nano-strong-i nil
@@ -434,7 +431,7 @@ background color that is barely perceptible."
                        :height     ,(face-attribute 'nano-italic :height)
                        :slant      ,(face-attribute 'nano-italic :slant)
                        :family     ,(face-attribute 'nano-italic :family)))))
-         `(nano-strong ((t (:weight normal))))
+         `(nano-strong ((t (:foreground ,snow-storm-0 :weight normal))))
          `(variable-pitch ((t (:weight ,(face-attribute 'nano-sans :weight)
                                :height ,(face-attribute 'nano-sans :height)
                                :family ,(face-attribute 'nano-sans :family)))))))
@@ -1075,7 +1072,7 @@ background color that is barely perceptible."
     '(elfeed-search-title-face              ((t (:inherit nano-default))))
     '(elfeed-search-tag-face                  ((t (:inherit nano-faded))))
     '(elfeed-search-unread-count-face        ((t (:inherit nano-strong))))
-    '(elfeed-search-unread-title-face        ((t (:inherit nano-strong))))
+    '(elfeed-search-unread-title-face        ((t (:inherit nano-strong :weight bold))))
 
     ;; --- Deft --------------------------------------------------------
     '(deft-filter-string-error-face         ((t (:inherit nano-popout))))
