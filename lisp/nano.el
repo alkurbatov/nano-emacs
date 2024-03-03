@@ -51,9 +51,6 @@
 ;; Nano spellcheck configuration
 (require 'nano-spellcheck)
 
-;; Nano counsel configuration
-(require 'nano-counsel)
-
 ;; Nano terminal configuration
 (require 'nano-terminal)
 

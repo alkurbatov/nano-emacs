@@ -33,11 +33,8 @@
         read-char-history
         face-name-history
         bookmark-history
-        ivy-history
         corfu-history
-        counsel-M-x-history
-        file-name-history
-        counsel-minibuffer-history))
+        file-name-history))
 
 (setq history-length 250)
 (setq kill-ring-max 50)
@@ -50,10 +47,7 @@
 (put 'read-char-history          'history-length 25)
 (put 'face-name-history          'history-length 25)
 (put 'bookmark-history           'history-length 25)
-(put 'ivy-history                'history-length 25)
 (put 'corfu-history              'history-length 25)
-(put 'counsel-M-x-history        'history-length 25)
-(put 'counsel-minibuffer-history 'history-length 25)
 
 ;; No duplicates in history
 (setq history-delete-duplicates t)

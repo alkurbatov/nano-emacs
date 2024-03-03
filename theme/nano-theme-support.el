@@ -453,7 +453,6 @@ background color that is barely perceptible."
      '(window-divider-first-pixel ((t (:inherit window-divider))))
      '(window-divider-last-pixel ((t (:inherit window-divider)))))
 
-
     (custom-theme-set-faces 'nano
 
    ;; --- Base ---------------------------------------------------------
@@ -527,7 +526,6 @@ background color that is barely perceptible."
                       :background ,polar-night-2
                       :inherit nil
                       :box nil))))
-
 
    ;; --- Structural ---------------------------------------------------
    '(bold                        ((t (:inherit nano-strong))))

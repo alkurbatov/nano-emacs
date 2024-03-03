@@ -48,9 +48,10 @@ DIR must include a file .project"
 
 ;; Key bindings
 (bind-keys :map project-prefix-map
+           ("b" . consult-project-buffer)
            ("D" . project-find-dir)
            ("d" . project-dired)
-           ("s" . counsel-ag)
+           ("s" . consult-ripgrep)
            ("t" . eat-project))
 
 (provide 'nano-project)

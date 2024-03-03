@@ -22,12 +22,14 @@
 (require 'bind-key)
 (require 'cape)
 (require 'corfu)
+(require 'consult)
 (require 'exec-path-from-shell)
 (require 'marginalia)
 (require 'orderless)
 (require 'rfc-mode)
 (require 'smartparens-config)
 (require 'treesit-auto)
+(require 'vertico)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
 (setq custom-file "~/.emacs.d/nano-custom.el")
@@ -215,6 +217,18 @@
 (setq mode-require-final-newline nil)
 (add-hook 'org-mode-hook #'ethan-wspace-mode)
 (add-hook 'prog-mode-hook #'ethan-wspace-mode)
+
+;; Customize list of Consult sources for the consult-buffer command
+(setq consult-buffer-sources '(consult--source-hidden-buffer
+                               consult--source-modified-buffer
+                               consult--source-buffer
+                               consult--source-file-register
+                               consult--source-project-buffer-hidden))
+
+(setq vertico-resize nil        ; How to resize the Vertico minibuffer window.
+      vertico-count 20          ; Maximal number of candidates to show.
+      vertico-count-format nil) ; No prefix with number of entries
+(vertico-mode)
 
 (setq-default marginalia--ellipsis "…"    ; Nicer ellipsis
               marginalia-align 'right     ; right alignment
