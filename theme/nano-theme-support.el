@@ -116,38 +116,38 @@
 
 (defface nano-mono
   '((t (:family "Roboto Mono"
-        :height 160
+        :height 150
         :weight light)))
-  "Default monospaced font (Roboto Mono Light, 16pt)."
+  "Default monospaced font (Roboto Mono Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-mono-alt
   '((t (:family "Fira Code"
-        :height 160
+        :height 150
         :weight light)))
-  "Alternative monospaced font (Fira Code Light, 16pt)."
+  "Alternative monospaced font (Fira Code Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-sans
   '((t (:family "Roboto"
-        :height 160
+        :height 150
         :weight light)))
-  "Default proportional sans font (Roboto Light, 16pt)."
+  "Default proportional sans font (Roboto Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-serif
   '((t (:family "Roboto Slab"
-        :height 160
+        :height 150
         :weight light)))
-  "Default proportional serif font (Roboto Slab Light, 16pt)."
+  "Default proportional serif font (Roboto Slab Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-italic
   '((t (:family "Victor Mono"
         :slant italic
-        :height 160
+        :height 150
         :weight regular)))
-  "Default italic font (Victor Mono Italic Light, 16pt)."
+  "Default italic font (Victor Mono Italic Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defvar polar-night-0 "#2E3440")
