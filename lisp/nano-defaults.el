@@ -25,6 +25,7 @@
 (require 'exec-path-from-shell)
 (require 'marginalia)
 (require 'orderless)
+(require 'rfc-mode)
 (require 'smartparens-config)
 (require 'treesit-auto)
 
@@ -271,6 +272,9 @@
 ;; Specify explicitly to use Orderless for Eglot
 (setq completion-category-overrides '((eglot (styles orderless))
                                       (eglot-capf (styles orderless))))
+
+;; Specify place to store downloaded RFCs
+(setq rfc-mode-directory (expand-file-name nano-rfc-directory))
 
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here

@@ -20,12 +20,17 @@
 
 ;;; Code:
 (defcustom nano-brew-path "/opt/homebrew"
-  "Set homebrew directory.  Should be set to '/usr/local' for non-silicon Macs."
+  "Set homebrew directory. Should be set to '/usr/local' for non-silicon Macs."
   :type 'string
   :group 'nano)
 
 (defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
-  "Name of the directory containing Org files with TODO items)."
+  "Path to the directory containing Org files with TODO items."
+  :type 'string
+  :group 'nano)
+
+(defcustom nano-rfc-directory "~/work/rfc/"
+  "Path to the directory containing RFCs downloaded by the rfc-mode package."
   :type 'string
   :group 'nano)
 
