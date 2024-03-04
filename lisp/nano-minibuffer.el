@@ -45,6 +45,7 @@
 (bind-key "C-s"     #'consult-line)
 (bind-key "C-c r"   #'consult-recent-file)
 (bind-key "M-g g"   #'consult-goto-line)
+(bind-key "M-g M-g" #'consult-goto-line)
 (bind-key "M-g o"   #'consult-outline)
 
 (provide 'nano-minibuffer)
