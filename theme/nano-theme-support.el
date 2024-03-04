@@ -1,12 +1,9 @@
 ;;; nano-theme-support.el --- N Λ N O theme -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021,2022 Free Software Foundation, Inc.
+;; Copyright (C) 2021-2022 Free Software Foundation, Inc.
 
 ;; Maintainer: Nicolas P. Rougier <Nicolas.Rougier@inria.fr>
 ;; URL: https://github.com/rougier/nano-theme
-;; Version: 0.3.4
-;; Package-Requires: ((emacs "27.1"))
-;; Keywords: theme, dark, light
 
 ;; This file is not part of GNU Emacs.
 
