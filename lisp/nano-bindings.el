@@ -43,12 +43,6 @@
 ;; Don't press shift when undoing things
 (bind-key* "C--" 'undo)
 
-(bind-key "C-x b"   #'consult-buffer)
-(bind-key "C-s"     #'consult-line)
-(bind-key "C-c r"   #'consult-recent-file)
-(bind-key "M-g g"   #'consult-goto-line)
-(bind-key "M-g o"   #'consult-outline)
-
 (bind-key "C-h f"   #'helpful-callable) ; Look up callable
 (bind-key "C-h v"   #'helpful-variable) ; Look up variable
 (bind-key "C-h k"   #'helpful-key)      ; Look up key
