@@ -41,7 +41,6 @@
         cape                     ; Completion At Point Extensions
         consult                  ; Consulting completing-read
         consult-eglot            ; Jump to workspace symbols with eglot and consult
-        consult-recoll           ; Consult interface for recoll query
         corfu                    ; COmpletion Overlay Region Function
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
@@ -61,14 +60,12 @@
         helpful                  ; A better help buffer
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
-        imenu-list               ; Show imenu entries in a separate buffer
         kind-icon                ; Completion kind text/icon prefix labelling for emacs in-region completion
         ligature                 ; Display typographical ligatures in Emacs
         magit                    ; A Git porcelain inside Emacs.
         marginalia               ; Enrich existing commands with completion annotations
         markdown-mode            ; Major mode for Markdown-formatted text
         markdown-toc             ; Generate a TOC in markdown file
-        multi-term               ; Managing multiple terminal buffers in Emacs.
         orderless                ; Completion style for matching regexps in any order
         org-auto-tangle          ; Tangle org file when it is saved
         org-superstar            ; Make org-mode stars a little more super
