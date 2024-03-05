@@ -267,6 +267,9 @@
 (setq completion-category-overrides '((eglot (styles orderless))
                                       (eglot-capf (styles orderless))))
 
+(with-eval-after-load "eglot"
+  (bind-key "M-g s"   #'consult-eglot-symbols))
+
 ;; Specify place to store downloaded RFCs
 (setq rfc-mode-directory (expand-file-name nano-rfc-directory))
 

@@ -40,6 +40,7 @@
         bind-key                 ; A simple way to manage personal keybindings
         cape                     ; Completion At Point Extensions
         consult                  ; Consulting completing-read
+        consult-eglot            ; Jump to workspace symbols with eglot and consult
         consult-recoll           ; Consult interface for recoll query
         corfu                    ; COmpletion Overlay Region Function
         diff-hl                  ; Package for highlighting uncommitted changes
