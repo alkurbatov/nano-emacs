@@ -78,6 +78,7 @@
 (require 'nano-org)
 
 ;; IDE features
+(require 'nano-lsp)
 (require 'nano-project)
 
 ;; Tools
