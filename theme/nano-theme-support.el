@@ -80,7 +80,7 @@
 ;; requires a set of specific fonts. This needs to be called before
 ;; setting the theme
 ;;
-;; Recommended font is "Roboto Mono" or "Roboto Mono Nerd" if you want
+;; Recommended font is "JetBrains Mono" and "JetBrainsMono Nerd" if you want
 ;; to benefit from all the fancy glyphs. See https://www.nerdfonts.com.
 
 ;;; Code:
@@ -112,17 +112,10 @@
   :type 'boolean :group 'nano-theme)
 
 (defface nano-mono
-  '((t (:family "Roboto Mono"
+  '((t (:family "JetBrains Mono"
         :height 150
         :weight light)))
-  "Default monospaced font (Roboto Mono Light, 15pt)."
-  :group 'nano-theme-fonts)
-
-(defface nano-mono-alt
-  '((t (:family "Fira Code"
-        :height 150
-        :weight light)))
-  "Alternative monospaced font (Fira Code Light, 15pt)."
+  "Default monospaced font (JetBrains Mono Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-sans
@@ -140,11 +133,11 @@
   :group 'nano-theme-fonts)
 
 (defface nano-italic
-  '((t (:family "Victor Mono"
+  '((t (:family "JetBrains Mono"
         :slant italic
         :height 150
         :weight regular)))
-  "Default italic font (Victor Mono Italic Light, 15pt)."
+  "Default italic font (JetBrains Mono Italic Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defvar polar-night-0 "#2E3440")
@@ -344,10 +337,10 @@ background color that is barely perceptible."
                           'wrap (make-glyph-code ?- 'nano-faded))
 
   ;; Nerd font for glyph icons
-  (let ((roboto-nerd (font-spec :name "RobotoMono Nerd Font Mono")))
-    (if (find-font roboto-nerd)
-        (set-fontset-font t '(#xe000 . #xffdd) roboto-nerd)
-      (message "Roboto Mono Nerd font has not been found on your system")))
+  (let ((jetbrains-nerd (font-spec :name "JetBrainsMono Nerd Font Mono")))
+    (if (find-font jetbrains-nerd)
+        (set-fontset-font t '(#xe000 . #xffdd) jetbrains-nerd)
+      (message "JetBrainsMono Nerd font has not been found on your system")))
 
   ;; Customize ethan-wspace mode faces
   (with-eval-after-load 'ethan-wspace

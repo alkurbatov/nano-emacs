@@ -38,7 +38,7 @@ configuration.
 
 - Additional fonts
   ```bash
-  brew install font-fira-code font-roboto font-roboto-mono font-roboto-mono-nerd-font font-roboto-slab font-victor-mono homebrew/cask-fonts/font-jetbrains-mono
+  brew install font-roboto font-roboto-slab homebrew/cask-fonts/font-jetbrains-mono homebrew/cask-fonts/font-jetbrains-mono-nerd-font
   ```
 
 - `coreutls` (`Mac OS` only) for better listing in `Dired`
