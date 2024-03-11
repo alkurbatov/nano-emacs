@@ -120,9 +120,6 @@
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
 
-;; Pixel scroll mode
-(pixel-scroll-precision-mode)
-
 ;; Mac specific
 (when (eq system-type 'darwin)
   (setq ns-use-native-fullscreen t

@@ -38,6 +38,7 @@
 
 ;; Nano default settings
 (require 'nano-defaults)
+(require 'nano-scroll)
 
 ;; Nano calendar tweaks
 (require 'nano-calendar)
