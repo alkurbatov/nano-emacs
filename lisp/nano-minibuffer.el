@@ -23,6 +23,9 @@
 (require 'marginalia)
 (require 'vertico)
 
+;; No live preview as it slow with poetry and LSP
+(setq consult-preview-key nil)
+
 ;; Customize list of Consult sources for the consult-buffer command
 (setq consult-buffer-sources '(consult--source-hidden-buffer
                                consult--source-modified-buffer
