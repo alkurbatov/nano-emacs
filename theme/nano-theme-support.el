@@ -316,7 +316,7 @@ background color that is barely perceptible."
                  '(min-width  . 1)  '(width  . 81)
                  '(vertical-scroll-bars . nil)
                  '(internal-border-width . 24)
-                 '(left-fringe . 0)
+                 '(left-fringe . 4)
                  '(right-fringe . 0)
                  '(undecorated-round . t) ;; emacs-plu@29 only
                  '(tool-bar-lines . 0)

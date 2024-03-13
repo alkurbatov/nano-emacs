@@ -24,10 +24,8 @@
 (require 'ligature)
 (require 'nano-modeline)
 
-(setq default-frame-alist
-      (append (list
-               '(left-fringe . 4)
-               '(fullscreen . maximized))))
+;; Start Emacs maximized
+(add-to-list 'default-frame-alist `(fullscreen . maximized))
 
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
 (when (and (eq system-type 'darwin) (display-graphic-p))
