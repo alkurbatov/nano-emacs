@@ -1384,7 +1384,7 @@ background color that is barely perceptible."
                                        :weight bold))))
 
     ;; --- Make --------------------------------------------------------
-    '(makefile-targets ((t (:inherit nano-salient))))
+    '(makefile-ts-mode-target-face ((t (:inherit nano-salient))))
 
     ;; --- Pip-requirements --------------------------------------------
     '(pip-requirements-name-regex-face      ((t (:inherit snow-storm-0))))

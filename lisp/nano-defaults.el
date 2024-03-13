@@ -23,6 +23,7 @@
 (require 'cape)
 (require 'corfu)
 (require 'exec-path-from-shell)
+(require 'makefile-ts-mode)
 (require 'orderless)
 (require 'rfc-mode)
 (require 'smartparens-config)

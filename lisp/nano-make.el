@@ -25,8 +25,8 @@
 
   (whitespace-mode))
 
-(with-eval-after-load "make-mode"
-  (add-hook 'makefile-mode-hook #'nano-setup-makefile-mode))
+(with-eval-after-load "makefile-ts-mode"
+  (add-hook 'makefile-ts-mode-hook #'nano-setup-makefile-mode))
 
 
 (provide 'nano-make)
