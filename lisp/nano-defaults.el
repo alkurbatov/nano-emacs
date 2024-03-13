@@ -228,6 +228,7 @@
 
 ;; Enable tree-sitter integrated into Emacs 29
 (setq treesit-auto-install 'prompt)
+(treesit-auto-add-to-auto-mode-alist 'all)
 (global-treesit-auto-mode)
 
 ;; Request maximum detalization

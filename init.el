@@ -71,7 +71,6 @@
         org-superstar            ; Make org-mode stars a little more super
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
-        protobuf-mode            ; Major mode for editing protocol buffers
         realgud                  ; The Grand "Cathedral" Debugger rewrite
         rfc-mode                 ; An Emacs major mode to read and browse RFC documents.
         russian-holidays         ; Russian holidays for GNU/Emacs calendar
@@ -139,6 +138,10 @@
 ;; Corfu popup on terminal
 (straight-use-package
  '(corfu-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
+
+;; Tree sitter support for Protobuf
+(straight-use-package
+ '(protobuf-ts-mode :type git :host github :repo "emacsmirror/protobuf-ts-mode"))
 
 ;; Load settings
 (require 'nano)
