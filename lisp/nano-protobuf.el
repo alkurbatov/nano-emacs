@@ -1,4 +1,4 @@
-;;; nano-make.el --- Makefile integration
+;;; nano-protobuf.el --- Protobuf programming environemnt
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers
@@ -19,18 +19,7 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'makefile-ts-mode)
+(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-ts-mode))
 
-(defun nano-setup-makefile-mode ()
-  (setq-local indent-tabs-mode t)
-  (setq-local whitespace-style '(tabs tab-mark))
-
-  (whitespace-mode))
-
-(with-eval-after-load "makefile-ts-mode"
-  (add-hook 'makefile-ts-mode-hook #'nano-setup-makefile-mode))
-
-(add-to-list 'auto-mode-alist '("\\([Mm]akefile\\|.*\\.\\(mk\\|make\\)\\)\\'" . makefile-ts-mode))
-
-(provide 'nano-make)
-;;; nano-make.el ends here
+(provide 'nano-protobuf)
+;;; nano-protobuf.el ends here

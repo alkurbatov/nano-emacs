@@ -97,6 +97,7 @@
 (require 'nano-go)
 (require 'nano-make)
 (require 'nano-markdown)
+(require 'nano-protobuf)
 (require 'nano-python)
 (require 'nano-sh)
 (require 'nano-toml)

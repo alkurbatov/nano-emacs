@@ -23,7 +23,6 @@
 (require 'cape)
 (require 'corfu)
 (require 'exec-path-from-shell)
-(require 'makefile-ts-mode)
 (require 'orderless)
 (require 'rfc-mode)
 (require 'smartparens-config)
@@ -229,7 +228,6 @@
 
 ;; Enable tree-sitter integrated into Emacs 29
 (setq treesit-auto-install 'prompt)
-(treesit-auto-add-to-auto-mode-alist 'all)
 (global-treesit-auto-mode)
 
 ;; Request maximum detalization
