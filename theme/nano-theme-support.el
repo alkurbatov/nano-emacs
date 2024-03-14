@@ -1339,6 +1339,8 @@ background color that is barely perceptible."
     ;; --- Dired -------------------------------------------------------
     `(dired-directory ((t (:foreground ,frost-2
                            :weight bold))))
+    `(dired-symlink   ((t (:foreground ,frost-0
+                           :weight bold))))
 
     ;; --- Eglot -------------------------------------------------------
     `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
