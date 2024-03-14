@@ -139,7 +139,7 @@
 
 ;; Tree sitter support for Protobuf
 (straight-use-package
- '(protobuf-ts-mode :type git :host github :repo "emacsmirror/protobuf-ts-mode"))
+ '(protobuf-ts-mode :type git :host github :repo "ashlineldridge/protobuf-ts-mode"))
 
 (straight-use-package
  '(makefile-ts-mode :type git :host github :repo "nverno/makefile-ts-mode"))
