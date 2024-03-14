@@ -23,7 +23,7 @@
 
 (defun nano-setup-makefile-mode ()
   (setq-local indent-tabs-mode t)
-  (setq-local whitespace-style '(tabs tab-mark))
+  (setq-local whitespace-style '(face tabs tab-mark))
 
   (whitespace-mode))
 
