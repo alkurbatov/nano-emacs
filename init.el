@@ -28,8 +28,6 @@
              (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path
              (expand-file-name "theme" user-emacs-directory))
-(add-to-list 'load-path
-             "/opt/homebrew/opt/mu/share/emacs/site-lisp/mu/mu4e")
 
 ;; Setup dependencies
 (require 'nano-package)
