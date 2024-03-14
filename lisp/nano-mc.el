@@ -19,9 +19,20 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'bind-key)
 (require 'dired-quick-sort)
 (require 'ls-lisp)
 (require 'nano-settings)
+
+(defun nano-dired-find-file ()
+  "Open file or directory and show its canonocal path even if it was symlink.
+Kudos to: https://www.youtube.com/watch?v=59XPGvJMggY&list=WL&index=95&t=12s"
+  (interactive)
+
+  (let ((original (dired-get-file-for-visit)))
+    (if (file-directory-p original)
+        (find-alternate-file (file-truename original))
+      (find-file-original))))
 
 (defun nano-open-dired ()
   "Open Dired in current folder with additional tweaks."
@@ -58,6 +69,7 @@
 (bind-key "C-x d" #'nano-open-dired)
 
 (bind-keys :map dired-mode-map
+           ("RET" . nano-dired-find-file)
            ("M-u" . dired-up-directory))
 
 (provide 'nano-mc)
