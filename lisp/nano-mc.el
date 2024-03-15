@@ -32,7 +32,38 @@ Kudos to: https://www.youtube.com/watch?v=59XPGvJMggY&list=WL&index=95&t=12s"
   (let ((original (dired-get-file-for-visit)))
     (if (file-directory-p original)
         (find-alternate-file (file-truename original))
-      (find-file-original))))
+      (find-file original))))
+
+(defun nano-open-in-external-app (&optional Fname)
+  "Open the current file or Dired marked files in external app.
+When called in Emacs Lisp, if FNAME is given, open that.
+
+Taken from:
+`http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'
+Version: 2019-11-04 2023-04-05 2023-06-26."
+  (interactive)
+  (let (xfileList xdoIt)
+    (setq xfileList
+          (if Fname
+              (list Fname)
+            (if (eq major-mode 'dired-mode)
+                (dired-get-marked-files)
+              (list buffer-file-name))))
+    (setq xdoIt (if (<= (length xfileList) 10) t (y-or-n-p "Open more than 10 files? ")))
+    (when xdoIt
+      (cond
+       ((eq system-type 'darwin)
+        (mapc (lambda (xfpath) (shell-command (concat "open " (shell-quote-argument xfpath)))) xfileList))
+       ((eq system-type 'gnu/linux)
+        (mapc (lambda (xfpath)
+                (call-process shell-file-name nil 0 nil
+                              shell-command-switch
+                              (format "%s %s"
+                                      "xdg-open"
+                                      (shell-quote-argument xfpath))))
+              xfileList))
+       ((eq system-type 'berkeley-unix)
+        (mapc (lambda (xfpath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" xfpath))) xfileList))))))
 
 (defun nano-open-dired ()
   "Open Dired in current folder with additional tweaks."
@@ -43,37 +74,38 @@ Kudos to: https://www.youtube.com/watch?v=59XPGvJMggY&list=WL&index=95&t=12s"
 ;; Enable async commands processing in Dired, available since Emacs 29.
 (setq dired-async-mode 1)
 
-;; Assume that we should use another Dired buffer (opened in a window nearby)
-;; as target of all operations
-(setq dired-dwim-target t)
+(with-eval-after-load 'dired
+  ;; Assume that we should use another Dired buffer (opened in a window nearby)
+  ;; as target of all operations
+  (setq dired-dwim-target t)
 
-;; Always do recursive copies without questions
-(setq dired-recursive-copies 'always)
+  ;; Always do recursive copies without questions
+  (setq dired-recursive-copies 'always)
 
-;; Use GNU ls on OS X
-(when (eq system-type 'darwin)
-  (setq ls-lisp-use-insert-directory-program t
-        insert-directory-program (concat nano-brew-path "/opt/coreutils/bin/gls")))
+  ;; Use GNU ls on OS X
+  (when (eq system-type 'darwin)
+    (setq ls-lisp-use-insert-directory-program t
+          insert-directory-program (concat nano-brew-path "/opt/coreutils/bin/gls")))
 
-;; Tweak displayed fields
-(setq dired-listing-switches
-      (combine-and-quote-strings '("-lahGk"
+  ;; Tweak displayed fields
+  (setq dired-listing-switches
+        (combine-and-quote-strings '("-lahGk"
                                    "--time-style=+%d %b %Y")))
 
-;; Setup quick sort
-(dired-quick-sort-setup)
-(setq dired-quick-sort-group-directories-last ?y) ; group directories together
+  ;; Setup quick sort
+  (dired-quick-sort-setup)
+  (setq dired-quick-sort-group-directories-last ?y) ; group directories together
 
-;; Tweak files and folders deletion
-(setq
-   delete-by-moving-to-trash t
-   dired-recursive-deletes 'always)
+  ;; Tweak files and folders deletion
+  (setq delete-by-moving-to-trash t
+        dired-recursive-deletes 'always)
+
+  (bind-keys :map dired-mode-map
+           ("RET" . nano-dired-find-file)
+           ("M-u" . dired-up-directory)
+           ("M-RET" . nano-open-in-external-app)))
 
 (bind-key "C-x d" #'nano-open-dired)
-
-(bind-keys :map dired-mode-map
-           ("RET" . nano-dired-find-file)
-           ("M-u" . dired-up-directory))
 
 (provide 'nano-mc)
 ;;; nano-mc.el ends here
