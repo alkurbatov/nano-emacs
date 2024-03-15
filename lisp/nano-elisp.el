@@ -23,7 +23,7 @@
 ;;; Code:
 (require 'checkdoc)
 
-(with-eval-after-load "lisp"
+(with-eval-after-load 'lisp
   ;; Don't enforce documentation, we have plenty of undocumented functions
   (setq checkdoc-force-docstrings-flag nil)
 

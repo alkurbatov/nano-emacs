@@ -22,7 +22,7 @@
 
 ;;; Code:
 
-(with-eval-after-load "conf-toml-mode"
+(with-eval-after-load 'conf-toml-mode
   (add-hook 'conf-toml-mode-hook #'display-line-numbers-mode))
 
 (provide 'nano-toml)

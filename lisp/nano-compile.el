@@ -27,7 +27,7 @@
  compilation-scroll-output t     ; follow compilation command output
  compilation-ask-about-save nil) ; save all buffers before compilation
 
-(with-eval-after-load "compile"
+(with-eval-after-load 'compile
   ;; Translate ANSI escape sequences
   (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter))
 

@@ -34,7 +34,7 @@
 (setq completion-category-overrides '((eglot (styles orderless))
                                       (eglot-capf (styles orderless))))
 
-(with-eval-after-load "eglot"
+(with-eval-after-load 'eglot
   (bind-key "M-g s"   #'consult-eglot-symbols))
 
 (provide 'nano-lsp)

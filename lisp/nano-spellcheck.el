@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(with-eval-after-load "ispell"
+(with-eval-after-load 'ispell
   (require 'bind-key)
 
   (setq ispell-program-name "hunspell"

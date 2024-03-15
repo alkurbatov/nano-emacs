@@ -66,7 +66,7 @@
 
   (eglot-ensure))
 
-(with-eval-after-load "go-ts-mode"
+(with-eval-after-load 'go-ts-mode
   ;; Sync indent with global settings
   (setq go-ts-mode-indent-offset 4)
 

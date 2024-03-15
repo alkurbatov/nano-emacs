@@ -27,7 +27,7 @@
 
   (whitespace-mode))
 
-(with-eval-after-load "makefile-ts-mode"
+(with-eval-after-load 'makefile-ts-mode
   (add-hook 'makefile-ts-mode-hook #'nano-setup-makefile-mode))
 
 (add-to-list 'auto-mode-alist '("\\([Mm]akefile\\|.*\\.\\(mk\\|make\\)\\)\\'" . makefile-ts-mode))

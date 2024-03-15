@@ -20,7 +20,7 @@
 
 ;;; Code:
 
-(with-eval-after-load "yaml-ts-mode"
+(with-eval-after-load 'yaml-ts-mode
   ;; Show indentation
   (add-hook 'yaml-ts-mode-hook #'highlight-indent-guides-mode)
 

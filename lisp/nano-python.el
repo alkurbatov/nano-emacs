@@ -43,7 +43,7 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
 
   (eglot-ensure))
 
-(with-eval-after-load "python"
+(with-eval-after-load 'python
   ;; Show indentation
   (add-hook 'python-ts-mode-hook #'highlight-indent-guides-mode)
 
