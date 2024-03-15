@@ -40,6 +40,9 @@ Kudos to: https://www.youtube.com/watch?v=59XPGvJMggY&list=WL&index=95&t=12s"
 
   (dired "."))
 
+;; Enable async commands processing in Dired, available since Emacs 29.
+(setq dired-async-mode 1)
+
 ;; Assume that we should use another Dired buffer (opened in a window nearby)
 ;; as target of all operations
 (setq dired-dwim-target t)
