@@ -237,7 +237,7 @@
 (setq format-all-show-errors 'never)
 
 ;; Ensure that default formatter is selected
-(add-hook 'format-all-mode-hook 'format-all-ensure-formatter)
+(add-hook 'format-all-mode-hook #'format-all-ensure-formatter)
 
 ;; Save abbreviations whenever files are saved
 (setq save-abbrevs 'silently)
