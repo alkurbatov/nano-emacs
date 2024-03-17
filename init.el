@@ -58,6 +58,7 @@
         helpful                  ; A better help buffer
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
+        inputrc-mode             ; Emacs major mode for readline inputrc configs
         kind-icon                ; Completion kind text/icon prefix labelling for emacs in-region completion
         ligature                 ; Display typographical ligatures in Emacs
         magit                    ; A Git porcelain inside Emacs.
