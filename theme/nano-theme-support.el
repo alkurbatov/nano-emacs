@@ -1,4 +1,4 @@
-;;; nano-theme-support.el --- N Λ N O theme -*- lexical-binding: t -*-
+;;; nano-theme-support.el --- N Λ N O theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021-2022 Free Software Foundation, Inc.
 

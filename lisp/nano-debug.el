@@ -1,4 +1,4 @@
-;;; nano-debug.el --- Debugging utilities
+;;; nano-debug.el --- Debugging utilities -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

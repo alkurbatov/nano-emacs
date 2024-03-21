@@ -1,4 +1,4 @@
-;;; nano-defaults.el --- Global default settings
+;;; nano-defaults.el --- Global default settings -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2020-2024 - N Λ N O developers

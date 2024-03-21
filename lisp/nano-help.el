@@ -1,4 +1,4 @@
-;;; nano-help.el --- Help and embedded documentation improvements
+;;; nano-help.el --- Help and embedded documentation improvements -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

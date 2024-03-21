@@ -1,4 +1,4 @@
-;;; nano-protobuf.el --- Protobuf programming environemnt
+;;; nano-protobuf.el --- Protobuf programming environemnt -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

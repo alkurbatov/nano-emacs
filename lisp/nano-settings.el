@@ -1,4 +1,4 @@
-;;; nano-settings.el --- Customizable project settings
+;;; nano-settings.el --- Customizable project settings -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

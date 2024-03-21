@@ -1,4 +1,4 @@
-;;; nano-spellcheck.el --- Setup spell checking
+;;; nano-spellcheck.el --- Setup spell checking -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

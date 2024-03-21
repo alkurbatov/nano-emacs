@@ -1,4 +1,4 @@
-;;; nano-calendar.el --- Emacs calendar settings for active locale
+;;; nano-calendar.el --- Emacs calendar settings for active locale -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

@@ -1,4 +1,4 @@
-;;; nano-remote.el --- Configures remote work support (SSH, Tramp, etc)
+;;; nano-remote.el --- Configures remote work support (SSH, Tramp, etc) -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

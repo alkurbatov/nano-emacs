@@ -1,4 +1,4 @@
-;;; early-init.el --- Early initialization routine
+;;; early-init.el --- Early initialization routine -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers

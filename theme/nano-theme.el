@@ -1,4 +1,4 @@
-;;; nano-theme.el --- N Λ N O dark theme Ex -*- lexical-binding: t -*-
+;;; nano-theme.el --- N Λ N O dark theme Ex -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021-2022 Free Software Foundation, Inc.
 
