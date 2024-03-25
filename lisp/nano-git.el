@@ -56,8 +56,20 @@
 
 (advice-add 'magit-set-header-line-format :around #'nano-modeline-magit-mode)
 
+(with-eval-after-load 'magit-blame
+  (setq magit-blame-styles '((headings
+                              (heading-format . "%.8H - %a, %C • %s\12"))
+                             (highlight
+                              (highlight-face . magit-blame-highlight))
+                             (lines
+                              (show-lines . t)
+                              (show-message . t)))))
+
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
+
+;; Enforce bindings recommended by Magit.
+(setq magit-define-global-key-bindings 'recommended)
 
 (provide 'nano-git)
 ;;; nano-git.el ends here

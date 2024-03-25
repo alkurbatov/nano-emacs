@@ -1182,7 +1182,7 @@ background color that is barely perceptible."
     '(magit-bisect-skip                      ((t (:inherit nano-default))))
     '(magit-blame-date                       ((t (:inherit nano-default))))
     '(magit-blame-dimmed                     ((t (:inherit nano-default))))
-    '(magit-blame-hash                       ((t (:inherit nano-faded))))
+    '(magit-blame-hash                       ((t (:inherit nano-salient))))
 
     '(magit-blame-margin                     ((t (:inherit nano-default))))
     '(magit-blame-name                       ((t (:inherit nano-default))))
