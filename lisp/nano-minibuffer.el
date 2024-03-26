@@ -23,6 +23,16 @@
 (require 'marginalia)
 (require 'vertico)
 
+(defun nano-vertico--match-directory (str)
+  "Match directory delimiter in STR."
+  (string-suffix-p "/" str))
+
+(defun nano-vertico-sort-directories-first (files)
+  "Sort directories before FILES."
+  (setq files (vertico-sort-alpha files))
+  (nconc (seq-filter #'nano-vertico--match-directory files)
+         (seq-remove #'nano-vertico--match-directory files)))
+
 ;; Customize list of Consult sources for the consult-buffer command
 (setq consult-buffer-sources '(consult--source-hidden-buffer
                                consult--source-modified-buffer
@@ -34,6 +44,10 @@
       vertico-count 20          ; maximal number of candidates to show
       vertico-count-format nil) ; no prefix with number of entries
 (vertico-mode)
+
+(setq vertico-multiform-categories
+      '((file (vertico-sort-function . nano-vertico-sort-directories-first))))
+(vertico-multiform-mode)
 
 (setq-default marginalia--ellipsis "…"    ; nicer ellipsis
               marginalia-align 'right     ; right alignment
