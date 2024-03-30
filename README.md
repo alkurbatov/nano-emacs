@@ -33,7 +33,7 @@ configuration.
   In case of `Mac OS`, [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) is strongly recommended, e.g.:
   ```bash
   brew tap d12frosted/emacs-plus
-  brew install emacs-plus@29 --with-imagemagick --with-no-frame-refocus --with-savchenkovaleriy-big-sur-icon --with-xwidgets
+  brew install emacs-plus@29 --with-imagemagick --with-no-frame-refocus --with-savchenkovaleriy-big-sur-icon --with-xwidgets --with-poll
   ```
 
 - Additional fonts
