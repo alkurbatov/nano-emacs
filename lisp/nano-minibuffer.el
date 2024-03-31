@@ -40,6 +40,8 @@
                                consult--source-file-register
                                consult--source-project-buffer-hidden))
 
+(setq consult-fd-args '("fd" "-i" "-H" "-c" "never"))
+
 (setq vertico-resize nil        ; how to resize the Vertico minibuffer window
       vertico-count 20          ; maximal number of candidates to show
       vertico-count-format nil) ; no prefix with number of entries
@@ -55,6 +57,7 @@
 (marginalia-mode)
 
 ;; Bind Consult commands
+(bind-key "C-x C-f" #'consult-fd)
 (bind-key "C-x b"   #'consult-buffer)
 (bind-key "C-s"     #'consult-line)
 (bind-key "C-c r"   #'consult-recent-file)

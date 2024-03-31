@@ -46,6 +46,11 @@ configuration.
   brew install coreutls
   ```
 
+- The `fd` utility:
+  ```bash
+  brew install fd
+  ```
+
 ### Optional requirements
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
