@@ -46,7 +46,7 @@ configuration.
   brew install coreutls
   ```
 
-- The `fd` utility:
+- The `fd` utility (to search files with `consult`):
   ```bash
   brew install fd
   ```
