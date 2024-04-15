@@ -41,6 +41,11 @@ configuration.
   brew install font-roboto font-roboto-slab homebrew/cask-fonts/font-jetbrains-mono homebrew/cask-fonts/font-jetbrains-mono-nerd-font
   ```
 
+- `Cargo` and `Rust` to compile [lspce](https://github.com/zbelial/lspce).
+  ```bash
+  brew install rust
+  ```
+
 - `coreutls` (`Mac OS` only) for better listing in `Dired`
   ```bash
   brew install coreutls
@@ -58,7 +63,7 @@ configuration.
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
 - [Pandoc](https://pandoc.org/) for markdown preview
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
-- [Pyright](https://github.com/microsoft/pyright) for `LSP` in `Python`.
+- [Pylsp](https://github.com/python-lsp/python-lsp-server) for `LSP` in `Python`.
 
 ### Installation
 To install the project execute the following command:

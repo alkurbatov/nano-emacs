@@ -38,7 +38,6 @@
         bind-key                 ; A simple way to manage personal keybindings
         cape                     ; Completion At Point Extensions
         consult                  ; Consulting completing-read
-        consult-eglot            ; Jump to workspace symbols with eglot and consult
         corfu                    ; COmpletion Overlay Region Function
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
@@ -148,6 +147,13 @@
 ;; Emacs major mode for readline inputrc configs
 (straight-use-package
  '(inputrc-mode :type git :host github :repo "nverno/inputrc-mode"))
+
+(straight-use-package
+ '(lspce :type git :host github :repo "zbelial/lspce"
+         :files (:defaults "lspce-module.dylib")
+         :pre-build (("cargo" "build" "--release")
+                     ("cp" "./target/release/liblspce_module.d" "./lspce-module.d")
+                     ("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib"))))
 
 ;; Load settings
 (require 'nano)

@@ -21,33 +21,29 @@
 ;; Configures programming environment for the Python language.
 
 ;;; Code:
-(require 'eglot)
-(require 'poetry)
+(require 'lspce)
 (require 'python)
 
-
-(defun nano-setup-python-with-eglot ()
-  "Setup and enable Eglot for Python.
+(defun nano-setup-python-with-lspce ()
+  "Setup and enable Lspce for Python.
 For additional settings please refer to Pyright documentation
 https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
+  (add-to-list 'lspce-server-programs '("python" "pylsp" ""))
 
   (setq poetry-tracking-strategy 'switch-buffer)
   (poetry-tracking-mode)
-
-  ;; Ask Eglot to disable diagnostic, we will use other linters instead.
-  (setq eglot-stay-out-of '(flymake))
 
   ;; Configure linting
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-flake8 nil t)
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-mypy nil t)
 
-  (eglot-ensure))
+  (lspce-mode))
 
 (with-eval-after-load 'python
   ;; Show indentation
   (add-hook 'python-ts-mode-hook #'highlight-indent-guides-mode)
 
-  (add-hook 'python-ts-mode-hook #'nano-setup-python-with-eglot))
+  (add-hook 'python-ts-mode-hook #'nano-setup-python-with-lspce))
 
 ;; Let Emacs guess Python indent silently
 (setq python-indent-guess-indent-offset t

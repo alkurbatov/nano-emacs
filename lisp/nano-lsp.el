@@ -1,4 +1,4 @@
-;;; nano-lsp.el --- Language server integration via Eglot -*- lexical-binding: t; -*-
+;;; nano-lsp.el --- Language server integration via Lspce -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers
@@ -18,24 +18,21 @@
 
 ;;; Commentary:
 
+;; See https://github.com/zbelial/lspce
+
 ;;; Code:
+(require 'lspce)
 
-;; Disable debug log to speed up things a bit
-(fset #'jsonrpc--log-event #'ignore) ; Remove laggy typing it probably reduces chatty json from lsp to eglot
-(setq eglot-events-buffer-config '(:size 0 :format full))
+(setq lspce-send-changes-idle-time 0.2)
 
-(setq-default eglot-autoshutdown t       ; Automatically shutdown backend if last buffer was killed
-              eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
-              eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
+;; Reset list of Lspce LSP servers. It'll be filled in dedicated modules.
+(setq lspce-server-programs '())
 
-(setq eglot-ignored-server-capabilities '(:inlayHintProvider)) ; Disable annoying inlay hints
+;; Uncomment to get debug log.
+;; (lspce-set-log-level-trace)
 
-;; Specify explicitly to use Orderless for Eglot
-(setq completion-category-overrides '((eglot (styles orderless))
-                                      (eglot-capf (styles orderless))))
-
-(with-eval-after-load 'eglot
-  (bind-key "M-g s"   #'consult-eglot-symbols))
+;; Uncomment to enable Lspce logs.
+;; (lspce-set-log-file (format "/tmp/lspce/lspce_%d.log" (emacs-pid)))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here

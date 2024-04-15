@@ -19,26 +19,17 @@
 ;;; Commentary:
 
 ;;; Code:
-(defun nano-setup-c++-with-eglot ()
-  "Setup and enable Eglot for C++."
+(require 'lspce)
 
-  (eglot-ensure))
+(defun nano-setup-c++-with-lspce ()
+  "Setup and enable Lspce for C++."
+  (add-to-list 'lspce-server-programs
+               '("C" "clangd"
+                 "-j=4 --log=error --clang-tidy --all-scopes-completion --completion-style=detailed --background-index --pch-storage=memory --header-insertion=never --header-insertion-decorators=0"))
 
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               '(c++-ts-mode
-                 . ("clangd"
-                    "-j=4"
-                    "--log=error"
-                    "--clang-tidy"
-                    "--all-scopes-completion"
-                    "--completion-style=detailed"
-                    "--background-index"
-                    "--pch-storage=memory"
-                    "--header-insertion=never"
-                    "--header-insertion-decorators=0"))))
+  (lspce-mode))
 
-(add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
+(add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-lspce)
 
 ;; Show indentation
 (add-hook 'c++-ts-mode-hook #'highlight-indent-guides-mode)

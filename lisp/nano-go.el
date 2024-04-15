@@ -21,10 +21,10 @@
 ;;; Code:
 (require 'bind-key)
 (require 'format-all)
-(require 'eglot)
+(require 'lspce)
 (require 'project)
 
-;; Make it possible for Eglot to find go.mod in the project.
+;; Make it possible for LSP servers to find go.mod in the project.
 ;; See https://github.com/golang/tools/blob/master/gopls/doc/emacs.md#configuring-project-for-go-modules-in-emacs
 (defun project-find-go-module (dir)
   (when-let ((root (locate-dominating-file dir "go.mod")))
@@ -52,19 +52,14 @@
   (:features)
   (:format (format-all--buffer-easy executable "print")))
 
-
-(defun nano-setup-go-with-eglot ()
-  "Setup and enable eglot for Go."
-  ;; Ask Eglot to disable diagnostic, we will use other linters instead.
-  (setq eglot-stay-out-of '(flymake))
+(defun nano-setup-go-with-lspce ()
+  "Setup and enable Lspce for Go."
+  (add-to-list 'lspce-server-programs '("go" "gopls" ""))
 
   ;; Configure linting
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-golangci-lint nil t)
 
-  (add-to-list 'eglot-workspace-configuration
-               '((:gopls . ((:usePlaceholders . t)))))
-
-  (eglot-ensure))
+  (lspce-mode))
 
 (with-eval-after-load 'go-ts-mode
   ;; Sync indent with global settings
@@ -73,7 +68,7 @@
   ;; Show indentation
   (add-hook 'go-ts-mode-hook #'highlight-indent-guides-mode)
 
-  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
+  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-lspce))
 
 ;; Enable syntax highlighting for Golang-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
