@@ -149,11 +149,14 @@
  '(inputrc-mode :type git :host github :repo "nverno/inputrc-mode"))
 
 (straight-use-package
- '(lspce :type git :host github :repo "zbelial/lspce"
-         :files (:defaults "lspce-module.dylib")
-         :pre-build (("cargo" "build" "--release")
-                     ("cp" "./target/release/liblspce_module.d" "./lspce-module.d")
-                     ("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib"))))
+ `(lspce :type git :host github :repo "zbelial/lspce"
+         :files (:defaults ,(pcase system-type
+                              (`gnu/linux "lspce-module.so")
+                              (_ "lspce-module.dylib")))
+         :pre-build ("cargo" "build" "--release")
+         :post-build ,(pcase system-type
+                        (`gnu/linux '("cp" "./target/release/liblspce_module.so" "./lspce-module.so"))
+                        (_ '("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib")))))
 
 ;; Load settings
 (require 'nano)
