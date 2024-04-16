@@ -28,6 +28,9 @@
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
   (flyspell-mode)
 
+  (setq-local whitespace-style '(face trailing))
+  (whitespace-mode)
+
   (unless (string= (buffer-name) "COMMIT_EDITMSG")
     (flyspell-buffer)))
 

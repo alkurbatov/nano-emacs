@@ -1406,8 +1406,8 @@ background color that is barely perceptible."
                                              :foreground ,polar-night-4))))
     `(whitespace-tab                    ((t (:background ,polar-night-0
                                              :foreground ,polar-night-4))))
-    `(whitespace-trailing               ((t (:background ,polar-night-0
-                                             :foreground ,polar-night-4))))
+    `(whitespace-trailing               ((t (:background ,polar-night-4
+                                             :foreground ,polar-night-0))))
 
     ))
 
