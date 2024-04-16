@@ -151,12 +151,12 @@
 (straight-use-package
  `(lspce :type git :host github :repo "zbelial/lspce"
          :files (:defaults ,(pcase system-type
-                              (`gnu/linux "lspce-module.so")
-                              (_ "lspce-module.dylib")))
+                              ('gnu/linux "lspce-module.so")
+                              ('darwin "lspce-module.dylib")))
          :pre-build ("cargo" "build" "--release")
          :post-build ,(pcase system-type
-                        (`gnu/linux '("cp" "./target/release/liblspce_module.so" "./lspce-module.so"))
-                        (_ '("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib")))))
+                        ('gnu/linux '("cp" "./target/release/liblspce_module.so" "./lspce-module.so"))
+                        ('darwin '("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib")))))
 
 ;; Load settings
 (require 'nano)
