@@ -1,7 +1,8 @@
-## GNU Emacs / N Λ N O (developers edition)
+# GNU Emacs / N Λ N O (developers edition)
 
-**GNU Emacs / N Λ N O (developers edition)** is a set of configuration files for GNU Emacs
-based on [nano-emacs](https://github.com/rougier/nano-emacs) such as to provide a nice and consistent look and feel for developers.
+**GNU Emacs / N Λ N O (developers edition)** is a set of configuration files
+for GNU Emacs based on [nano-emacs](https://github.com/rougier/nano-emacs)
+such as to provide a nice and consistent look and feel for developers.
 The dark theme is based on [Nord colors](https://www.nordtheme.com/).
 
 The philosophy of `nano-emacs` is to stick as much as possible to
@@ -14,7 +15,8 @@ configuration.
 <img src="./images/nano-emacs-dark.png">
 </div>
 
-### Supported programming languages and formats
+## Supported programming languages and formats
+
 - `Bash`
 - `C++`
 - `Elisp`
@@ -24,39 +26,58 @@ configuration.
 - `TOML`
 - `YAML`
 
-### Limitations
+## Limitations
+
 - Only dark theme is supported.
 - The configuration is tested mostly on `Mac OS` and rarely on `Linux`.
 
-### Mandatory requirements
-- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 29.2 with enabled tree-sitter and native compilation.
-  In case of `Mac OS`, [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) is strongly recommended, e.g.:
+## Mandatory requirements
+
+- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 29.2 with enabled
+  tree-sitter and native compilation.
+  In case of `Mac OS`, [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus)
+  is strongly recommended, e.g.:
+
   ```bash
   brew tap d12frosted/emacs-plus
-  brew install emacs-plus@29 --with-imagemagick --with-no-frame-refocus --with-savchenkovaleriy-big-sur-icon --with-xwidgets --with-poll
+  brew install emacs-plus@29 \
+    --with-imagemagick \
+    --with-no-frame-refocus \
+    --with-savchenkovaleriy-big-sur-icon \
+    --with-xwidgets \
+    --with-poll
   ```
 
 - Additional fonts
+
   ```bash
-  brew install font-roboto font-roboto-slab homebrew/cask-fonts/font-jetbrains-mono homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+  brew install \
+    font-roboto \
+    font-roboto-slab \
+    homebrew/cask-fonts/font-jetbrains-mono \
+    homebrew/cask-fonts/font-jetbrains-mono-nerd-font
   ```
 
 - `Cargo` and `Rust` to compile [lspce](https://github.com/zbelial/lspce).
+
   ```bash
   brew install rust
   ```
 
 - `coreutls` (`Mac OS` only) for better listing in `Dired`
+
   ```bash
   brew install coreutls
   ```
 
 - The `fd` utility (to search files with `consult`):
+
   ```bash
   brew install fd
   ```
 
 ### Optional requirements
+
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
 - [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP` in `Golang`.
@@ -67,7 +88,9 @@ configuration.
 - [Pylsp](https://github.com/python-lsp/python-lsp-server) for `LSP` in `Python`.
 
 ### Installation
+
 To install the project execute the following command:
+
 ```bash
 make install
 ```
