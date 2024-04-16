@@ -24,6 +24,8 @@
 
   (setq markdown-command "pandoc")
 
+  ;; Configure linting
+  (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
   (flyspell-mode)
 
   (unless (string= (buffer-name) "COMMIT_EDITMSG")

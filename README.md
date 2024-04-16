@@ -61,7 +61,8 @@ configuration.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
 - [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP` in `Golang`.
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
-- [Pandoc](https://pandoc.org/) for markdown preview
+- [Markdownlint](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
+- [Pandoc](https://pandoc.org/) for markdown preview.
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
 - [Pylsp](https://github.com/python-lsp/python-lsp-server) for `LSP` in `Python`.
 
