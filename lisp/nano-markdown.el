@@ -24,14 +24,15 @@
 
   (setq markdown-command "pandoc")
 
-  ;; Configure linting
-  (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
   (flyspell-mode)
 
   (setq-local whitespace-style '(face trailing))
   (whitespace-mode)
 
   (unless (string= (buffer-name) "COMMIT_EDITMSG")
+    ;; Configure linting
+    (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
+
     (flyspell-buffer)))
 
 (with-eval-after-load 'markdown-mode
