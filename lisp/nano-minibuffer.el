@@ -57,7 +57,7 @@
 (marginalia-mode)
 
 ;; Bind Consult commands
-(bind-key "C-x C-f" #'consult-fd)
+(bind-key "C-x f" #'consult-fd)
 (bind-key "C-x b"   #'consult-buffer)
 (bind-key "C-s"     #'consult-line)
 (bind-key "C-c r"   #'consult-recent-file)
