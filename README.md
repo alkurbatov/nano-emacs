@@ -11,9 +11,7 @@ possible) and to keep it modular enough. The idea is for users to copy
 the part they are interested in such as to include them in their own
 configuration.
 
-<div>
-<img src="./images/nano-emacs-dark.png">
-</div>
+![preview](./images/nano-emacs-dark.png)
 
 ## Supported programming languages and formats
 
