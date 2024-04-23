@@ -18,12 +18,22 @@
 
 ;;; Commentary:
 
+;; Inspired by https://leanpub.com/markdown-mode/read
+
 ;;; Code:
 (defun nano-setup-markdown-mode ()
-  "Setup markdown mode with spellcheck."
+  "Setup markdown mode."
 
-  (setq markdown-command "pandoc")
+  (setq markdown-command
+      (concat
+       "pandoc"
+       " --highlight-style=pygments"))
 
+  (setq markdown-fontify-code-blocks-natively t)
+  (add-to-list 'markdown-code-lang-modes '("bash" . bash-ts-mode))
+  (add-to-list 'markdown-code-lang-modes '("json" . json-ts-mode))
+
+  ;; Enable spellcheck
   (flyspell-mode)
 
   (setq-local whitespace-style '(face trailing))
