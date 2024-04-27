@@ -7,3 +7,7 @@ help: ## Display this help screen
 .PHONY: install
 install: ## Install Emacs configuration into the current system
 	./scripts/install
+
+.PHONY: clean-install
+clean-install: ## Force cleanup of installed packages and install Emacs configuration into the current system
+	CLEAN=1 ./scripts/install

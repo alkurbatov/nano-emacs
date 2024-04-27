@@ -4,10 +4,16 @@ set -euxo pipefail
 
 # Settings
 EMACS_HOME=~/.emacs.d
+FOLDERS_TO_REMOVE=(lisp snippets theme)
+
+CLEAN="${CLEAN:-0}"
+if [[ "${CLEAN}" -eq 1 ]]; then
+    FOLDERS_TO_REMOVE+=(straight tree-sitter)
+fi
 
 # Purge previous configuration
 if [ -d "${EMACS_HOME}" ]; then
-    for i in lisp snippets theme; do
+    for i in "${FOLDERS_TO_REMOVE[@]}"; do
         rm -rf "${EMACS_HOME:?}/${i}" || true
     done
 
