@@ -73,6 +73,7 @@
 
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
   (add-hook 'org-mode-hook             #'org-superstar-mode)
+  (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
   (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
 
   (bind-keys :map org-mode-map

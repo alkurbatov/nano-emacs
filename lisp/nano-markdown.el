@@ -39,6 +39,9 @@
   (setq-local whitespace-style '(face trailing))
   (whitespace-mode)
 
+  ;; Show fill column (defaults to 80)
+  (display-fill-column-indicator-mode)
+
   (unless (string= (buffer-name) "COMMIT_EDITMSG")
     ;; Configure linting
     (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
