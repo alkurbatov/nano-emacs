@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: anonymous namespace
+# --
+namespace {
+$1
+} // anonymous namespace
