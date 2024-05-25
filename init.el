@@ -53,7 +53,6 @@
         flyspell-popup           ; Correcting words with flyspell in popup menus
         format-all               ; Auto-format source code in many languages with one command
         git-modes                ; Emacs major modes for Git configuration files
-        golden-ratio             ; Automatic resizing of Emacs windows to the golden ratio
         helpful                  ; A better help buffer
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords

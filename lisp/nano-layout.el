@@ -20,7 +20,6 @@
 
 ;;; Code:
 (require 'disp-table)
-(require 'golden-ratio)
 (require 'ligature)
 (require 'nano-modeline)
 
@@ -79,10 +78,6 @@
 (add-hook 'conf-unix-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
-
-;; Enable windows balancing with golden ratio
-(golden-ratio-mode 1)
-(setq golden-ratio-auto-scale t)
 
 ;; In some modes we don't want to scale anything
 (setq golden-ratio-exclude-modes '("dired-mode"))
