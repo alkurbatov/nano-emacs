@@ -52,8 +52,8 @@ configuration.
   brew install \
     font-roboto \
     font-roboto-slab \
-    homebrew/cask-fonts/font-jetbrains-mono \
-    homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+    homebrew/cask/font-jetbrains-mono \
+    homebrew/cask/font-jetbrains-mono-nerd-font
   ```
 
 - `Cargo` and `Rust` to compile [lspce](https://github.com/zbelial/lspce).
@@ -84,6 +84,37 @@ configuration.
 - [Pandoc](https://pandoc.org/) for markdown preview.
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
 - [Pylsp](https://github.com/python-lsp/python-lsp-server) for `LSP` in `Python`.
+
+#### Recommended `Pylsp` setup
+
+1. Install `Pylsp` with `pipx`:
+
+``` bash
+pipx install python-lsp-server
+```
+
+1. Install [`memestra`](https://github.com/QuantStack/pyls-memestra) plugin:
+
+``` bash
+pipx inject python-lsp-server pyls-memestra
+```
+
+1. Install [`rope`](https://github.com/python-rope/pylsp-rope) plugin:
+
+``` bash
+pipx inject python-lsp-server pyls-rope
+```
+
+#### Recommended `Pylsp` per-project setup
+
+```lisp
+((python-ts-mode
+  (lspce-workspace-configuration .
+      (:pylsp (:plugins (:jedi_completion (:include_params t :fuzzy t)
+                         :jedi (:environment "/<path-to-project>/.venv/bin/python")
+                         :flake8 (:enabled :json-false)
+                         :rope_completion (:enabled :json-true)))))))
+```
 
 ### Installation
 
