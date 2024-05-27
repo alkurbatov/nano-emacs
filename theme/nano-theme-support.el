@@ -300,12 +300,6 @@ background color that is barely perceptible."
   (setq-default cursor-in-non-selected-windows nil)
   (setq blink-cursor-mode nil)
 
-  ;; No tooltips
-  (tooltip-mode -1)
-
-  ;; No scroll bars
-  (scroll-bar-mode -1)
-
   ;; No toolbar
   (tool-bar-mode -1)
 
@@ -319,6 +313,7 @@ background color that is barely perceptible."
                  '(left-fringe . 4)
                  '(right-fringe . 0)
                  '(undecorated-round . t) ;; emacs-plu@29 only
+                 '(scroll-bar-mode . -1)
                  '(tool-bar-lines . 0)
                  '(menu-bar-lines . 0))))
 
@@ -569,7 +564,7 @@ background color that is barely perceptible."
 
    ;; --- Line numbers -------------------------------------------------
    '(line-number                  ((t (:inherit nano-faded))))
-   '(line-number-current-line     ((t (:inherit nil))))
+   '(line-number-current-line     ((t (:inherit (nano-strong hl-line)))))
    `(line-number-major-tick       ((t (:inherit nano-faded))))
    '(line-number-minor-tick       ((t (:inherit nano-faded))))
 
@@ -687,7 +682,6 @@ background color that is barely perceptible."
    '(helpful-heading                ((t (:inherit nano-strong))))
 
    ;; --- Nano modeline ------------------------------------------------
-   '(nano-modeline-active               ((t (:inherit nano-subtle))))
    '(nano-modeline-active-name          ((t (:inherit (nano-strong nano-modeline-active)))))
    '(nano-modeline-active-primary       ((t (:inherit (nano-default nano-modeline-active)))))
    '(nano-modeline-active-secondary     ((t (:inherit (nano-faded nano-modeline-active)))))
@@ -695,7 +689,6 @@ background color that is barely perceptible."
    '(nano-modeline-active-status-RW     ((t (:inherit (nano-faded-i nano-strong)))))
    '(nano-modeline-active-status-**     ((t (:inherit (nano-popout-i nano-strong)))))
 
-   '(nano-modeline-inactive             ((t (:inherit nano-subtle))))
    '(nano-modeline-inactive-name        ((t (:inherit (nano-faded nano-modeline-inactive)))))
    '(nano-modeline-inactive-primary     ((t (:inherit (nano-faded nano-modeline-inactive)))))
    '(nano-modeline-inactive-secondary   ((t (:inherit (nano-faded nano-modeline-inactive)))))
