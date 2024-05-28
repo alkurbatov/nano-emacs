@@ -19,6 +19,7 @@ configuration.
 - `C++`
 - `Elisp`
 - `Golang`
+- `JSON`
 - `Makefile`
 - `Python`
 - `TOML`
@@ -50,8 +51,8 @@ configuration.
 
   ```bash
   brew install \
-    font-roboto \
-    font-roboto-slab \
+    homebrew/cask/font-roboto \
+    homebrew/cask/font-roboto-slab \
     homebrew/cask/font-jetbrains-mono \
     homebrew/cask/font-jetbrains-mono-nerd-font
   ```
@@ -102,7 +103,7 @@ pipx inject python-lsp-server pyls-memestra
 1. Install [`rope`](https://github.com/python-rope/pylsp-rope) plugin:
 
 ``` bash
-pipx inject python-lsp-server pyls-rope
+pipx inject python-lsp-server pylsp-rope
 ```
 
 #### Recommended `Pylsp` per-project setup
