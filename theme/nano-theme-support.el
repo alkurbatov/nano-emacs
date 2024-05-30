@@ -622,8 +622,8 @@ background color that is barely perceptible."
    '(company-tooltip-common               ((t (:inherit nano-strong))))
    '(company-tooltip-common-selection     ((t (:inherit nano-salient-i
                                                 :weight normal))))
-   '(company-tooltip-annotation           ((t (:inherit nano-default))))
-   '(company-tooltip-annotation-selection ((t (:inherit nano-subtle))))
+   '(company-tooltip-annotation           ((t (:inherit nano-salient))))
+   '(company-tooltip-annotation-selection ((t (:inherit nano-salient-i))))
 
    ;; --- Compilation --------------------------------------------------
    '(compilation-error ((t (:inherit nano-critical))))

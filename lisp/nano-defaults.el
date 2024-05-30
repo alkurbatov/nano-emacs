@@ -20,8 +20,7 @@
 
 ;;; Code:
 (require 'bind-key)
-(require 'cape)
-(require 'corfu)
+(require 'company)
 (require 'exec-path-from-shell)
 (require 'orderless)
 (require 'rfc-mode)
@@ -68,37 +67,23 @@
 (yas-global-mode)
 
 ;; Enable autocompletion
-(setq corfu-cycle t                ; Enable cycling for `corfu-next/previous'
-      corfu-auto t                 ; Enable auto completion
-      corfu-auto-prefix 2          ; Minimum length of prefix for auto completion
-      corfu-separator ?\s          ; Orderless field separator
-      corfu-quit-no-match t        ; Quit when no match
-      corfu-preview-current nil    ; Disable current candidate preview
-      corfu-preselect-first nil    ; Disable candidate preselection
-      corfu-on-exact-match nil     ; Configure handling of exact matches
-      corfu-echo-documentation nil ; Disable documentation in the echo area
-      corfu-scroll-margin 5)       ; Use scroll margin
+(global-company-mode)
 
-(global-corfu-mode)
+;; Show autocompletion as soon as possible
+(setq company-idle-delay 0.2
+      company-minimum-prefix-length 2)
 
-;; Enable autocompletion via popup menu in terminal
-(unless (display-graphic-p)
-  (corfu-terminal-mode +1))
+;; Allow typing in characters that don’t match the candidates
+(setq company-require-match nil)
 
-;; TAB cycle if there are only few candidates
-(setq completion-cycle-threshold 3)
+;; Controls the maximum number of the candidates shown simultaneously in the tooltip
+(setq company-tooltip-limit 16)
 
-;; Enable indentation+completion using the TAB key.
-;; completion-at-point is often bound to M-TAB.
-(setq tab-always-indent 'complete)
+;; Show annotations to the right side of the tooltip
+(setq company-tooltip-align-annotations t)
 
-;; Enable nice icons in completion menu
-(setq kind-icon-default-face 'corfu-default)
-(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
-
-;; Enable code compeletion extensions (order matters!)
-(add-to-list 'completion-at-point-functions #'cape-file)
-(add-to-list 'completion-at-point-functions #'cape-keyword)
+(define-key company-mode-map [remap indent-for-tab-command]
+            #'company-indent-or-complete-common)
 
 ;; Completion style, see
 ;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
@@ -109,16 +94,16 @@
       read-buffer-completion-ignore-case t
       completion-ignore-case t)
 
+;; TAB cycle if there are only few candidates
+(setq completion-cycle-threshold 3)
+
+;; Enable indentation+completion using the TAB key.
+;; completion-at-point is often bound to M-TAB.
+(setq tab-always-indent 'complete)
+
 ;; Enable useful region commands
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
-
-;; Enable indentation+completion using the TAB key
-;; completion-at-point is often bound to M-TAB
-(setq tab-always-indent 'complete)
-
-;; TAB cycle if there are only few candidates
-(setq completion-cycle-threshold 3)
 
 ;; Mac specific
 (when (eq system-type 'darwin)

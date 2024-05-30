@@ -36,9 +36,8 @@
       '(ag                       ; Integration of ag search utility
         avy                      ; Jump to things in Emacs tree-style
         bind-key                 ; A simple way to manage personal keybindings
-        cape                     ; Completion At Point Extensions
         consult                  ; Consulting completing-read
-        corfu                    ; COmpletion Overlay Region Function
+        company                  ; Modular auto-completion framework
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
         elfeed                   ; An Emacs web feeds client
@@ -56,7 +55,6 @@
         helpful                  ; A better help buffer
         highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
-        kind-icon                ; Completion kind text/icon prefix labelling for emacs in-region completion
         ligature                 ; Display typographical ligatures in Emacs
         magit                    ; A Git porcelain inside Emacs.
         marginalia               ; Enrich existing commands with completion annotations
@@ -130,10 +128,6 @@
 ;; An Emacs minor mode for highlighting matches to the selection
 (straight-use-package
  '(selection-highlight-mode :type git :host github :repo "balloneij/selection-highlight-mode"))
-
-;; Corfu popup on terminal
-(straight-use-package
- '(corfu-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
 
 ;; Tree sitter support for Protobuf
 (straight-use-package

@@ -33,7 +33,6 @@
         read-char-history
         face-name-history
         bookmark-history
-        corfu-history
         file-name-history))
 
 (setq history-length 250)
@@ -47,13 +46,9 @@
 (put 'read-char-history          'history-length 25)
 (put 'face-name-history          'history-length 25)
 (put 'bookmark-history           'history-length 25)
-(put 'corfu-history              'history-length 25)
 
 ;; No duplicates in history
 (setq history-delete-duplicates t)
-
-;; Prefer recently used completions
-(corfu-history-mode 1)
 
 (savehist-mode 1)
 
