@@ -27,5 +27,7 @@
   (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
   (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
 
+(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
+
 (provide 'nano-yaml)
 ;;; nano-yaml.el ends here
