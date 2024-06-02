@@ -209,7 +209,7 @@
 
 ;; Enable smarter parens handling
 (show-smartparens-global-mode t)
-(add-hook 'prog-mode-hook #'turn-on-smartparens-mode)
+(add-hook 'prog-mode-hook #'turn-on-smartparens-strict-mode)
 
 ;; Enable tree-sitter integrated into Emacs 29
 (setq treesit-auto-install 'prompt)
