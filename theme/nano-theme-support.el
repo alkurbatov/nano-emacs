@@ -312,7 +312,7 @@ background color that is barely perceptible."
                  '(internal-border-width . 24)
                  '(left-fringe . 4)
                  '(right-fringe . 0)
-                 '(undecorated-round . t) ;; emacs-plu@29 only
+                 '(undecorated-round . t) ;; emacs-plus@29 only
                  '(scroll-bar-mode . -1)
                  '(tool-bar-lines . 0)
                  '(menu-bar-lines . 0))))
@@ -753,20 +753,6 @@ background color that is barely perceptible."
    '(vertico-group-title                   ((t (:inherit nano-faded))))
    '(vertico-multiline                     ((t (:inherit nano-faded))))
 
-   ;; --- Citar --------------------------------------------------------
-   '(citar                          ((t (:inherit nano-faded))))
-   '(citar-highlight                ((t (:inherit nano-default))))
-
-   ;; --- Corfu --------------------------------------------------------
-   '(corfu-annotations              ((t (:inherit nano-faded))))
-   '(corfu-bar                      ((t (:inherit nano-default-i))))
-   `(corfu-border                   ((t (:foreground ,polar-night-0
-                                         :background ,polar-night-3))))
-   `(corfu-current                  ((t (:background ,polar-night-3))))
-   `(corfu-default                  ((t (:background ,polar-night-1))))
-   '(corfu-deprecated               ((t (:inherit nano-faded))))
-   '(corfu-echo                     ((t (:inherit nano-faded))))
-
    ;; --- Orderless ----------------------------------------------------
    '(orderless-match-face-0         ((t (:inherit (nano-salient
                                                    nano-strong)))))
@@ -892,119 +878,6 @@ background color that is barely perceptible."
    '(org-verse                               ((t (:inherit nano-faded))))
    '(org-warning                             ((t (:inherit nano-popout))))
 
-   ;; --- Mu4e ---------------------------------------------------------
-   '(mu4e-attach-number-face                ((t (:inherit nano-strong))))
-   '(mu4e-cited-1-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-2-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-3-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-4-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-5-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-6-face                       ((t (:inherit nano-faded))))
-   '(mu4e-cited-7-face                       ((t (:inherit nano-faded))))
-   '(mu4e-compose-header-face                ((t (:inherit nano-faded))))
-   '(mu4e-compose-separator-face             ((t (:inherit nano-faded))))
-   '(mu4e-contact-face                     ((t (:inherit nano-salient))))
-   '(mu4e-context-face                       ((t (:inherit nano-faded))))
-   '(mu4e-draft-face                         ((t (:inherit nano-faded))))
-   '(mu4e-flagged-face                     ((t (:inherit nano-salient))))
-   '(mu4e-footer-face                        ((t (:inherit nano-faded))))
-   '(mu4e-forwarded-face                   ((t (:inherit nano-default))))
-   '(mu4e-header-face                      ((t (:inherit nano-default))))
-   '(mu4e-header-highlight-face               ((t (:inherit highlight))))
-   '(mu4e-header-key-face                   ((t (:inherit nano-strong))))
-   '(mu4e-header-marks-face                  ((t (:inherit nano-faded))))
-   '(mu4e-header-title-face                 ((t (:inherit nano-strong))))
-   '(mu4e-header-field-face                 ((t (:inherit nano-strong))))
-   '(mu4e-header-value-face                ((t (:inherit nano-default))))
-   '(mu4e-highlight-face                    ((t (:inherit nano-popout))))
-   '(mu4e-link-face                        ((t (:inherit nano-salient))))
-   '(mu4e-modeline-face                      ((t (:inherit nano-faded))))
-   '(mu4e-moved-face                         ((t (:inherit nano-faded))))
-   '(mu4e-ok-face                            ((t (:inherit nano-faded))))
-   '(mu4e-region-code                        ((t (:inherit nano-faded))))
-   '(mu4e-replied-face                     ((t (:inherit nano-default))))
-   '(mu4e-special-header-value-face        ((t (:inherit nano-default))))
-   '(mu4e-system-face                        ((t (:inherit nano-faded))))
-   '(mu4e-related-face                       ((t (:inherit nano-faded))))
-   '(mu4e-title-face                        ((t (:inherit nano-strong))))
-   '(mu4e-trashed-face                       ((t (:inherit nano-faded))))
-   '(mu4e-unread-face                       ((t (:inherit nano-strong))))
-   '(mu4e-url-number-face                    ((t (:inherit nano-faded))))
-   '(mu4e-view-body-face                   ((t (:inherit nano-default))))
-   '(mu4e-warning-face                      ((t (:inherit nano-popout))))
-
-   ;; --- GNUS ---------------------------------------------------------
-   '(gnus-button                            ((t (:inherit nano-salient))))
-   '(gnus-cite-1                            ((t (:inherit nano-faded))))
-   '(gnus-cite-10                           ((t (:inherit nano-faded))))
-   '(gnus-cite-11                           ((t (:inherit nano-faded))))
-   '(gnus-cite-2                            ((t (:inherit nano-faded))))
-   '(gnus-cite-3                            ((t (:inherit nano-faded))))
-   '(gnus-cite-4                            ((t (:inherit nano-faded))))
-   '(gnus-cite-5                            ((t (:inherit nano-faded))))
-   '(gnus-cite-6                            ((t (:inherit nano-faded))))
-   '(gnus-cite-7                            ((t (:inherit nano-faded))))
-   '(gnus-cite-8                            ((t (:inherit nano-faded))))
-   '(gnus-cite-9                            ((t (:inherit nano-faded))))
-   '(gnus-cite-attribution                  ((t (:inherit nano-faded))))
-   '(gnus-emphasis-bold                     ((t (:inherit nano-faded))))
-   '(gnus-emphasis-bold-italic              ((t (:inherit nano-faded))))
-   '(gnus-emphasis-highlight-words          ((t (:inherit nano-faded))))
-   '(gnus-emphasis-italic                   ((t (:inherit nano-faded))))
-   '(gnus-emphasis-strikethru               ((t (:inherit nano-faded))))
-   '(gnus-emphasis-underline                ((t (:inherit nano-faded))))
-   '(gnus-emphasis-underline-bold           ((t (:inherit nano-faded))))
-   '(gnus-emphasis-underline-bold-italic    ((t (:inherit nano-faded))))
-   '(gnus-emphasis-underline-italic         ((t (:inherit nano-faded))))
-   '(gnus-group-mail-1                      ((t (:inherit nano-faded))))
-   '(gnus-group-mail-1-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-mail-2                      ((t (:inherit nano-faded))))
-   '(gnus-group-mail-2-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-mail-3                      ((t (:inherit nano-faded))))
-   '(gnus-group-mail-3-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-mail-low                    ((t (:inherit nano-faded))))
-   '(gnus-group-mail-low-empty              ((t (:inherit nano-faded))))
-   '(gnus-group-news-1                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-1-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-2                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-2-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-3                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-3-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-4                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-4-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-5                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-5-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-6                      ((t (:inherit nano-faded))))
-   '(gnus-group-news-6-empty                ((t (:inherit nano-faded))))
-   '(gnus-group-news-low                    ((t (:inherit nano-faded))))
-   '(gnus-group-news-low-empty              ((t (:inherit nano-faded))))
-
-   '(gnus-header-content                    ((t (:inherit nano-faded))))
-   '(gnus-header-from                       ((t (:inherit nano-strong))))
-   '(gnus-header-name                       ((t (:inherit nano-strong))))
-   '(gnus-header-newsgroups                 ((t (:inherit nano-faded))))
-   '(gnus-header-subject                    ((t (:inherit nano-default))))
-
-   '(gnus-signature                         ((t (:inherit nano-faded))))
-   '(gnus-splash                            ((t (:inherit nano-faded))))
-   '(gnus-summary-cancelled                 ((t (:inherit nano-faded))))
-   '(gnus-summary-high-ancient              ((t (:inherit nano-faded))))
-   '(gnus-summary-high-read                 ((t (:inherit nano-faded))))
-   '(gnus-summary-high-ticked               ((t (:inherit nano-faded))))
-   '(gnus-summary-high-undownloaded         ((t (:inherit nano-faded))))
-   '(gnus-summary-high-unread               ((t (:inherit nano-faded))))
-   '(gnus-summary-low-ancient               ((t (:inherit nano-faded))))
-   '(gnus-summary-low-read                  ((t (:inherit nano-faded))))
-   '(gnus-summary-low-ticked                ((t (:inherit nano-faded))))
-   '(gnus-summary-low-undownloaded          ((t (:inherit nano-faded))))
-   '(gnus-summary-low-unread                ((t (:inherit nano-faded))))
-   '(gnus-summary-normal-ancient            ((t (:inherit nano-faded))))
-   '(gnus-summary-normal-read               ((t (:inherit nano-faded))))
-   '(gnus-summary-normal-ticked             ((t (:inherit nano-faded))))
-   '(gnus-summary-normal-undownloaded       ((t (:inherit nano-faded))))
-   '(gnus-summary-normal-unread             ((t (:inherit nano-faded))))
-   '(gnus-summary-selected                  ((t (:inherit nano-faded))))
-
    ;; --- Marginalia ---------------------------------------------------
    '(marginalia-archive                     ((t (:inherit nano-faded))))
    '(marginalia-char                        ((t (:inherit nano-faded))))
@@ -1055,15 +928,6 @@ background color that is barely perceptible."
     '(elfeed-search-unread-count-face        ((t (:inherit nano-strong))))
     '(elfeed-search-unread-title-face        ((t (:inherit nano-strong :weight bold))))
 
-    ;; --- Deft --------------------------------------------------------
-    '(deft-filter-string-error-face         ((t (:inherit nano-popout))))
-    '(deft-filter-string-face              ((t (:inherit nano-default))))
-    '(deft-header-face                     ((t (:inherit nano-salient))))
-    '(deft-separator-face                    ((t (:inherit nano-faded))))
-    '(deft-summary-face                      ((t (:inherit nano-faded))))
-    '(deft-time-face                       ((t (:inherit nano-salient))))
-    '(deft-title-face                       ((t (:inherit nano-strong))))
-
     ;; --- imenu-list ---------------------------------------------------
     '(imenu-list-entry-face                 ((t (:inherit nano-default))))
     '(imenu-list-entry-face-0                ((t (:inherit nano-strong))))
@@ -1093,18 +957,6 @@ background color that is barely perceptible."
     '(rst-literal                           ((t (:inherit nano-salient))))
     '(rst-reference                         ((t (:inherit nano-salient))))
     '(rst-transition                        ((t (:inherit nano-default))))
-
-    ;; ---SHR ---------------------------------------------------------
-    '(shr-abbreviation                    ((t (:inherit nano-popout))))
-    '(shr-h1                              ((t (:inherit nano-strong))))
-    '(shr-h2                              ((t (:inherit nano-strong))))
-    '(shr-h3                              ((t (:inherit nano-strong))))
-    '(shr-h4                              ((t (:inherit nano-strong))))
-    '(shr-h5                              ((t (:inherit nano-strong))))
-    '(shr-h6                              ((t (:inherit nano-strong))))
-    '(shr-link                           ((t (:inherit nano-salient))))
-    '(shr-selected-link      ((t (:inherit (nano-salient nano-subtle)))))
-    '(shr-strike-through                   ((t (:inherit nano-faded))))
 
     ;; --- Markdown ----------------------------------------------------
     '(markdown-blockquote-face              ((t (:inherit nano-default))))
@@ -1335,14 +1187,6 @@ background color that is barely perceptible."
     `(dired-symlink   ((t (:foreground ,frost-0
                            :weight bold))))
 
-    ;; --- Eglot -------------------------------------------------------
-    `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
-                                                 :foreground ,snow-storm-2
-                                                 :underline unspecified))))
-    `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
-                                                 :foreground ,polar-night-0
-                                                 :underline unspecified))))
-
     ;; --- Ethan-wspace ------------------------------------------------
     `(ethan-wspace-face ((t (:background ,aurora-2
                              :foreground unspecified))))
@@ -1364,19 +1208,6 @@ background color that is barely perceptible."
     ;; --- Highlight-indent --------------------------------------------
     `(highlight-indent-guides-character-face     ((t (:foreground ,polar-night-1))))
     `(highlight-indent-guides-top-character-face ((t (:foreground ,polar-night-3))))
-
-    ;; --- Ivy ---------------------------------------------------------
-    `(ivy-minibuffer-match-face-1 ((t (:background unspecified
-                                       :foreground ,frost-0))))
-    `(ivy-minibuffer-match-face-2 ((t (:background unspecified
-                                       :foreground ,frost-0))))
-    `(ivy-minibuffer-match-face-3 ((t (:background unspecified
-                                       :foreground ,frost-0))))
-    `(ivy-minibuffer-match-face-4 ((t (:background unspecified
-                                       :foreground ,frost-0))))
-    `(ivy-current-match           ((t (:background ,polar-night-3
-                                       :foreground ,snow-storm-0
-                                       :weight bold))))
 
     ;; --- Make --------------------------------------------------------
     '(makefile-ts-mode-target-face ((t (:inherit nano-salient))))
