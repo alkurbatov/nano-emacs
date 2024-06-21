@@ -1192,17 +1192,11 @@ background color that is barely perceptible."
                              :foreground unspecified))))
 
     ;; --- Flymake -----------------------------------------------------
-    `(flymake-error        ((t (:background ,aurora-0
-                                :foreground ,snow-storm-2
-                                :underline unspecified))))
+    `(flymake-error        ((t (:underline (:style wave :color ,aurora-0)))))
     `(flymake-error-echo   ((t (:foreground ,aurora-0))))
-    `(flymake-warning      ((t (:background ,aurora-2
-                                :foreground ,polar-night-0
-                                :underline unspecified))))
+    `(flymake-warning      ((t (:underline (:style wave :color ,aurora-2)))))
     `(flymake-warning-echo ((t (:foreground ,aurora-2))))
-    `(flymake-note         ((t (:background ,frost-2
-                                :foreground ,polar-night-0
-                                :underline unspecified))))
+    `(flymake-note         ((t (:underline (:style wave :color ,frost-2)))))
     `(flymake-note-echo    ((t (:foreground ,frost-2))))
 
     ;; --- Highlight-indent --------------------------------------------
