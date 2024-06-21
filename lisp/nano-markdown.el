@@ -49,7 +49,7 @@
     (flyspell-buffer)))
 
 (with-eval-after-load 'markdown-mode
-  (add-hook 'markdown-mode-hook #'turn-on-smartparens-mode)
+  (add-hook 'markdown-mode-hook #'turn-on-smartparens-strict-mode)
   (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode)) ; immediately check whole buffer
 
 ;; Use Github Markdown flavor by default (provided by markdown-mode) as it is used most often

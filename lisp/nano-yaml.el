@@ -24,7 +24,7 @@
   ;; Show indentation
   (add-hook 'yaml-ts-mode-hook #'highlight-indent-guides-mode)
 
-  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
+  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-strict-mode)
   (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
 
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))

@@ -24,7 +24,6 @@
 (require 'exec-path-from-shell)
 (require 'orderless)
 (require 'rfc-mode)
-(require 'smartparens-config)
 (require 'treesit-auto)
 
 ;; Move customization variables to a separate file, otherwise init.el will be used
@@ -206,10 +205,6 @@
                        (let ((name (buffer-name buf)))
                          (not (or (string-prefix-p "*" name)
                                   (eq 'dired-mode (buffer-local-value 'major-mode buf)))))))
-
-;; Enable smarter parens handling
-(show-smartparens-global-mode t)
-(add-hook 'prog-mode-hook #'turn-on-smartparens-strict-mode)
 
 ;; Enable tree-sitter integrated into Emacs 29
 (setq treesit-auto-install 'prompt)
