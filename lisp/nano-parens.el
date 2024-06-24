@@ -66,7 +66,7 @@ respectively."
 
 ;; Enable smarter parens handling
 (show-smartparens-global-mode t)
-(add-hook 'prog-mode-hook #'turn-on-smartparens-strict-mode)
+(add-hook 'prog-mode-hook #'turn-on-smartparens-mode)
 
 (provide 'nano-parens)
 ;;; nano-parens.el ends here
