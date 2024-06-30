@@ -88,7 +88,7 @@
 (require 'cl-macs)
 
 (defgroup nano nil
-  "N Λ N O"
+  "N Λ N O."
   :group 'convenience)
 
 (defgroup nano-theme nil
@@ -1243,6 +1243,9 @@ background color that is barely perceptible."
                                              :foreground ,polar-night-4))))
     `(whitespace-trailing               ((t (:background ,polar-night-4
                                              :foreground ,polar-night-0))))
+
+    ;; -- Flymake-popon --------------------------------------------------
+    `(flymake-popon-posframe-border ((t (:foreground ,polar-night-0))))
 
     ))
 
