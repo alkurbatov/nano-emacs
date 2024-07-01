@@ -32,16 +32,14 @@ configuration.
 
 ## Mandatory requirements
 
-- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 29.2 with enabled
-  tree-sitter and native compilation.
+- [GNU Emacs](https://www.gnu.org/software/emacs/) >= 30 with enabled tree-sitter.
   In case of `Mac OS`, [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus)
   is strongly recommended, e.g.:
 
   ```bash
   brew tap d12frosted/emacs-plus
-  brew install emacs-plus@29 \
+  brew install emacs-plus@30 \
     --with-imagemagick \
-    --with-no-frame-refocus \
     --with-savchenkovaleriy-big-sur-icon \
     --with-xwidgets \
     --with-poll
