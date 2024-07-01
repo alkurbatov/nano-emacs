@@ -20,6 +20,13 @@
 
 ;;; Code:
 (require 'engine-mode)
+(require 'which-key)
+
+;; Enable which key mode to show available key bindings
+(which-key-mode)
+
+;; Open which-key hints faster (default is 1.0)
+(setq which-key-idle-delay 0.2)
 
 ;; Binded to 'C-x /' by default
 (engine-mode t)

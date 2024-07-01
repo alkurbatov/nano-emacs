@@ -206,7 +206,7 @@
                          (not (or (string-prefix-p "*" name)
                                   (eq 'dired-mode (buffer-local-value 'major-mode buf)))))))
 
-;; Enable tree-sitter integrated into Emacs 29
+;; Enable tree-sitter integrated into Emacs >= 29
 (setq treesit-auto-install 'prompt)
 (global-treesit-auto-mode)
 

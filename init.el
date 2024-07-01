@@ -73,8 +73,7 @@
         smex                     ; A smart M-x enhancement for Emacs
         treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                  ; VERTical Interactive Completion
-        yasnippet                ; A template system for Emacs
-        which-key))              ; Display available keybindings in popup
+        yasnippet))              ; A template system for Emacs
 
 ;; Install packages that are not yet installed
 (dolist (package package-list)
