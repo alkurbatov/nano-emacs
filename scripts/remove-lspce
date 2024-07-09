@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Remove everything related to lspce for clean install.
+
+set -euxo pipefail
+
+for folder in build modified repos; do
+    rm -rf ~/.emacs.d/straight/${folder}/lspce
+done
