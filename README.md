@@ -82,37 +82,18 @@ configuration.
 - [Markdownlint](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
 - [Pandoc](https://pandoc.org/) for markdown preview.
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
-- [Pylsp](https://github.com/python-lsp/python-lsp-server) for `LSP` in `Python`.
+- [Pyright](https://github.com/microsoft/pyright) for `LSP` in `Python`.
 
-#### Recommended `Pylsp` setup
+#### Recommended `Pyright` setup
 
-1. Install `Pylsp` with `pipx`:
+To provide automatic activation of virtual environments create `pyrightconfig.json`
+file in the root of your project with the following content:
 
-``` bash
-pipx install python-lsp-server
-```
-
-1. Install [`memestra`](https://github.com/QuantStack/pyls-memestra) plugin:
-
-``` bash
-pipx inject python-lsp-server pyls-memestra
-```
-
-1. Install [`rope`](https://github.com/python-rope/pylsp-rope) plugin:
-
-``` bash
-pipx inject python-lsp-server pylsp-rope
-```
-
-#### Recommended `Pylsp` per-project setup
-
-```lisp
-((python-ts-mode
-  (lspce-workspace-configuration .
-      (:pylsp (:plugins (:jedi_completion (:include_params t :fuzzy t)
-                         :jedi (:environment "/<path-to-project>/.venv/bin/python")
-                         :flake8 (:enabled :json-false)
-                         :rope_completion (:enabled :json-true)))))))
+``` json
+{
+  "venvPath": "<path-to-the-folder-containing-venv",
+  "venv": "<name of the venv folder, e.g. .venv"
+}
 ```
 
 ### Installation

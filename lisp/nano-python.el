@@ -28,7 +28,7 @@
   "Setup and enable Lspce for Python.
 For additional settings please refer to Pyright documentation
 https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
-  (add-to-list 'lspce-server-programs '("python" "pylsp" ""))
+  (add-to-list 'lspce-server-programs '("python" "pyright-langserver" "--stdio" ""))
 
   (setq poetry-tracking-strategy 'switch-buffer)
   (poetry-tracking-mode)
