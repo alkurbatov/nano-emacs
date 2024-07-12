@@ -81,9 +81,6 @@
 ;; Show annotations to the right side of the tooltip
 (setq company-tooltip-align-annotations t)
 
-(define-key company-mode-map [remap indent-for-tab-command]
-            #'company-indent-or-complete-common)
-
 ;; Completion style, see
 ;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
 (setq completion-styles '(substring orderless basic)
@@ -96,9 +93,9 @@
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
 
-;; Enable indentation+completion using the TAB key.
-;; completion-at-point is often bound to M-TAB.
-(setq tab-always-indent 'complete)
+;; Enable indentation+tab insertion using the TAB key.
+;; completion-at-point is bound to M-TAB.
+(setq tab-always-indent nil)
 
 ;; Enable useful region commands
 (put 'downcase-region 'disabled nil)

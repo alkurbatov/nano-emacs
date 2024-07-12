@@ -57,6 +57,9 @@
 (bind-key "C-c l" #'avy-copy-line)
 (bind-key "C-c m" #'avy-move-line)
 
+;; Company
+(bind-key "M-TAB" #'company-complete)
+
 ;; Flymake
 (with-eval-after-load 'flymake
   ;; Provide some flycheck-like bindings in flymake mode to ease transition
