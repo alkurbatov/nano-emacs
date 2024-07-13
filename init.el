@@ -37,6 +37,7 @@
         avy                      ; Jump to things in Emacs tree-style
         bind-key                 ; A simple way to manage personal keybindings
         consult                  ; Consulting completing-read
+        consult-eglot            ; Jump to workspace symbols with eglot and consult
         company                  ; Modular auto-completion framework
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
@@ -138,15 +139,6 @@
 ;; Emacs major mode for readline inputrc configs
 (straight-use-package
  '(inputrc-mode :type git :host github :repo "nverno/inputrc-mode"))
-
-(straight-use-package
- `(lspce :type git :host github :repo "zbelial/lspce"
-         :files (:defaults ,(pcase system-type
-                              ('gnu/linux "lspce-module.so")
-                              ('darwin "lspce-module.dylib")))
-         :pre-build ,(pcase system-type
-                       ('gnu/linux '(("cargo" "build" "--release") ("cp" "./target/release/liblspce_module.so" "./lspce-module.so")))
-                       ('darwin '(("cargo" "build" "--release") ("cp" "./target/release/liblspce_module.dylib" "./lspce-module.dylib"))))))
 
 ;; Load settings
 (require 'nano)

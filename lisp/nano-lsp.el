@@ -1,4 +1,4 @@
-;;; nano-lsp.el --- Language server integration via Lspce -*- lexical-binding: t; -*-
+;;; nano-lsp.el --- Language server integration via Eglot -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers
@@ -18,21 +18,18 @@
 
 ;;; Commentary:
 
-;; See https://github.com/zbelial/lspce
-
 ;;; Code:
-(require 'lspce)
 
-(setq lspce-send-changes-idle-time 0.2)
+(setq-default eglot-autoshutdown t       ; Automatically shutdown backend if last buffer was killed
+              eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
+              eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
 
-;; Reset list of Lspce LSP servers. It'll be filled in dedicated modules.
-(setq lspce-server-programs '())
+;; Specify explicitly to use Orderless for Eglot
+(setq completion-category-overrides '((eglot (styles orderless))
+                                      (eglot-capf (styles orderless))))
 
-;; Uncomment to get debug log.
-;; (lspce-set-log-level-trace)
-
-;; Uncomment to enable Lspce logs.
-;; (lspce-set-log-file (format "/tmp/lspce/lspce_%d.log" (emacs-pid)))
+(with-eval-after-load 'eglot
+  (bind-key "M-g s"   #'consult-eglot-symbols))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here

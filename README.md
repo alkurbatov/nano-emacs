@@ -55,12 +55,6 @@ configuration.
     homebrew/cask/font-jetbrains-mono-nerd-font
   ```
 
-- `Cargo` and `Rust` to compile [lspce](https://github.com/zbelial/lspce).
-
-  ```bash
-  brew install rust
-  ```
-
 - `coreutls` (`Mac OS` only) for better listing in `Dired`
 
   ```bash
@@ -86,8 +80,8 @@ configuration.
 
 #### Recommended `Pyright` setup
 
-To provide automatic activation of virtual environments create `pyrightconfig.json`
-file in the root of your project with the following content:
+To provide automatic activation of virtual environments create
+`pyrightconfig.json` file in the root of your project with the following content:
 
 ``` json
 {

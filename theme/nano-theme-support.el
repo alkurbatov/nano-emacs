@@ -464,7 +464,13 @@ background color that is barely perceptible."
                                    :underline unspecified))))
         `(flyspell-incorrect  ((t (:background ,frost-2
                                    :foreground ,polar-night-0
-                                   :underline unspecified))))))
+                                   :underline unspecified)))))
+        `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
+                                                     :foreground ,snow-storm-2
+                                                     :underline unspecified))))
+        `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
+                                                     :foreground ,polar-night-0
+                                                     :underline unspecified)))))
 
     (custom-theme-set-faces 'nano
 
