@@ -63,7 +63,6 @@
         markdown-toc             ; Generate a TOC in markdown file
         orderless                ; Completion style for matching regexps in any order
         org-auto-tangle          ; Tangle org file when it is saved
-        org-superstar            ; Make org-mode stars a little more super
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
         realgud                  ; The Grand "Cathedral" Debugger rewrite
