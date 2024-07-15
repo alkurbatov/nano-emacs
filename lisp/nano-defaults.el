@@ -228,5 +228,13 @@
 ;; Specify place to store downloaded RFCs
 (setq rfc-mode-directory (expand-file-name nano-rfc-directory))
 
+(defun nano-pulse-current-region (&rest _)
+  "Pulse the current implicit or active region."
+  (if mark-active
+      (pulse-momentary-highlight-region (region-beginning) (region-end))
+    (pulse-momentary-highlight-region (mark) (point))))
+
+(advice-add #'kill-ring-save :before #'nano-pulse-current-region)
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here

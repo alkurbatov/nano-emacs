@@ -584,6 +584,8 @@ background color that is barely perceptible."
    '(help-argument-name            ((t (:inherit nano-faded))))
    '(tabulated-list-fake-header    ((t (:inherit nano-strong))))
    '(tool-bar                      ((t (:inherit nano-faded-i))))
+   '(pulse-highlight-face          ((t (:inherit nano-critical-i))))
+   '(pulse-highlight-start-face    ((t (:inherit nano-critical-i))))
 
    ;; --- TTY faces ----------------------------------------------------
    '(tty-menu-disabled-face        ((t (:inherit nano-faded-i))))
