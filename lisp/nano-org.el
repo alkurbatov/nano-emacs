@@ -51,6 +51,10 @@
   ;; Allow manual change of inline images size
   (setq org-image-actual-width nil)
 
+  ;; Enable document parsing
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+
   ;; Customize some links, see:
   ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
 

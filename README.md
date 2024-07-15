@@ -20,6 +20,7 @@ configuration.
 - `Elisp`
 - `Golang`
 - `JSON`
+- `LaTeX`
 - `Makefile`
 - `Python`
 - `TOML`
@@ -77,6 +78,11 @@ configuration.
 - [Pandoc](https://pandoc.org/) for markdown preview.
 - [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
 - [Pyright](https://github.com/microsoft/pyright) for `LSP` in `Python`.
+- `LaTeX` for formulas support in org mode, e.g.:
+
+  ```bash
+  brew install --cask mactex
+  ```
 
 #### Recommended `Pyright` setup
 
