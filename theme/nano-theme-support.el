@@ -438,40 +438,6 @@ background color that is barely perceptible."
      '(window-divider-first-pixel ((t (:inherit window-divider))))
      '(window-divider-last-pixel ((t (:inherit window-divider)))))
 
-
-   ;; Set colors for linters indicators. Many terminals require complex setup
-   ;; to make wave underline with colors work properly. To workaround this problem,
-   ;; we introduce different styles for GUI and TUI modes.
-   (if (display-graphic-p)
-       (custom-theme-set-faces 'nano
-        `(flymake-error       ((t (:underline (:style wave :color ,aurora-0)))))
-        `(flymake-warning     ((t (:underline (:style wave :color ,aurora-2)))))
-        `(flymake-note        ((t (:underline (:style wave :color ,frost-2)))))
-        `(flyspell-incorrect  ((t (:underline (:style wave :color ,frost-2)))))
-        `(flyspell-duplicate  ((t (:inherit flyspell-incorrect)))))
-     (custom-theme-set-faces 'nano
-        `(flymake-error       ((t (:background ,aurora-0
-                                   :foreground ,snow-storm-2
-                                   :underline unspecified))))
-        `(flymake-warning     ((t (:background ,aurora-2
-                                   :foreground ,polar-night-0
-                                   :underline unspecified))))
-        `(flymake-note        ((t (:background ,frost-2
-                                   :foreground ,polar-night-0
-                                   :underline unspecified))))
-        `(flyspell-duplicate  ((t (:background ,frost-2
-                                   :foreground ,polar-night-0
-                                   :underline unspecified))))
-        `(flyspell-incorrect  ((t (:background ,frost-2
-                                   :foreground ,polar-night-0
-                                   :underline unspecified)))))
-        `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
-                                                     :foreground ,snow-storm-2
-                                                     :underline unspecified))))
-        `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
-                                                     :foreground ,polar-night-0
-                                                     :underline unspecified)))))
-
     (custom-theme-set-faces 'nano
 
    ;; --- Base ---------------------------------------------------------
@@ -1254,6 +1220,23 @@ background color that is barely perceptible."
 
     ;; -- Flymake-popon --------------------------------------------------
     `(flymake-popon-posframe-border ((t (:foreground ,polar-night-0))))
+
+    ;; -- Flymake --------------------------------------------------------
+    `(flymake-error       ((t (:underline (:style wave :color ,aurora-0)))))
+    `(flymake-warning     ((t (:underline (:style wave :color ,aurora-2)))))
+    `(flymake-note        ((t (:underline (:style wave :color ,frost-2)))))
+
+    ;; -- Flyspell -------------------------------------------------------
+    `(flyspell-incorrect  ((t (:underline (:style wave :color ,frost-2)))))
+    `(flyspell-duplicate  ((t (:inherit flyspell-incorrect))))
+
+    ;; -- Eglot ----------------------------------------------------------
+    `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
+                                                 :foreground ,snow-storm-2
+                                                 :underline unspecified))))
+    `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
+                                                 :foreground ,polar-night-0
+                                                 :underline unspecified))))
 
     ))
 
