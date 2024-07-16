@@ -43,11 +43,5 @@
   (load bootstrap-file nil 'nomessage))
 
 
-(defun nano-compile ()
-  "Compile nano ELisp modules."
-  (interactive)
-  (byte-recompile-directory (expand-file-name "~/.emacs.d/lisp") 0))
-
-
 (provide 'nano-package)
 ;;; nano-package.el ends here
