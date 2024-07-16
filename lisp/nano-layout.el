@@ -23,9 +23,6 @@
 (require 'ligature)
 (require 'nano-modeline)
 
-;; Start Emacs maximized
-(add-to-list 'default-frame-alist `(fullscreen . maximized))
-
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
 (when (and (eq system-type 'darwin) (display-graphic-p))
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text

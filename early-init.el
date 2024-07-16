@@ -39,4 +39,9 @@
 (setq native-comp-eln-load-path
       (list (expand-file-name "eln-cache" user-emacs-directory)))
 
+;; Start Emacs maximixed without scrollbars
+(setq default-frame-alist '((fullscreen . maximized)
+                            (vertical-scroll-bars . nil)
+                            (horizontal-scroll-bars . nil)))
+
 ;;; early-init.el ends here
