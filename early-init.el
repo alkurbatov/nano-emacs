@@ -44,4 +44,7 @@
                             (vertical-scroll-bars . nil)
                             (horizontal-scroll-bars . nil)))
 
+;; No menu bar
+(menu-bar-mode 0)
+
 ;;; early-init.el ends here
