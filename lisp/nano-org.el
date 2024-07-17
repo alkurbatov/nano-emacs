@@ -55,6 +55,9 @@
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
 
+  ;; Enable syntax highlighting in src blocks for certain languages
+  (add-to-list 'org-src-lang-modes '("go" . go-ts))
+
   ;; Customize some links, see:
   ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
 
