@@ -41,6 +41,7 @@
 
 ;; Nano default settings
 (require 'nano-defaults)
+(require 'nano-clipboard)
 (require 'nano-scroll)
 
 ;; Nano calendar tweaks
