@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+#
+# Desktop file to integrate manually built Emacs into Gnome. 
+[Desktop Entry]
+Name=Emacs
+Comment=Emacs text editor
+Exec=/home/alkurbatov/work/bin/emacs
+Type=Application
+Icon=/home/alkurbatov/work/src/git.sv.gnu.org/emacs/etc/images/icons/hicolor/128x128/apps/emacs.png
+Terminal=false
+Categories=Development;
+StartupNotify=true
+StartupWMClass=emacs
