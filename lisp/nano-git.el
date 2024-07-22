@@ -67,6 +67,7 @@
 
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.gitconfig" . gitconfig-mode))
 
 ;; Enforce bindings recommended by Magit.
 (setq magit-define-global-key-bindings 'recommended)
