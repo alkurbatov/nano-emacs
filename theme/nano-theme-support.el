@@ -353,6 +353,7 @@ background color that is barely perceptible."
           hl-todo-keyword-faces
           `(("TODO"       . nano-popout)
             ("XXX"        . nano-popout)
+            ("CRUTCH"     . nano-popout)
             ("FIXME"      . nano-critical)
             ("NB"         . nano-salient)
             ("NOTE"       . nano-salient))))
