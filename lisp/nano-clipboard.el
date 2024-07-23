@@ -31,6 +31,8 @@
   "Paste text using macOS tools."
   (shell-command-to-string "pbpaste"))
 
+(setq wl-copy-process nil)
+
 (defun copy-from-linux (text)
   "Copy TEXT using Wayland tools."
   (setq wl-copy-process (make-process :name "wl-copy"
@@ -38,8 +40,8 @@
                                       :command '("wl-copy" "-f" "-n")
                                       :connection-type 'pipe
                                       :noquery t))
-    (process-send-string wl-copy-process text)
-    (process-send-eof wl-copy-process))
+  (process-send-string wl-copy-process text)
+  (process-send-eof wl-copy-process))
 
 (defun paste-to-linux ()
   "Paste text using Wayland tools."

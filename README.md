@@ -99,7 +99,7 @@ To provide automatic activation of virtual environments create
 #### Common clipboard in Linux
 
 To use common clipboard on Linux running under Wayland one needs to install
-`wl-paste` and `wl-copy` tools, e.g.:
+`wl-paste` and `wl-copy` tools (recommended version >= 2.2), e.g.:
 
 ```bash
 sudo apt-get install wl-clipboard
