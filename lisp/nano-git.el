@@ -24,6 +24,15 @@
 ;;; Code:
 (require 'diff-hl)
 (require 'nano-modeline)
+(require 's)
+
+;; Taken from: https://www.youtube.com/watch?v=yP3mgt5hMyI&list=WL&index=15
+(defun nano-auto-insert-jira-ticket-into-commit-msg ()
+  "Insert Jira ticket (if any) into commit message."
+  (let ((has-ticket-title (string-match "^[A-Z]+-[0-9]+" (magit-get-current-branch)))
+        (words (s-split-words (magit-get-current-branch))))
+    (if has-ticket-title
+        (insert (format "%s-%s | " (car words) (car (cdr words)))))))
 
 ;; Show changes in unsaved buffers
 (diff-hl-flydiff-mode)
@@ -41,7 +50,8 @@
 (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
 
 ;; Check spelling when writing commit message
-(add-hook 'git-commit-setup #'git-commit-turn-on-flyspell)
+(add-hook 'git-commit-setup-hook #'git-commit-turn-on-flyspell)
+(add-hook 'git-commit-setup-hook #'nano-auto-insert-jira-ticket-into-commit-msg)
 
 ;; Improve display of nano-modeline in magit buffers, see:
 ;; See: https://github.com/rougier/nano-modeline/issues/8

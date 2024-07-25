@@ -69,6 +69,7 @@
         realgud                  ; The Grand "Cathedral" Debugger rewrite
         rfc-mode                 ; An Emacs major mode to read and browse RFC documents.
         russian-holidays         ; Russian holidays for GNU/Emacs calendar
+        s                        ; The long lost Emacs string manipulation library
         ssh-config-mode          ; Emacs mode for editing ssh config files
         smartparens              ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
         smex                     ; A smart M-x enhancement for Emacs
