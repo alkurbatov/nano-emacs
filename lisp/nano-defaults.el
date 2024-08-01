@@ -65,13 +65,28 @@
 
 ;; Show autocompletion as soon as possible
 (setq company-idle-delay 0.2
-      company-minimum-prefix-length 2)
+      company-minimum-prefix-length 3)
 
 ;; Allow typing in characters that don’t match the candidates
 (setq company-require-match nil)
 
+;; Easy navigation to candidates with M-<n>
+(setq company-show-quick-access t)
+
 ;; Controls the maximum number of the candidates shown simultaneously in the tooltip
 (setq company-tooltip-limit 16)
+
+;; Don't allow to shrink tooltip
+(setq company-tooltip-width-grow-only t)
+
+;; Complete `abbrev' only in current buffer and make dabbrev case-sensitive
+(setq company-dabbrev-other-buffers nil
+      company-dabbrev-ignore-case nil
+      company-dabbrev-downcase nil)
+
+;; Make dabbrev-code case-sensitive
+(setq company-dabbrev-code-ignore-case nil
+      company-dabbrev-code-everywhere t)
 
 ;; Show annotations to the right side of the tooltip
 (setq company-tooltip-align-annotations t)
