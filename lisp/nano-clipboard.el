@@ -55,7 +55,6 @@
     (setq interprogram-cut-function 'copy-from-osx)
     (setq interprogram-paste-function 'paste-to-osx))
    ((string-equal system-type "gnu/linux")
-    (setq wl-copy-process nil)
     (setq interprogram-cut-function 'copy-from-linux)
     (setq interprogram-paste-function 'paste-to-linux))))
 
