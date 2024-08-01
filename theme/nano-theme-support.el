@@ -1184,11 +1184,6 @@ background color that is barely perceptible."
     `(ethan-wspace-face ((t (:background ,aurora-2
                              :foreground unspecified))))
 
-    ;; --- Flymake -----------------------------------------------------
-    `(flymake-error-echo   ((t (:foreground ,aurora-0))))
-    `(flymake-warning-echo ((t (:foreground ,aurora-2))))
-    `(flymake-note-echo    ((t (:foreground ,frost-2))))
-
     ;; --- Highlight-indent --------------------------------------------
     `(highlight-indent-guides-character-face     ((t (:foreground ,polar-night-1))))
     `(highlight-indent-guides-top-character-face ((t (:foreground ,polar-night-3))))
@@ -1221,21 +1216,21 @@ background color that is barely perceptible."
     `(flymake-popon-posframe-border ((t (:foreground ,polar-night-0))))
 
     ;; -- Flymake --------------------------------------------------------
-    `(flymake-error       ((t (:underline (:style wave :color ,aurora-0)))))
-    `(flymake-warning     ((t (:underline (:style wave :color ,aurora-2)))))
-    `(flymake-note        ((t (:underline (:style wave :color ,frost-2)))))
+    `(flymake-error        ((t (:underline (:style wave :color ,aurora-0)))))
+    `(flymake-error-echo   ((t (:foreground ,aurora-0))))
+    `(flymake-warning      ((t (:underline (:style wave :color ,aurora-2)))))
+    `(flymake-warning-echo ((t (:foreground ,aurora-2))))
+    `(flymake-note         ((t (:underline (:style wave :color ,frost-2)))))
+    `(flymake-note-echo    ((t (:foreground ,frost-2))))
+
 
     ;; -- Flyspell -------------------------------------------------------
     `(flyspell-incorrect  ((t (:underline (:style wave :color ,frost-2)))))
     `(flyspell-duplicate  ((t (:inherit flyspell-incorrect))))
 
     ;; -- Eglot ----------------------------------------------------------
-    `(eglot-diagnostic-tag-deprecated-face  ((t (:background ,polar-night-4
-                                                 :foreground ,snow-storm-2
-                                                 :underline unspecified))))
-    `(eglot-diagnostic-tag-unnecessary-face ((t (:background ,frost-2
-                                                 :foreground ,polar-night-0
-                                                 :underline unspecified))))
+    `(eglot-diagnostic-tag-deprecated-face  ((t (:underline (:style wave :color ,frost-2)))))
+    `(eglot-diagnostic-tag-unnecessary-face  ((t (:underline (:style wave :color ,frost-2)))))
 
     ))
 
