@@ -30,8 +30,11 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
   (setq poetry-tracking-strategy 'switch-buffer)
   (poetry-tracking-mode)
 
-  ;; Ask Eglot to disable diagnostic, we will use other linters instead.
+  ;; Ask Eglot to stay away from completely taking over flymake
   (setq eglot-stay-out-of '(flymake))
+
+  ;; Uncomment to enable diagnostics from Eglot in flymake
+  ;; (add-hook 'flymake-diagnostic-functions #'eglot-flymake-backend)
 
   ;; Configure linting
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-flake8 nil t)
