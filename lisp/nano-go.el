@@ -53,8 +53,9 @@
 
 (defun nano-setup-go-with-eglot ()
   "Setup and enable Eglot for Go."
-  ;; Ask Eglot to disable diagnostic, we will use other linters instead.
+  ;; Ask Eglot to stay away from completely taking over flymake
   (setq eglot-stay-out-of '(flymake))
+  (add-hook 'flymake-diagnostic-functions #'eglot-flymake-backend)
 
   ;; Configure linting
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-golangci-lint nil t)
