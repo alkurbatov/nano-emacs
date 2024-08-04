@@ -64,6 +64,7 @@
 (with-eval-after-load 'flymake
   ;; Provide some flycheck-like bindings in flymake mode to ease transition
   (bind-keys :map flymake-mode-map
+             ("C-c ! L" . flymake-show-project-diagnostics)
              ("C-c ! l" . flymake-show-buffer-diagnostics)
              ("C-c ! n" . flymake-goto-next-error)
              ("C-c ! p" . flymake-goto-prev-error)
