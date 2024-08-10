@@ -41,7 +41,7 @@
 (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
 
 ;; Show indentation
-(add-hook 'c++-ts-mode-hook #'highlight-indent-guides-mode)
+(add-hook 'c++-ts-mode-hook #'indent-bars-mode)
 
 ;; Force C++ mode for all headers
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-ts-mode))

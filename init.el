@@ -55,10 +55,9 @@
         format-all               ; Auto-format source code in many languages with one command
         git-modes                ; Emacs major modes for Git configuration files
         helpful                  ; A better help buffer
-        highlight-indent-guides  ; Emacs minor mode to highlight indentation
         hl-todo                  ; Highlight TODO keywords
         ligature                 ; Display typographical ligatures in Emacs
-        magit                    ; A Git porcelain inside Emacs.
+        magit                    ; A Git porcelain inside Emacs
         marginalia               ; Enrich existing commands with completion annotations
         markdown-mode            ; Major mode for Markdown-formatted text
         markdown-toc             ; Generate a TOC in markdown file
@@ -67,7 +66,7 @@
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
         realgud                  ; The Grand "Cathedral" Debugger rewrite
-        rfc-mode                 ; An Emacs major mode to read and browse RFC documents.
+        rfc-mode                 ; An Emacs major mode to read and browse RFC documents
         russian-holidays         ; Russian holidays for GNU/Emacs calendar
         s                        ; The long lost Emacs string manipulation library
         ssh-config-mode          ; Emacs mode for editing ssh config files
@@ -144,6 +143,10 @@
 ;; Emacs mode for Bazel
 (straight-use-package
  '(emacs-bazel-mode :type git :host github :repo "bazelbuild/emacs-bazel-mode"))
+
+;; Fast, configurable indentation guide-bars for Emacs
+(straight-use-package
+ '(indent-bars :type git :host github :repo "jdtsmith/indent-bars"))
 
 ;; Load settings
 (require 'nano)

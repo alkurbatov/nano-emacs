@@ -28,7 +28,7 @@
   (setq checkdoc-force-docstrings-flag nil)
 
   ;; Show indentation
-  (add-hook 'emacs-lisp-mode-hook #'highlight-indent-guides-mode))
+  (add-hook 'emacs-lisp-mode-hook #'indent-bars-mode))
 
 (provide 'nano-elisp)
 ;;; nano-elisp.el ends here

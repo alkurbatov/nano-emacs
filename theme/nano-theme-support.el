@@ -339,13 +339,21 @@ background color that is barely perceptible."
   (with-eval-after-load 'ethan-wspace
     (setq ethan-wspace-face-customized t))
 
-  ;; Customize highlight-indent-guides mode
-  (with-eval-after-load 'highlight-indent-guides
-    (setq highlight-indent-guides-auto-enabled nil)
+  ;; Customize indent-bars mode
+  (with-eval-after-load 'indent-bars
+    ;; Enable TreeSitter support
+    (setq indent-bars-treesit-support t)
+    (setq indent-bars-treesit-ignore-blank-lines-types '("module"))
 
-    (setq highlight-indent-guides-method 'character
-          highlight-indent-guides-character ?\|
-          highlight-indent-guides-responsive 'top))
+    (setq
+     indent-bars-color '(nano-faded-i :face-bg t :blend 0.55)
+     indent-bars-pattern "..."
+     indent-bars-width-frac 0.1
+     indent-bars-pad-frac 0.1
+     indent-bars-zigzag nil
+     indent-bars-color-by-depth nil
+     indent-bars-highlight-current-depth nil
+     indent-bars-display-on-blank-lines nil))
 
   ;; Customize hl-todo colors
   (with-eval-after-load 'hl-todo

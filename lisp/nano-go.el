@@ -71,7 +71,7 @@
   (setq go-ts-mode-indent-offset 4)
 
   ;; Show indentation
-  (add-hook 'go-ts-mode-hook #'highlight-indent-guides-mode)
+  (add-hook 'go-ts-mode-hook #'indent-bars-mode)
 
   (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
 

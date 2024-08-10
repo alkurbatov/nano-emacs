@@ -21,8 +21,10 @@
 ;;; Code:
 
 (with-eval-after-load 'yaml-ts-mode
+  (setq-local tab-width 2)
+
   ;; Show indentation
-  (add-hook 'yaml-ts-mode-hook #'highlight-indent-guides-mode)
+  (add-hook 'yaml-ts-mode-hook #'indent-bars-mode)
 
   (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
   (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))

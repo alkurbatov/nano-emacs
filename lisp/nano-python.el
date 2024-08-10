@@ -44,7 +44,7 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
 
 (with-eval-after-load 'python
   ;; Show indentation
-  (add-hook 'python-ts-mode-hook #'highlight-indent-guides-mode)
+  (add-hook 'python-ts-mode-hook #'indent-bars-mode)
 
   (add-hook 'python-ts-mode-hook #'nano-setup-python-with-eglot))
 
