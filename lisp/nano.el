@@ -100,6 +100,7 @@
 (require 'nano-elisp)
 (require 'nano-c++)
 (require 'nano-go)
+(require 'nano-lua)
 (require 'nano-make)
 (require 'nano-markdown)
 (require 'nano-protobuf)

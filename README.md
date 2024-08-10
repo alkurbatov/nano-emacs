@@ -21,6 +21,7 @@ configuration.
 - `Golang`
 - `JSON`
 - `LaTeX`
+- `Lua`
 - `Makefile`
 - `Python`
 - `TOML`
@@ -83,6 +84,8 @@ configuration.
   ```bash
   brew install --cask mactex
   ```
+
+- [LuaCheck](https://github.com/lunarmodules/luacheck) to link `Lua` files.
 
 #### Recommended `Pyright` setup
 
