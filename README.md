@@ -29,7 +29,7 @@ configuration.
 ## Limitations
 
 - Only dark theme is supported.
-- The configuration is tested mostly on `Mac OS` and rarely on `Linux`.
+- The configuration is tested on `Mac OS` and `Linux`.
 
 ## Mandatory requirements
 
@@ -99,10 +99,10 @@ To provide automatic activation of virtual environments create
 #### Common clipboard in Linux
 
 To use common clipboard on Linux running under Wayland one needs to install
-`wl-paste` and `wl-copy` tools (recommended version >= 2.2), e.g.:
+`xsel`:
 
 ```bash
-sudo apt-get install wl-clipboard
+sudo apt-get install xsel
 ```
 
 ### Installation

@@ -31,23 +31,17 @@
   "Paste text using macOS tools."
   (shell-command-to-string "pbpaste"))
 
-(setq wl-copy-process nil)
-
-(defun copy-from-linux (text)
-  "Copy TEXT using Wayland tools."
-  (setq wl-copy-process (make-process :name "wl-copy"
-                                      :buffer nil
-                                      :command '("wl-copy" "-f" "-n")
-                                      :connection-type 'pipe
-                                      :noquery t))
-  (process-send-string wl-copy-process text)
-  (process-send-eof wl-copy-process))
+(defun copy-from-linux (text &optional push)
+  "Copy TEXT using X tools."
+  (with-temp-buffer
+    (insert text)
+    (call-process-region (point-min) (point-max) "xsel" nil 0 nil "--clipboard" "--input")))
 
 (defun paste-to-linux ()
-  "Paste text using Wayland tools."
-  (if (and wl-copy-process (process-live-p wl-copy-process))
-      nil ; should return nil if we're the current paste owner
-    (shell-command-to-string "wl-paste -n | tr -d \r")))
+  "Paste text using X tools."
+  (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
+    (unless (string= (car kill-ring) xsel-output)
+      xsel-output )))
 
 (unless (display-graphic-p)
   (cond
@@ -55,6 +49,7 @@
     (setq interprogram-cut-function 'copy-from-osx)
     (setq interprogram-paste-function 'paste-to-osx))
    ((string-equal system-type "gnu/linux")
+    (setq x-select-enable-clipboard t)
     (setq interprogram-cut-function 'copy-from-linux)
     (setq interprogram-paste-function 'paste-to-linux))))
 
