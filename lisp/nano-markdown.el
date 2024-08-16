@@ -46,11 +46,12 @@
     ;; Configure linting
     (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
 
+    ;; Immediately check whole buffer
     (flyspell-buffer)))
 
 (with-eval-after-load 'markdown-mode
   (add-hook 'markdown-mode-hook #'turn-on-smartparens-mode)
-  (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode)) ; immediately check whole buffer
+  (add-hook 'markdown-mode-hook #'nano-setup-markdown-mode))
 
 ;; Use Github Markdown flavor by default (provided by markdown-mode) as it is used most often
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))

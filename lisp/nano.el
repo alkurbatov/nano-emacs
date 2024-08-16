@@ -97,9 +97,10 @@
 (require 'nano-rss)
 
 ;; Programming languages
-(require 'nano-elisp)
 (require 'nano-c++)
+(require 'nano-elisp)
 (require 'nano-go)
+(require 'nano-json)
 (require 'nano-lua)
 (require 'nano-make)
 (require 'nano-markdown)
