@@ -43,7 +43,6 @@
         company                  ; Modular auto-completion framework
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
-        editorconfig             ; EditorConfig plugin for Emacs
         elfeed                   ; An Emacs web feeds client
         elfeed-org               ; Configure the Elfeed RSS reader with an Orgmode file
         engine-mode              ; Minor mode for defining and querying search engines through Emacs
