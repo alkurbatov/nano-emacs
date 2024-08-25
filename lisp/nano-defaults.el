@@ -174,6 +174,9 @@
 (add-hook 'prog-mode-hook #'nano-enable-flymake)
 (add-hook 'text-mode-hook #'nano-enable-flymake)
 
+;; Enable centered cursor
+(global-centered-cursor-mode)
+
 ;; Enable selection highlighting
 (selection-highlight-mode)
 
