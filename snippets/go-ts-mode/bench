@@ -1,12 +1,14 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: Benchmark template
 # --
-func Benchmark${1:Function}(b *testing.B) {
-    var ret $2
+var global $1
+
+func Benchmark${2:Function}(b *testing.B) {
+    var ret $3
 
     for n := 0; n < b.N; n++ {
-        ret = $3
+        ret = $4
     }
 
-    _ = ret
+    global = ret
 }
