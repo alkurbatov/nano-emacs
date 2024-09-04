@@ -345,6 +345,11 @@ background color that is barely perceptible."
     (setq indent-bars-treesit-support t)
     (setq indent-bars-treesit-ignore-blank-lines-types '("module"))
 
+    ;; Make the indent-bars package decide when to use the stipple attribute
+    ;; Stripple doesn't work on most macOS and Windows builds.
+    (setq indent-bars-prefer-character
+      (if (memq initial-window-system '(pgtk ns)) t))
+
     (setq
      indent-bars-color '(nano-faded-i :face-bg t :blend 0.55)
      indent-bars-pattern "..."
