@@ -100,6 +100,7 @@
 (require 'nano-c++)
 (require 'nano-elisp)
 (require 'nano-go)
+(require 'nano-js)
 (require 'nano-json)
 (require 'nano-lua)
 (require 'nano-make)
@@ -108,6 +109,7 @@
 (require 'nano-python)
 (require 'nano-sh)
 (require 'nano-toml)
+(require 'nano-typescript)
 (require 'nano-yaml)
 
 (provide 'nano)
