@@ -28,6 +28,12 @@
 (setq completion-category-overrides '((eglot (styles orderless))
                                       (eglot-capf (styles orderless))))
 
+;; Suggest snippets in autocompletion.
+;; By some reason we have to modify completion backends again after Eglot start.
+(add-hook 'eglot-managed-mode-hook (lambda ()
+                                     (add-to-list 'company-backends
+                                                  '(company-capf :with company-yasnippet))))
+
 (with-eval-after-load 'eglot
   (bind-key "M-g s"   #'consult-eglot-symbols))
 

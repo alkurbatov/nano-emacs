@@ -103,6 +103,9 @@
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
 
+;; Suggest snippets in autocompletion.
+(add-to-list 'company-backends '(company-capf :with company-yasnippet))
+
 ;; Enable indentation+tab insertion using the TAB key.
 ;; completion-at-point is bound to M-TAB.
 (setq tab-always-indent nil)
