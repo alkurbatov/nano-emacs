@@ -22,26 +22,26 @@
 (require 'bind-key)
 
 ;; Kill current buffer (instead of asking first buffer name)
-(bind-key* "C-x k" 'kill-current-buffer)
+(bind-key* "C-x k" #'kill-current-buffer)
 
 ;; Cmd-return for frame maximization toggle
-(bind-key "<s-return>" 'toggle-frame-maximized)
+(bind-key "<s-return>" #'toggle-frame-maximized)
 
 ;; Show buffers list in separate window
-(bind-key "C-x C-b" 'ibuffer)
+(bind-key "C-x C-b" #'ibuffer)
 
 ;; Show recently visited buffer but not the current one
-(bind-key* "C-c `" 'mode-line-other-buffer)
+(bind-key* "C-c `" #'mode-line-other-buffer)
 
 ;; Close frame if not the last, kill emacs else
 (defun nano--delete-frame-or-kill-emacs ()
   "Delete frame or kill Emacs if there is only one frame."
   (interactive)
   (condition-case nil (delete-frame) (error (save-buffers-kill-terminal))))
-(bind-key* "C-x C-c" 'nano--delete-frame-or-kill-emacs)
+(bind-key* "C-x C-c" #'nano--delete-frame-or-kill-emacs)
 
 ;; Don't press shift when undoing things
-(bind-key* "C--" 'undo)
+(bind-key* "C--" #'undo)
 
 (bind-key "C-h f"   #'helpful-callable) ; Look up callable
 (bind-key "C-h v"   #'helpful-variable) ; Look up variable
