@@ -23,10 +23,9 @@
 ;; https://200ok.ch/posts/2020-08-22_setting_up_spell_checking_with_multiple_dictionaries.html
 
 ;;; Code:
+(require 'bind-key)
 
 (with-eval-after-load 'ispell
-  (require 'bind-key)
-
   (setq ispell-program-name "hunspell"
         ispell-dictionary "en_US,ru_RU")
 
@@ -42,18 +41,18 @@
   ;; Do not ask for confirmation when modifying personal dictionary.
   (setq ispell-silently-savep t)
 
-  ;; Do not order not by the default of alphabetical ordering
-  (setq flyspell-sort-corrections nil)
-
-  ;; When checking the entire buffer, don’t print messages for every word
-  (setq flyspell-issue-message-flag nil)
-
   ;; The personal dictionary file has to exist, otherwise hunspell will
   ;; silently not use it.
   (unless (file-exists-p ispell-personal-dictionary)
-    (write-region "" nil ispell-personal-dictionary nil 0))
+    (write-region "" nil ispell-personal-dictionary nil 0)))
 
-  (bind-key "M-4" 'ispell-word))
+(with-eval-after-load 'jinx
+  (setq jinx-languages "en_US ru_RU")
+
+  (bind-key "M-4" #'jinx-correct))
+
+;; Enable spellcheck in all modes
+(add-hook 'emacs-startup-hook #'global-jinx-mode)
 
 (provide 'nano-spellcheck)
 ;;; nano-spellcheck.el ends here

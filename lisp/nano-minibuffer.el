@@ -48,7 +48,8 @@
 (vertico-mode)
 
 (setq vertico-multiform-categories
-      '((file (vertico-sort-function . nano-vertico-sort-directories-first))))
+      '((file (vertico-sort-function . nano-vertico-sort-directories-first))
+        (jinx grid (vertico-grid-annotate . 20))))
 (vertico-multiform-mode)
 
 (setq-default marginalia--ellipsis "…"    ; nicer ellipsis

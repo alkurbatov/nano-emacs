@@ -69,16 +69,34 @@ configuration.
   brew install fd
   ```
 
+- The `enchant` library to check spelling with
+  [Jinx](https://github.com/minad/jinx):
+
+  On `Mac OS`:
+
+  ```bash
+  brew install enchant pkgconf
+  ```
+
+  On Linux:
+
+  ```bash
+  apt-get install libenchant-2-dev pkgconf
+  ```
+
 ### Optional requirements
 
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
-- [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP` in `Golang`.
+- [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP`
+  in `Golang`.
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
 - [Jsonlint](https://github.com/zaach/jsonlint) - to lint `JSON` files.
-- [Markdownlint](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
+- [Markdownlint](https://github.com/DavidAnson/markdownlint-cli2)
+  for markdown linting.
 - [Pandoc](https://pandoc.org/) for markdown preview.
-- [Poetry](https://python-poetry.org/) for virtual environment management in `Python`
+- [Poetry](https://python-poetry.org/) for vitual environment management
+  in `Python`.
 - [Pyright](https://github.com/microsoft/pyright) for `LSP` in `Python`.
 - `LaTeX` for formulas support in org mode, e.g.:
 

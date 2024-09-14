@@ -33,9 +33,6 @@
   (add-to-list 'markdown-code-lang-modes '("bash" . bash-ts-mode))
   (add-to-list 'markdown-code-lang-modes '("json" . json-ts-mode))
 
-  ;; Enable spellcheck
-  (flyspell-mode)
-
   (setq-local whitespace-style '(face trailing))
   (whitespace-mode)
 
@@ -44,10 +41,7 @@
 
   (unless (string= (buffer-name) "COMMIT_EDITMSG")
     ;; Configure linting
-    (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)
-
-    ;; Immediately check whole buffer
-    (flyspell-buffer)))
+    (add-hook 'flymake-diagnostic-functions #'flymake-collection-markdownlint nil t)))
 
 (with-eval-after-load 'markdown-mode
   (add-hook 'markdown-mode-hook #'turn-on-smartparens-mode)

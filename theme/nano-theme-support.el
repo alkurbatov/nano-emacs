@@ -1236,10 +1236,12 @@ background color that is barely perceptible."
     `(flymake-note         ((t (:underline (:style wave :color ,frost-2)))))
     `(flymake-note-echo    ((t (:foreground ,frost-2))))
 
-
     ;; -- Flyspell -------------------------------------------------------
-    `(flyspell-incorrect  ((t (:underline (:style wave :color ,frost-2)))))
-    `(flyspell-duplicate  ((t (:inherit flyspell-incorrect))))
+    `(flyspell-incorrect ((t (:underline (:style wave :color ,frost-2)))))
+    `(flyspell-duplicate ((t (:inherit flyspell-incorrect))))
+
+    ;; -- Jinx -----------------------------------------------------------
+    `(jinx-misspelled ((t (:underline (:style wave :color ,frost-2)))))
 
     ;; -- Eglot ----------------------------------------------------------
     `(eglot-diagnostic-tag-deprecated-face  ((t (:underline (:style wave :color ,frost-2)))))

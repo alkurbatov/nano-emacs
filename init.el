@@ -56,6 +56,7 @@
         git-modes                ; Emacs major modes for Git configuration files
         helpful                  ; A better help buffer
         hl-todo                  ; Highlight TODO keywords
+        jinx                     ; Enchanted Spell Checker
         ligature                 ; Display typographical ligatures in Emacs
         magit                    ; A Git porcelain inside Emacs
         marginalia               ; Enrich existing commands with completion annotations
