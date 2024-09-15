@@ -31,7 +31,9 @@
 
   (setq markdown-fontify-code-blocks-natively t)
   (add-to-list 'markdown-code-lang-modes '("bash" . bash-ts-mode))
-  (add-to-list 'markdown-code-lang-modes '("json" . json-ts-mode))
+  ;; Use yaml-ts-mode as a workaround as json-ts-mode doesn't work by some reason.
+  ;; yaml-ts-mode is somewhat ok because JSON is subset of the YAML standard.
+  (add-to-list 'markdown-code-lang-modes '("json" . yaml-ts-mode))
 
   (setq-local whitespace-style '(face trailing))
   (whitespace-mode)
