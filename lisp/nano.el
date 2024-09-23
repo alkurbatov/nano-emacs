@@ -88,6 +88,7 @@
 (require 'nano-project)
 
 ;; Tools
+(require 'nano-ansible)
 (require 'nano-debug)
 (require 'nano-compile)
 (require 'nano-docker)
