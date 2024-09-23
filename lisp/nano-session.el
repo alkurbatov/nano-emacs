@@ -60,7 +60,7 @@
 
 ;; Recentf files
 (setq recentf-max-menu-items 25
-      recentf-exclude '(".elfeed/index$" ".git/COMMIT_EDITMSG$")) ; ignore some files in recentf
+      recentf-exclude '(".git/COMMIT_EDITMSG$")) ; ignore some files in recentf
 (recentf-mode 1)
 
 ;; Bookmarks

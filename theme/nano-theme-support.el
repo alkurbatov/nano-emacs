@@ -918,22 +918,6 @@ background color that is barely perceptible."
    '(marginalia-value                       ((t (:inherit nano-faded))))
    '(marginalia-version                     ((t (:inherit nano-faded))))
 
-   ;; --- Elfeed -------------------------------------------------------
-    '(elfeed-log-date-face                    ((t (:inherit nano-faded))))
-    '(elfeed-log-info-level-face            ((t (:inherit nano-default))))
-    '(elfeed-log-debug-level-face           ((t (:inherit nano-default))))
-    '(elfeed-log-warn-level-face             ((t (:inherit nano-popout))))
-    '(elfeed-log-error-level-face            ((t (:inherit nano-popout))))
-    '(elfeed-search-tag-face                  ((t (:inherit nano-faded))))
-    '(elfeed-search-date-face                 ((t (:inherit nano-faded))))
-    '(elfeed-search-feed-face               ((t (:inherit nano-salient))))
-    '(elfeed-search-filter-face               ((t (:inherit nano-faded))))
-    '(elfeed-search-last-update-face        ((t (:inherit nano-salient))))
-    '(elfeed-search-title-face              ((t (:inherit nano-default))))
-    '(elfeed-search-tag-face                  ((t (:inherit nano-faded))))
-    '(elfeed-search-unread-count-face        ((t (:inherit nano-strong))))
-    '(elfeed-search-unread-title-face        ((t (:inherit nano-strong :weight bold))))
-
     ;; --- imenu-list ---------------------------------------------------
     '(imenu-list-entry-face                 ((t (:inherit nano-default))))
     '(imenu-list-entry-face-0                ((t (:inherit nano-strong))))

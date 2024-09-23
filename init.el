@@ -43,8 +43,6 @@
         company                  ; Modular auto-completion framework
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
-        elfeed                   ; An Emacs web feeds client
-        elfeed-org               ; Configure the Elfeed RSS reader with an Orgmode file
         engine-mode              ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace             ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim

@@ -95,7 +95,6 @@
 (require 'nano-git)
 (require 'nano-mc)
 (require 'nano-remote)
-(require 'nano-rss)
 
 ;; Programming languages
 (require 'nano-c++)

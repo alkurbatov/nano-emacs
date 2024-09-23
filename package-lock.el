@@ -12,8 +12,6 @@
  ("eglot" . "6b9c4faa5201915ab81fe470a872ebce8921fe51")
  ("el-get" . "2f3d2be393d70dab3047ac21512628dc91ec3a35")
  ("eldoc" . "91a8ae2fa66ac09f45337f9eca6c7aa643a063f4")
- ("elfeed" . "904b6d4feca78e7e5336d7dbb7b8ba53b8c4dac1")
- ("elfeed-org" . "d62d23e25c5e3be3d70b7fbe1eaeb6e43f93a061")
  ("elisp-refs" . "541a064c3ce27867872cf708354a65d83baf2a6d")
  ("emacs-async" . "43f97d7e689eea65043ded1464747a2f3ce7661c")
  ("emacs-bazel-mode" . "769b30dc18282564d614d7044195b5a0c1a0a5f3")
