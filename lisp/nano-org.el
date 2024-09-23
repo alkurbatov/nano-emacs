@@ -21,26 +21,10 @@
 
 ;;; Code:
 (require 'bind-key)
-(require 'nano-settings)
 (require 'org-agenda)
-
-(defun nano-org-time-stamp-inactive ()
-  "Insert inactive timestamp with current date."
-  (interactive)
-  (org-insert-time-stamp (current-time) nil t))
 
 (with-eval-after-load 'org
   (require 'nano-modeline)
-
-  ;; Load org files with tasks
-  (if (file-directory-p nano-org-directory)
-      (setq org-agenda-files (directory-files-recursively nano-org-directory "\\.org$")))
-
-  (setq org-todo-keywords
-        '((sequence "TODO" "|" "DONE" "CANCELLED")))
-
-  ;; Add current time when marking item as 'DONE'
-  (setq org-log-done 'time)
 
   ;; Use RET to open org-mode links, including those in quick-help.org
   (setq org-return-follows-link t)
@@ -61,18 +45,6 @@
   ;; Customize some links, see:
   ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
 
-  ;; "Green" projects aka moving me to personal targets
-  (org-link-set-parameters
-    "green-project"
-    :face 'nano-face-org-green-project
-    :follow (lambda (path) (org-open-file path)))
-
-  ;; "Red" projects aka must-do-or-be-fired
-  (org-link-set-parameters
-    "red-project"
-    :face 'nano-face-org-red-project
-    :follow (lambda (path) (org-open-file path)))
-
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
   (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
   (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
@@ -87,8 +59,6 @@
 
 ;; Let the agenda buffer consume whole window
 (setq org-agenda-window-setup 'current-window)
-
-(bind-key* "C-c a" 'org-agenda)
 
 (provide 'nano-org)
 ;;; nano-org.el ends here

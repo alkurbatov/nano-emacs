@@ -92,15 +92,6 @@
 (straight-use-package
  '(pdf-tools :type git :host github :repo "vedang/pdf-tools"))
 
-;; Display org properties in the agenda buffer (modified version)
-(straight-use-package
- '(org-agenda-property :type git :host github :repo "Malabarba/org-agenda-property"
-                       :fork (:host github :repo "rougier/org-agenda-property")))
-
-;; Relative date formatting
-(straight-use-package
- '(relative-date :type git :host github :repo "rougier/relative-date"))
-
 ;; Collection of flymake checkers
 (straight-use-package
  '(flymake-collection :type git :host github :repo "mohkale/flymake-collection"

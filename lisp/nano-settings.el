@@ -24,11 +24,6 @@
   :type 'string
   :group 'nano)
 
-(defcustom nano-org-directory "~/Yandex.Disk.localized/org/Проекты"
-  "Path to the directory containing Org files with TODO items."
-  :type 'string
-  :group 'nano)
-
 (defcustom nano-rfc-directory "~/work/rfc/"
   "Path to the directory containing RFCs downloaded by the rfc-mode package."
   :type 'string
