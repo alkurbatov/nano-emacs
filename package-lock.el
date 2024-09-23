@@ -2,7 +2,7 @@
  ("auctex" . "1855fdc01f7f6be6d331d25f8d30c22437cf3d66")
  ("avy" . "be612110cb116a38b8603df367942e2bb3d9bdbe")
  ("centered-cursor-mode.el" . "67ef719e685407dbc455c7430765e4e685fd95a9")
- ("company-mode" . "58542350fb6a949f5ed91616a715e79ee42bd8a8")
+ ("company-mode" . "393940f76aec1f2500441d4e0b97f783acbb536b")
  ("compat" . "c1f94ac75d6ea7f93c8da51e3f78ab3f39dbc2a2")
  ("consult" . "73530bab90dae79d6b0ea177b4e935588ea08dd1")
  ("consult-eglot" . "64262e72452f8fe6dd49d31bcdd4bd577b7d682d")
