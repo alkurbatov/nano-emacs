@@ -9,7 +9,7 @@
  ("dash.el" . "1de9dcb83eacfb162b6d9a118a4770b1281bcd84")
  ("diff-hl" . "b80ff9b4a772f7ea000e86fbf88175104ddf9557")
  ("dired-quick-sort" . "eaeab1021b391e3d6275ba7c186c5ac95fb8a10e")
- ("eglot" . "6b9c4faa5201915ab81fe470a872ebce8921fe51")
+ ("eglot" . "9c4eaa3d7e18d06fb4adb91bd9b5d88d5e65708b")
  ("el-get" . "2f3d2be393d70dab3047ac21512628dc91ec3a35")
  ("eldoc" . "91a8ae2fa66ac09f45337f9eca6c7aa643a063f4")
  ("elisp-refs" . "541a064c3ce27867872cf708354a65d83baf2a6d")
