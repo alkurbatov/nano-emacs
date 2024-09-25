@@ -135,6 +135,10 @@
 ;; Minimum window height
 (setq window-min-height 1)
 
+;; Enable drugging of lines and regions like Eclipse does
+(drag-stuff-global-mode t)
+(drag-stuff-define-keys)
+
 ;; Forward some shell variables in OS X GUI
 (when (memq window-system '(mac ns x))
   (dolist (var '("LANG" "LC_ALL" "LC_CTYPE"))

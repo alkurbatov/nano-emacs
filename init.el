@@ -43,6 +43,7 @@
         company                  ; Modular auto-completion framework
         diff-hl                  ; Package for highlighting uncommitted changes
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
+        drag-stuff               ; Drag stuff around in Emacs. Like in Eclipse
         engine-mode              ; Minor mode for defining and querying search engines through Emacs
         ethan-wspace             ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim

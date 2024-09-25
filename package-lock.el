@@ -9,6 +9,7 @@
  ("dash.el" . "1de9dcb83eacfb162b6d9a118a4770b1281bcd84")
  ("diff-hl" . "b80ff9b4a772f7ea000e86fbf88175104ddf9557")
  ("dired-quick-sort" . "eaeab1021b391e3d6275ba7c186c5ac95fb8a10e")
+ ("drag-stuff.el" . "6d06d846cd37c052d79acd0f372c13006aa7e7c8")
  ("eglot" . "9c4eaa3d7e18d06fb4adb91bd9b5d88d5e65708b")
  ("el-get" . "2f3d2be393d70dab3047ac21512628dc91ec3a35")
  ("eldoc" . "91a8ae2fa66ac09f45337f9eca6c7aa643a063f4")
