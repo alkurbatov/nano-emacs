@@ -75,7 +75,7 @@ configuration.
   On `Mac OS`:
 
   ```bash
-  brew install enchant pkgconf
+  brew install enchant pkg-config
   ```
 
   On Linux:
@@ -104,7 +104,7 @@ configuration.
   brew install --cask mactex
   ```
 
-- [LuaCheck](https://github.com/lunarmodules/luacheck) to link `Lua` files.
+- [LuaCheck](https://github.com/lunarmodules/luacheck) to lint `Lua` files.
 
 #### Recommended `Pyright` setup
 
