@@ -42,6 +42,9 @@
 
 (setq consult-fd-args '("fd" "-i" "-H" "-c" "never"))
 
+;; Enable commands execution in the minibuffers to support vertico-suspend
+(setq enable-recursive-minibuffers t)
+
 (setq vertico-resize nil        ; how to resize the Vertico minibuffer window
       vertico-count 20          ; maximal number of candidates to show
       vertico-count-format nil) ; no prefix with number of entries
@@ -57,14 +60,21 @@
               marginalia-align-offset -1) ; one space on the right
 (marginalia-mode)
 
+;; Bind Vertico commands
+(bind-key "M-s" #'vertico-suspend)
+
 ;; Bind Consult commands
-(bind-key "C-x f" #'consult-fd)
+(bind-key "C-x f"   #'consult-fd)
 (bind-key "C-x b"   #'consult-buffer)
 (bind-key "C-s"     #'consult-line)
 (bind-key "C-c r"   #'consult-recent-file)
 (bind-key "M-g g"   #'consult-goto-line)
 (bind-key "M-g M-g" #'consult-goto-line)
 (bind-key "M-g o"   #'consult-outline)
+
+(bind-keys :map minibuffer-local-map
+           ("M-h" . consult-history)
+           ("M-s" . vertico-suspend))
 
 (provide 'nano-minibuffer)
 ;;; nano-minibuffer.el ends here
