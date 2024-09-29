@@ -24,6 +24,7 @@ configuration.
 - `Lua`
 - `Makefile`
 - `Python`
+- `Raku`
 - `TOML`
 - `YAML`
 

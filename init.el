@@ -65,6 +65,7 @@
         org-auto-tangle          ; Tangle org file when it is saved
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
+        raku-mode                ; Emacs major mode for Raku
         realgud                  ; The Grand "Cathedral" Debugger rewrite
         rfc-mode                 ; An Emacs major mode to read and browse RFC documents
         russian-holidays         ; Russian holidays for GNU/Emacs calendar
