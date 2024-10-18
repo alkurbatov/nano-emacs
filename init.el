@@ -49,6 +49,7 @@
         evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
         exec-path-from-shell     ; Make Emacs use the $PATH set up by the user's shell
         f                        ; Modern API for working with files and directories
+        flatbuffers-mode         ; Emacs mode for flatbuffers featuring syntax highlighting
         flyspell-correct-popup   ; Correcting words with flyspell via popup interface
         flyspell-popup           ; Correcting words with flyspell in popup menus
         format-all               ; Auto-format source code in many languages with one command
