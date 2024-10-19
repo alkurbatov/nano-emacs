@@ -35,7 +35,7 @@
   ;; yaml-ts-mode is somewhat ok because JSON is subset of the YAML standard.
   (add-to-list 'markdown-code-lang-modes '("json" . yaml-ts-mode))
 
-  (setq-local whitespace-style '(face trailing))
+  (setq-local whitespace-style '(face trailing tab-mark))
   (whitespace-mode)
 
   ;; Show fill column (defaults to 80)
