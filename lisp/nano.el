@@ -92,6 +92,7 @@
 (require 'nano-debug)
 (require 'nano-compile)
 (require 'nano-docker)
+(require 'nano-lint)
 (require 'nano-git)
 (require 'nano-mc)
 (require 'nano-remote)

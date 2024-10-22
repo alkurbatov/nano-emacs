@@ -173,14 +173,6 @@
 (setq global-auto-revert-non-file-buffers t
       dired-auto-revert-buffer t)
 
-;; Enable flymake
-(defun nano-enable-flymake ()
-  (flymake-mode)
-  (flymake-popon-mode))
-
-(add-hook 'prog-mode-hook #'nano-enable-flymake)
-(add-hook 'text-mode-hook #'nano-enable-flymake)
-
 ;; Allow to open URLs in default browser by clicking 'C-c RET'
 (global-goto-address-mode)
 
