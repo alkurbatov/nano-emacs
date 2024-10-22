@@ -66,6 +66,7 @@
 ;; Bind Consult commands
 (bind-key "C-x f"   #'consult-fd)
 (bind-key "C-x b"   #'consult-buffer)
+(bind-key "C-x r b" #'consult-bookmark)
 (bind-key "C-s"     #'consult-line)
 (bind-key "C-c r"   #'consult-recent-file)
 (bind-key "M-g g"   #'consult-goto-line)
