@@ -69,6 +69,9 @@
 ;; Lock files
 (setq lock-file-name-transforms `((".*" ,(concat user-emacs-directory "locks/") t)))
 
+;; Auto-save files
+(setq auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "auto-save-list/") t)))
+
 ;; Backup
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups/")))
       make-backup-files t     ; backup of a file the first time it is saved
