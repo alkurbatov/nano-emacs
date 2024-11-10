@@ -42,10 +42,5 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; Workaround to build jinx on arm64 Macs, see:
-;; https://github.com/minad/jinx/discussions/160
-(when (and (eq system-type 'darwin) (file-directory-p "/opt/homebrew"))
-  (setenv "PKG_CONFIG_PATH" (concat "/opt/homebrew/opt/glib/lib/pkgconfig/:" (getenv "PKG_CONFIG_PATH"))))
-
 (provide 'nano-package)
 ;;; nano-package.el ends here
