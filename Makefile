@@ -11,3 +11,7 @@ install: ## Install Emacs configuration into the current system
 .PHONY: clean-install
 clean-install: ## Force cleanup of installed packages and install Emacs configuration into the current system
 	CLEAN=1 ./scripts/install
+
+.PHONY: copy-lock
+copy-lock: ## Copy lock from ~/.emacs.d to the repo
+	cp ~/.emacs.d/straight/versions/default.el package-lock.el
