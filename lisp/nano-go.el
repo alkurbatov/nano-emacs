@@ -60,9 +60,17 @@
   ;; Configure linting
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-golangci-lint nil t)
 
+  ;; Regarding settings see:
+  ;; Eglot: https://www.gnu.org/software/emacs/manual/html_node/eglot/User_002dspecific-configuration.html
+  ;; Gopls: https://github.com/golang/tools/blob/master/gopls/doc/settings.md
   (with-eval-after-load 'eglot
-    (add-to-list 'eglot-workspace-configuration
-                 '((:gopls . ((:usePlaceholders . t))))))
+    (add-to-list 'eglot-server-programs
+                 `(go-ts-mode . ("gopls" :initializationOptions
+                                 (:usePlaceholders t
+                                                   :hints (:constantValues t
+                                                           :compositeLiteralFields t
+                                                           :functionTypeParameters t
+                                                           :parameterNames t))))))
 
   (eglot-ensure))
 
