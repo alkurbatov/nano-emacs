@@ -1,6 +1,6 @@
 ;;; nano-theme-support.el --- N Λ N O theme -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021-2022 Free Software Foundation, Inc.
+;; Copyright (C) 2021-2024 Free Software Foundation, Inc.
 
 ;; Maintainer: Nicolas P. Rougier <Nicolas.Rougier@inria.fr>
 ;; URL: https://github.com/rougier/nano-theme
@@ -232,16 +232,6 @@ background color that is barely perceptible."
   "Default face inversed."
   :group nil)
 
-(defface nano-face-org-green-project
-  `((t (:foreground ,aurora-3)))
-  "Nano face for personal projects."
-  :group 'nano-theme-fonts)
-
-(defface nano-face-org-red-project
-  `((t (:foreground ,aurora-0)))
-  "Nano face for must-do-or-be-fired projects."
-  :group 'nano-theme-fonts)
-
 (defun nano-mode ()
   "Defaults settings for nano."
   (interactive)
@@ -372,25 +362,6 @@ background color that is barely perceptible."
             ("NOTE"       . nano-salient))))
 
 )
-
-
-;; (defun inherit (face &optional inherit)
-;;   "Extract face properties as a property list"
-
-;;   (let ((tags (list :family :foundry :width :height :weight :slant :underline
-;;                     :overline :strike-through :box :inverse-video :foreground
-;;                     :background :stipple :extend :inherit))
-;;  (properties))
-;;     (if inherit
-;;  `(:inherit ,face)
-;;       (progn
-;;  (dolist (tag tags)
-;;    (let ((attribute (face-attribute face tag)))
-;;     (when (not (eq attribute 'unspecified))
-;;       (push attribute properties)
-;;       (push tag properties)))))
-;;       properties)))
-
 
 (defun nano-frame-list-advice-selected (_frames)
   (list (selected-frame)))
