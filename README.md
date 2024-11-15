@@ -114,8 +114,8 @@ To provide automatic activation of virtual environments create
 
 ``` json
 {
-  "venvPath": "<path-to-the-folder-containing-venv",
-  "venv": "<name of the venv folder, e.g. .venv"
+  "venvPath": "path-to-the-folder-containing-venv",
+  "venv": "name of the venv folder, e.g. .venv"
 }
 ```
 
