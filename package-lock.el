@@ -32,7 +32,7 @@
  ("f.el" . "1e7020dc0d4c52d3da9bd610d431cab13aa02d8c")
  ("flatbuffers-mode" . "8e7783db45a64c9456130fd0c108ac12d45a7789")
  ("flymake" . "1c501d7398922ba8d8f2714f277feb99a58cad2e")
- ("flymake-collection" . "68dc01fe851fdb20f28a999848a9ba93b407bd41")
+ ("flymake-collection" . "7fdc88d4471c43630a5795269832f72eadb3f862")
  ("flyspell-correct" . "1e7a5a56362dd875dddf848b9a9e25d1395b9d37")
  ("flyspell-popup" . "29311849bfd253b9b689bf331860b4c4d3bd4dde")
  ("git-modes" . "f99010bbeb8b6d8a0819fac0195a2ef0159d08f0")
