@@ -33,7 +33,7 @@
 ;; Show recently visited buffer but not the current one
 (bind-key* "C-c `" #'mode-line-other-buffer)
 
-;; Close frame if not the last, kill emacs else
+;; Close frame if not the last, kill Emacs else
 (defun nano--delete-frame-or-kill-emacs ()
   "Delete frame or kill Emacs if there is only one frame."
   (interactive)
@@ -42,6 +42,10 @@
 
 ;; Don't press shift when undoing things
 (bind-key* "C--" #'undo)
+
+;; Open URL in default browser (works in UI mode only)
+(bind-key "<C-return>" #'browse-url-at-point)
+(bind-key "C-c RET"    #'browse-url-at-point) ; Fallback for TUI mode
 
 (bind-key "C-h f"   #'helpful-callable) ; Look up callable
 (bind-key "C-h v"   #'helpful-variable) ; Look up variable

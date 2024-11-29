@@ -173,9 +173,6 @@
 (setq global-auto-revert-non-file-buffers t
       dired-auto-revert-buffer t)
 
-;; Allow to open URLs in default browser by clicking 'C-c RET'
-(global-goto-address-mode)
-
 ;; Enable centered cursor
 (global-centered-cursor-mode)
 
