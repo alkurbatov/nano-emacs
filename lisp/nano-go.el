@@ -66,11 +66,10 @@
   (with-eval-after-load 'eglot
     (add-to-list 'eglot-server-programs
                  `(go-ts-mode . ("gopls" :initializationOptions
-                                 (:usePlaceholders t
-                                                   :hints (:constantValues t
-                                                           :compositeLiteralFields t
-                                                           :functionTypeParameters t
-                                                           :parameterNames t))))))
+                                 (:hints (:constantValues t
+                                          :compositeLiteralFields t
+                                          :functionTypeParameters t
+                                          :parameterNames t))))))
 
   (eglot-ensure))
 
