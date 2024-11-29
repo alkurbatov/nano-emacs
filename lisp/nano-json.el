@@ -29,5 +29,7 @@
 
   (add-hook 'json-ts-mode-hook #'nano-setup-json-mode))
 
+(add-to-list 'auto-mode-alist '("\\.json\\." . json-ts-mode))
+
 (provide 'nano-json)
 ;;; nano-json.el ends here
