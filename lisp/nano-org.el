@@ -60,5 +60,8 @@
 ;; Let the agenda buffer consume whole window
 (setq org-agenda-window-setup 'current-window)
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'org)
+
 (provide 'nano-org)
 ;;; nano-org.el ends here

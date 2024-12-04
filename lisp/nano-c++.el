@@ -43,6 +43,10 @@
 ;; Show indentation
 (add-hook 'c++-ts-mode-hook #'indent-bars-mode)
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'cpp)
+(add-to-list 'treesit-auto-langs 'cmake)
+
 ;; Force C++ mode for all headers
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-ts-mode))
 

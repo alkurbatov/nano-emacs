@@ -203,6 +203,9 @@
 ;; Enable tree-sitter integrated into Emacs >= 29
 (setq treesit-auto-install 'prompt)
 (global-treesit-auto-mode)
+;; Reset langs list to fill it in the dedicated modules
+;; except these that doesn't have one.
+(setq treesit-auto-langs '(perl))
 
 ;; Request maximum detalization
 (customize-set-variable 'treesit-font-lock-level 4)

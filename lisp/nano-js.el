@@ -23,5 +23,8 @@
 ;; Show indentation
 (add-hook 'js-ts-mode-hook #'indent-bars-mode)
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'javascript)
+
 (provide 'nano-js)
 ;;; nano-js.el ends here

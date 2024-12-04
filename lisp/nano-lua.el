@@ -25,5 +25,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-ts-mode))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'lua)
+
 (provide 'nano-lua)
 ;;; nano-lua.el ends here

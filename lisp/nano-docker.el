@@ -22,6 +22,9 @@
 
 ;;; Code:
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'dockerfile)
+
 ;; Enable syntax highlighting for Docker-related configuration files
 (add-to-list 'auto-mode-alist '("\\.dockerignore\\'" . gitignore-mode))
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-ts-mode))

@@ -29,6 +29,9 @@
   (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
   (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'yaml)
+
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
 
 (provide 'nano-yaml)

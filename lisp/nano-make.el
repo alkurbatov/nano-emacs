@@ -30,6 +30,9 @@
 (with-eval-after-load 'makefile-ts-mode
   (add-hook 'makefile-ts-mode-hook #'nano-setup-makefile-mode))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'make)
+
 (add-to-list 'auto-mode-alist '("\\([Mm]akefile\\|.*\\.\\(mk\\|make\\)\\)\\'" . makefile-ts-mode))
 
 (provide 'nano-make)

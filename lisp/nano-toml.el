@@ -22,6 +22,9 @@
 
 ;;; Code:
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'toml)
+
 (add-to-list 'auto-mode-alist '("\\.toml\\'" . toml-ts-mode))
 
 (provide 'nano-toml)

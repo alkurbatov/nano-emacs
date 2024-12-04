@@ -19,6 +19,10 @@
 ;;; Commentary:
 
 ;;; Code:
+
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'proto)
+
 (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-ts-mode))
 
 (provide 'nano-protobuf)

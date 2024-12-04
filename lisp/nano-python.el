@@ -52,6 +52,9 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
 (setq python-indent-guess-indent-offset t
       python-indent-guess-indent-offset-verbose nil)
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'python)
+
 ;; Enable syntax highlighting for Python-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.coveragerc\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.flake8\\'" . conf-mode))

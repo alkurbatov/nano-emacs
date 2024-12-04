@@ -20,6 +20,9 @@
 
 ;;; Code:
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'toml)
+
 ;; Show indentation
 (add-hook 'typescript-ts-mode-hook #'indent-bars-mode)
 (add-hook 'tsx-ts-mode-hook #'indent-bars-mode)

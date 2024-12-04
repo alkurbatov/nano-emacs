@@ -52,5 +52,8 @@
 ;; Use Github Markdown flavor by default (provided by markdown-mode) as it is used most often
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'markdown)
+
 (provide 'nano-markdown)
 ;;; nano-markdown.el ends here

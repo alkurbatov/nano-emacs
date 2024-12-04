@@ -22,6 +22,9 @@
 
 ;;; Code:
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'bash)
+
 ;; Enable syntax highlighting for Sh-related files
 (add-to-list 'auto-mode-alist '("\\.env\\'" . bash-ts-mode))
 

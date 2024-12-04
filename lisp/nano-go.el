@@ -82,6 +82,10 @@
 
   (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'go)
+(add-to-list 'treesit-auto-langs 'gomod)
+
 ;; Enable syntax highlighting for Golang-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-to-list 'auto-mode-alist '("go\\.mod\\'" . go-mod-ts-mode))

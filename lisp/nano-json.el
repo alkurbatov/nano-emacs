@@ -29,6 +29,9 @@
 
   (add-hook 'json-ts-mode-hook #'nano-setup-json-mode))
 
+;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'json)
+
 (add-to-list 'auto-mode-alist '("\\.json\\." . json-ts-mode))
 
 (provide 'nano-json)
