@@ -46,13 +46,23 @@ DIR must include a file .project"
 ;; Switch project in the same way as projectile does
 (setq project-switch-commands 'project-find-file)
 
+(defvar nano-project-test-command "make test")
+
+(defun project-run-tests ()
+  "Run unit tests in the project root."
+  (interactive)
+  (let ((default-directory (project-root (project-current t))))
+        (async-shell-command nano-project-test-command)))
+
+
 ;; Key bindings
 (bind-keys :map project-prefix-map
            ("b" . consult-project-buffer)
            ("D" . project-find-dir)
            ("d" . project-dired)
            ("s" . consult-ripgrep)
-           ("t" . eat-project))
+           ("t" . eat-project)
+           ("T" . project-run-tests))
 
 (provide 'nano-project)
 ;;; nano-project.el ends here
