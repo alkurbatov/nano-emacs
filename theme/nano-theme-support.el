@@ -611,9 +611,9 @@ background color that is barely perceptible."
    '(company-tooltip-annotation-selection ((t (:inherit nano-salient-i))))
 
    ;; --- Compilation --------------------------------------------------
-   '(compilation-error ((t (:inherit nano-critical))))
-   '(compilation-info ((t (:inherit nano-default))))
-   '(compilation-warning ((t (:inherit nano-popout))))
+   `(compilation-error ((t (:foreground ,aurora-0))))
+   `(compilation-info ((t (:foreground ,frost-2))))
+   `(compilation-warning ((t (:foreground ,aurora-2))))
    '(compilation-line-number ((t (:inherit nano-default))))
    '(compilation-column-number ((t (:inherit nano-default))))
    '(compilation-mode-line-run ((t (:inherit nano-default-i))))
