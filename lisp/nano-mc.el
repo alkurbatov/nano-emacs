@@ -25,7 +25,7 @@
 (require 'nano-settings)
 
 (defun nano-dired-find-file ()
-  "Open file or directory and show its canonocal path even if it was symlink.
+  "Open file or directory and show its canonical path even if it was symlink.
 Kudos to: https://www.youtube.com/watch?v=59XPGvJMggY&list=WL&index=95&t=12s"
   (interactive)
 
@@ -89,7 +89,7 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
 
   ;; Tweak displayed fields
   (setq dired-listing-switches
-        (combine-and-quote-strings '("-lahGk"
+        (combine-and-quote-strings '("-GlahFk"
                                    "--time-style=+%d %b %Y")))
 
   ;; Setup quick sort
