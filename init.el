@@ -54,6 +54,7 @@
         flyspell-popup           ; Correcting words with flyspell in popup menus
         format-all               ; Auto-format source code in many languages with one command
         git-modes                ; Emacs major modes for Git configuration files
+        gotest                   ; Emacs mode to go unit test command line tool
         helpful                  ; A better help buffer
         hl-todo                  ; Highlight TODO keywords
         jinx                     ; Enchanted Spell Checker
@@ -140,6 +141,10 @@
 ;; Fast, configurable indentation guide-bars for Emacs
 (straight-use-package
  '(indent-bars :type git :host github :repo "jdtsmith/indent-bars"))
+
+;; Run subtests and test with TreeSitter and gotest.el
+(straight-use-package
+ '(gotest-ts :type git :host github :repo "chmouel/gotest-ts.el"))
 
 ;; Load settings
 (require 'nano)

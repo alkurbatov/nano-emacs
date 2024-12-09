@@ -21,6 +21,7 @@
 ;;; Code:
 (require 'bind-key)
 (require 'format-all)
+(require 'gotest-ts)
 (require 'project)
 
 ;; Make it possible for LSP servers to find go.mod in the project.
@@ -77,10 +78,15 @@
   ;; Sync indent with global settings
   (setq go-ts-mode-indent-offset 4)
 
+  ;; Make tests execution with gotest more verbose
+  (setq go-test-verbose t)
+
   ;; Show indentation
   (add-hook 'go-ts-mode-hook #'indent-bars-mode)
 
-  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot))
+  (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot)
+
+  (bind-key "<f2>" #'gotest-ts-run-dwim))
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'go)

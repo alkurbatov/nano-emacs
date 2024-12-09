@@ -1202,6 +1202,13 @@ background color that is barely perceptible."
     `(eglot-diagnostic-tag-deprecated-face  ((t (:underline (:style wave :color ,frost-2)))))
     `(eglot-diagnostic-tag-unnecessary-face  ((t (:underline (:style wave :color ,frost-2)))))
 
+    ;; -- Gotest ---------------------------------------------------------
+    `(go-test--ok-face        ((t (:foreground ,aurora-3))))
+    `(go-test--error-face     ((t (:foreground ,aurora-0))))
+    `(go-test--warning-face   ((t (:foreground ,aurora-2))))
+    `(go-test--pointer-face   ((t (:foreground ,frost-2))))
+    '(go-test--standard-face  ((t (inherit nano-default))))
+
     ))
 
   (dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
