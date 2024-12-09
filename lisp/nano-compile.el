@@ -24,7 +24,6 @@
 
 (setq
  compilation-ask-about-save nil           ; save all buffers before compilation
- compilation-auto-jump-to-first-error t   ; jump to the first compilation error
  compilation-max-output-line-length nil   ; don't hide long lines
  compilation-read-command nil             ; don't ask for command confirmation when run compilation
  compilation-scroll-output t              ; follow compilation command output
