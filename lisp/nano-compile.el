@@ -23,6 +23,7 @@
 (require 'compile)
 
 (setq
+ compilation-always-kill t                ; always kill current compilation process when running new one
  compilation-ask-about-save nil           ; save all buffers before compilation
  compilation-max-output-line-length nil   ; don't hide long lines
  compilation-read-command nil             ; don't ask for command confirmation when run compilation

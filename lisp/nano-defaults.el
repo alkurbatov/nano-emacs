@@ -39,6 +39,9 @@
 ; Increase read size per process
 (setq-default read-process-output-max (* 1024 1024))
 
+;; No confirmation for killing running process
+(setq-default confirm-kill-processes nil)
+
 ;; No confirmation for visiting non-existent files
 (setq-default confirm-nonexistent-file-or-buffer nil)
 
