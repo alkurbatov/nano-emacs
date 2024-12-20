@@ -17,12 +17,14 @@
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+;;
+;; Hints
+;;
+;; To open file under root user on remote machine do:
+;; /ssh:remote-host|sudo::/path/to-file
 
 ;;; Code:
 (require 'tramp)
-
-;; Prefer SSH when using Trump
-(setq tramp-default-method "ssh")
 
 ;; Show line numbers when editing SSH configs
 (add-hook 'ssh-authorized-keys-mode-hook #'display-line-numbers-mode)
