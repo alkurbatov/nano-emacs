@@ -70,16 +70,16 @@ The DWIM behavior of this command is as follows:
 ;; Don't press shift when undoing things
 (bind-key* "C--" #'undo)
 
-;; Open URL in default browser (works in UI mode only)
-(bind-key "<C-return>" #'browse-url-at-point)
+;; Open URL in default browser
+(bind-key "<C-return>" #'browse-url-at-point) ; Works in UI mode only
 (bind-key "C-c RET"    #'browse-url-at-point) ; Fallback for TUI mode
 
 (bind-key "C-h f"   #'helpful-callable) ; Look up callable
 (bind-key "C-h v"   #'helpful-variable) ; Look up variable
 (bind-key "C-h k"   #'helpful-key)      ; Look up key
 (bind-key "C-c C-d" #'helpful-at-point) ; Look up the current symbol at point
-(bind-key "C-h F"   #'helpful-function) ; Look up *F*unctions (excludes macros).
-(bind-key "C-h C"   #'helpful-command)  ; Look up *C*ommands.
+(bind-key "C-h F"   #'helpful-function) ; Look up *F*unctions (excludes macros)
+(bind-key "C-h C"   #'helpful-command)  ; Look up *C*ommands
 
 ;; Avy
 (bind-key "M-g f" #'avy-goto-line)
