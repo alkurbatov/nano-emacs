@@ -87,6 +87,8 @@ configuration.
 
 ### Optional requirements
 
+- [Bash Language Server](https://github.com/bash-lsp/bash-language-server) for
+  `LSP` in `Bash`.
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
 - [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP`

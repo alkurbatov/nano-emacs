@@ -22,6 +22,22 @@
 
 ;;; Code:
 
+(defun nano-setup-sh-with-eglot ()
+  "Setup and enable Eglot for Bash/Sh."
+  ;; Ask Eglot to stay away from completely taking over flymake
+  (setq eglot-stay-out-of '(flymake))
+  (add-hook 'flymake-diagnostic-functions #'eglot-flymake-backend)
+
+  ;; Regarding settings see:
+  ;; Eglot: https://www.gnu.org/software/emacs/manual/html_node/eglot/User_002dspecific-configuration.html
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+                 '((sh-mode bash-ts-mode) . ("bash-language-server" "start"))))
+
+  (eglot-ensure))
+
+(add-hook 'bash-ts-mode-hook #'nano-setup-sh-with-eglot)
+
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'bash)
 
