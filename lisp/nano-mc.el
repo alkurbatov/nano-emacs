@@ -105,6 +105,9 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
            ("M-u" . dired-up-directory)
            ("M-RET" . nano-open-in-external-app)))
 
+;; Highlight current line for convenience
+(add-hook 'dired-mode-hook #'hl-line-mode)
+
 (bind-key "C-x d" #'nano-open-dired)
 
 (provide 'nano-mc)
