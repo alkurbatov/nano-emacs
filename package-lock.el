@@ -37,6 +37,8 @@
  ("flyspell-popup" . "29311849bfd253b9b689bf331860b4c4d3bd4dde")
  ("git-modes" . "f99010bbeb8b6d8a0819fac0195a2ef0159d08f0")
  ("gnu-elpa-mirror" . "827ac631d606a6f199d52f8f50b75616f5b36de3")
+ ("go-impl" . "1eebba6ccd02d11a5a82ad4540a8d562797bc3b3")
+ ("go-mode.el" . "602d73e22646b1b98b2eb97927fd426c0d1d2f92")
  ("gotest-ts.el" . "c439ae4197df3b3ceb561f9b99357387b8033104")
  ("gotest.el" . "490189e68d743a851bfb42d0017428a7550e8615")
  ("helpful" . "4ba24cac9fb14d5fdc32582cd947572040e82b2c")

@@ -54,6 +54,7 @@
         flyspell-popup           ; Correcting words with flyspell in popup menus
         format-all               ; Auto-format source code in many languages with one command
         git-modes                ; Emacs major modes for Git configuration files
+        go-impl                  ; impl for Emacs
         gotest                   ; Emacs mode to go unit test command line tool
         helpful                  ; A better help buffer
         hl-todo                  ; Highlight TODO keywords
