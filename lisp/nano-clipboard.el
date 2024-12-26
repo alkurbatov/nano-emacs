@@ -53,5 +53,9 @@
     (setq interprogram-cut-function 'copy-from-linux)
     (setq interprogram-paste-function 'paste-to-linux))))
 
+;; Save the existing system clipboard text into the kill ring before replacing it.
+;; See https://srijan.ch/notes/2024-09-24-001
+(setq save-interprogram-paste-before-kill t)
+
 (provide 'nano-clipboard)
 ;;; nano-clipboard.el ends here
