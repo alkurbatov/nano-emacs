@@ -20,7 +20,6 @@
 
 ;;; Code:
 (require 'disp-table)
-(require 'ligature)
 (require 'nano-modeline)
 
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
@@ -36,21 +35,6 @@
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 1 (light)
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 2 (medium)
 ;; defaults write org.gnu.Emacs AppleFontSmoothing -int 3 (strong)
-
-;; Enable font ligatures
-;; Taken from https://github.com/mickeynp/ligature.el/wiki
-(ligature-set-ligatures 'prog-mode '("-|" "-~" "---" "-<<" "-<" "--" "->" "->>" "-->" "///" "/=" "/=="
-                                     "/>" "//" "/*" "*>" "***" "*/" "<-" "<<-" "<=>" "<=" "<|" "<||"
-                                     "<|||" "<|>" "<:" "<>" "<-<" "<<<" "<==" "<<=" "<=<" "<==>" "<-|"
-                                     "<<" "<~>" "<=|" "<~~" "<~" "<$>" "<$" "<+>" "<+" "</>" "</" "<*"
-                                     "<*>" "<->" "<!--" ":>" ":<" ":::" "::" ":?" ":?>" ":=" "::=" "=>>"
-                                     "==>" "=/=" "=!=" "=>" "===" "=:=" "==" "!==" "!!" "!=" ">]" ">:"
-                                     ">>-" ">>=" ">=>" ">>>" ">-" ">=" "&&&" "&&" "|||>" "||>" "|>" "|]"
-                                     "|}" "|=>" "|->" "|=" "||-" "|-" "||=" "||" ".." ".?" ".=" ".-" "..<"
-                                     "..." "+++" "+>" "++" "[||]" "[<" "[|" "{|" "??" "?." "?=" "?:" "##"
-                                     "###" "####" "#[" "#{" "#=" "#!" "#:" "#_(" "#_" "#?" "#(" ";;" "_|_"
-                                     "__" "~~" "~~>" "~>" "~-" "~@" "$>" "^=" "]#"))
-(global-ligature-mode t)
 
 (add-hook 'prog-mode-hook            #'hl-line-mode)
 (add-hook 'text-mode-hook            #'hl-line-mode)

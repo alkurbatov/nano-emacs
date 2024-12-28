@@ -22,6 +22,7 @@
 ;;; Code:
 (require 'bind-key)
 (require 'org-agenda)
+(require 'nano-font)
 
 (with-eval-after-load 'org
   (require 'nano-modeline)
@@ -48,6 +49,8 @@
   (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
   (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
   (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
+
+  (ligature-set-ligatures 'org-mode nano-jetbrains-ligatures)
 
   (bind-keys :map org-mode-map
              ("C-c z" . org-toggle-link-display)
