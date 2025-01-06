@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+go install github.com/daixiang0/gci@latest
+go install github.com/josharian/impl@latest
+go install github.com/rogpeppe/godef@latest
+go install github.com/swaggo/swag/cmd/swag@latest
+go install golang.org/x/perf/cmd/benchstat@latest
+go install golang.org/x/tools/cmd/deadcode@latest
+go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/vuln/cmd/govulncheck@latest

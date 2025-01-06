@@ -91,8 +91,7 @@ configuration.
   `LSP` in `Bash`.
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
-- [Gopls](https://github.com/golang/tools/tree/master/gopls) for `LSP`
-  in `Golang`.
+- [Gopls and other handy Golang binaries](./scripts/up-go-tools).
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
 - [Jsonlint](https://github.com/zaach/jsonlint) - to lint `JSON` files.
 - [Markdownlint](https://github.com/DavidAnson/markdownlint-cli2)
