@@ -45,7 +45,6 @@
         dired-quick-sort         ; Persistent quick sorting of dired buffers in various ways
         drag-stuff               ; Drag stuff around in Emacs. Like in Eclipse
         engine-mode              ; Minor mode for defining and querying search engines through Emacs
-        ethan-wspace             ; A non-intrusive emacs customization for people who are OCD about whitespace
         evil-nerd-commenter      ; Comment/uncomment lines efficiently. Like Nerd Commenter in Vim
         exec-path-from-shell     ; Make Emacs use the $PATH set up by the user's shell
         f                        ; Modern API for working with files and directories
@@ -78,6 +77,7 @@
         smex                     ; A smart M-x enhancement for Emacs
         treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                  ; VERTical Interactive Completion
+        ws-butler                ; Unobtrusively trim extraneous white-space *ONLY* in lines edited.
         yasnippet))              ; A template system for Emacs
 
 ;; Install packages that are not yet installed

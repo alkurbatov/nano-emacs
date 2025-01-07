@@ -325,10 +325,6 @@ background color that is barely perceptible."
         (set-fontset-font t '(#xe000 . #xffdd) jetbrains-nerd)
       (message "JetBrainsMono Nerd font has not been found on your system")))
 
-  ;; Customize ethan-wspace mode faces
-  (with-eval-after-load 'ethan-wspace
-    (setq ethan-wspace-face-customized t))
-
   ;; Customize indent-bars mode
   (with-eval-after-load 'indent-bars
     ;; Enable TreeSitter support
@@ -1147,10 +1143,6 @@ background color that is barely perceptible."
                            :weight bold))))
     `(dired-symlink   ((t (:foreground ,frost-0
                            :weight bold))))
-
-    ;; --- Ethan-wspace ------------------------------------------------
-    `(ethan-wspace-face ((t (:background ,aurora-2
-                             :foreground unspecified))))
 
     ;; --- Highlight-indent --------------------------------------------
     `(highlight-indent-guides-character-face     ((t (:foreground ,polar-night-1))))

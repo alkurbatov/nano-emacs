@@ -190,8 +190,8 @@
 
 ;; Better work with trailing whitespaces and line endings
 (setq mode-require-final-newline nil)
-(add-hook 'org-mode-hook #'ethan-wspace-mode)
-(add-hook 'prog-mode-hook #'ethan-wspace-mode)
+(add-hook 'org-mode-hook #'ws-butler-mode)
+(add-hook 'prog-mode-hook #'ws-butler-mode)
 
 ;; Enable convenient comment/uncomment shortcut
 (evilnc-default-hotkeys t)

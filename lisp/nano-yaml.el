@@ -27,7 +27,7 @@
   (add-hook 'yaml-ts-mode-hook #'indent-bars-mode)
 
   (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
-  (add-hook 'yaml-ts-mode-hook #'ethan-wspace-mode))
+  (add-hook 'yaml-ts-mode-hook #'ws-butler-mode))
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'yaml)
