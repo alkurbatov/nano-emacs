@@ -60,8 +60,5 @@
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 
-;; In some modes we don't want to scale anything
-(setq golden-ratio-exclude-modes '("dired-mode"))
-
 (provide 'nano-layout)
 ;;; nano-layout.el ends here
