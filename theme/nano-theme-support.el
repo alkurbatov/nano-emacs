@@ -113,21 +113,21 @@
 
 (defface nano-mono
   '((t (:family "JetBrains Mono"
-        :height 150
+        :height 130
         :weight light)))
   "Default monospaced font (JetBrains Mono Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-sans
   '((t (:family "Roboto"
-        :height 150
+        :height 130
         :weight light)))
   "Default proportional sans font (Roboto Light, 15pt)."
   :group 'nano-theme-fonts)
 
 (defface nano-serif
   '((t (:family "Roboto Slab"
-        :height 150
+        :height 130
         :weight light)))
   "Default proportional serif font (Roboto Slab Light, 15pt)."
   :group 'nano-theme-fonts)
@@ -135,7 +135,7 @@
 (defface nano-italic
   '((t (:family "JetBrains Mono"
         :slant italic
-        :height 150
+        :height 130
         :weight regular)))
   "Default italic font (JetBrains Mono Italic Light, 15pt)."
   :group 'nano-theme-fonts)
@@ -306,7 +306,7 @@ background color that is barely perceptible."
                  '(menu-bar-lines . 0))))
 
   ;; Line spacing (in pixels)
-  ;; (setq line-spacing 0)
+  (setq line-spacing 1.2)
 
   ;; Vertical window divider
   (setq window-divider-default-right-width 24)
