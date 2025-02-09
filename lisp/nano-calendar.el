@@ -20,6 +20,7 @@
 
 ;;; Code:
 (require 'calendar)
+(require 'nano-modeline)
 (require 'russian-holidays)
 
 ;; Set Russian names, abbrevs and holidays
@@ -40,6 +41,8 @@
 
 ;; Highlight holidays by default
 (setq calendar-mark-holidays-flag t)
+
+(add-hook 'calendar-mode-hook #'(lambda () (nano-modeline nano-modeline-format-calendar)))
 
 (provide 'nano-calendar)
 ;;; nano-calendar.el ends here

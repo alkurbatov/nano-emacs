@@ -44,18 +44,13 @@ configuration.
   brew install emacs-plus@30 \
     --with-imagemagick \
     --with-savchenkovaleriy-big-sur-icon \
-    --with-xwidgets \
-    --with-poll
+    --with-xwidgets
   ```
 
 - Additional fonts
 
   ```bash
-  brew install \
-    homebrew/cask/font-roboto \
-    homebrew/cask/font-roboto-slab \
-    homebrew/cask/font-jetbrains-mono \
-    homebrew/cask/font-jetbrains-mono-nerd-font
+  brew install homebrew/cask/font-jetbrains-mono
   ```
 
 - `coreutls` (`Mac OS` only) for better listing in `Dired`

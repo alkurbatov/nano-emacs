@@ -97,11 +97,18 @@
 ;; Completion style, see
 ;; gnu.org/software/emacs/manual/html_node/emacs/Completion-Styles.html
 (setq completion-styles '(substring orderless basic)
-      orderless-component-separator 'orderless-escapable-split-on-space
+      orderless-component-separator "[ &]" ; press & to type another query in company popup
       completion-category-overrides '((file (styles basic partial-completion)))
       read-file-name-completion-ignore-case t
       read-buffer-completion-ignore-case t
       completion-ignore-case t)
+
+;; Improve appearance for several orderless queries.
+;; See https://github.com/oantolin/orderless?tab=readme-ov-file#company
+(defun just-one-face (fn &rest args)
+  (let ((orderless-match-faces [completions-common-part]))
+    (apply fn args)))
+(advice-add 'company-capf--candidates :around #'just-one-face)
 
 ;; TAB cycle if there are only few candidates
 (setq completion-cycle-threshold 3)
@@ -222,7 +229,7 @@
 ;; Save abbreviations whenever files are saved
 (setq save-abbrevs 'silently)
 
-;; Tell emacs where to read abbrev definitions from
+;; Tell Emacs where to read abbrev definitions from
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 
 ;; Enable embedded abbrev mode

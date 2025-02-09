@@ -5,7 +5,7 @@ set -euxo pipefail
 # Settings
 EMACS_HOME=~/.emacs.d
 STRAIGHT_VERSIONS="${EMACS_HOME}/straight/versions"
-FOLDERS_TO_REMOVE=(lisp snippets theme)
+FOLDERS_TO_REMOVE=(lisp snippets)
 
 CLEAN="${CLEAN:-0}"
 if [[ "${CLEAN}" -eq 1 ]]; then
@@ -30,7 +30,7 @@ cp package-lock.el "${STRAIGHT_VERSIONS}/default.el"
 # Install new configuration
 cp early-init.el init.el "${EMACS_HOME}"
 
-for i in lisp snippets theme; do
+for i in lisp snippets; do
     cp -r "${i}" "${EMACS_HOME}"
 done
 

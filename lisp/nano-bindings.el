@@ -35,7 +35,7 @@
 
 ;; Close frame if not the last, kill Emacs else
 (defun nano--delete-frame-or-kill-emacs ()
-  "Delete frame or kill Emacs if there is only one frame."
+  "Delete frame or kill Emacs if there is only one frame left."
   (interactive)
   (condition-case nil (delete-frame) (error (save-buffers-kill-terminal))))
 (bind-key* "C-x C-c" #'nano--delete-frame-or-kill-emacs)
@@ -56,15 +56,10 @@ The DWIM behavior of this command is as follows:
 - When the Completions buffer is selected, close it.
 - In every other case use the regular `keyboard-quit'."
   (interactive)
-  (cond
-   ((region-active-p)
-    (keyboard-quit))
-   ((derived-mode-p 'completion-list-mode)
-    (delete-completion-window))
-   ((> (minibuffer-depth) 0)
-    (abort-recursive-edit))
-   (t
-    (keyboard-quit))))
+  (cond ((region-active-p) (keyboard-quit))
+        ((derived-mode-p 'completion-list-mode) (delete-completion-window))
+        ((> (minibuffer-depth) 0) (abort-recursive-edit))
+        (t (keyboard-quit))))
 (bind-key "C-g" #'nano--keyboard-quit-dwim)
 
 ;; Don't press shift when undoing things

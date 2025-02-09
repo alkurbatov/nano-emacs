@@ -91,7 +91,7 @@
 
 ;; GNU Emacs / N Λ N O Modeline
 (straight-use-package
- '(nano-modeline :type git :host github :repo "rougier/nano-modeline"))
+ '(nano-modeline :type git :host github :repo "rougier/nano-modeline" :branch "rewrite"))
 
 ;; Special case for pdf-tools that has recently (2022) changed maintainer
 (straight-use-package
@@ -146,6 +146,9 @@
 ;; Run subtests and test with TreeSitter and gotest.el
 (straight-use-package
  '(gotest-ts :type git :host github :repo "chmouel/gotest-ts.el"))
+
+(straight-use-package
+ '(nord-theme :type git :host github :repo "alkurbatov/nord-theme"))
 
 ;; Load settings
 (require 'nano)

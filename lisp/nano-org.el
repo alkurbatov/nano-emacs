@@ -25,8 +25,6 @@
 (require 'nano-font)
 
 (with-eval-after-load 'org
-  (require 'nano-modeline)
-
   ;; Use RET to open org-mode links, including those in quick-help.org
   (setq org-return-follows-link t)
 
@@ -46,9 +44,8 @@
   ;; Customize some links, see:
   ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
 
-  (add-hook 'org-mode-hook             #'nano-modeline-org-mode)
+  (add-hook 'org-mode-hook             #'nano-modeline-format-default)
   (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
-  (add-hook 'org-agenda-mode-hook      #'nano-modeline-org-agenda-mode)
 
   (ligature-set-ligatures 'org-mode nano-jetbrains-ligatures)
 

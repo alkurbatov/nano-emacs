@@ -34,7 +34,7 @@
 (setq eat-kill-buffer-on-exit t
       eat-query-before-killing-running-terminal nil)
 
-(add-hook 'eat-mode-hook #'nano-modeline-eat-mode)
+(add-hook 'eat-mode-hook #'(lambda () (nano-modeline nano-modeline-format-terminal)))
 (add-hook 'eat-mode-hook #'compilation-shell-minor-mode)
 
 (provide 'nano-terminal)

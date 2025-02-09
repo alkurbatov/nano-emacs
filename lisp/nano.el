@@ -24,20 +24,15 @@
     (error (format "Nano Emacs for Devs only works with Emacs 30 and newer; you have version %d" emacs-major-version)))
 
 ;; Theming Command line options (this will cancel warning messages)
-(add-to-list 'command-switch-alist '("-no-splash" . (lambda (args))))
 (add-to-list 'command-switch-alist '("-debug" . (lambda (args))))
-
-;; Theme
-(require 'nano-theme)
-(nano-mode)
-(load-theme 'nano t)
 
 ;; Settings
 (require 'nano-settings)
 
 ;; Default layout
-(require 'nano-layout)
 (require 'nano-font)
+(require 'nano-appearance)
+(require 'nano-layout)
 (require 'nano-whitespace)
 
 ;; Nano default settings
@@ -64,21 +59,16 @@
 (require 'nano-help)
 
 ;; Minibuffer configuration
-(require 'nano-minibuffer)
+(require 'nano-minibuffer-ex)
 
 ;; Welcome message
 (let ((inhibit-message t))
   (message "Welcome to GNU Emacs / N Λ N O for devs edition")
   (message (format "Initialization time: %s" (emacs-init-time))))
 
-;; Splash
-(unless (member "-no-splash" command-line-args)
-  (require 'nano-splash)
-  (nano-splash))
-
 ;; Extended debugging
 (when (member "-debug" command-line-args)
-    (setq debug-on-error t))
+  (setq debug-on-error t))
 
 ;; Org mode
 (require 'nano-org)

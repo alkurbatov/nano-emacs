@@ -23,7 +23,6 @@
 
 ;;; Code:
 (require 'diff-hl)
-(require 'nano-modeline)
 (require 's)
 
 ;; Taken from: https://www.youtube.com/watch?v=yP3mgt5hMyI&list=WL&index=15
@@ -41,9 +40,8 @@
 (setq magit-save-repository-buffers 'dontask)
 
 ;; Show the diff indicators in the margin when in TUI mode
-(unless (display-graphic-p)
-  (add-hook 'prog-mode-hook #'diff-hl-margin-mode)
-  (add-hook 'text-mode-hook #'diff-hl-margin-mode))
+(add-hook 'prog-mode-hook #'diff-hl-margin-mode)
+(add-hook 'text-mode-hook #'diff-hl-margin-mode)
 
 ;; Integrate diff-hl with magit
 (add-hook 'magit-pre-refresh-hook #'diff-hl-magit-pre-refresh)
@@ -52,19 +50,6 @@
 ;; Check spelling when writing commit message
 (add-hook 'git-commit-setup-hook #'git-commit-turn-on-flyspell)
 (add-hook 'git-commit-setup-hook #'nano-auto-insert-jira-ticket-into-commit-msg)
-
-;; Improve display of nano-modeline in magit buffers, see:
-;; See: https://github.com/rougier/nano-modeline/issues/8
-(defun nano-modeline-magit-mode (orig-fun input)
-  "Nano modeline for magit mode."
-  (funcall nano-modeline-position
-           `((nano-modeline-buffer-status) " "
-             (nano-modeline-buffer-name) " "
-             ,(concat "(" input ")"))
-           '((nano-modeline-cursor-position)
-             (nano-modeline-window-dedicated))))
-
-(advice-add 'magit-set-header-line-format :around #'nano-modeline-magit-mode)
 
 (with-eval-after-load 'magit-blame
   (setq magit-blame-styles '((headings

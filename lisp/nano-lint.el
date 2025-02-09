@@ -22,6 +22,9 @@
 
 (defun nano-enable-flymake ()
   "Enable Flymake."
+  ;; Don't use left fringe, it is occupied by diff-hl
+  (setq flymake-fringe-indicator-position nil)
+
   (flymake-mode)
   (flymake-popon-mode))
 
@@ -33,6 +36,8 @@
 (with-eval-after-load 'flymake
   ;; Provide some Flycheck-like bindings in Flymake mode to ease transition
   (bind-keys :map flymake-mode-map
+             ("C-c ! b" . flymake-show-buffer-diagnostics)
+             ("C-c ! P" . flymake-show-project-diagnostics)
              ("C-c ! L" . nano-consult-flymake-project)
              ("C-c ! l" . consult-flymake)
              ("C-c ! n" . flymake-goto-next-error)

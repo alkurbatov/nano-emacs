@@ -21,6 +21,27 @@
 ;;; Code:
 (require 'ligature)
 
+;; Nerd font for glyph icons
+(let ((jetbrains-nerd (font-spec :name "JetBrains Mono")))
+  (if (find-font jetbrains-nerd)
+      (set-fontset-font t '(#xe000 . #xffdd) jetbrains-nerd)
+    (message "JetBrains Mono font has not been found on your system")))
+
+(defface nano-mono
+  '((t (:family "JetBrains Mono"
+        :height 130
+        :weight light)))
+  "Default monospaced font (JetBrains Mono Light, 13pt)."
+  :group 'nano-fonts)
+
+(defface nano-italic
+  '((t (:family "JetBrains Mono"
+        :slant italic
+        :height 130
+        :weight regular)))
+  "Default italic font (JetBrains Mono Italic Light, 13pt)."
+  :group 'nano-fonts)
+
 ;; Enable font ligatures
 (defconst nano-jetbrains-ligatures
   '("-->" "//" "/**" "/*" "*/" "<!--" ":=" "->>" "<<-" "->" "<-"

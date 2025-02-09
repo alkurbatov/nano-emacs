@@ -22,38 +22,83 @@
 (require 'disp-table)
 (require 'nano-modeline)
 
+;; No startup  screen
+(setq inhibit-startup-screen t)
+
+;; No startup message
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+
+;; No message in scratch buffer
+(setq initial-scratch-message nil)
+
+;; Initial buffer
+(setq initial-buffer-choice nil)
+
+;; No frame title
+(setq frame-title-format nil)
+
+;; No file dialog
+(setq use-file-dialog nil)
+
+;; No dialog box
+(setq use-dialog-box nil)
+
+;; No popup windows
+(setq pop-up-windows nil)
+
+;; No empty line indicators
+(setq indicate-empty-lines nil)
+
+;; No cursor in inactive windows
+(setq cursor-in-non-selected-windows nil)
+
+;; Text mode is initial mode
+(setq initial-major-mode 'text-mode)
+
+;; Text mode is default major mode
+(setq default-major-mode 'text-mode)
+
+;; Moderate font lock
+(setq font-lock-maximum-decoration t)
+
+;; No line break space points
+(setq auto-fill-mode nil)
+
+;; Fill column at 80
+(setq fill-column 80)
+
+;; Bar cursor
+(setq-default cursor-type '(hbar .  2))
+(setq-default cursor-in-non-selected-windows nil)
+(setq blink-cursor-mode nil)
+
+;; No toolbar
+(tool-bar-mode -1)
+
+;; Vertical window divider
+(setq window-divider-default-right-width 24)
+(setq window-divider-default-places 'right-only)
+(window-divider-mode 1)
+
+;; Nicer glyphs for continuation and wrap
+(set-display-table-slot standard-display-table
+                        'truncation (make-glyph-code ?… 'nano-faded))
+(set-display-table-slot standard-display-table
+                        'wrap (make-glyph-code ?- 'nano-faded))
+
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
 (when (and (eq system-type 'darwin) (display-graphic-p))
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
 
-;; on OSX, type the line below (in terminal) to get a 1 pixel border
-;; defaults write com.apple.universalaccess increaseContrast -bool YES
-
-;; To control anti-aliasing on OSX:
-;; defaults write org.gnu.Emacs AppleFontSmoothing -int 0 (none)
-;; defaults write org.gnu.Emacs AppleFontSmoothing -int 1 (light)
-;; defaults write org.gnu.Emacs AppleFontSmoothing -int 2 (medium)
-;; defaults write org.gnu.Emacs AppleFontSmoothing -int 3 (strong)
-
-(add-hook 'prog-mode-hook            #'hl-line-mode)
-(add-hook 'text-mode-hook            #'hl-line-mode)
+(add-hook 'prog-mode-hook     #'hl-line-mode)
+(add-hook 'text-mode-hook     #'hl-line-mode)
 
 ;; Enable nano-modeline in different modes
-(add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
-(add-hook 'text-mode-hook            #'nano-modeline-text-mode)
-(add-hook 'pdf-view-mode-hook        #'nano-modeline-pdf-mode)
-(add-hook 'xwidget-webkit-mode-hook  #'nano-modeline-xwidget-mode)
-(add-hook 'messages-buffer-mode-hook #'nano-modeline-message-mode)
-
-;; Remove the default modeline in favor of nano-modeline
-(setq-default mode-line-format nil)
-
-;; Make a text mode the default one
-(nano-modeline-text-mode t)
-
-;; Show column number in modeline mode
-(column-number-mode)
+(setq nano-modeline-alignment '(text . text)
+      nano-modeline-borders '(nil . nil))
+(nano-modeline nil "Top" t)
 
 ;; Display line numbers in most modes
 (add-hook 'conf-unix-mode-hook #'display-line-numbers-mode)

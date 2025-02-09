@@ -1,4 +1,4 @@
-;;; nano-minibuffer.el --- Minibuffer configuration -*- lexical-binding: t; -*-
+;;; nano-minibuffer-ex.el --- Minibuffer configuration -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2024 - N Λ N O developers
@@ -60,6 +60,17 @@
               marginalia-align-offset -1) ; one space on the right
 (marginalia-mode)
 
+;; Use vanilla modeline as minibuffer divider
+(setq-default mode-line-format "") ;; disabled by nano-modeline
+(set-face-attribute 'mode-line nil
+                    :background (face-background 'default)
+                    :underline (face-foreground 'nano-faded)
+                    :height 40 :overline nil :box nil)
+(set-face-attribute 'mode-line-inactive nil
+                    :background (face-background 'default)
+                    :underline (face-foreground 'nano-faded)
+                    :height 40 :overline nil :box nil)
+
 ;; Bind Vertico commands
 (bind-key "M-s" #'vertico-suspend)
 
@@ -77,5 +88,5 @@
            ("M-h" . consult-history)
            ("M-s" . vertico-suspend))
 
-(provide 'nano-minibuffer)
-;;; nano-minibuffer.el ends here
+(provide 'nano-minibuffer-ex)
+;;; nano-minibuffer-ex.el ends here
