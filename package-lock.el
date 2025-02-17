@@ -60,7 +60,7 @@
  ("melpa" . "822cd8b6f44d8404c7f50b547f35f84d95b4b07e")
  ("nano-modeline" . "8d4219914a6afe7647c2effbc823eb70796fbea0")
  ("nongnu-elpa" . "31eac8bb1373a3b42cc80a329b28d25c56e59e20")
- ("nord-theme" . "da59a889002f01d531e47d408b77d3f8b4860f8b")
+ ("nord-theme" . "faf08aa8593a2305c4812e8c64becb966873af45")
  ("orderless" . "c7cb04499d94ee1c17affb29b1cfcd2a45116c97")
  ("org-auto-tangle" . "817eabf902e759e96782bdc54d2dab36c4a2c5ab")
  ("pdf-tools" . "30b50544e55b8dbf683c2d932d5c33ac73323a16")
