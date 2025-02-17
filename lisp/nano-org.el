@@ -41,10 +41,6 @@
   ;; Enable syntax highlighting in src blocks for certain languages
   (add-to-list 'org-src-lang-modes '("go" . go-ts))
 
-  ;; Customize some links, see:
-  ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
-
-  (add-hook 'org-mode-hook             #'nano-modeline-format-default)
   (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
 
   (ligature-set-ligatures 'org-mode nano-jetbrains-ligatures)
