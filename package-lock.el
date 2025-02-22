@@ -58,7 +58,7 @@
  ("markdown-mode" . "7659bc470d096e7a53285fa246cbabcb07d66a33")
  ("markdown-toc" . "d2fb4cbd95e558042307d706f9f47f93687c9fcc")
  ("melpa" . "822cd8b6f44d8404c7f50b547f35f84d95b4b07e")
- ("nano-modeline" . "8d4219914a6afe7647c2effbc823eb70796fbea0")
+ ("nano-modeline" . "c86d194a61643a2c8fdfd20c7d67625b4c296c32")
  ("nongnu-elpa" . "31eac8bb1373a3b42cc80a329b28d25c56e59e20")
  ("nord-theme" . "faf08aa8593a2305c4812e8c64becb966873af45")
  ("orderless" . "c7cb04499d94ee1c17affb29b1cfcd2a45116c97")
