@@ -44,6 +44,7 @@
 (add-hook 'c++-ts-mode-hook #'indent-bars-mode)
 
 ;; Enable tree-sitter integration.
+(add-to-list 'treesit-auto-langs 'c)
 (add-to-list 'treesit-auto-langs 'cpp)
 (add-to-list 'treesit-auto-langs 'cmake)
 
