@@ -23,17 +23,22 @@
 ;;; Code:
 (defun nano-setup-markdown-mode ()
   "Setup markdown mode."
-
   (setq markdown-command
       (concat
        "pandoc"
        " --highlight-style=pygments"))
 
   (setq markdown-fontify-code-blocks-natively t)
-  (add-to-list 'markdown-code-lang-modes '("bash" . bash-ts-mode))
-  ;; Use yaml-ts-mode as a workaround as json-ts-mode doesn't work by some reason.
-  ;; yaml-ts-mode is somewhat ok because JSON is subset of the YAML standard.
-  (add-to-list 'markdown-code-lang-modes '("json" . yaml-ts-mode))
+  (setq markdown-code-lang-modes '(
+      ("bash"   . bash-ts-mode)
+      ("go"     . go-mode)
+      ("golang" . go-mode)
+      ;; Use yaml-ts-mode as a workaround as json-ts-mode doesn't work by some reason.
+      ;; yaml-ts-mode is somewhat ok because JSON is subset of the YAML standard.
+      ("json"   . yaml-ts-mode)
+      ("make"   . makefile-ts-mode)
+      ("text"   . text-mode)
+      ("yaml"   . yaml-ts-mode)))
 
   (setq-local whitespace-style '(face trailing tab-mark))
   (whitespace-mode)
