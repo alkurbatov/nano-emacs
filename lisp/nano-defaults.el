@@ -150,7 +150,7 @@
 (drag-stuff-define-keys)
 
 ;; Forward some shell variables in OS X GUI
-(when (memq window-system '(mac ns x))
+(when (display-graphic-p)
   (dolist (var '("LANG" "LC_ALL" "LC_CTYPE"))
     (add-to-list 'exec-path-from-shell-variables var))
   (exec-path-from-shell-initialize)
