@@ -19,15 +19,20 @@
 ;;; Commentary:
 
 ;;; Code:
-(defun nano-setup-json-mode ()
-  "Setup markdown mode."
-  (add-hook 'flymake-diagnostic-functions #'flymake-collection-jsonlint nil t))
+(require 'nord-theme)
+
+(defun nano-setup-json-ts-mode ()
+  "Setup json-ts-mode."
+  (add-hook 'flymake-diagnostic-functions #'flymake-collection-jsonlint nil t)
+
+  ;; Show indentation
+  (indent-bars-mode)
+
+  ;; Remap faces as the most used face is just white.
+  (face-remap-add-relative 'font-lock-property-use-face :foreground nord7))
 
 (with-eval-after-load 'json-ts-mode
-  ;; Show indentation
-  (add-hook 'json-ts-mode-hook #'indent-bars-mode)
-
-  (add-hook 'json-ts-mode-hook #'nano-setup-json-mode))
+  (add-hook 'json-ts-mode-hook #'nano-setup-json-ts-mode))
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'json)

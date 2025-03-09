@@ -19,15 +19,24 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'nord-theme)
+
+(defun nano-setup-yaml-ts-mode()
+  "Setup yaml-ts-mode."
+
+  ;; Show indentation
+  (indent-bars-mode)
+
+  (turn-on-smartparens-mode)
+  (ws-butler-mode)
+
+  ;; Remap faces as the most used face is just white.
+  (face-remap-add-relative 'font-lock-property-use-face :foreground nord7))
 
 (with-eval-after-load 'yaml-ts-mode
   (setq-local tab-width 2)
 
-  ;; Show indentation
-  (add-hook 'yaml-ts-mode-hook #'indent-bars-mode)
-
-  (add-hook 'yaml-ts-mode-hook #'turn-on-smartparens-mode)
-  (add-hook 'yaml-ts-mode-hook #'ws-butler-mode))
+  (add-hook 'yaml-ts-mode-hook #'nano-setup-yaml-ts-mode))
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'yaml)
