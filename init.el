@@ -52,6 +52,7 @@
         flyspell-correct-popup   ; Correcting words with flyspell via popup interface
         flyspell-popup           ; Correcting words with flyspell in popup menus
         format-all               ; Auto-format source code in many languages with one command
+        git-link                 ; Emacs package to get the GitHub/Bitbucket/GitLab/... URL for a buffer location
         git-modes                ; Emacs major modes for Git configuration files
         go-impl                  ; impl for Emacs
         gotest                   ; Emacs mode to go unit test command line tool

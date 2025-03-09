@@ -67,5 +67,7 @@
 ;; Enforce bindings recommended by Magit.
 (setq magit-define-global-key-bindings 'recommended)
 
+(global-set-key (kbd "C-c g l") 'git-link)
+
 (provide 'nano-git)
 ;;; nano-git.el ends here
