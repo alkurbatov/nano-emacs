@@ -28,11 +28,11 @@
  inhibit-default-init t                    ; No site-wide default library
  package-enable-at-startup nil)            ; We'll use straight.el
 
-;; Tweak gc to make startup faster.
+;; Tweak garbage collector to make startup faster.
 ;; See https://emacsconf.org/2023/talks/gc/
 (setq gc-cons-threshold (* 80 1024 1024))
 
-;; Reset garbage collector limit after init process has ended (800Kb)
+;; Reset garbage collector limit after the init process has ended (800Kb)
 (add-hook 'after-init-hook
           #'(lambda () (setq gc-cons-threshold 800000)))
 
@@ -40,8 +40,7 @@
       (list (expand-file-name "eln-cache" user-emacs-directory)))
 
 ;; Start Emacs maximixed without scrollbars
-(setq default-frame-alist '((fullscreen . maximized)
-                            (vertical-scroll-bars . nil)
+(setq default-frame-alist '((vertical-scroll-bars . nil)
                             (horizontal-scroll-bars . nil)))
 
 ;; No menu bar

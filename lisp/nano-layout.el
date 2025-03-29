@@ -21,6 +21,7 @@
 ;;; Code:
 (require 'disp-table)
 (require 'nano-modeline)
+(require 'olivetti)
 
 ;; No startup  screen
 (setq inhibit-startup-screen t)
@@ -102,8 +103,20 @@
 
 ;; Display line numbers in most modes
 (add-hook 'conf-unix-mode-hook #'display-line-numbers-mode)
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-(add-hook 'text-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook      #'display-line-numbers-mode)
+(add-hook 'text-mode-hook      #'display-line-numbers-mode)
+
+;; Enable margins for nice writing environment.
+(defun setup-olivetti-mode ()
+  "Setup and enable 'olivetti-mode'."
+  (setq olivetti-minimum-body-width 120
+        olivetti-body-width 120)
+
+  (olivetti-mode))
+
+(add-hook 'conf-unix-mode-hook #'setup-olivetti-mode)
+(add-hook 'prog-mode-hook      #'setup-olivetti-mode)
+(add-hook 'text-mode-hook      #'setup-olivetti-mode)
 
 (provide 'nano-layout)
 ;;; nano-layout.el ends here
