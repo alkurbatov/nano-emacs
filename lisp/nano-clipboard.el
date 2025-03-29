@@ -31,15 +31,15 @@
   "Paste text using macOS tools."
   (shell-command-to-string "pbpaste"))
 
-(defun copy-from-linux (text &optional push)
-  "Copy TEXT using X tools."
+(defun copy-from-linux-wayland (text &optional push)
+  "Copy TEXT using wl-clipboard."
   (with-temp-buffer
     (insert text)
-    (call-process-region (point-min) (point-max) "xsel" nil 0 nil "--clipboard" "--input")))
+    (call-process-region (point-min) (point-max) "wl-copy" nil 0 nil "-f" "-n")))
 
-(defun paste-to-linux ()
-  "Paste text using X tools."
-  (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
+(defun paste-to-linux-wayland ()
+  "Paste text using wl-clipboard."
+  (let ((xsel-output (shell-command-to-string "wl-paste -n | tr -d \r")))
     (unless (string= (car kill-ring) xsel-output)
       xsel-output )))
 
@@ -49,13 +49,14 @@
     (setq interprogram-cut-function 'copy-from-osx)
     (setq interprogram-paste-function 'paste-to-osx))
    ((string-equal system-type "gnu/linux")
-    (setq x-select-enable-clipboard t)
-    (setq interprogram-cut-function 'copy-from-linux)
-    (setq interprogram-paste-function 'paste-to-linux))))
+    (setq interprogram-cut-function 'copy-from-linux-wayland)
+    (setq interprogram-paste-function 'paste-to-linux-wayland))))
 
 ;; Save the existing system clipboard text into the kill ring before replacing it.
 ;; See https://srijan.ch/notes/2024-09-24-001
 (setq save-interprogram-paste-before-kill t)
+
+(setq select-enable-clipboard t)
 
 (provide 'nano-clipboard)
 ;;; nano-clipboard.el ends here
