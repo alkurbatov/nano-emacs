@@ -33,7 +33,7 @@
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'make)
 
-(add-to-list 'auto-mode-alist '("\\([Mm]akefile\\|.*\\.\\(mk\\|make\\)\\)\\'" . makefile-ts-mode))
+(add-to-list 'auto-mode-alist '("\\([Mm]akefile\\|.*\\.\\(mk\\|make\\)\\'\\)" . makefile-ts-mode))
 
 (provide 'nano-make)
 ;;; nano-make.el ends here
