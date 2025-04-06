@@ -30,7 +30,7 @@
   (turn-on-smartparens-mode)
   (ws-butler-mode)
 
-  ;; Remap faces as the most used face is just white.
+  ;; Remap some faces for better UX.
   (face-remap-add-relative 'font-lock-property-use-face :foreground nord7))
 
 (with-eval-after-load 'yaml-ts-mode

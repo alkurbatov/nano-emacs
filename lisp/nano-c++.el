@@ -19,6 +19,7 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'nord-theme)
 
 (defun nano-setup-c++-with-eglot ()
   "Setup and enable Eglot for C++."
@@ -36,12 +37,21 @@
                       "--header-insertion=never"
                       "--header-insertion-decorators=0"))))
 
-  (eglot-ensure))
+  (eglot-ensure)
+
+  ;; Remap some faces for better UX.
+  (face-remap-add-relative 'font-lock-type-face :foreground nord9))
+
+(defun nano-setup-cmake ()
+  "Setup cmake."
+
+  (setq cmake-ts-mode-indent-offset 4))
 
 (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
-
-;; Show indentation
 (add-hook 'c++-ts-mode-hook #'indent-bars-mode)
+
+(add-hook 'cmake-ts-mode-hook #'nano-setup-cmake)
+(add-hook 'cmake-ts-mode-hook #'indent-bars-mode)
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'c)
