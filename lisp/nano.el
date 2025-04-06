@@ -90,6 +90,7 @@
 
 ;; Programming languages
 (require 'nano-c++)
+(require 'nano-cmake)
 (require 'nano-elisp)
 (require 'nano-go)
 (require 'nano-js)

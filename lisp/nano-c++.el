@@ -42,16 +42,8 @@
   ;; Remap some faces for better UX.
   (face-remap-add-relative 'font-lock-type-face :foreground nord9))
 
-(defun nano-setup-cmake ()
-  "Setup cmake."
-
-  (setq cmake-ts-mode-indent-offset 4))
-
 (add-hook 'c++-ts-mode-hook #'nano-setup-c++-with-eglot)
 (add-hook 'c++-ts-mode-hook #'indent-bars-mode)
-
-(add-hook 'cmake-ts-mode-hook #'nano-setup-cmake)
-(add-hook 'cmake-ts-mode-hook #'indent-bars-mode)
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'c)
@@ -63,8 +55,6 @@
 
 ;; Enable syntax highlighting for C++-related tools configuration files
 (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-ts-mode))
-(add-to-list 'auto-mode-alist '("CMakeLists.txt\\'" . cmake-ts-mode))
 
 (provide 'nano-c++)
 ;;; nano-c++.el ends here
