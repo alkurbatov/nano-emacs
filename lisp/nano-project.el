@@ -40,7 +40,7 @@ DIR must include a file .project"
       (cons 'local root)))
 
 (customize-set-variable 'project-find-functions
-                        (list #'project-try-vc
+                        (list #'project-rootfile-try-detect
                               #'project-local-try-local))
 
 ;; Switch project in the same way as projectile does

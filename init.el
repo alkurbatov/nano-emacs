@@ -69,6 +69,7 @@
         org-auto-tangle          ; Tangle org file when it is saved
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
+        project-rootfile         ; Extension of project.el to detect project root with root file (e.g. Gemfile)
         raku-mode                ; Emacs major mode for Raku
         realgud                  ; The Grand "Cathedral" Debugger rewrite
         rfc-mode                 ; An Emacs major mode to read and browse RFC documents
@@ -79,7 +80,7 @@
         smex                     ; A smart M-x enhancement for Emacs
         treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                  ; VERTical Interactive Completion
-        ws-butler                ; Unobtrusively trim extraneous white-space *ONLY* in lines edited.
+        ws-butler                ; Unobtrusively trim extraneous white-space *ONLY* in lines edited
         yasnippet))              ; A template system for Emacs
 
 ;; Install packages that are not yet installed
