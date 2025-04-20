@@ -22,19 +22,6 @@
 (require 'bind-key)
 (require 'format-all)
 (require 'gotest-ts)
-(require 'project)
-
-;; Make it possible for LSP servers to find go.mod in the project.
-;; See https://github.com/golang/tools/blob/master/gopls/doc/emacs.md#configuring-project-for-go-modules-in-emacs
-(defun project-find-go-module (dir)
-  (when-let ((root (locate-dominating-file dir "go.mod")))
-    (cons 'go-module root)))
-
-(cl-defmethod project-root ((project (head go-module)))
-  (cdr project))
-
-(add-hook 'project-find-functions #'project-find-go-module)
-
 
 ;; Add gofumpt formatter
 (define-format-all-formatter gofumpt
