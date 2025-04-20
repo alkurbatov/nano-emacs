@@ -80,6 +80,7 @@
         smex                     ; A smart M-x enhancement for Emacs
         treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                  ; VERTical Interactive Completion
+        vterm                    ; Emacs libvterm integration
         ws-butler                ; Unobtrusively trim extraneous white-space *ONLY* in lines edited
         yasnippet))              ; A template system for Emacs
 
@@ -110,17 +111,6 @@
  '(flymake-popon
    :type git
    :repo "https://codeberg.org/akib/emacs-flymake-popon.git"))
-
-;; Emulate A Terminal, in a region, in a buffer and in Eshell
-(straight-use-package
- '(eat :type git
-       :host codeberg
-       :repo "akib/emacs-eat"
-       :files ("*.el" ("term" "term/*.el") "*.texi"
-               "*.ti" ("terminfo/e" "terminfo/e/*")
-               ("terminfo/65" "terminfo/65/*")
-               ("integration" "integration/*")
-               (:exclude ".dir-locals.el" "*-tests.el"))))
 
 ;; An Emacs minor mode for highlighting matches to the selection
 (straight-use-package

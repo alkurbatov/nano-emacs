@@ -27,15 +27,8 @@
    ("<mouse-4>" . scroll-down-line)
    ("<mouse-5>" . scroll-up-line)))
 
-;; Mask Eat as xterm to make it compatible with OS X tools
-(setq eat-term-name "xterm-256color")
-
-;; Close terminal without questions
-(setq eat-kill-buffer-on-exit t
-      eat-query-before-killing-running-terminal nil)
-
-(add-hook 'eat-mode-hook #'(lambda () (nano-modeline nano-modeline-format-terminal)))
-(add-hook 'eat-mode-hook #'compilation-shell-minor-mode)
+(add-hook 'vterm-mode-hook #'(lambda () (nano-modeline nano-modeline-format-terminal)))
+(add-hook 'vterm-mode-hook #'compilation-shell-minor-mode)
 
 (provide 'nano-terminal)
 ;;; nano-terminal.el ends here

@@ -43,6 +43,12 @@ DIR must include a file .project"
                         (list #'project-rootfile-try-detect
                               #'project-local-try-local))
 
+(defun vterm-project ()
+  "Open vterm in the root of the current project."
+  (interactive)
+  (let ((default-directory (project-root (project-current t))))
+    (vterm)))
+
 ;; Switch project in the same way as projectile does
 (setq project-switch-commands 'project-find-file)
 
@@ -61,7 +67,7 @@ DIR must include a file .project"
            ("D" . project-find-dir)
            ("d" . project-dired)
            ("s" . consult-ripgrep)
-           ("t" . eat-project)
+           ("t" . vterm-project)
            ("T" . project-run-tests))
 
 (provide 'nano-project)

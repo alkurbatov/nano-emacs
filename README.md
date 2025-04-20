@@ -65,6 +65,12 @@ configuration.
   brew install fd
   ```
 
+- The `vterm` library and compilation tools to build `vterm` terminal module:
+
+  ```bash
+  brew install cmake libvterm
+  ```
+
 - The `enchant` library to check spelling with
   [Jinx](https://github.com/minad/jinx):
 
