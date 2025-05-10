@@ -71,6 +71,8 @@ configuration.
   brew install cmake libvterm
   ```
 
+  See also [zsh integration][zsh-integration].
+
 - The `enchant` library to check spelling with
   [Jinx](https://github.com/minad/jinx):
 
@@ -137,3 +139,5 @@ To install the project execute the following command:
 ```bash
 make install
 ```
+
+[zsh-integration]: https://github.com/alkurbatov/dotfiles/blob/master/.zsh_vterm
