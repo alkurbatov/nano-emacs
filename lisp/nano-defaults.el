@@ -246,5 +246,22 @@
 
 (advice-add #'kill-ring-save :before #'nano-pulse-current-region)
 
+;; Open files with line numbers, e.g. [C-x f] path/file.cpp:123
+;; Kudos to https://topikettunen.com/blog/finally-got-my-emacs-setup-just-how-i-like-it/
+(defadvice find-file (around find-file-line-number
+                             (filename &optional wildcards)
+                             activate)
+  (save-match-data
+    (let* ((matched (string-match "^\\(.*\\):\\([0-9]+\\):?$" filename))
+           (line-number (and matched
+                             (match-string 2 filename)
+                             (string-to-number (match-string 2 filename))))
+           (filename (if matched (match-string 1 filename) filename)))
+      ad-do-it
+      (when line-number
+        ;; goto-line is for interactive use
+        (goto-char (point-min))
+        (forward-line (1- line-number))))))
+
 (provide 'nano-defaults)
 ;;; nano-defaults.el ends here
