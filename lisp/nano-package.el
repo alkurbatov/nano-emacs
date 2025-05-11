@@ -23,7 +23,11 @@
 
 ;;; Code:
 
-(setq straight-use-package-by-default t)   ; Implicitly adds :straight t to all use-package forms
+;; Implicitly adds :straight t to all use-package forms
+(setq straight-use-package-by-default t)
+
+;; Speed up packages downloads by checking out only current branch instead of the default 'full
+(setq straight-vc-git-default-clone-depth '(1 single-branch))
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
