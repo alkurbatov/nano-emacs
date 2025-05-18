@@ -23,7 +23,9 @@
 
 ;;; Code:
 (require 'diff-hl)
+(require 'log-edit)
 (require 's)
+(require 'vc-git)
 
 ;; Taken from: https://www.youtube.com/watch?v=yP3mgt5hMyI&list=WL&index=15
 (defun nano-auto-insert-jira-ticket-into-commit-msg ()
@@ -48,7 +50,6 @@
 (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
 
 ;; Check spelling when writing commit message
-(add-hook 'git-commit-setup-hook #'git-commit-turn-on-flyspell)
 (add-hook 'git-commit-setup-hook #'nano-auto-insert-jira-ticket-into-commit-msg)
 
 (with-eval-after-load 'magit-blame
@@ -61,7 +62,7 @@
                               (show-message . t)))))
 
 ;; Enable syntax highlighting when composing commit message
-(add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . vc-git-log-edit-mode))
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . gitconfig-mode))
 
 ;; Enforce bindings recommended by Magit.
