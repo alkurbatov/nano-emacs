@@ -36,7 +36,6 @@
       '(ag                       ; Integration of ag search utility
         auctex                   ; Integrated environment for *TeX*
         avy                      ; Jump to things in Emacs tree-style
-        bind-key                 ; A simple way to manage personal keybindings
         centered-cursor-mode     ; An emacs minor mode for smooth scrolling
         consult                  ; Consulting completing-read
         consult-eglot            ; Jump to workspace symbols with eglot and consult
