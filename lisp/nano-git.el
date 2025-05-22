@@ -61,6 +61,24 @@
                               (show-lines . t)
                               (show-message . t)))))
 
+;; As usually only git is used.
+;; This may have an effect on performance, as Emacs will not try to
+;; check for a bunch of backends.
+(setq vc-handled-backends '(Git))
+
+(setq vc-git-log-edit-summary-target-len 50
+      vc-git-log-edit-summary-max-len 70)
+
+(defun nano-setup-log-edit ()
+  "Setup vc-git-log-edit-mode."
+
+  ;; Show fill column when composing commit message
+  (setq-local fill-column 64)
+
+  (display-fill-column-indicator-mode))
+
+(add-hook 'vc-git-log-edit-mode-hook #'nano-setup-log-edit)
+
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . vc-git-log-edit-mode))
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . gitconfig-mode))
