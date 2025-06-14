@@ -24,7 +24,12 @@
 ;; /ssh:remote-host|sudo::/path/to-file
 
 ;;; Code:
+(require 'nano-settings)
 (require 'tramp)
+
+;; Keep remote backups with local.
+(setq tramp-auto-save-directory nano-auto-save-directory
+      tramp-backup-directory-alist `(("." . ,nano-backup-directory)))
 
 ;; Show line numbers when editing SSH configs
 (add-hook 'ssh-authorized-keys-mode-hook #'display-line-numbers-mode)

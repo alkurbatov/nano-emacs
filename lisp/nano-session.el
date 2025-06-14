@@ -20,6 +20,7 @@
 
 ;;; Code:
 (require 'nano-sensitive)
+(require 'nano-settings)
 
 ;; Save miscellaneous history
 (setq savehist-additional-variables
@@ -66,14 +67,11 @@
 ;; Bookmarks
 (setq bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
 
-;; Lock files
-(setq lock-file-name-transforms `((".*" ,(concat user-emacs-directory "locks/") t)))
-
 ;; Auto-save files
-(setq auto-save-file-name-transforms `((".*" ,(concat user-emacs-directory "auto-save-list/") t)))
+(setq auto-save-file-name-transforms `((".*" ,nano-auto-save-directory t)))
 
 ;; Backup
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups/")))
+(setq backup-directory-alist  `(("." . ,nano-backup-directory))
       make-backup-files t     ; backup of a file the first time it is saved
       backup-by-copying t     ; don't clobber symlinks
       vc-make-backup-files t  ; backup version controlled files too as we don't commit on every save

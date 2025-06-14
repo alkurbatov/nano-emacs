@@ -29,5 +29,15 @@
   :type 'string
   :group 'nano)
 
+(defcustom nano-auto-save-directory (concat user-emacs-directory "auto-save-list/")
+  "Where Emacs should store auto saved files."
+  :type 'string
+  :group 'nano)
+
+(defcustom nano-backup-directory (concat user-emacs-directory "backups/")
+  "Where Emacs should store file backups."
+  :type 'string
+  :group 'nano)
+
 (provide 'nano-settings)
 ;;; nano-settings.el ends here
