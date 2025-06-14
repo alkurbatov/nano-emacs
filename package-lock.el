@@ -51,8 +51,6 @@
  ("jsonrpc" . "444cafedd091815e674b6c93458ba97a55a76928")
  ("let-alist" . "35a1dae3c540705433a510c13c8af80206b29b5f")
  ("ligature.el" . "6ac1634612dbd42f7eb81ecaf022bd239aabb954")
- ("llama" . "7de288e79329bfb3e2b4a2f9b574cf834bd371dd")
- ("magit" . "0c134614665c70552aff6786844e4792365ff7e5")
  ("makefile-ts-mode" . "d033e71bd1881543e18552caff4d491c363decf4")
  ("marginalia" . "3cfba58cd56bdf5c12609a8bfc89fb97f3df37b0")
  ("markdown-mode" . "90ad4af79a8bb65a3a5cdd6314be44abd9517cfc")
@@ -91,7 +89,6 @@
  ("transient" . "cb6550d5b111b7815feec97b236ecb051de70dbe")
  ("treesit-auto" . "016bd286a1ba4628f833a626f8b9d497882ecdf3")
  ("vertico" . "54829f61034c9408cf620dac1e6af304f38d79ed")
- ("with-editor" . "e39137ed0add2fb2cb7e4db1d9fab10ee1ebd682")
  ("xref" . "63b5875528e9c8dba3abbc76dae1b49351273c1c")
  ("yasnippet" . "2384fe1655c60e803521ba59a34c0a7e48a25d06"))
 :gamma

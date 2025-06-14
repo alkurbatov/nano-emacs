@@ -27,39 +27,12 @@
 (require 's)
 (require 'vc-git)
 
-;; Taken from: https://www.youtube.com/watch?v=yP3mgt5hMyI&list=WL&index=15
-(defun nano-auto-insert-jira-ticket-into-commit-msg ()
-  "Insert Jira ticket (if any) into commit message."
-  (let ((has-ticket-title (string-match "^[A-Z]+-[0-9]+" (magit-get-current-branch)))
-        (words (s-split-words (magit-get-current-branch))))
-    (if has-ticket-title
-        (insert (format "%s-%s | " (car words) (car (cdr words)))))))
-
 ;; Show changes in unsaved buffers
 (diff-hl-flydiff-mode)
-
-;; Save modified files in a repository without additional questions
-(setq magit-save-repository-buffers 'dontask)
 
 ;; Show the diff indicators in the margin when in TUI mode
 (add-hook 'prog-mode-hook #'diff-hl-margin-mode)
 (add-hook 'text-mode-hook #'diff-hl-margin-mode)
-
-;; Integrate diff-hl with magit
-(add-hook 'magit-pre-refresh-hook #'diff-hl-magit-pre-refresh)
-(add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
-
-;; Check spelling when writing commit message
-(add-hook 'git-commit-setup-hook #'nano-auto-insert-jira-ticket-into-commit-msg)
-
-(with-eval-after-load 'magit-blame
-  (setq magit-blame-styles '((headings
-                              (heading-format . "%.8H - %a, %C • %s\12"))
-                             (highlight
-                              (highlight-face . magit-blame-highlight))
-                             (lines
-                              (show-lines . t)
-                              (show-message . t)))))
 
 ;; As usually only git is used.
 ;; This may have an effect on performance, as Emacs will not try to
@@ -82,9 +55,6 @@
 ;; Enable syntax highlighting when composing commit message
 (add-to-list 'auto-mode-alist '("\\.git/COMMIT_EDITMSG\\'" . vc-git-log-edit-mode))
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . gitconfig-mode))
-
-;; Enforce bindings recommended by Magit.
-(setq magit-define-global-key-bindings 'recommended)
 
 (global-set-key (kbd "C-c g l") 'git-link)
 
