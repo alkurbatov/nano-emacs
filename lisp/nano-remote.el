@@ -31,6 +31,9 @@
 (setq tramp-auto-save-directory nano-auto-save-directory
       tramp-backup-directory-alist `(("." . ,nano-backup-directory)))
 
+;; Print only warnings and errors.
+(setq tramp-verbose 2)
+
 ;; Show line numbers when editing SSH configs
 (add-hook 'ssh-authorized-keys-mode-hook #'display-line-numbers-mode)
 (add-hook 'ssh-config-mode-hook #'display-line-numbers-mode)
