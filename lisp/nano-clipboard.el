@@ -39,7 +39,9 @@
 
 (defun paste-to-linux-wayland ()
   "Paste text using wl-clipboard."
-  (let ((xsel-output (shell-command-to-string "wl-paste -n | tr -d \r")))
+  (let ((tramp-mode nil)
+        (default-directory "~"))
+    (setq-local xsel-output (shell-command-to-string "wl-paste -n | tr -d \r"))
     (unless (string= (car kill-ring) xsel-output)
       xsel-output )))
 
