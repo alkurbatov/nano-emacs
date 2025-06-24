@@ -30,7 +30,7 @@
 
   (setq markdown-fontify-code-blocks-natively t)
   (setq markdown-code-lang-modes '(
-      ("bash"   . bash-ts-mode)
+      ("bash"   . shell-script-mode)
       ("go"     . go-mode)
       ("golang" . go-mode)
       ;; Use yaml-ts-mode as a workaround as json-ts-mode doesn't work by some reason.
