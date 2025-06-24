@@ -31,8 +31,8 @@
 (setq tramp-auto-save-directory nano-auto-save-directory
       tramp-backup-directory-alist `(("." . ,nano-backup-directory)))
 
-;; Print only warnings and errors.
-(setq tramp-verbose 2)
+(setq tramp-verbose 2             ;; print only warnings and errors.
+      enable-remote-dir-locals t) ;; load .dir-locals.el of remote projects
 
 ;; Show line numbers when editing SSH configs
 (add-hook 'ssh-authorized-keys-mode-hook #'display-line-numbers-mode)
