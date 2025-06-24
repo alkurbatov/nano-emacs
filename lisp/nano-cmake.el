@@ -22,7 +22,8 @@
 (defun nano-setup-cmake ()
   "Setup cmake."
 
-  (setq cmake-ts-mode-indent-offset 4))
+  ;; See https://docs.zephyrproject.org/latest/contribute/style/cmake.html
+  (setq cmake-ts-mode-indent-offset 2))
 
 (add-hook 'cmake-ts-mode-hook #'nano-setup-cmake)
 (add-hook 'cmake-ts-mode-hook #'indent-bars-mode)
