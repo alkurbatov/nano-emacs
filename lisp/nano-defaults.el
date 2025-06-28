@@ -195,8 +195,9 @@
 ;; Highlight TODO keywords
 (global-hl-todo-mode)
 
-;; Better work with trailing whitespaces and line endings
-(setq mode-require-final-newline nil)
+;; Better work with trailing whitespace and line endings
+(setq show-trailing-whitespace t
+      mode-require-final-newline nil)
 (add-hook 'org-mode-hook #'ws-butler-mode)
 (add-hook 'prog-mode-hook #'ws-butler-mode)
 
