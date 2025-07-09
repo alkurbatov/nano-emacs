@@ -1,0 +1,1 @@
+((markdown-mode (eval setq flymake-collection-markdownlint-style "/Users/alkurbatov/work/src/gitverse.ru/alkurbatov/python-service-template/.mdlstyle.rb")))
