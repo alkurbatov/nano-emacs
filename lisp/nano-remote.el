@@ -18,6 +18,9 @@
 
 ;;; Commentary:
 ;;
+;; Regarding TRAMP optimizations see:
+;; https://coredumped.dev/2025/06/18/making-tramp-go-brrrr./
+;;
 ;; Hints
 ;;
 ;; To open file under root user on remote machine do:
@@ -31,8 +34,19 @@
 (setq tramp-auto-save-directory nano-auto-save-directory
       tramp-backup-directory-alist `(("." . ,nano-backup-directory)))
 
-(setq tramp-verbose 2             ;; print only warnings and errors.
-      enable-remote-dir-locals t) ;; load .dir-locals.el of remote projects
+(setq tramp-verbose 2                       ;; print only warnings and errors.
+      tramp-use-scp-direct-remote-copying t ;; use faster method
+      tramp-copy-size-limit (* 1024 1024)   ;; 1MB buffer for faster copying
+      enable-remote-dir-locals t)           ;; load .dir-locals.el of remote projects
+
+;; Use async processes to speed up TRAMP.
+(connection-local-set-profile-variables
+ 'remote-direct-async-process
+ '((tramp-direct-async-process . t)))
+
+(connection-local-set-profiles
+ '(:application tramp :protocol "scp")
+ 'remote-direct-async-process)
 
 ;; Show line numbers when editing SSH configs
 (add-hook 'ssh-authorized-keys-mode-hook #'display-line-numbers-mode)

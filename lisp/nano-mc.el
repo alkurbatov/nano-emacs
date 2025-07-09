@@ -97,8 +97,7 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
   (setq dired-quick-sort-group-directories-last ?y) ; group directories together
 
   ;; Tweak files and folders deletion
-  (setq delete-by-moving-to-trash t
-        dired-recursive-deletes 'always)
+  (setq dired-recursive-deletes 'always)
 
   (bind-keys :map dired-mode-map
            ("RET" . nano-dired-find-file)
