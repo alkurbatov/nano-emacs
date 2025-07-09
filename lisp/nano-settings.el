@@ -29,6 +29,11 @@
   :type 'string
   :group 'nano)
 
+(defcustom nano-lock-files-directory (concat user-emacs-directory "locks/")
+  "Where Emacs should store lock files."
+  :type 'string
+  :group 'nano)
+
 (defcustom nano-auto-save-directory (concat user-emacs-directory "auto-save-list/")
   "Where Emacs should store auto saved files."
   :type 'string

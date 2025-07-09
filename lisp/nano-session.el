@@ -67,6 +67,9 @@
 ;; Bookmarks
 (setq bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
 
+;; Lock files
+(setq lock-file-name-transforms `((".*" ,nano-lock-files-directory t)))
+
 ;; Auto-save files
 (setq auto-save-file-name-transforms `((".*" ,nano-auto-save-directory t)))
 

@@ -35,4 +35,6 @@ for i in lisp snippets; do
 done
 
 # Create auxiliary directories
-mkdir -p "${EMACS_HOME}/auto-save-list"
+for i in auto-save-list locks; do
+    mkdir -p "${EMACS_HOME}/${i}"
+done

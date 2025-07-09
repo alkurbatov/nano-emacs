@@ -34,7 +34,8 @@
 (setq tramp-auto-save-directory nano-auto-save-directory
       tramp-backup-directory-alist `(("." . ,nano-backup-directory)))
 
-(setq tramp-verbose 2                       ;; print only warnings and errors.
+(setq tramp-verbose 2                       ;; print only warnings and errors
+      remote-file-name-inhibit-locks t      ;; don't use locks on remote files
       tramp-use-scp-direct-remote-copying t ;; use faster method
       tramp-copy-size-limit (* 1024 1024)   ;; 1MB buffer for faster copying
       enable-remote-dir-locals t)           ;; load .dir-locals.el of remote projects
