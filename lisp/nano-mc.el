@@ -52,18 +52,16 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
     (setq xdoIt (if (<= (length xfileList) 10) t (y-or-n-p "Open more than 10 files? ")))
     (when xdoIt
       (cond
-       ((eq system-type 'darwin)
+       (os-macos
         (mapc (lambda (xfpath) (shell-command (concat "open " (shell-quote-argument xfpath)))) xfileList))
-       ((eq system-type 'gnu/linux)
+       (os-linux
         (mapc (lambda (xfpath)
                 (call-process shell-file-name nil 0 nil
                               shell-command-switch
                               (format "%s %s"
                                       "xdg-open"
                                       (shell-quote-argument xfpath))))
-              xfileList))
-       ((eq system-type 'berkeley-unix)
-        (mapc (lambda (xfpath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" xfpath))) xfileList))))))
+              xfileList))))))
 
 (defun nano-open-dired ()
   "Open Dired in current folder with additional tweaks."
@@ -83,7 +81,7 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
   (setq dired-recursive-copies 'always)
 
   ;; Use GNU ls on OS X
-  (when (eq system-type 'darwin)
+  (when os-macos
     (setq ls-lisp-use-insert-directory-program t
           insert-directory-program (concat nano-brew-path "/opt/coreutils/bin/gls")))
 

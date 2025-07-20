@@ -89,7 +89,7 @@
                         'wrap (make-glyph-code ?- 'nano-faded))
 
 ;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
-(when (and (eq system-type 'darwin) (display-graphic-p))
+(when (and os-macos (display-graphic-p))
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
 

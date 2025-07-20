@@ -124,8 +124,7 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-;; Mac specific
-(when (eq system-type 'darwin)
+(when os-macos
   (setq ns-use-native-fullscreen t
         mac-use-title-bar nil))
 

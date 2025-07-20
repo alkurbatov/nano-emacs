@@ -19,6 +19,12 @@
 ;;; Commentary:
 
 ;;; Code:
+(defvar os-linux (string-equal system-type "gnu/linux")
+  "Running on Linux.")
+
+(defvar os-macos (string-equal system-type "darwin")
+  "Running on macOS.")
+
 (defcustom nano-brew-path "/opt/homebrew"
   "Set homebrew directory. Should be set to '/usr/local' for non-silicon Macs."
   :type 'string
@@ -42,6 +48,11 @@
 (defcustom nano-backup-directory (concat user-emacs-directory "backups/")
   "Where Emacs should store file backups."
   :type 'string
+  :group 'nano)
+
+(defcustom nano-font-height 130
+  "The default font height (in 1/10th points)."
+  :type 'number
   :group 'nano)
 
 (provide 'nano-settings)

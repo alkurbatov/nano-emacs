@@ -47,10 +47,10 @@
 
 (unless (display-graphic-p)
   (cond
-   ((string-equal system-type "darwin")
+   (os-macos
     (setq interprogram-cut-function 'copy-from-osx)
     (setq interprogram-paste-function 'paste-to-osx))
-   ((string-equal system-type "gnu/linux")
+   (os-linux
     (setq interprogram-cut-function 'copy-from-linux-wayland)
     (setq interprogram-paste-function 'paste-to-linux-wayland))))
 

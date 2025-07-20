@@ -84,7 +84,7 @@ eel."
 
 (with-eval-after-load 'pixel-scroll
   ;; Use smooth scrolling
-  (when (eq system-type 'darwin)
+  (when os-macos
     (bind-key "<wheel-down>" #'nano-pixel-scroll-precision)
     (bind-key "<wheel-up>" #'nano-pixel-scroll-precision)))
 
