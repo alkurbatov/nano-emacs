@@ -76,7 +76,6 @@
         ssh-config-mode          ; Emacs mode for editing ssh config files
         smartparens              ; Minor mode for Emacs that deals with parens pairs and tries to be smart about it
         smex                     ; A smart M-x enhancement for Emacs
-        treesit-auto             ; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
         vertico                  ; VERTical Interactive Completion
         vterm                    ; Emacs libvterm integration
         ws-butler                ; Unobtrusively trim extraneous white-space *ONLY* in lines edited
@@ -85,6 +84,11 @@
 ;; Install packages that are not yet installed
 (dolist (package package-list)
   (straight-use-package package))
+
+;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
+(straight-use-package
+ '(treesit-auto :type git :host github :repo "renzmann/treesit-auto"
+                    :fork (:host github :repo "alkurbatov/treesit-auto")))
 
 ;; Major mode for editing pip requirements files
 (straight-use-package

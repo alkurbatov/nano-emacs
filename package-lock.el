@@ -87,7 +87,7 @@
  ("straight.el" . "d157afbec4ec8659ad2026f57354d58d849a7c94")
  ("tablist" . "fcd37147121fabdf003a70279cf86fbe08cfac6f")
  ("transient" . "cb6550d5b111b7815feec97b236ecb051de70dbe")
- ("treesit-auto" . "016bd286a1ba4628f833a626f8b9d497882ecdf3")
+ ("treesit-auto" . "3738c5e96f4384b947085100b9554170b783e1ea")
  ("vertico" . "54829f61034c9408cf620dac1e6af304f38d79ed")
  ("xref" . "63b5875528e9c8dba3abbc76dae1b49351273c1c")
  ("yasnippet" . "2384fe1655c60e803521ba59a34c0a7e48a25d06"))
