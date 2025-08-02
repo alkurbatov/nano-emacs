@@ -19,6 +19,7 @@
 ;;; Commentary:
 
 ;;; Code:
+(require 'bind-key)
 
 (setq-default eglot-autoshutdown t       ; Automatically shutdown backend if last buffer was killed
               eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
@@ -35,7 +36,11 @@
                                                   '(company-capf :with company-yasnippet))))
 
 (with-eval-after-load 'eglot
-  (bind-key "M-g s"   #'consult-eglot-symbols))
+  (bind-keys :map eglot-mode-map
+       ("r" . eglot-rename)
+       ("a" . eglot-code-actions)
+       ("f" . eglot-format)
+       ("s" . consult-eglot-symbols)))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here
