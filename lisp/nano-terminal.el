@@ -27,6 +27,8 @@
    ("<mouse-4>" . scroll-down-line)
    ("<mouse-5>" . scroll-up-line)))
 
+(setq vterm-kill-buffer-on-exit t)
+
 (add-hook 'vterm-mode-hook #'(lambda () (nano-modeline nano-modeline-format-terminal)))
 (add-hook 'vterm-mode-hook #'compilation-shell-minor-mode)
 
