@@ -97,6 +97,10 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
   ;; Tweak files and folders deletion
   (setq dired-recursive-deletes 'always)
 
+  ;; Auto refresh Dired, but be quiet about it
+  (setq global-auto-revert-non-file-buffers t
+        auto-revert-verbose nil)
+
   (bind-keys :map dired-mode-map
            ("RET" . nano-dired-find-file)
            ("M-u" . dired-up-directory)
