@@ -80,13 +80,13 @@
 
 ;; Tools
 (require 'nano-ansible)
-(require 'nano-debug)
 (require 'nano-compile)
 (require 'nano-docker)
 (require 'nano-lint)
 (require 'nano-git)
 (require 'nano-mc)
 (require 'nano-remote)
+(autoload 'nano-what-faces "nano-debug" "" t nil)
 
 ;; Programming languages
 (require 'nano-c++)
