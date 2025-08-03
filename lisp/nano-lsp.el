@@ -37,10 +37,10 @@
 
 (with-eval-after-load 'eglot
   (bind-keys :map eglot-mode-map
-       ("r" . eglot-rename)
-       ("a" . eglot-code-actions)
-       ("f" . eglot-format)
-       ("s" . consult-eglot-symbols)))
+       ("C-c e r" . eglot-rename)
+       ("C-c e a" . eglot-code-actions)
+       ("C-c e f" . eglot-format)
+       ("C-c e s" . consult-eglot-symbols)))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here
