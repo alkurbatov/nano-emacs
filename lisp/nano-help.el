@@ -31,6 +31,10 @@
 ;; Binded to 'C-x /' by default
 (engine-mode t)
 
+(defengine cppreference
+           "https://duckduckgo.com/?sites=cppreference.com&q=%s&ia=web"
+           :keybinding "c")
+
 (defengine pypi
            "https://pypi.org/search/?q=%s"
            :keybinding "y")
@@ -38,6 +42,10 @@
 (defengine github
            "https://github.com/search?q=%s&type=code"
            :keybinding "h")
+
+(defengine gopkg
+           "https://pkg.go.dev/search?q=%s"
+           :keybinding "g")
 
 (provide 'nano-help)
 ;;; nano-help.el ends here
