@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Create Python virtual environment
+# expand-env: ((yas-indent-line 'fixed))
+# --
+.venv: pyproject.toml poetry.lock  ## Build the virtual environment
+	poetry env use 3.11
+	poetry install --no-root --no-interaction --no-ansi
+	touch .venv
