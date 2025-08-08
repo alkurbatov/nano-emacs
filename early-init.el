@@ -40,8 +40,8 @@
       (list (expand-file-name "eln-cache" user-emacs-directory)))
 
 ;; Start Emacs maximixed without scrollbars
-(setq default-frame-alist '((vertical-scroll-bars . 0)
-                            (horizontal-scroll-bars . 0)
+(setq default-frame-alist '((vertical-scroll-bars . nil)
+                            (horizontal-scroll-bars . nil)
                             (tool-bar-lines . 0)))
 
 ;; During startup, Emacs doesn't require specific file handlers for every file
