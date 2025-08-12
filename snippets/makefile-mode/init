@@ -20,3 +20,11 @@ SOURCES = app
 .PHONY: help
 help: ## Display this help screen
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-38s\033[0m %s\n", \$\$1, \$\$2}' \$(MAKEFILE_LIST)
+
+.PHONY: deps
+make deps: ## Install project dependnecies
+	echo "Installing project dependencies"
+
+.PHONY: lint
+lint: ## Run linters on the source code
+	echo "Running linters"
