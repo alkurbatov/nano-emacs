@@ -24,6 +24,8 @@
 (defun nano-setup-yaml-ts-mode()
   "Setup yaml-ts-mode."
 
+  (setq-local tab-width 2)
+
   ;; Show indentation
   (indent-bars-mode)
 
@@ -34,8 +36,6 @@
   (face-remap-add-relative 'font-lock-property-use-face :foreground nord7))
 
 (with-eval-after-load 'yaml-ts-mode
-  (setq-local tab-width 2)
-
   (add-hook 'yaml-ts-mode-hook #'nano-setup-yaml-ts-mode))
 
 ;; Enable tree-sitter integration.
