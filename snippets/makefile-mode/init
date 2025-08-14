@@ -28,3 +28,7 @@ make deps: ## Install project dependnecies
 .PHONY: lint
 lint: ## Run linters on the source code
 	echo "Running linters"
+
+.PHONY: clean
+clean: ## Remove intermediate files and build artifacts
+	echo "Cleaning up"
