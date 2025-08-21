@@ -115,5 +115,9 @@
 (add-hook 'prog-mode-hook      #'setup-olivetti-mode)
 (add-hook 'text-mode-hook      #'setup-olivetti-mode)
 
+;; Enable dock integration with KDE/Gnome.
+(when os-linux
+  (require 'dock))
+
 (provide 'nano-layout)
 ;;; nano-layout.el ends here
