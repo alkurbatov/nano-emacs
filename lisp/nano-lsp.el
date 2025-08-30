@@ -1,7 +1,7 @@
 ;;; nano-lsp.el --- Language server integration via Eglot -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
-;; Copyright (C) 2023-2024 - N Λ N O developers
+;; Copyright (C) 2023-2025 - N Λ N O developers
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
