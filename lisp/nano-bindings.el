@@ -27,9 +27,6 @@
 ;; Cmd-return for frame maximization toggle
 (bind-key "<s-return>" #'toggle-frame-maximized)
 
-;; Show buffers list in separate window
-(bind-key "C-x C-b" #'ibuffer)
-
 ;; Show recently visited buffer but not the current one
 (bind-key* "C-c `" #'mode-line-other-buffer)
 
