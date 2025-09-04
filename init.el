@@ -63,7 +63,6 @@
         marginalia               ; Enrich existing commands with completion annotations
         markdown-mode            ; Major mode for Markdown-formatted text
         markdown-toc             ; Generate a TOC in markdown file
-        olivetti                 ; Emacs minor mode to automatically balance window margins
         orderless                ; Completion style for matching regexps in any order
         org-auto-tangle          ; Tangle org file when it is saved
         pinentry                 ; GnuPG Pinentry server implementation

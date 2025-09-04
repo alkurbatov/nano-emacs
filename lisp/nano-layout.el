@@ -21,7 +21,6 @@
 ;;; Code:
 (require 'disp-table)
 (require 'nano-modeline)
-(require 'olivetti)
 
 ;; No startup  screen
 (setq inhibit-startup-screen t)
@@ -104,15 +103,12 @@
 (add-hook 'text-mode-hook      #'display-line-numbers-mode)
 
 ;; Enable margins for nice writing environment.
-(defun setup-olivetti-mode ()
-  "Setup and enable 'olivetti-mode'."
+(use-package olivetti
+  :config
   (setq olivetti-minimum-body-width 120
         olivetti-body-width 120)
 
-  (olivetti-mode))
-
-(add-hook 'org-mode-hook       #'setup-olivetti-mode)
-(add-hook 'text-mode-hook      #'setup-olivetti-mode)
+  :hook ((org-mode text-mode) . olivetti-mode))
 
 ;; Enable dock integration with KDE/Gnome.
 (when os-linux
