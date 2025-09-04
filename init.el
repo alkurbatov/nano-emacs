@@ -33,8 +33,7 @@
 (require 'nano-package)
 
 (setq package-list
-      '(ag                       ; Integration of ag search utility
-        auctex                   ; Integrated environment for *TeX*
+      '(auctex                   ; Integrated environment for *TeX*
         avy                      ; Jump to things in Emacs tree-style
         centered-cursor-mode     ; An emacs minor mode for smooth scrolling
         consult                  ; Consulting completing-read

@@ -1,5 +1,4 @@
-(("ag.el" . "ed7e32064f92f1315cecbfc43f120bbc7508672c")
- ("auctex" . "a2809e4d7068aaa7fa9cbd51214606393d4ab9eb")
+(("auctex" . "a2809e4d7068aaa7fa9cbd51214606393d4ab9eb")
  ("avy" . "933d1f36cca0f71e4acb5fac707e9ae26c536264")
  ("centered-cursor-mode.el" . "67ef719e685407dbc455c7430765e4e685fd95a9")
  ("company-mode" . "ca045bc54411f274779057d94a1807efe7f8d2a6")
