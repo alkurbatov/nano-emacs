@@ -71,7 +71,6 @@
  ("popup-el" . "b189a4e8ccf18356395878c3d38a23df834d3898")
  ("posframe" . "12f540c9ad5da09673b2bca1132b41f94c134e82")
  ("project" . "a0ebb2e9cfda339d8ebda77447c9d822fe313c2d")
- ("project-rootfile.el" . "db981a9d270e438b669aa0772d0ea406689d42ad")
  ("protobuf-ts-mode" . "65152f5341ea4b3417390b3e60b195975161b8bc")
  ("pyvenv" . "31ea715f2164dd611e7fc77b26390ef3ca93509b")
  ("raku-mode" . "14f9b9bba08c0bbb7f3895380d0b1a9feb7a168d")

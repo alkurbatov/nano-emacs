@@ -67,7 +67,6 @@
         org-auto-tangle          ; Tangle org file when it is saved
         pinentry                 ; GnuPG Pinentry server implementation
         poetry                   ; Python dependency management and packaging in Emacs
-        project-rootfile         ; Extension of project.el to detect project root with root file (e.g. Gemfile)
         raku-mode                ; Emacs major mode for Raku
         realgud                  ; The Grand "Cathedral" Debugger rewrite
         rfc-mode                 ; An Emacs major mode to read and browse RFC documents

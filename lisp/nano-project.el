@@ -40,8 +40,7 @@ DIR must include a file .project"
       (cons 'local root)))
 
 (customize-set-variable 'project-find-functions
-                        (list #'project-rootfile-try-detect
-                              #'project-try-vc
+                        (list #'project-try-vc
                               #'project-local-try-local))
 
 (defun vterm-project ()
