@@ -111,8 +111,7 @@
 
   (olivetti-mode))
 
-(add-hook 'conf-unix-mode-hook #'setup-olivetti-mode)
-(add-hook 'prog-mode-hook      #'setup-olivetti-mode)
+(add-hook 'org-mode-hook       #'setup-olivetti-mode)
 (add-hook 'text-mode-hook      #'setup-olivetti-mode)
 
 ;; Enable dock integration with KDE/Gnome.
