@@ -36,7 +36,7 @@
               bidi-paragraph-direction 'left-to-right ; Faster
               truncate-string-ellipsis "…")           ; Nicer ellipsis
 
-; Increase read size per process
+;; Increase read size per process
 (setq-default read-process-output-max (* 1024 1024))
 
 ;; No confirmation for killing running process
@@ -171,7 +171,7 @@
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
 
-; Focus new help windows when opened
+;; Focus new help windows when opened
 (setq help-window-select t)
 
 ;; Delete selected text when starting to type over it

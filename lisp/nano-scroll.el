@@ -68,7 +68,7 @@ eel."
                   (condition-case nil
                       (progn
                         (if (< delta 0)
-                        (pixel-scroll-precision-scroll-down (- delta))
+                            (pixel-scroll-precision-scroll-down (- delta))
                           (pixel-scroll-precision-scroll-up delta))
                         (pixel-scroll-accumulate-velocity delta))
                     ;; Do not ding at buffer limits.  Show a message instead.

@@ -21,7 +21,7 @@
 ;;; Code:
 
 (when (< emacs-major-version 30)
-    (error (format "Nano Emacs for Devs only works with Emacs 30 and newer; you have version %d" emacs-major-version)))
+  (error (format "Nano Emacs for Devs only works with Emacs 30 and newer; you have version %d" emacs-major-version)))
 
 ;; Theming Command line options (this will cancel warning messages)
 (add-to-list 'command-switch-alist '("-debug" . (lambda (args))))

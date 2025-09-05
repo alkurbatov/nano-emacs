@@ -23,16 +23,16 @@
 
 (defface nano-mono
   `((t (:family "JetBrains Mono"
-        :height ,nano-font-height
-        :weight light)))
+                :height ,nano-font-height
+                :weight light)))
   "Default monospaced font (JetBrains Mono Light, 13pt)."
   :group 'nano-fonts)
 
 (defface nano-italic
   `((t (:family "JetBrains Mono"
-        :slant italic
-        :height ,nano-font-height
-        :weight regular)))
+                :slant italic
+                :height ,nano-font-height
+                :weight regular)))
   "Default italic font (JetBrains Mono Italic Light, 13pt)."
   :group 'nano-fonts)
 

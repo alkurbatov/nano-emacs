@@ -58,7 +58,7 @@ DIR must include a file .project"
   "Run unit tests in the project root."
   (interactive)
   (let ((default-directory (project-root (project-current t))))
-        (async-shell-command nano-project-test-command)))
+    (async-shell-command nano-project-test-command)))
 
 
 ;; Key bindings

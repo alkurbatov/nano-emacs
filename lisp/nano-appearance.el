@@ -59,7 +59,7 @@ attention through the popout effect."
 To suggest the information is of the same nature but important,
 the face uses a different hue with approximately the same
 intensity as the default face. This is typically used for links."
-    :group 'nano)
+  :group 'nano)
 
 (defface nano-subtle `((t (:foreground ,nord2)))
   "Subtle face is used to suggest a physical area on the screen.
@@ -70,15 +70,15 @@ background color that is barely perceptible."
 
 ;; Apply fonts
 (custom-theme-set-faces 'nord
- `(default ((t (:foreground ,nord6
-                :weight     ,(face-attribute 'nano-mono :weight)
-                :height     ,(face-attribute 'nano-mono :height)
-                :family     ,(face-attribute 'nano-mono :family)))))
- `(italic ((t (:foreground ,nord6
-               :weight     ,(face-attribute 'nano-italic :weight)
-               :height     ,(face-attribute 'nano-italic :height)
-               :slant      ,(face-attribute 'nano-italic :slant)
-               :family     ,(face-attribute 'nano-italic :family))))))
+                        `(default ((t (:foreground ,nord6
+                                                   :weight     ,(face-attribute 'nano-mono :weight)
+                                                   :height     ,(face-attribute 'nano-mono :height)
+                                                   :family     ,(face-attribute 'nano-mono :family)))))
+                        `(italic ((t (:foreground ,nord6
+                                                  :weight     ,(face-attribute 'nano-italic :weight)
+                                                  :height     ,(face-attribute 'nano-italic :height)
+                                                  :slant      ,(face-attribute 'nano-italic :slant)
+                                                  :family     ,(face-attribute 'nano-italic :family))))))
 
 ;; Line spacing (in pixels)
 (setq line-spacing 1.2)
@@ -92,7 +92,7 @@ background color that is barely perceptible."
   ;; Make the indent-bars package decide when to use the stipple attribute
   ;; Stripple doesn't work on most macOS and Windows builds.
   (setq indent-bars-prefer-character
-    (if (memq initial-window-system '(pgtk ns)) t))
+        (if (memq initial-window-system '(pgtk ns)) t))
 
   (setq
    indent-bars-color '(nano-faded-i :face-bg t :blend 0.55)

@@ -88,7 +88,7 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
   ;; Tweak displayed fields
   (setq dired-listing-switches
         (combine-and-quote-strings '("-GlahFk"
-                                   "--time-style=+%d %b %Y")))
+                                     "--time-style=+%d %b %Y")))
 
   ;; Setup quick sort
   (dired-quick-sort-setup)
@@ -102,9 +102,9 @@ Version: 2019-11-04 2023-04-05 2023-06-26."
         auto-revert-verbose nil)
 
   (bind-keys :map dired-mode-map
-           ("RET" . nano-dired-find-file)
-           ("M-u" . dired-up-directory)
-           ("M-RET" . nano-open-in-external-app)))
+             ("RET" . nano-dired-find-file)
+             ("M-u" . dired-up-directory)
+             ("M-RET" . nano-open-in-external-app)))
 
 ;; Highlight current line for convenience
 (add-hook 'dired-mode-hook #'hl-line-mode)

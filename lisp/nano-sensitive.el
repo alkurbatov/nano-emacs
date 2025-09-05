@@ -44,9 +44,9 @@ Null prefix argument turns off the mode."
         ;; disable auto-save
         (if auto-save-default
             (auto-save-mode -1)))
-    ;resort to default value of backup-inhibited
+                                        ;resort to default value of backup-inhibited
     (kill-local-variable 'backup-inhibited)
-    ;resort to default auto save setting
+                                        ;resort to default auto save setting
     (if auto-save-default
         (auto-save-mode 1))))
 

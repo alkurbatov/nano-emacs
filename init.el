@@ -86,7 +86,7 @@
 ;; Automatic installation, usage, and fallback for tree-sitter major modes in Emacs 29
 (straight-use-package
  '(treesit-auto :type git :host github :repo "renzmann/treesit-auto"
-                    :fork (:host github :repo "alkurbatov/treesit-auto")))
+                :fork (:host github :repo "alkurbatov/treesit-auto")))
 
 ;; Major mode for editing pip requirements files
 (straight-use-package

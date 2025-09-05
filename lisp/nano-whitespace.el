@@ -29,15 +29,15 @@
 
 ;; Make these characters represent whitespace.
 (setq-default whitespace-display-mappings
-      '(
-        ;; space -> ·
-        (space-mark 32 [183])
-        ;; new line -> $
-        (newline-mark ?\n [36 ?\n])
-        ;; carriage return (Windows) -> ¶
-        (newline-mark ?\r [182])
-        ;; tabs -> »
-        (tab-mark ?\t [187 ?\t])))
+              '(
+                ;; space -> ·
+                (space-mark 32 [183])
+                ;; new line -> $
+                (newline-mark ?\n [36 ?\n])
+                ;; carriage return (Windows) -> ¶
+                (newline-mark ?\r [182])
+                ;; tabs -> »
+                (tab-mark ?\t [187 ?\t])))
 
 
 ;; Don't highlight long lines, there is not much we can do with them.

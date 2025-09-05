@@ -25,103 +25,103 @@
 
 (use-package ibuffer :ensure nil
   :config
-    (setq ibuffer-expert t
-          ibuffer-display-summary nil
-          ibuffer-use-other-window nil
-          ibuffer-show-empty-filter-groups nil
-          ibuffer-default-sorting-mode 'filename/process
-          ibuffer-title-face 'font-lock-doc-face
-          ibuffer-use-header-line t
-          ibuffer-default-shrink-to-minimum-size nil)
+  (setq ibuffer-expert t
+        ibuffer-display-summary nil
+        ibuffer-use-other-window nil
+        ibuffer-show-empty-filter-groups nil
+        ibuffer-default-sorting-mode 'filename/process
+        ibuffer-title-face 'font-lock-doc-face
+        ibuffer-use-header-line t
+        ibuffer-default-shrink-to-minimum-size nil)
 
-    (setq ibuffer-formats
-          '((mark modified read-only locked " "
-                  (name 30 30 :left :elide)
-                  " "
-                  (size 9 -1 :right)
-                  " "
-                  (mode 16 16 :left :elide)
-                  " " filename-and-process)
-            (mark " "
-                  (name 16 -1)
-                  " " filename)))
+  (setq ibuffer-formats
+        '((mark modified read-only locked " "
+                (name 30 30 :left :elide)
+                " "
+                (size 9 -1 :right)
+                " "
+                (mode 16 16 :left :elide)
+                " " filename-and-process)
+          (mark " "
+                (name 16 -1)
+                " " filename)))
 
-    (setq ibuffer-saved-filter-groups
-          '(("Main"
-             ("Directories" (mode . dired-mode))
-             ("C++" (or
-                 (mode . c++-mode)
-                 (mode . c++-ts-mode)
-                 (mode . c-mode)
-                 (mode . c-ts-mode)
-                 (mode . c-or-c++-ts-mode)))
-             ("Python" (or
-                 (mode . python-ts-mode)
-                 (mode . c-mode)
-                 (mode . python-mode)))
-             ("Build" (or
-                 (mode . make-mode)
-                 (mode . makefile-gmake-mode)
-                 (name . "^CMakeLists.txt$")
-                 (name . "^Makefile$")
-                 (mode . change-log-mode)))
-             ("Scripts" (or
-                 (mode . shell-script-mode)
-                 (mode . shell-mode)
-                 (mode . sh-mode)
-                 (mode . lua-mode)))
-             ("Config" (or
-                 (mode . conf-mode)
-                 (mode . conf-toml-mode)
-                 (mode . toml-ts-mode)
-                 (name . "^\\.clangd$")
-                 (name . "^\\.gitignore$")
-                 (name . "^Doxyfile$")
-                 (name . "^config\\.toml$")
-                 (mode . yaml-mode)))
-             ("Web" (or
-                 (mode . mhtml-mode)
-                 (mode . html-mode)
-                 (mode . web-mode)
-                 (mode . nxml-mode)))
-             ("CSS" (or
-                 (mode . css-mode)
-                 (mode . sass-mode)))
-             ("JS" (or
-                 (mode . js-mode)
-                 (mode . rjsx-mode)))
-             ("Markup" (or
-                 (mode . markdown-mode)
-                 (mode . gfm-mode)
-                 (mode . adoc-mode)))
-             ("Org"  (mode . org-mode))
-             ("Apps" (or
-                 (mode . elfeed-search-mode)
-                 (mode . elfeed-show-mode)))
-             ("Emacs" (or
-                 (mode . emacs-lisp-mode)
-                 (name . "^\\*Async")
-                 (name . "^\\*Backtrace\\*$")
-                 (name . "^\\*Custom.*")
-                 (name . "^\\*EGLOT")
-                 (name . "^\\*Help\\*$")
-                 (name . "^\\*Native-compile-Log\\*$")
-                 (name . "^\\*Messages\\*$")
-                 (name . "^\\*Org Agenda\\*$")
-                 (name . "^\\*info\\*$")
-                 (name . "^\\*scratch\\*$")
-                 (name . "^\\*straight-process\\*$")))
-             ("Fundamental" (or
-                 (mode . fundamental-mode)
-                 (mode . text-mode)))
-             )))
+  (setq ibuffer-saved-filter-groups
+        '(("Main"
+           ("Directories" (mode . dired-mode))
+           ("C++" (or
+                   (mode . c++-mode)
+                   (mode . c++-ts-mode)
+                   (mode . c-mode)
+                   (mode . c-ts-mode)
+                   (mode . c-or-c++-ts-mode)))
+           ("Python" (or
+                      (mode . python-ts-mode)
+                      (mode . c-mode)
+                      (mode . python-mode)))
+           ("Build" (or
+                     (mode . make-mode)
+                     (mode . makefile-gmake-mode)
+                     (name . "^CMakeLists.txt$")
+                     (name . "^Makefile$")
+                     (mode . change-log-mode)))
+           ("Scripts" (or
+                       (mode . shell-script-mode)
+                       (mode . shell-mode)
+                       (mode . sh-mode)
+                       (mode . lua-mode)))
+           ("Config" (or
+                      (mode . conf-mode)
+                      (mode . conf-toml-mode)
+                      (mode . toml-ts-mode)
+                      (name . "^\\.clangd$")
+                      (name . "^\\.gitignore$")
+                      (name . "^Doxyfile$")
+                      (name . "^config\\.toml$")
+                      (mode . yaml-mode)))
+           ("Web" (or
+                   (mode . mhtml-mode)
+                   (mode . html-mode)
+                   (mode . web-mode)
+                   (mode . nxml-mode)))
+           ("CSS" (or
+                   (mode . css-mode)
+                   (mode . sass-mode)))
+           ("JS" (or
+                  (mode . js-mode)
+                  (mode . rjsx-mode)))
+           ("Markup" (or
+                      (mode . markdown-mode)
+                      (mode . gfm-mode)
+                      (mode . adoc-mode)))
+           ("Org"  (mode . org-mode))
+           ("Apps" (or
+                    (mode . elfeed-search-mode)
+                    (mode . elfeed-show-mode)))
+           ("Emacs" (or
+                     (mode . emacs-lisp-mode)
+                     (name . "^\\*Async")
+                     (name . "^\\*Backtrace\\*$")
+                     (name . "^\\*Custom.*")
+                     (name . "^\\*EGLOT")
+                     (name . "^\\*Help\\*$")
+                     (name . "^\\*Native-compile-Log\\*$")
+                     (name . "^\\*Messages\\*$")
+                     (name . "^\\*Org Agenda\\*$")
+                     (name . "^\\*info\\*$")
+                     (name . "^\\*scratch\\*$")
+                     (name . "^\\*straight-process\\*$")))
+           ("Fundamental" (or
+                           (mode . fundamental-mode)
+                           (mode . text-mode)))
+           )))
 
-    :hook
-    (ibuffer-mode . (lambda ()
-                      (ibuffer-switch-to-saved-filter-groups "Main")))
+  :hook
+  (ibuffer-mode . (lambda ()
+                    (ibuffer-switch-to-saved-filter-groups "Main")))
 
-    :bind
-    (("C-x C-b" . ibuffer)))
+  :bind
+  (("C-x C-b" . ibuffer)))
 
 (provide 'nano-ibuffer)
 ;;; nano-ibuffer.el ends here
