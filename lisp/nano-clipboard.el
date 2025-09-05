@@ -20,7 +20,9 @@
 ;; Linux part taken from https://www.emacswiki.org/emacs/CopyAndPaste
 
 ;;; Code:
-(defun copy-from-osx (text &optional push)
+(require 'nano-settings)
+
+(defun copy-from-osx (text &optional _push)
   "Copy TEXT using macOS tools."
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
@@ -31,7 +33,7 @@
   "Paste text using macOS tools."
   (shell-command-to-string "pbpaste"))
 
-(defun copy-from-linux-wayland (text &optional push)
+(defun copy-from-linux-wayland (text &optional _push)
   "Copy TEXT using wl-clipboard."
   (with-temp-buffer
     (insert text)

@@ -15,5 +15,6 @@ repos:
     hooks:
       - id: elisp-check-parens
 # FIXME (alkurbatov): Enable when compilation will be fixed.
-# - id: elisp-byte-compile
+      # - id: elisp-byte-compile
+      #   exclude: examples
       - id: elisp-indent
