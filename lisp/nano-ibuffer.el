@@ -121,7 +121,7 @@
                     (ibuffer-switch-to-saved-filter-groups "Main")))
 
   :bind
-  (("C-x C-b" . ibuffer)))
+  ("C-x C-b" . ibuffer))
 
 (provide 'nano-ibuffer)
 ;;; nano-ibuffer.el ends here

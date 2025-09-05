@@ -21,6 +21,9 @@
 ;;; Code:
 (require 'nano-sensitive)
 (require 'nano-settings)
+(require 'recentf)
+(require 'save-place)
+(require 'savehist)
 
 ;; Save miscellaneous history
 (setq savehist-additional-variables
@@ -59,10 +62,23 @@
   (setq kill-ring (mapcar 'substring-no-properties kill-ring)))
 (add-hook 'kill-emacs-hook #'unpropertize-kill-ring)
 
-;; Recentf files
-(setq recentf-max-menu-items 25
-      recentf-exclude '(".git/COMMIT_EDITMSG$")) ; ignore some files in recentf
-(recentf-mode 1)
+(defun nano-fido-recentf ()
+  "Use fido to select from recently opened files."
+  (interactive)
+  (find-file (completing-read "Recent file: " recentf-list nil t nil 'recentf-list)))
+
+;; Open recently closed files.
+(use-package recentf
+  :ensure nil
+
+  :config
+  (setq recentf-max-menu-items 25
+        recentf-exclude '(".git/COMMIT_EDITMSG$"))
+
+  (recentf-mode 1)
+
+  :bind
+  ("M-o" . nano-fido-recentf))
 
 ;; Bookmarks
 (setq bookmark-save-flag 1)   ; save bookmarks to disk as soon as possible (default: on exit)
@@ -94,7 +110,6 @@
 (setq save-place-file (expand-file-name "saveplace" user-emacs-directory)
       save-place-forget-unreadable-files t)
 (save-place-mode 1)
-
 
 (provide 'nano-session)
 ;;; nano-session.el ends here
