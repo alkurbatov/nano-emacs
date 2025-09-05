@@ -21,8 +21,10 @@
 ;;; Code:
 (require 'nano-sensitive)
 (require 'nano-settings)
+
+(require 'bookmark)
 (require 'recentf)
-(require 'save-place)
+(require 'saveplace)
 (require 'savehist)
 
 ;; Save miscellaneous history
@@ -103,8 +105,8 @@
       auto-save-interval 200) ; number of keystrokes between auto-saves (default: 300)
 
 ;; Exclude sensitive data from backups
-(add-to-list 'auto-mode-alist '("\\.gpg$" . sensitive-mode))
-(add-to-list 'auto-mode-alist '("\\.netrc$" . sensitive-mode))
+(add-to-list 'auto-mode-alist '("\\.gpg$" . nano-sensitive-mode))
+(add-to-list 'auto-mode-alist '("\\.netrc$" . nano-sensitive-mode))
 
 ;; Record cursor position from one session ot the other
 (setq save-place-file (expand-file-name "saveplace" user-emacs-directory)

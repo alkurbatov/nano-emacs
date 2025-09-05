@@ -37,7 +37,7 @@ Null prefix argument turns off the mode."
   ;; The minor mode bindings.
   :keymap nil
 
-  (if (symbol-value sensitive-mode)
+  (if (symbol-value nano-sensitive-mode)
       (progn
         ;; disable backups
         (set (make-local-variable 'backup-inhibited) t)
