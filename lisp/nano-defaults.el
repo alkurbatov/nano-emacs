@@ -182,8 +182,13 @@
 (setq global-auto-revert-non-file-buffers t
       dired-auto-revert-buffer t)
 
-;; Enable centered cursor
-(global-centered-cursor-mode)
+;; Scroll Emacs like lightning.
+(use-package ultra-scroll
+  :init
+  (setq scroll-conservatively 3
+        scroll-margin 0)        ; scroll-margin>0 not yet supported by the package
+  :config
+  (ultra-scroll-mode 1))
 
 ;; Enable selection highlighting
 (selection-highlight-mode)
