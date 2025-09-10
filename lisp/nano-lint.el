@@ -47,5 +47,8 @@
 
 (add-hook 'prog-mode-hook #'nano-enable-flymake)
 
+;; Focus on Flymake diagnostics buffer when activated.
+(add-to-list 'display-buffer-alist '("Flymake diagnostics" nil (post-command-select-window . t)))
+
 (provide 'nano-lint)
 ;;; nano-lint.el ends here
