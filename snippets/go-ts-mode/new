@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: NewObject()
+# --
+// New${2:$$(yas-auto-next (yas-field-value 1))} создает новый объект [${3:$$(yas-auto-next (yas-field-value 1))}].
+func New${1:Object}() *${4:$$(yas-auto-next (yas-field-value 1))} {
+     return &${5:$$(yas-auto-next (yas-field-value 1))} {
+            $6
+     }
+}

@@ -1,7 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: Elisp module template
 # --
-;;; nano-${1:module}.el --- $2 -*- lexical-binding: t; -*-
+;;; nano-${1:module}.el --- $4 -*- lexical-binding: t; -*-
 
 ;; GNU Emacs / N Λ N O - Emacs made simple
 ;; Copyright (C) 2023-2025 - N Λ N O developers
@@ -23,5 +23,5 @@
 
 ;;; Code:
 
-(provide 'nano-${3:$$(yas-field-value 1)})
-;;; nano-${4:$$(yas-field-value 1)}.el ends here
+(provide 'nano-${2:$$(yas-auto-next (yas-field-value 1))})
+;;; nano-${3:$$(yas-auto-next (yas-field-value 1))}.el ends here

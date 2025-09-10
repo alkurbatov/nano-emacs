@@ -1,7 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: main
 # --
-int main(${1:int argc, char **argv})
+auto main(${1:int argc, char **argv}) -> int
 {
   $2
 

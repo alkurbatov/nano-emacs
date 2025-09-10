@@ -14,7 +14,6 @@ MAKEFLAGS += --no-builtin-rules
 PWD := \$(realpath \$(dir \$(abspath \$(firstword \$(MAKEFILE_LIST)))))
 
 WORKTREE_ROOT := \$(shell git rev-parse --show-toplevel 2> /dev/null)
-SOURCES = app
 
 .DEFAULT_GOAL := help
 .PHONY: help
@@ -22,12 +21,16 @@ help: ## Display this help screen
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-38s\033[0m %s\n", \$\$1, \$\$2}' \$(MAKEFILE_LIST)
 
 .PHONY: deps
-make deps: ## Install project dependnecies
+make deps: ## Install project dependencies
 	echo "Installing project dependencies"
 
 .PHONY: lint
 lint: ## Run linters on the source code
 	echo "Running linters"
+
+.PHONY: test
+test: ## Run unit-tests
+	echo "Running tests"
 
 .PHONY: clean
 clean: ## Remove intermediate files and build artifacts
