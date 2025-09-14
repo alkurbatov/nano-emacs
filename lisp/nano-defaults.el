@@ -26,9 +26,10 @@
 (require 'rfc-mode)
 (require 'treesit-auto)
 
-;; Move customization variables to a separate file, otherwise init.el will be used
-(setq custom-file "~/.emacs.d/nano-custom.el")
-(load custom-file 'noerror 'nomessage)
+(use-package emacs
+  :init
+  (setq custom-file "~/.emacs.d/nano-custom.el")
+  (load custom-file 'noerror 'nomessage))
 
 ;; Typography
 (setq-default fill-column 80                          ; Default line width

@@ -19,28 +19,38 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'bind-key)
+(require 'company)
 
-(setq-default eglot-autoshutdown t       ; Automatically shutdown backend if last buffer was killed
-              eglot-sync-connect nil     ; Otherwise, Elgot freezes the UI for ~3s when large file is opened
-              eglot-connect-timeout nil) ; Never time out Eglot connection to make things faster
+(use-package eglot
+  :config
+  ;; Automatically shutdown backend if last buffer was killed.
+  (setq eglot-autoshutdown t)
 
-;; Specify explicitly to use Orderless for Eglot
-(setq completion-category-overrides '((eglot (styles orderless))
-                                      (eglot-capf (styles orderless))))
+  ;; Otherwise, Elgot freezes the UI for ~3s when large file is opened.
+  (setq eglot-sync-connect nil)
 
-;; Suggest snippets in autocompletion.
-;; By some reason we have to modify completion backends again after Eglot start.
-(add-hook 'eglot-managed-mode-hook (lambda ()
-                                     (add-to-list 'company-backends
-                                                  '(company-capf :with company-yasnippet))))
+  ;; Never time out Eglot connection to make things faster.
+  (setq eglot-connect-timeout nil)
 
-(with-eval-after-load 'eglot
-  (bind-keys :map eglot-mode-map
-             ("C-c e r" . eglot-rename)
-             ("C-c e a" . eglot-code-actions)
-             ("C-c e f" . eglot-format)
-             ("C-c e s" . consult-eglot-symbols)))
+  ;; Specify explicitly to use Orderless for Eglot.
+  (setq completion-category-overrides '((eglot (styles orderless))
+                                        (eglot-capf (styles orderless))))
+
+  ;; Disable annoying action indicators.
+  (setq eglot-code-action-indications nil)
+
+  :hook
+  ;; Suggest snippets in auto completion.
+  ;; By some reason we have to modify completion backends again after Eglot start.
+  (eglot-managed-mode . (lambda ()
+                          (add-to-list 'company-backends
+                                       '(company-capf :with company-yasnippet))))
+
+  :bind (:map eglot-mode-map
+              ("C-c e r" . eglot-rename)
+              ("C-c e a" . eglot-code-actions)
+              ("C-c e f" . eglot-format)
+              ("C-c e s" . consult-eglot-symbols)))
 
 (provide 'nano-lsp)
 ;;; nano-lsp.el ends here

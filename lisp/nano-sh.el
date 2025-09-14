@@ -34,7 +34,11 @@
     (add-to-list 'eglot-server-programs
                  '((sh-mode bash-ts-mode) . ("bash-language-server" "start"))))
 
-  (eglot-ensure))
+  (eglot-ensure)
+
+  ;; Disable annoying action indicators.
+  ;; By some reason this variable is always overloaded after call to eglot-ensure.
+  (setq eglot-code-action-indications nil))
 
 (add-hook 'bash-ts-mode-hook #'nano-setup-sh-with-eglot)
 

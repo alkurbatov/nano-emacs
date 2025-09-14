@@ -40,7 +40,11 @@ https://github.com/microsoft/pyright/blob/main/docs/configuration.md"
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-flake8 nil t)
   (add-hook 'flymake-diagnostic-functions #'flymake-collection-mypy nil t)
 
-  (eglot-ensure))
+  (eglot-ensure)
+
+  ;; Disable annoying action indicators.
+  ;; By some reason this variable is always overloaded after call to eglot-ensure.
+  (setq eglot-code-action-indications nil))
 
 (with-eval-after-load 'python
   ;; Show indentation

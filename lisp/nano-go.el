@@ -59,7 +59,11 @@
                                                           :functionTypeParameters t
                                                           :parameterNames t))))))
 
-  (eglot-ensure))
+  (eglot-ensure)
+
+  ;; Disable annoying action indicators.
+  ;; By some reason this variable is always overloaded after call to eglot-ensure.
+  (setq eglot-code-action-indications nil))
 
 (with-eval-after-load 'go-ts-mode
   ;; Sync indent with global settings

@@ -39,6 +39,10 @@
 
   (eglot-ensure)
 
+  ;; Disable annoying action indicators.
+  ;; By some reason this variable is always overloaded after call to eglot-ensure.
+  (setq eglot-code-action-indications nil)
+
   ;; Remap some faces for better UX.
   (face-remap-add-relative 'font-lock-type-face :foreground nord9))
 
