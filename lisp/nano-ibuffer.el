@@ -48,16 +48,20 @@
 
   (setq ibuffer-saved-filter-groups
         '(("Main"
-           ("Directories" (mode . dired-mode))
+           ("Directories" (or
+                           (mode . dired-mode)
+                           (name . "^\\*Directory\\*$")))
            ("C++" (or
                    (mode . c++-mode)
                    (mode . c++-ts-mode)
                    (mode . c-mode)
                    (mode . c-ts-mode)
                    (mode . c-or-c++-ts-mode)))
+           ("Golang" (or
+                      (mode . go-ts-mode)
+                      (mode . go-mod-ts-mode)))
            ("Python" (or
                       (mode . python-ts-mode)
-                      (mode . c-mode)
                       (mode . python-mode)))
            ("Build" (or
                      (mode . make-mode)
@@ -78,7 +82,8 @@
                       (name . "^\\.gitignore$")
                       (name . "^Doxyfile$")
                       (name . "^config\\.toml$")
-                      (mode . yaml-mode)))
+                      (mode . yaml-mode)
+                      (mode . yaml-ts-mode)))
            ("Web" (or
                    (mode . mhtml-mode)
                    (mode . html-mode)
@@ -94,22 +99,21 @@
                       (mode . markdown-mode)
                       (mode . gfm-mode)
                       (mode . adoc-mode)))
-           ("Org"  (mode . org-mode))
-           ("Apps" (or
-                    (mode . elfeed-search-mode)
-                    (mode . elfeed-show-mode)))
+           ("Org"  (or
+                    (mode . org-mode)
+                    (name . "^\\*Org Agenda\\*$")))
+           ("Elisp" (mode . emacs-lisp-mode))
            ("Emacs" (or
-                     (mode . emacs-lisp-mode)
+                     (name . "^\\*scratch\\*$")
                      (name . "^\\*Async")
                      (name . "^\\*Backtrace\\*$")
                      (name . "^\\*Custom.*")
                      (name . "^\\*EGLOT")
+                     (name . "^\\*Flymake log\\*$")
                      (name . "^\\*Help\\*$")
                      (name . "^\\*Native-compile-Log\\*$")
                      (name . "^\\*Messages\\*$")
-                     (name . "^\\*Org Agenda\\*$")
                      (name . "^\\*info\\*$")
-                     (name . "^\\*scratch\\*$")
                      (name . "^\\*straight-process\\*$")))
            ("Fundamental" (or
                            (mode . fundamental-mode)
