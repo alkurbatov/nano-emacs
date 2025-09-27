@@ -47,5 +47,8 @@
            "https://pkg.go.dev/search?q=%s"
            :keybinding "g")
 
+;; Short version of man pages.
+(use-package tldr)
+
 (provide 'nano-help)
 ;;; nano-help.el ends here
