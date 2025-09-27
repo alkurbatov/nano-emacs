@@ -66,7 +66,6 @@
 (setq fill-column 80)
 
 ;; Bar cursor
-(setq-default cursor-type '(hbar .  2))
 (setq-default cursor-in-non-selected-windows nil)
 (setq blink-cursor-mode nil)
 
@@ -89,9 +88,6 @@
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
 
-(add-hook 'prog-mode-hook     #'hl-line-mode)
-(add-hook 'text-mode-hook     #'hl-line-mode)
-
 ;; Enable nano-modeline in different modes
 (setq nano-modeline-alignment '(text . text)
       nano-modeline-borders '(nil . nil))
@@ -108,7 +104,7 @@
   (setq olivetti-minimum-body-width 120
         olivetti-body-width 120)
 
-  :hook ((org-mode text-mode) . olivetti-mode))
+  :hook ((org-mode) . olivetti-mode))
 
 ;; Enable dock integration with KDE/Gnome.
 (when os-linux

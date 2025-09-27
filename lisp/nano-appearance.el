@@ -115,5 +115,10 @@ background color that is barely perceptible."
           ("NB"         . nano-salient)
           ("NOTE"       . nano-salient))))
 
+;; Make the cursor to be the same color as face it points to.
+(use-package crystal-point
+  :config
+  (crystal-point-enable))
+
 (provide 'nano-appearance)
 ;;; nano-appearance.el ends here
