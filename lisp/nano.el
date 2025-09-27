@@ -74,7 +74,6 @@
 (require 'nano-org)
 
 ;; IDE features
-(require 'nano-parens)
 (require 'nano-lsp)
 (require 'nano-project)
 

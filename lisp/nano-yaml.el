@@ -29,7 +29,6 @@
   ;; Show indentation
   (indent-bars-mode)
 
-  (turn-on-smartparens-mode)
   (ws-butler-mode)
 
   ;; Remap some faces for better UX.
