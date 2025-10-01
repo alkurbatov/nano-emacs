@@ -72,6 +72,7 @@
 
 ;; Org mode
 (require 'nano-org)
+(require 'nano-brain)
 
 ;; IDE features
 (require 'nano-lsp)

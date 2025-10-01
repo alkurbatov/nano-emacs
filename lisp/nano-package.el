@@ -45,5 +45,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Require newest org as soon as possible to avoid loading of the old version.
+(straight-use-package 'org)
+
 (provide 'nano-package)
 ;;; nano-package.el ends here
