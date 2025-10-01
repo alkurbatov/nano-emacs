@@ -24,11 +24,16 @@
 (require 'org-agenda)
 (require 'nano-font)
 
+(defun nano-org-time-stamp-inactive ()
+  "Insert inactive timestamp with current date."
+  (interactive)
+  (org-insert-time-stamp (current-time) nil t))
+
 (with-eval-after-load 'org
   ;; Use RET to open org-mode links, including those in quick-help.org
   (setq org-return-follows-link t)
 
-  ;; Hide org markup for README
+  ;; Hide org markup
   (setq org-hide-emphasis-markers t)
 
   ;; Allow manual change of inline images size
@@ -41,7 +46,7 @@
   ;; Enable syntax highlighting in src blocks for certain languages
   (add-to-list 'org-src-lang-modes '("go" . go-ts))
 
-  (add-hook 'org-mode-hook             #'display-fill-column-indicator-mode)
+  (add-hook 'org-mode-hook #'display-fill-column-indicator-mode)
 
   (ligature-set-ligatures 'org-mode nano-jetbrains-ligatures)
 
