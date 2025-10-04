@@ -23,7 +23,7 @@
 (require 'format-all)
 (require 'gotest-ts)
 
-;; Add gofumpt formatter
+;; Register gofumpt formatter.
 (define-format-all-formatter gofumpt
                              (:executable "gofumpt")
                              (:install "go install mvdan.cc/gofumpt@latest")
@@ -31,13 +31,21 @@
                              (:features)
                              (:format (format-all--buffer-easy executable)))
 
-;; Add gci formatter
+;; Register gci formatter.
 (define-format-all-formatter gci
                              (:executable "gci")
                              (:install "go install github.com/daixiang0/gci@latest")
                              (:languages "Go")
                              (:features)
                              (:format (format-all--buffer-easy executable "print")))
+
+;; Register golangci-lint formatter.
+(define-format-all-formatter golangci-lint
+                             (:executable "golangci-lint")
+                             (:install "See https://golangci-lint.run/docs/welcome/install/")
+                             (:languages "Go")
+                             (:features)
+                             (:format (format-all--buffer-easy executable "fmt" "--stdin")))
 
 (defun nano-setup-go-with-eglot ()
   "Setup and enable Eglot for Go."
