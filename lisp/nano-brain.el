@@ -21,7 +21,15 @@
 ;;; Code:
 (use-package org-roam
   :config
-  (org-roam-db-autosync-mode))
+  (org-roam-db-autosync-mode)
+
+  (setq org-roam-mode-sections
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              #'org-roam-unlinked-references-section))
+
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)))
 
 (provide 'nano-brain)
 ;;; nano-brain.el ends here
