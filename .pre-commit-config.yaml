@@ -11,10 +11,10 @@ repos:
       - id: markdownlint
 
   - repo: https://github.com/jamescherti/pre-commit-elisp
-    rev: v1.0.1
+    rev: v1.0.5
     hooks:
       - id: elisp-check-parens
 # FIXME (alkurbatov): Enable when compilation will be fixed.
-      # - id: elisp-byte-compile
-      #   exclude: examples
+#      - id: elisp-byte-compile
+#        exclude: examples|package-lock.el
       - id: elisp-indent
