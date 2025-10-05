@@ -45,6 +45,10 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Enable upgrade of builtin packages,
+;; see https://irreal.org/blog/?p=12409
+(setq package-install-upgrade-built-in t)
+
 ;; Require newest org as soon as possible to avoid loading of the old version.
 (straight-use-package 'org)
 
