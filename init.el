@@ -54,7 +54,6 @@
         git-modes                ; Emacs major modes for Git configuration files
         go-impl                  ; impl for Emacs
         gotest                   ; Emacs mode to go unit test command line tool
-        helpful                  ; A better help buffer
         hl-todo                  ; Highlight TODO keywords
         jinx                     ; Enchanted Spell Checker
         ligature                 ; Display typographical ligatures in Emacs

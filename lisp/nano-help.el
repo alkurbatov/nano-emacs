@@ -50,5 +50,15 @@
 ;; Short version of man pages.
 (use-package tldr)
 
+;; A better help buffer.
+(use-package helpful
+  :bind
+  (("C-h f" . helpful-callable)   ; Look up callable.
+   ("C-h v" . helpful-variable)   ; Look up variable.
+   ("C-h k" . helpful-key)        ; Look up key.
+   ("C-c C-d" . helpful-at-point) ; Look up the current symbol at point.
+   ("C-h F" . helpful-function)   ; Look up *F*unctions (excludes macros).
+   ("C-h C" . helpful-command)))  ; Look up *C*ommands.
+
 (provide 'nano-help)
 ;;; nano-help.el ends here
