@@ -1,6 +1,6 @@
 #!/usr/bin/env xdg-open
 #
-# Desktop file to integrate manually built Emacs into Gnome. 
+# Desktop file to integrate manually built Emacs into Gnome.
 [Desktop Entry]
 Name=Emacs
 Comment=Emacs text editor
