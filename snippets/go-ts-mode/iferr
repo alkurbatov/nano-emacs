@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: if err := $1; err != nil {}
+# --
+if err := $1; err != nil {
+    $2
+}
