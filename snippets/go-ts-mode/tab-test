@@ -2,15 +2,15 @@
 # name: Table test template
 # --
 func Test${1:Function}(t *testing.T) {
-	tt := []struct {
-		name   string
-		$2
+	tests := []struct {
+		name         string
+        $2
 	}{
 	}
 
-	for _, tc := range tt {
-		t.Run(tc.name, func(t *testing.T) {
-			$3
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+            $3
 		})
 	}
 }
