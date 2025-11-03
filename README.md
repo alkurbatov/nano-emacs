@@ -93,6 +93,7 @@ configuration.
 - [Bash Language Server](https://github.com/bash-lsp/bash-language-server) for
   `LSP` in `Bash`.
 - [Clangd](https://clangd.llvm.org/) for `LSP` in `C++`.
+- [Claude code CLI][claude-code] for AI integration.
 - [Golangci-lint](https://golangci-lint.run/) for linting in `Golang`.
 - [Gopls and other handy Golang binaries](./scripts/up-go-tools).
 - [Hunspell](https://github.com/hunspell/hunspell) for spellchecking.
@@ -140,4 +141,5 @@ To install the project execute the following command:
 make install
 ```
 
+[claude-code]: https://docs.claude.com/en/docs/claude-code/setup
 [zsh-integration]: https://github.com/alkurbatov/dotfiles/blob/master/.zsh_vterm

@@ -79,6 +79,7 @@
 (require 'nano-project)
 
 ;; Tools
+(require 'nano-ai)
 (require 'nano-ansible)
 (require 'nano-compile)
 (require 'nano-docker)
