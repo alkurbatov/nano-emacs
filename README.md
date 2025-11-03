@@ -20,6 +20,7 @@ configuration.
 - `Elisp`
 - `Golang`
 - `JSON`
+- `Jenkinsfile`
 - `LaTeX`
 - `Lua`
 - `Makefile`

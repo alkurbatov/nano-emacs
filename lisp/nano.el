@@ -94,6 +94,7 @@
 (require 'nano-cmake)
 (require 'nano-elisp)
 (require 'nano-go)
+(require 'nano-jenkins)
 (require 'nano-js)
 (require 'nano-json)
 (require 'nano-lua)
