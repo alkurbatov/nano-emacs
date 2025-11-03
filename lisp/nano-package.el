@@ -49,6 +49,9 @@
 ;; see https://irreal.org/blog/?p=12409
 (setq package-install-upgrade-built-in t)
 
+;; Useful to know how much time packages are taking.
+(setq use-package-compute-statistics t)
+
 ;; Require newest org as soon as possible to avoid loading of the old version.
 (straight-use-package 'org)
 

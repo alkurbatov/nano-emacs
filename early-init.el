@@ -46,11 +46,23 @@
 
 ;; During startup, Emacs doesn't require specific file handlers for every file
 ;; it opens or loads; thus, we should unset this list to optimize the startup process.
-(defvar file-name-handler-alist-original file-name-handler-alist)
-(setq file-name-handler-alist nil
-      site-run-file nil)
+(defvar startup/file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq file-name-handler-alist startup/file-name-handler-alist)
+            (makunbound 'startup/file-name-handler-alist)))
 
-;; No menu bar
+;; No menu bar.
 (menu-bar-mode -1)
+
+;; Suppress the startup, scratch buffer will be home buffer.
+(setq inhibit-splash-screen t
+      inhibit-startup-screen t
+      inhibit-startup-message t
+      inhibit-startup-buffer-menu t)
+
+;; Disable modeline while loading.
+(setq mode-line-format nil)
 
 ;;; early-init.el ends here
