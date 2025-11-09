@@ -19,12 +19,26 @@
 ;;; Commentary:
 
 ;;; Code:
+(defun nano-setup-js-with-eglot ()
+  "Setup and enable Eglot for JavaScript."
+  (indent-bars-mode)
 
-;; Show indentation
-(add-hook 'js-ts-mode-hook #'indent-bars-mode)
+  ;; Ask Eglot to stay away from completely taking over flymake.
+  (setq eglot-stay-out-of '(flymake))
+  (add-hook 'flymake-diagnostic-functions #'eglot-flymake-backend)
+
+  (eglot-ensure)
+
+  ;; Disable annoying action indicators.
+  ;; By some reason this variable is always overloaded after call to eglot-ensure.
+  (setq eglot-code-action-indications nil))
+
+(add-hook 'js-ts-mode-hook #'nano-setup-js-with-eglot)
 
 ;; Enable tree-sitter integration.
 (add-to-list 'treesit-auto-langs 'javascript)
+
+(add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-ts-mode))
 
 (provide 'nano-js)
 ;;; nano-js.el ends here
