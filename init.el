@@ -34,7 +34,6 @@
 
 (setq package-list
       '(auctex                   ; Integrated environment for *TeX*
-        avy                      ; Jump to things in Emacs tree-style
         consult                  ; Consulting completing-read
         consult-eglot            ; Jump to workspace symbols with eglot and consult
         company                  ; Modular auto-completion framework

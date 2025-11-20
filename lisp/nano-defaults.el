@@ -29,7 +29,11 @@
 (use-package emacs
   :init
   (setq custom-file "~/.emacs.d/nano-custom.el")
-  (load custom-file 'noerror 'nomessage))
+  (load custom-file 'noerror 'nomessage)
+
+  :config
+  ;; Replace yes/no prompts with y/n
+  (setq-default use-short-answers t))
 
 ;; Typography
 (setq-default fill-column 80                          ; Default line width
@@ -48,9 +52,6 @@
 
 ;; Follow symlinks without prompt
 (setq vc-follow-symlinks t)
-
-;; Replace yes/no prompts with y/n
-(setq-default use-short-answers t)
 
 (setq-default visible-bell nil             ; No visual bell
               ring-bell-function 'ignore)  ; No bell
@@ -124,6 +125,15 @@
 ;; Enable useful region commands
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+;; Jump to things in Emacs tree-style.
+(use-package avy
+  :config
+  (setq avy-timeout-seconds 1)
+
+  :bind
+  ;; See https://irreal.org/blog/?p=13398
+  ("M-g c" . avy-goto-char-timer))
 
 (when os-macos
   (setq ns-use-native-fullscreen t

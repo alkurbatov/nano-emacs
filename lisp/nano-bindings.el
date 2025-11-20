@@ -66,13 +66,6 @@ The DWIM behavior of this command is as follows:
 (bind-key "<C-return>" #'browse-url-at-point) ; Works in UI mode only
 (bind-key "C-c RET"    #'browse-url-at-point) ; Fallback for TUI mode
 
-;; Avy
-(bind-key "M-g f" #'avy-goto-line)
-(bind-key "M-g w" #'avy-goto-word-1)
-(bind-key "M-g c" #'avy-goto-char)
-(bind-key "C-c l" #'avy-copy-line)
-(bind-key "C-c m" #'avy-move-line)
-
 ;; Company
 (bind-key "M-TAB" #'company-complete)
 
