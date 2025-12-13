@@ -83,6 +83,9 @@
   ;; Show indentation
   (add-hook 'go-ts-mode-hook #'indent-bars-mode)
 
+  ;; Treat camel case substrings as words.
+  (add-hook 'go-ts-mode-hook #'subword-mode)
+
   (add-hook 'go-ts-mode-hook #'nano-setup-go-with-eglot)
 
   (bind-key "<f2>" #'gotest-ts-run-dwim))
