@@ -116,7 +116,7 @@
 (setq completion-cycle-threshold 3)
 
 ;; Suggest snippets in autocompletion.
-(add-to-list 'company-backends '(company-capf :with company-yasnippet))
+(add-to-list 'company-backends '(company-capf company-files :with company-yasnippet))
 
 ;; Enable indentation+tab insertion using the TAB key.
 ;; completion-at-point is bound to M-TAB.
