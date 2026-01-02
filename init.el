@@ -26,8 +26,6 @@
 ;; Libraries load path
 (add-to-list 'load-path
              (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path
-             (expand-file-name "theme" user-emacs-directory))
 
 ;; Setup dependencies
 (require 'nano-package)
