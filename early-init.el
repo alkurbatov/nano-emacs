@@ -65,4 +65,8 @@
 ;; Disable modeline while loading.
 (setq mode-line-format nil)
 
+;; No scroll bars.
+(if (fboundp 'scroll-bar-mode)
+    (setopt scroll-bar-mode nil))
+
 ;;; early-init.el ends here

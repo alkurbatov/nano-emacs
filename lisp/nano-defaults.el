@@ -56,9 +56,6 @@
 (setq-default visible-bell nil             ; No visual bell
               ring-bell-function 'ignore)  ; No bell
 
-;; No scroll bars
-(if (fboundp 'scroll-bar-mode) (set-scroll-bar-mode nil))
-
 ;; Disable some byte compile warnings
 (setq native-comp-async-report-warnings-errors 'silent)
 
