@@ -32,8 +32,12 @@
   (load custom-file 'noerror 'nomessage)
 
   :config
-  ;; Replace yes/no prompts with y/n
-  (setq-default use-short-answers t))
+  ;; Replace yes/no prompts with y/n.
+  (setq-default use-short-answers t)
+
+  :custom
+  ;; Don't show boring messages.
+  (inhibit-startup-echo-area-message (user-login-name)))
 
 ;; Typography
 (setq-default fill-column 80                          ; Default line width

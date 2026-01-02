@@ -53,6 +53,9 @@
             (setq file-name-handler-alist startup/file-name-handler-alist)
             (makunbound 'startup/file-name-handler-alist)))
 
+;; No startup screen.
+(setopt inhibit-startup-screen t)
+
 ;; No menu bar.
 (menu-bar-mode -1)
 

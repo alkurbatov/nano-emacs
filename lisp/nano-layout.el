@@ -22,13 +22,6 @@
 (require 'disp-table)
 (require 'nano-modeline)
 
-;; No startup  screen
-(setq inhibit-startup-screen t)
-
-;; No startup message
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
-
 ;; No message in scratch buffer
 (setq initial-scratch-message nil)
 
