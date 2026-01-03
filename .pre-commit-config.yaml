@@ -16,7 +16,9 @@ repos:
     rev: v1.0.5
     hooks:
       - id: elisp-check-parens
-# FIXME (alkurbatov): Enable when compilation will be fixed.
-#      - id: elisp-byte-compile
-#        exclude: examples|package-lock.el
       - id: elisp-indent
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+       - id: shellcheck
