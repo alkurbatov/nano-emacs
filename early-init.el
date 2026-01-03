@@ -39,11 +39,6 @@
 (setq native-comp-eln-load-path
       (list (expand-file-name "eln-cache" user-emacs-directory)))
 
-;; Start Emacs maximized without scrollbars.
-(setq default-frame-alist '((vertical-scroll-bars . nil)
-                            (horizontal-scroll-bars . nil)
-                            (tool-bar-lines . 0)))
-
 ;; During startup, Emacs doesn't require specific file handlers for every file
 ;; it opens or loads; thus, we should unset this list to optimize the startup process.
 (defvar startup/file-name-handler-alist file-name-handler-alist)
@@ -70,6 +65,7 @@
 
 ;; No scroll bars.
 (if (fboundp 'scroll-bar-mode)
-    (setopt scroll-bar-mode nil))
+    (setopt scroll-bar-mode nil
+            horizontal-scroll-bar-mode nil))
 
 ;;; early-init.el ends here
