@@ -76,11 +76,6 @@
 (set-display-table-slot standard-display-table
                         'wrap (make-glyph-code ?- 'nano-faded))
 
-;; Transparent Emacs titlebars on OSX (works only with emacs-plus)
-(when (and os-macos (display-graphic-p))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
-
 ;; Enable nano-modeline in different modes
 (setq nano-modeline-alignment '(text . text)
       nano-modeline-borders '(nil . nil))
