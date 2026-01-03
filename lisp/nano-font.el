@@ -19,7 +19,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'ligature)
 
 (defface nano-mono
   `((t (:family "JetBrains Mono"
@@ -54,7 +53,14 @@
     "|=" "||=" "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#="
     "&="))
 
-(ligature-set-ligatures 'prog-mode nano-jetbrains-ligatures)
+;; Enables font ligatures.
+(use-package ligature
+  :when (display-graphic-p)
+
+  :config
+  (ligature-set-ligatures 't nano-jetbrains-ligatures)
+
+  (global-ligature-mode))
 
 (provide 'nano-font)
 ;;; nano-font.el ends here

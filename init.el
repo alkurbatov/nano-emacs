@@ -53,7 +53,6 @@
         gotest                   ; Emacs mode to go unit test command line tool
         hl-todo                  ; Highlight TODO keywords
         jinx                     ; Enchanted Spell Checker
-        ligature                 ; Display typographical ligatures in Emacs
         marginalia               ; Enrich existing commands with completion annotations
         markdown-mode            ; Major mode for Markdown-formatted text
         markdown-toc             ; Generate a TOC in markdown file

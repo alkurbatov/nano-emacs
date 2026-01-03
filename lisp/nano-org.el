@@ -22,7 +22,6 @@
 ;;; Code:
 (require 'bind-key)
 (require 'org-agenda)
-(require 'nano-font)
 
 (defun nano-org-time-stamp-inactive ()
   "Insert inactive timestamp with current date."
@@ -47,8 +46,6 @@
   (add-to-list 'org-src-lang-modes '("go" . go-ts))
 
   (add-hook 'org-mode-hook #'display-fill-column-indicator-mode)
-
-  (ligature-set-ligatures 'org-mode nano-jetbrains-ligatures)
 
   (bind-keys :map org-mode-map
              ("C-c z" . org-toggle-link-display)
