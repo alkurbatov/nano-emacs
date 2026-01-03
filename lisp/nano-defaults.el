@@ -136,10 +136,6 @@
   ;; See https://irreal.org/blog/?p=13398
   ("M-g c" . avy-goto-char-timer))
 
-(when os-macos
-  (setq ns-use-native-fullscreen t
-        mac-use-title-bar nil))
-
 ;; y/n for  answering yes/no questions
 (fset 'yes-or-no-p 'y-or-n-p)
 
