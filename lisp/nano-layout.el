@@ -100,11 +100,10 @@
 
 ;; Show an indicator for the trailing newline in the end of the file.
 (use-package trailing-newline-indicator
-  :init
-  (global-trailing-newline-indicator-mode 1)
-
   :config
-  (setq trailing-newline-indicator-show-line-number nil))
+  (setopt trailing-newline-indicator-show-line-number nil)
+
+  (global-trailing-newline-indicator-mode 1))
 
 (provide 'nano-layout)
 ;;; nano-layout.el ends here
